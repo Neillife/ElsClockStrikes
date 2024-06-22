@@ -4,7 +4,6 @@ using ElsClockStrikes.Forms;
 using ElsClockStrikes.Core;
 using MetroSuite;
 using System.Drawing;
-using System.IO;
 
 namespace ElsClockStrikes
 {
@@ -39,7 +38,16 @@ namespace ElsClockStrikes
             TopMostCheckBoxOriginPos = TopMostCheckBox.Location;
             WindowsSettingOriginPos = WindowsSetting.Location;
             WindowsOriginSize = this.Size;
+
+            大招LabelOriginPos = 大招Label.Location;
+            大刺LabelOriginPos = 大刺Label.Location;
+            翻桌LabelOriginPos = 翻桌Label.Location;
+            控場156R1LabelOriginPos = R1156控場Label.Location;
+
             預設音效RadioButton.Checked = true;
+            預設音效156R1RadioButton.Checked = true;
+            預設音效156R3RadioButton.Checked = true;
+            CopyrightTagLabel.Text = FormsConstant.copyrightTag;
         }
 
         private void ElsClockStrikesForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -160,19 +168,6 @@ namespace ElsClockStrikes
             this.TopMost = !this.TopMost;
         }
 
-        private int GetLabelMaxWidth(Control parent)
-        {
-            int maxWidth = 0;
-            foreach (Control control in parent.Controls)
-            {
-                if (control is Label && maxWidth < control.Width && control.Text != FormsConstant.copyrightTag)
-                {
-                    maxWidth = control.Width;
-                }
-            }
-            return maxWidth;
-        }
-
         private void ProcessWindowsSetting(bool isBackToOriginCheck)
         {
             小荊棘ComboBox.Visible = !小荊棘ComboBox.Visible;
@@ -195,10 +190,84 @@ namespace ElsClockStrikes
             重置計時器按鍵Label.Visible = !重置計時器按鍵Label.Visible;
             ZoomOutControlBox.Visible = !ZoomOutControlBox.Visible;
             CloseControlBox.Visible = !CloseControlBox.Visible;
+            metroTabControlVS1.Visible = !metroTabControlVS1.Visible;
+
+            if (isBackToOriginCheck)
+            {
+                this.Controls.Remove(小荊棘按鍵Label);
+                this.Controls.Remove(小荊棘Label);
+                this.Controls.Remove(小荊棘CDLabel);
+                this.Controls.Remove(雷射按鍵Label);
+                this.Controls.Remove(雷射Label);
+                this.Controls.Remove(雷射CDLabel);
+                this.Controls.Remove(荊棘延遲按鍵Label);
+                this.Controls.Remove(荊棘延遲Label);
+                this.Controls.Remove(荊棘延遲CDLabel);
+                this.Controls.Remove(控場按鍵Label);
+                this.Controls.Remove(控場Label);
+                this.Controls.Remove(控場CDLabel);
+                this.Controls.Remove(重置計時器按鍵Label);
+                this.Controls.Remove(重置計時器Label);
+                this.Controls.Remove(TopMostCheckBox);
+                this.Controls.Remove(WindowsSetting);
+
+                TabPage127R3.Controls.Add(小荊棘按鍵Label);
+                TabPage127R3.Controls.Add(小荊棘Label);
+                TabPage127R3.Controls.Add(小荊棘CDLabel);
+                TabPage127R3.Controls.Add(雷射按鍵Label);
+                TabPage127R3.Controls.Add(雷射Label);
+                TabPage127R3.Controls.Add(雷射CDLabel);
+                TabPage127R3.Controls.Add(荊棘延遲按鍵Label);
+                TabPage127R3.Controls.Add(荊棘延遲Label);
+                TabPage127R3.Controls.Add(荊棘延遲CDLabel);
+                TabPage127R3.Controls.Add(控場按鍵Label);
+                TabPage127R3.Controls.Add(控場Label);
+                TabPage127R3.Controls.Add(控場CDLabel);
+                TabPage127R3.Controls.Add(重置計時器按鍵Label);
+                TabPage127R3.Controls.Add(重置計時器Label);
+                TabPage127R3.Controls.Add(TopMostCheckBox);
+                TabPage127R3.Controls.Add(WindowsSetting);
+            }
+            else
+            {
+                TabPage127R3.Controls.Remove(小荊棘按鍵Label);
+                TabPage127R3.Controls.Remove(小荊棘Label);
+                TabPage127R3.Controls.Remove(小荊棘CDLabel);
+                TabPage127R3.Controls.Remove(雷射按鍵Label);
+                TabPage127R3.Controls.Remove(雷射Label);
+                TabPage127R3.Controls.Remove(雷射CDLabel);
+                TabPage127R3.Controls.Remove(荊棘延遲按鍵Label);
+                TabPage127R3.Controls.Remove(荊棘延遲Label);
+                TabPage127R3.Controls.Remove(荊棘延遲CDLabel);
+                TabPage127R3.Controls.Remove(控場按鍵Label);
+                TabPage127R3.Controls.Remove(控場Label);
+                TabPage127R3.Controls.Remove(控場CDLabel);
+                TabPage127R3.Controls.Remove(重置計時器按鍵Label);
+                TabPage127R3.Controls.Remove(重置計時器Label);
+                TabPage127R3.Controls.Remove(TopMostCheckBox);
+                TabPage127R3.Controls.Remove(WindowsSetting);
+
+                this.Controls.Add(小荊棘按鍵Label);
+                this.Controls.Add(小荊棘Label);
+                this.Controls.Add(小荊棘CDLabel);
+                this.Controls.Add(雷射按鍵Label);
+                this.Controls.Add(雷射Label);
+                this.Controls.Add(雷射CDLabel);
+                this.Controls.Add(荊棘延遲按鍵Label);
+                this.Controls.Add(荊棘延遲Label);
+                this.Controls.Add(荊棘延遲CDLabel);
+                this.Controls.Add(控場按鍵Label);
+                this.Controls.Add(控場Label);
+                this.Controls.Add(控場CDLabel);
+                this.Controls.Add(重置計時器按鍵Label);
+                this.Controls.Add(重置計時器Label);
+                this.Controls.Add(TopMostCheckBox);
+                this.Controls.Add(WindowsSetting);
+            }
 
             this.Size = isBackToOriginCheck ? WindowsOriginSize : new Size(180, 330);
 
-            int MaxLabelWidth = this.GetLabelMaxWidth(this);
+            int MaxLabelWidth = FormsUtils.GetLabelMaxWidth(this);
             int KeyLabelAddY = 40;
             小荊棘按鍵Label.Location = new Point(5, 30);
             小荊棘Label.Location = isBackToOriginCheck ? 小荊棘LabelOriginPos : new Point(MaxLabelWidth - 小荊棘Label.Width + 小荊棘按鍵Label.Width - 5, 小荊棘按鍵Label.Top + 小荊棘按鍵Label.Height - 小荊棘Label.Height - 3);
@@ -240,7 +309,7 @@ namespace ElsClockStrikes
             }
             else
             {
-                hotKeyManager = new HotKeyManager(this, this.components.Components, typeof(ElsClockStrikesForm));
+                hotKeyManager = new HotKeyManager(this.TabPage127R3, typeof(ElsClockStrikesForm));
             }
         }
 
@@ -251,52 +320,44 @@ namespace ElsClockStrikes
                 WindowsSetting.BaseColor = Color.FromArgb(65, 105, 225);
                 WindowsSetting.OnHoverBaseColor = Color.FromArgb(45, 85, 205);
                 WindowsSetting.Text = "調整設定";
-                this.ProcessWindowsSetting(false);
                 this.ProcessRegisterHotKey(false);
+                this.ProcessWindowsSetting(false);
                 FormsConstant.init127Timer(小荊棘TextBox.Text, 雷射TextBox.Text, 荊棘延遲TextBox.Text, 控場TextBox.Text);
             } else
             {
                 WindowsSetting.BaseColor = Color.FromArgb(184, 44, 44);
                 WindowsSetting.OnHoverBaseColor = Color.FromArgb(150, 20, 20);
                 WindowsSetting.Text = "設定完成";
-                this.ProcessWindowsSetting(true);
                 this.ProcessRegisterHotKey(true);
-            }
-        }
-
-        private void ProcessKeyPress(KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
-            {
-                e.Handled = true;
+                this.ProcessWindowsSetting(true);
             }
         }
 
         private void 小荊棘TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            this.ProcessKeyPress(e);
+            FormsUtils.ProcessKeyPress(e);
         }
 
         private void 雷射TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            this.ProcessKeyPress(e);
+            FormsUtils.ProcessKeyPress(e);
         }
 
         private void 荊棘延遲TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            this.ProcessKeyPress(e);
+            FormsUtils.ProcessKeyPress(e);
         }
 
         private void 控場TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            this.ProcessKeyPress(e);
+            FormsUtils.ProcessKeyPress(e);
         }
 
         private void LoadDefaultSound()
         {
-            小荊棘TimeupAudioPlayer = new AudioPlayer(Properties.Resources.小荊棘DefultSound);
-            雷射TimeupAudioPlayer = new AudioPlayer(Properties.Resources.雷射DefultSound);
-            荊棘延遲TimeupAudioPlayer = new AudioPlayer(Properties.Resources.荊棘延遲DefultSound);
+            小荊棘TimeupAudioPlayer = new AudioPlayer(Properties.Resources.小荊棘大招大黑DefultSound);
+            雷射TimeupAudioPlayer = new AudioPlayer(Properties.Resources.雷射大刺三連DefultSound);
+            荊棘延遲TimeupAudioPlayer = new AudioPlayer(Properties.Resources.荊棘延遲翻桌陰陽陣DefultSound);
             控場TimeupAudioPlayer = new AudioPlayer(Properties.Resources.控場DefultSound);
         }
 
@@ -322,40 +383,25 @@ namespace ElsClockStrikes
             控場TimeupAudioPlayer = null;
         }
 
-        private AudioPlayer ProcessSelectSoundFile(UnmanagedMemoryStream defaultSound)
-        {
-            AudioPlayer ap = new AudioPlayer(defaultSound);
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            //openFileDialog.Multiselect = false;
-            openFileDialog.Title = "請選擇音效檔";
-            openFileDialog.Filter = "MP3 Files (*.mp3)|*.mp3|WAV Files (*.wav)|*.wav";
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                ap = new AudioPlayer(openFileDialog.FileName);
-            }
-            return ap;
-        }
-
         private void 小荊棘設定音效Button_Click(object sender, EventArgs e)
         {
-            小荊棘TimeupAudioPlayer = ProcessSelectSoundFile(Properties.Resources.小荊棘DefultSound);
+            小荊棘TimeupAudioPlayer = FormsUtils.ProcessSelectSoundFile(Properties.Resources.小荊棘大招大黑DefultSound);
         }
 
         private void 雷射設定音效Button_Click(object sender, EventArgs e)
         {
             
-            雷射TimeupAudioPlayer = ProcessSelectSoundFile(Properties.Resources.雷射DefultSound);
+            雷射TimeupAudioPlayer = FormsUtils.ProcessSelectSoundFile(Properties.Resources.雷射大刺三連DefultSound);
         }
 
         private void 荊棘延遲設定音效Button_Click(object sender, EventArgs e)
         {
-            荊棘延遲TimeupAudioPlayer = ProcessSelectSoundFile(Properties.Resources.荊棘延遲DefultSound);
+            荊棘延遲TimeupAudioPlayer = FormsUtils.ProcessSelectSoundFile(Properties.Resources.荊棘延遲翻桌陰陽陣DefultSound);
         }
 
         private void 控場設定音效Button_Click(object sender, EventArgs e)
         {
-            控場TimeupAudioPlayer = ProcessSelectSoundFile(Properties.Resources.控場DefultSound);
+            控場TimeupAudioPlayer = FormsUtils.ProcessSelectSoundFile(Properties.Resources.控場DefultSound);
         }
     }
 }
