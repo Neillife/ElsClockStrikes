@@ -107,18 +107,18 @@
             this.大招設定音效Button = new Guna.UI.WinForms.GunaButton();
             this.大刺設定音效Button = new Guna.UI.WinForms.GunaButton();
             this.TabPage156R3 = new System.Windows.Forms.TabPage();
-            this.控場156R3Label = new System.Windows.Forms.Label();
+            this.R3156控場Label = new System.Windows.Forms.Label();
             this.WindowsSetting156R3 = new Guna.UI.WinForms.GunaButton();
             this.音效設定156R3GroupBox = new System.Windows.Forms.GroupBox();
             this.關閉音效156R3RadioButton = new Guna.UI.WinForms.GunaRadioButton();
             this.預設音效156R3RadioButton = new Guna.UI.WinForms.GunaRadioButton();
             this.自訂音效156R3RadioButton = new Guna.UI.WinForms.GunaRadioButton();
-            this.控場156R3TextBox = new Guna.UI.WinForms.GunaLineTextBox();
+            this.R3156控場TextBox = new Guna.UI.WinForms.GunaLineTextBox();
             this.重置計時器156R3按鍵Label = new System.Windows.Forms.Label();
             this.大黑Label = new System.Windows.Forms.Label();
             this.大黑按鍵Label = new System.Windows.Forms.Label();
             this.大黑TextBox = new Guna.UI.WinForms.GunaLineTextBox();
-            this.控場156R3CDLabel = new System.Windows.Forms.Label();
+            this.R3156控場CDLabel = new System.Windows.Forms.Label();
             this.陰陽陣Label = new System.Windows.Forms.Label();
             this.三連CDLabel = new System.Windows.Forms.Label();
             this.陰陽陣TextBox = new Guna.UI.WinForms.GunaLineTextBox();
@@ -127,7 +127,7 @@
             this.大黑CDLabel = new System.Windows.Forms.Label();
             this.三連TextBox = new Guna.UI.WinForms.GunaLineTextBox();
             this.大黑ComboBox = new Guna.UI.WinForms.GunaComboBox();
-            this.控場156R3ComboBox = new Guna.UI.WinForms.GunaComboBox();
+            this.R3156控場ComboBox = new Guna.UI.WinForms.GunaComboBox();
             this.重置計時器156R3ComboBox = new Guna.UI.WinForms.GunaComboBox();
             this.三連ComboBox = new Guna.UI.WinForms.GunaComboBox();
             this.重置計時器156R3Label = new System.Windows.Forms.Label();
@@ -135,8 +135,8 @@
             this.陰陽陣按鍵Label = new System.Windows.Forms.Label();
             this.TopMost156R3CheckBox = new Guna.UI.WinForms.GunaCheckBox();
             this.三連按鍵Label = new System.Windows.Forms.Label();
-            this.控場156R3設定音效Button = new Guna.UI.WinForms.GunaButton();
-            this.控場156R3按鍵Label = new System.Windows.Forms.Label();
+            this.R3156控場設定音效Button = new Guna.UI.WinForms.GunaButton();
+            this.R3156控場按鍵Label = new System.Windows.Forms.Label();
             this.三連設定音效Button = new Guna.UI.WinForms.GunaButton();
             this.大黑設定音效Button = new Guna.UI.WinForms.GunaButton();
             this.陰陽陣設定音效Button = new Guna.UI.WinForms.GunaButton();
@@ -146,6 +146,10 @@
             this.翻桌Timer = new System.Windows.Forms.Timer(this.components);
             this.大刺Timer = new System.Windows.Forms.Timer(this.components);
             this.大招Timer = new System.Windows.Forms.Timer(this.components);
+            this.R3156控場Timer = new System.Windows.Forms.Timer(this.components);
+            this.三連Timer = new System.Windows.Forms.Timer(this.components);
+            this.陰陽陣Timer = new System.Windows.Forms.Timer(this.components);
+            this.大黑Timer = new System.Windows.Forms.Timer(this.components);
             this.音效設定GroupBox.SuspendLayout();
             this.metroTabControlVS1.SuspendLayout();
             this.TabPage127R3.SuspendLayout();
@@ -227,7 +231,7 @@
             this.控場TextBox.Name = "控場TextBox";
             this.控場TextBox.PasswordChar = '\0';
             this.控場TextBox.Size = new System.Drawing.Size(90, 42);
-            this.控場TextBox.TabIndex = 93;
+            this.控場TextBox.TabIndex = 99;
             this.控場TextBox.Text = "90";
             this.控場TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.控場TextBox.TextOffsetX = 3;
@@ -247,7 +251,7 @@
             this.小荊棘TextBox.Name = "小荊棘TextBox";
             this.小荊棘TextBox.PasswordChar = '\0';
             this.小荊棘TextBox.Size = new System.Drawing.Size(90, 42);
-            this.小荊棘TextBox.TabIndex = 95;
+            this.小荊棘TextBox.TabIndex = 93;
             this.小荊棘TextBox.Text = "150";
             this.小荊棘TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.小荊棘TextBox.TextOffsetX = 3;
@@ -277,7 +281,7 @@
             this.雷射TextBox.Name = "雷射TextBox";
             this.雷射TextBox.PasswordChar = '\0';
             this.雷射TextBox.Size = new System.Drawing.Size(90, 42);
-            this.雷射TextBox.TabIndex = 97;
+            this.雷射TextBox.TabIndex = 95;
             this.雷射TextBox.Text = "70";
             this.雷射TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.雷射TextBox.TextOffsetX = 3;
@@ -307,7 +311,7 @@
             this.荊棘延遲TextBox.Name = "荊棘延遲TextBox";
             this.荊棘延遲TextBox.PasswordChar = '\0';
             this.荊棘延遲TextBox.Size = new System.Drawing.Size(90, 42);
-            this.荊棘延遲TextBox.TabIndex = 99;
+            this.荊棘延遲TextBox.TabIndex = 97;
             this.荊棘延遲TextBox.Text = "30";
             this.荊棘延遲TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.荊棘延遲TextBox.TextOffsetX = 3;
@@ -1085,6 +1089,7 @@
             this.metroTabControlVS1.Size = new System.Drawing.Size(542, 533);
             this.metroTabControlVS1.Style = MetroSuite.Design.Style.Custom;
             this.metroTabControlVS1.TabIndex = 125;
+            this.metroTabControlVS1.SelectedIndexChanged += new System.EventHandler(this.metroTabControlVS1_SelectedIndexChanged);
             // 
             // TabPage127R3
             // 
@@ -1273,7 +1278,7 @@
             this.R1156控場TextBox.Name = "R1156控場TextBox";
             this.R1156控場TextBox.PasswordChar = '\0';
             this.R1156控場TextBox.Size = new System.Drawing.Size(90, 42);
-            this.R1156控場TextBox.TabIndex = 127;
+            this.R1156控場TextBox.TabIndex = 133;
             this.R1156控場TextBox.Text = "90";
             this.R1156控場TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.R1156控場TextBox.TextOffsetX = 3;
@@ -1325,7 +1330,7 @@
             this.大招TextBox.Name = "大招TextBox";
             this.大招TextBox.PasswordChar = '\0';
             this.大招TextBox.Size = new System.Drawing.Size(90, 42);
-            this.大招TextBox.TabIndex = 129;
+            this.大招TextBox.TabIndex = 127;
             this.大招TextBox.Text = "270";
             this.大招TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.大招TextBox.TextOffsetX = 3;
@@ -1377,7 +1382,7 @@
             this.大刺TextBox.Name = "大刺TextBox";
             this.大刺TextBox.PasswordChar = '\0';
             this.大刺TextBox.Size = new System.Drawing.Size(90, 42);
-            this.大刺TextBox.TabIndex = 131;
+            this.大刺TextBox.TabIndex = 129;
             this.大刺TextBox.Text = "80";
             this.大刺TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.大刺TextBox.TextOffsetX = 3;
@@ -1429,7 +1434,7 @@
             this.翻桌TextBox.Name = "翻桌TextBox";
             this.翻桌TextBox.PasswordChar = '\0';
             this.翻桌TextBox.Size = new System.Drawing.Size(90, 42);
-            this.翻桌TextBox.TabIndex = 133;
+            this.翻桌TextBox.TabIndex = 131;
             this.翻桌TextBox.Text = "115";
             this.翻桌TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.翻桌TextBox.TextOffsetX = 3;
@@ -2003,15 +2008,15 @@
             // TabPage156R3
             // 
             this.TabPage156R3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.TabPage156R3.Controls.Add(this.控場156R3Label);
+            this.TabPage156R3.Controls.Add(this.R3156控場Label);
             this.TabPage156R3.Controls.Add(this.WindowsSetting156R3);
             this.TabPage156R3.Controls.Add(this.音效設定156R3GroupBox);
-            this.TabPage156R3.Controls.Add(this.控場156R3TextBox);
+            this.TabPage156R3.Controls.Add(this.R3156控場TextBox);
             this.TabPage156R3.Controls.Add(this.重置計時器156R3按鍵Label);
             this.TabPage156R3.Controls.Add(this.大黑Label);
             this.TabPage156R3.Controls.Add(this.大黑按鍵Label);
             this.TabPage156R3.Controls.Add(this.大黑TextBox);
-            this.TabPage156R3.Controls.Add(this.控場156R3CDLabel);
+            this.TabPage156R3.Controls.Add(this.R3156控場CDLabel);
             this.TabPage156R3.Controls.Add(this.陰陽陣Label);
             this.TabPage156R3.Controls.Add(this.三連CDLabel);
             this.TabPage156R3.Controls.Add(this.陰陽陣TextBox);
@@ -2020,7 +2025,7 @@
             this.TabPage156R3.Controls.Add(this.大黑CDLabel);
             this.TabPage156R3.Controls.Add(this.三連TextBox);
             this.TabPage156R3.Controls.Add(this.大黑ComboBox);
-            this.TabPage156R3.Controls.Add(this.控場156R3ComboBox);
+            this.TabPage156R3.Controls.Add(this.R3156控場ComboBox);
             this.TabPage156R3.Controls.Add(this.重置計時器156R3ComboBox);
             this.TabPage156R3.Controls.Add(this.三連ComboBox);
             this.TabPage156R3.Controls.Add(this.重置計時器156R3Label);
@@ -2028,8 +2033,8 @@
             this.TabPage156R3.Controls.Add(this.陰陽陣按鍵Label);
             this.TabPage156R3.Controls.Add(this.TopMost156R3CheckBox);
             this.TabPage156R3.Controls.Add(this.三連按鍵Label);
-            this.TabPage156R3.Controls.Add(this.控場156R3設定音效Button);
-            this.TabPage156R3.Controls.Add(this.控場156R3按鍵Label);
+            this.TabPage156R3.Controls.Add(this.R3156控場設定音效Button);
+            this.TabPage156R3.Controls.Add(this.R3156控場按鍵Label);
             this.TabPage156R3.Controls.Add(this.三連設定音效Button);
             this.TabPage156R3.Controls.Add(this.大黑設定音效Button);
             this.TabPage156R3.Controls.Add(this.陰陽陣設定音效Button);
@@ -2041,15 +2046,15 @@
             this.TabPage156R3.TabIndex = 2;
             this.TabPage156R3.Text = "156R3";
             // 
-            // 控場156R3Label
+            // R3156控場Label
             // 
-            this.控場156R3Label.AutoSize = true;
-            this.控場156R3Label.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.控場156R3Label.Location = new System.Drawing.Point(267, 258);
-            this.控場156R3Label.Name = "控場156R3Label";
-            this.控場156R3Label.Size = new System.Drawing.Size(47, 20);
-            this.控場156R3Label.TabIndex = 154;
-            this.控場156R3Label.Text = "控場:";
+            this.R3156控場Label.AutoSize = true;
+            this.R3156控場Label.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.R3156控場Label.Location = new System.Drawing.Point(267, 258);
+            this.R3156控場Label.Name = "R3156控場Label";
+            this.R3156控場Label.Size = new System.Drawing.Size(47, 20);
+            this.R3156控場Label.TabIndex = 154;
+            this.R3156控場Label.Text = "控場:";
             // 
             // WindowsSetting156R3
             // 
@@ -2076,6 +2081,7 @@
             this.WindowsSetting156R3.TabIndex = 156;
             this.WindowsSetting156R3.Text = "設定完成";
             this.WindowsSetting156R3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.WindowsSetting156R3.Click += new System.EventHandler(this.WindowsSetting156R3_Click);
             // 
             // 音效設定156R3GroupBox
             // 
@@ -2102,6 +2108,7 @@
             this.關閉音效156R3RadioButton.Size = new System.Drawing.Size(55, 20);
             this.關閉音效156R3RadioButton.TabIndex = 79;
             this.關閉音效156R3RadioButton.Text = "關閉";
+            this.關閉音效156R3RadioButton.CheckedChanged += new System.EventHandler(this.關閉音效156R3RadioButton_CheckedChanged);
             // 
             // 預設音效156R3RadioButton
             // 
@@ -2115,6 +2122,7 @@
             this.預設音效156R3RadioButton.Size = new System.Drawing.Size(55, 20);
             this.預設音效156R3RadioButton.TabIndex = 77;
             this.預設音效156R3RadioButton.Text = "預設";
+            this.預設音效156R3RadioButton.CheckedChanged += new System.EventHandler(this.預設音效156R3RadioButton_CheckedChanged);
             // 
             // 自訂音效156R3RadioButton
             // 
@@ -2127,25 +2135,27 @@
             this.自訂音效156R3RadioButton.Size = new System.Drawing.Size(55, 20);
             this.自訂音效156R3RadioButton.TabIndex = 78;
             this.自訂音效156R3RadioButton.Text = "自訂";
+            this.自訂音效156R3RadioButton.CheckedChanged += new System.EventHandler(this.自訂音效156R3RadioButton_CheckedChanged);
             // 
-            // 控場156R3TextBox
+            // R3156控場TextBox
             // 
-            this.控場156R3TextBox.Animated = true;
-            this.控場156R3TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(82)))), ((int)(((byte)(80)))));
-            this.控場156R3TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.控場156R3TextBox.FocusedLineColor = System.Drawing.Color.Red;
-            this.控場156R3TextBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.控場156R3TextBox.LineColor = System.Drawing.Color.Gainsboro;
-            this.控場156R3TextBox.LineSize = 1;
-            this.控場156R3TextBox.Location = new System.Drawing.Point(333, 245);
-            this.控場156R3TextBox.MaxLength = 3;
-            this.控場156R3TextBox.Name = "控場156R3TextBox";
-            this.控場156R3TextBox.PasswordChar = '\0';
-            this.控場156R3TextBox.Size = new System.Drawing.Size(90, 42);
-            this.控場156R3TextBox.TabIndex = 157;
-            this.控場156R3TextBox.Text = "90";
-            this.控場156R3TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.控場156R3TextBox.TextOffsetX = 3;
+            this.R3156控場TextBox.Animated = true;
+            this.R3156控場TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(82)))), ((int)(((byte)(80)))));
+            this.R3156控場TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.R3156控場TextBox.FocusedLineColor = System.Drawing.Color.Red;
+            this.R3156控場TextBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.R3156控場TextBox.LineColor = System.Drawing.Color.Gainsboro;
+            this.R3156控場TextBox.LineSize = 1;
+            this.R3156控場TextBox.Location = new System.Drawing.Point(333, 245);
+            this.R3156控場TextBox.MaxLength = 3;
+            this.R3156控場TextBox.Name = "R3156控場TextBox";
+            this.R3156控場TextBox.PasswordChar = '\0';
+            this.R3156控場TextBox.Size = new System.Drawing.Size(90, 42);
+            this.R3156控場TextBox.TabIndex = 163;
+            this.R3156控場TextBox.Text = "90";
+            this.R3156控場TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.R3156控場TextBox.TextOffsetX = 3;
+            this.R3156控場TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.R3156控場TextBox_KeyPress);
             // 
             // 重置計時器156R3按鍵Label
             // 
@@ -2193,21 +2203,22 @@
             this.大黑TextBox.Name = "大黑TextBox";
             this.大黑TextBox.PasswordChar = '\0';
             this.大黑TextBox.Size = new System.Drawing.Size(90, 42);
-            this.大黑TextBox.TabIndex = 159;
+            this.大黑TextBox.TabIndex = 157;
             this.大黑TextBox.Text = "210";
             this.大黑TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.大黑TextBox.TextOffsetX = 3;
+            this.大黑TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.大黑TextBox_KeyPress);
             // 
-            // 控場156R3CDLabel
+            // R3156控場CDLabel
             // 
-            this.控場156R3CDLabel.AutoSize = true;
-            this.控場156R3CDLabel.Font = new System.Drawing.Font("Segoe UI", 15.25F, System.Drawing.FontStyle.Bold);
-            this.控場156R3CDLabel.Location = new System.Drawing.Point(58, 258);
-            this.控場156R3CDLabel.Name = "控場156R3CDLabel";
-            this.控場156R3CDLabel.Size = new System.Drawing.Size(37, 30);
-            this.控場156R3CDLabel.TabIndex = 173;
-            this.控場156R3CDLabel.Text = "90";
-            this.控場156R3CDLabel.Visible = false;
+            this.R3156控場CDLabel.AutoSize = true;
+            this.R3156控場CDLabel.Font = new System.Drawing.Font("Segoe UI", 15.25F, System.Drawing.FontStyle.Bold);
+            this.R3156控場CDLabel.Location = new System.Drawing.Point(58, 258);
+            this.R3156控場CDLabel.Name = "R3156控場CDLabel";
+            this.R3156控場CDLabel.Size = new System.Drawing.Size(37, 30);
+            this.R3156控場CDLabel.TabIndex = 173;
+            this.R3156控場CDLabel.Text = "90";
+            this.R3156控場CDLabel.Visible = false;
             // 
             // 陰陽陣Label
             // 
@@ -2244,10 +2255,11 @@
             this.陰陽陣TextBox.Name = "陰陽陣TextBox";
             this.陰陽陣TextBox.PasswordChar = '\0';
             this.陰陽陣TextBox.Size = new System.Drawing.Size(90, 42);
-            this.陰陽陣TextBox.TabIndex = 161;
+            this.陰陽陣TextBox.TabIndex = 159;
             this.陰陽陣TextBox.Text = "240";
             this.陰陽陣TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.陰陽陣TextBox.TextOffsetX = 3;
+            this.陰陽陣TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.陰陽陣TextBox_KeyPress);
             // 
             // 陰陽陣CDLabel
             // 
@@ -2295,10 +2307,11 @@
             this.三連TextBox.Name = "三連TextBox";
             this.三連TextBox.PasswordChar = '\0';
             this.三連TextBox.Size = new System.Drawing.Size(90, 42);
-            this.三連TextBox.TabIndex = 163;
+            this.三連TextBox.TabIndex = 161;
             this.三連TextBox.Text = "140";
             this.三連TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.三連TextBox.TextOffsetX = 3;
+            this.三連TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.三連TextBox_KeyPress);
             // 
             // 大黑ComboBox
             // 
@@ -2379,19 +2392,19 @@
             this.大黑ComboBox.StartIndex = 0;
             this.大黑ComboBox.TabIndex = 169;
             // 
-            // 控場156R3ComboBox
+            // R3156控場ComboBox
             // 
-            this.控場156R3ComboBox.BackColor = System.Drawing.Color.Transparent;
-            this.控場156R3ComboBox.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.控場156R3ComboBox.BorderColor = System.Drawing.Color.Silver;
-            this.控場156R3ComboBox.BorderSize = 1;
-            this.控場156R3ComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.控場156R3ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.控場156R3ComboBox.FocusedColor = System.Drawing.Color.Empty;
-            this.控場156R3ComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.控場156R3ComboBox.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.控場156R3ComboBox.FormattingEnabled = true;
-            this.控場156R3ComboBox.Items.AddRange(new object[] {
+            this.R3156控場ComboBox.BackColor = System.Drawing.Color.Transparent;
+            this.R3156控場ComboBox.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.R3156控場ComboBox.BorderColor = System.Drawing.Color.Silver;
+            this.R3156控場ComboBox.BorderSize = 1;
+            this.R3156控場ComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.R3156控場ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.R3156控場ComboBox.FocusedColor = System.Drawing.Color.Empty;
+            this.R3156控場ComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.R3156控場ComboBox.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.R3156控場ComboBox.FormattingEnabled = true;
+            this.R3156控場ComboBox.Items.AddRange(new object[] {
             "F1",
             "F2",
             "F3",
@@ -2450,13 +2463,13 @@
             "小鍵盤7",
             "小鍵盤8",
             "小鍵盤9"});
-            this.控場156R3ComboBox.Location = new System.Drawing.Point(111, 255);
-            this.控場156R3ComboBox.Name = "控場156R3ComboBox";
-            this.控場156R3ComboBox.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.控場156R3ComboBox.OnHoverItemForeColor = System.Drawing.SystemColors.ControlDark;
-            this.控場156R3ComboBox.Size = new System.Drawing.Size(84, 26);
-            this.控場156R3ComboBox.StartIndex = 3;
-            this.控場156R3ComboBox.TabIndex = 166;
+            this.R3156控場ComboBox.Location = new System.Drawing.Point(111, 255);
+            this.R3156控場ComboBox.Name = "R3156控場ComboBox";
+            this.R3156控場ComboBox.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.R3156控場ComboBox.OnHoverItemForeColor = System.Drawing.SystemColors.ControlDark;
+            this.R3156控場ComboBox.Size = new System.Drawing.Size(84, 26);
+            this.R3156控場ComboBox.StartIndex = 3;
+            this.R3156控場ComboBox.TabIndex = 166;
             // 
             // 重置計時器156R3ComboBox
             // 
@@ -2729,6 +2742,7 @@
             this.TopMost156R3CheckBox.Size = new System.Drawing.Size(100, 25);
             this.TopMost156R3CheckBox.TabIndex = 155;
             this.TopMost156R3CheckBox.Text = "置頂視窗";
+            this.TopMost156R3CheckBox.CheckedChanged += new System.EventHandler(this.TopMost156R3CheckBox_CheckedChanged);
             // 
             // 三連按鍵Label
             // 
@@ -2741,43 +2755,44 @@
             this.三連按鍵Label.Text = "F3";
             this.三連按鍵Label.Visible = false;
             // 
-            // 控場156R3設定音效Button
+            // R3156控場設定音效Button
             // 
-            this.控場156R3設定音效Button.Animated = true;
-            this.控場156R3設定音效Button.AnimationHoverSpeed = 0.07F;
-            this.控場156R3設定音效Button.AnimationSpeed = 0.03F;
-            this.控場156R3設定音效Button.BackColor = System.Drawing.Color.Transparent;
-            this.控場156R3設定音效Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.控場156R3設定音效Button.BorderColor = System.Drawing.Color.Transparent;
-            this.控場156R3設定音效Button.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.控場156R3設定音效Button.FocusedColor = System.Drawing.Color.Empty;
-            this.控場156R3設定音效Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.控場156R3設定音效Button.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.控場156R3設定音效Button.Image = null;
-            this.控場156R3設定音效Button.ImageSize = new System.Drawing.Size(24, 24);
-            this.控場156R3設定音效Button.Location = new System.Drawing.Point(429, 245);
-            this.控場156R3設定音效Button.Name = "控場156R3設定音效Button";
-            this.控場156R3設定音效Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.控場156R3設定音效Button.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.控場156R3設定音效Button.OnHoverForeColor = System.Drawing.Color.White;
-            this.控場156R3設定音效Button.OnHoverImage = null;
-            this.控場156R3設定音效Button.OnPressedColor = System.Drawing.Color.Black;
-            this.控場156R3設定音效Button.Size = new System.Drawing.Size(84, 42);
-            this.控場156R3設定音效Button.TabIndex = 182;
-            this.控場156R3設定音效Button.Text = "設定音效";
-            this.控場156R3設定音效Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.控場156R3設定音效Button.Visible = false;
+            this.R3156控場設定音效Button.Animated = true;
+            this.R3156控場設定音效Button.AnimationHoverSpeed = 0.07F;
+            this.R3156控場設定音效Button.AnimationSpeed = 0.03F;
+            this.R3156控場設定音效Button.BackColor = System.Drawing.Color.Transparent;
+            this.R3156控場設定音效Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.R3156控場設定音效Button.BorderColor = System.Drawing.Color.Transparent;
+            this.R3156控場設定音效Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.R3156控場設定音效Button.FocusedColor = System.Drawing.Color.Empty;
+            this.R3156控場設定音效Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.R3156控場設定音效Button.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.R3156控場設定音效Button.Image = null;
+            this.R3156控場設定音效Button.ImageSize = new System.Drawing.Size(24, 24);
+            this.R3156控場設定音效Button.Location = new System.Drawing.Point(429, 245);
+            this.R3156控場設定音效Button.Name = "R3156控場設定音效Button";
+            this.R3156控場設定音效Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.R3156控場設定音效Button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.R3156控場設定音效Button.OnHoverForeColor = System.Drawing.Color.White;
+            this.R3156控場設定音效Button.OnHoverImage = null;
+            this.R3156控場設定音效Button.OnPressedColor = System.Drawing.Color.Black;
+            this.R3156控場設定音效Button.Size = new System.Drawing.Size(84, 42);
+            this.R3156控場設定音效Button.TabIndex = 182;
+            this.R3156控場設定音效Button.Text = "設定音效";
+            this.R3156控場設定音效Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.R3156控場設定音效Button.Visible = false;
+            this.R3156控場設定音效Button.Click += new System.EventHandler(this.R3156控場設定音效Button_Click);
             // 
-            // 控場156R3按鍵Label
+            // R3156控場按鍵Label
             // 
-            this.控場156R3按鍵Label.AutoSize = true;
-            this.控場156R3按鍵Label.Font = new System.Drawing.Font("Segoe UI", 15.25F, System.Drawing.FontStyle.Bold);
-            this.控場156R3按鍵Label.Location = new System.Drawing.Point(106, 222);
-            this.控場156R3按鍵Label.Name = "控場156R3按鍵Label";
-            this.控場156R3按鍵Label.Size = new System.Drawing.Size(36, 30);
-            this.控場156R3按鍵Label.TabIndex = 177;
-            this.控場156R3按鍵Label.Text = "F4";
-            this.控場156R3按鍵Label.Visible = false;
+            this.R3156控場按鍵Label.AutoSize = true;
+            this.R3156控場按鍵Label.Font = new System.Drawing.Font("Segoe UI", 15.25F, System.Drawing.FontStyle.Bold);
+            this.R3156控場按鍵Label.Location = new System.Drawing.Point(106, 222);
+            this.R3156控場按鍵Label.Name = "R3156控場按鍵Label";
+            this.R3156控場按鍵Label.Size = new System.Drawing.Size(36, 30);
+            this.R3156控場按鍵Label.TabIndex = 177;
+            this.R3156控場按鍵Label.Text = "F4";
+            this.R3156控場按鍵Label.Visible = false;
             // 
             // 三連設定音效Button
             // 
@@ -2805,6 +2820,7 @@
             this.三連設定音效Button.Text = "設定音效";
             this.三連設定音效Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.三連設定音效Button.Visible = false;
+            this.三連設定音效Button.Click += new System.EventHandler(this.三連設定音效Button_Click);
             // 
             // 大黑設定音效Button
             // 
@@ -2832,6 +2848,7 @@
             this.大黑設定音效Button.Text = "設定音效";
             this.大黑設定音效Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.大黑設定音效Button.Visible = false;
+            this.大黑設定音效Button.Click += new System.EventHandler(this.大黑設定音效Button_Click);
             // 
             // 陰陽陣設定音效Button
             // 
@@ -2859,6 +2876,7 @@
             this.陰陽陣設定音效Button.Text = "設定音效";
             this.陰陽陣設定音效Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.陰陽陣設定音效Button.Visible = false;
+            this.陰陽陣設定音效Button.Click += new System.EventHandler(this.陰陽陣設定音效Button_Click);
             // 
             // TabPageCustomize
             // 
@@ -2905,6 +2923,30 @@
             this.大招Timer.Interval = 1000;
             this.大招Timer.Tag = "大招Timer";
             this.大招Timer.Tick += new System.EventHandler(this.大招Timer_Tick);
+            // 
+            // R3156控場Timer
+            // 
+            this.R3156控場Timer.Interval = 1000;
+            this.R3156控場Timer.Tag = "R3156控場Timer";
+            this.R3156控場Timer.Tick += new System.EventHandler(this.R3156控場Timer_Tick);
+            // 
+            // 三連Timer
+            // 
+            this.三連Timer.Interval = 1000;
+            this.三連Timer.Tag = "三連Timer";
+            this.三連Timer.Tick += new System.EventHandler(this.三連Timer_Tick);
+            // 
+            // 陰陽陣Timer
+            // 
+            this.陰陽陣Timer.Interval = 1000;
+            this.陰陽陣Timer.Tag = "陰陽陣Timer";
+            this.陰陽陣Timer.Tick += new System.EventHandler(this.陰陽陣Timer_Tick);
+            // 
+            // 大黑Timer
+            // 
+            this.大黑Timer.Interval = 1000;
+            this.大黑Timer.Tag = "大黑Timer";
+            this.大黑Timer.Tick += new System.EventHandler(this.大黑Timer_Tick);
             // 
             // ElsClockStrikesForm
             // 
@@ -3025,18 +3067,18 @@
         private Guna.UI.WinForms.GunaButton 翻桌設定音效Button;
         private Guna.UI.WinForms.GunaButton 大招設定音效Button;
         private Guna.UI.WinForms.GunaButton 大刺設定音效Button;
-        private System.Windows.Forms.Label 控場156R3Label;
+        private System.Windows.Forms.Label R3156控場Label;
         private Guna.UI.WinForms.GunaButton WindowsSetting156R3;
         private System.Windows.Forms.GroupBox 音效設定156R3GroupBox;
         private Guna.UI.WinForms.GunaRadioButton 關閉音效156R3RadioButton;
         private Guna.UI.WinForms.GunaRadioButton 預設音效156R3RadioButton;
         private Guna.UI.WinForms.GunaRadioButton 自訂音效156R3RadioButton;
-        private Guna.UI.WinForms.GunaLineTextBox 控場156R3TextBox;
+        private Guna.UI.WinForms.GunaLineTextBox R3156控場TextBox;
         private System.Windows.Forms.Label 重置計時器156R3按鍵Label;
         private System.Windows.Forms.Label 大黑Label;
         private System.Windows.Forms.Label 大黑按鍵Label;
         private Guna.UI.WinForms.GunaLineTextBox 大黑TextBox;
-        private System.Windows.Forms.Label 控場156R3CDLabel;
+        private System.Windows.Forms.Label R3156控場CDLabel;
         private System.Windows.Forms.Label 陰陽陣Label;
         private System.Windows.Forms.Label 三連CDLabel;
         private Guna.UI.WinForms.GunaLineTextBox 陰陽陣TextBox;
@@ -3045,7 +3087,7 @@
         private System.Windows.Forms.Label 大黑CDLabel;
         private Guna.UI.WinForms.GunaLineTextBox 三連TextBox;
         private Guna.UI.WinForms.GunaComboBox 大黑ComboBox;
-        private Guna.UI.WinForms.GunaComboBox 控場156R3ComboBox;
+        private Guna.UI.WinForms.GunaComboBox R3156控場ComboBox;
         private Guna.UI.WinForms.GunaComboBox 重置計時器156R3ComboBox;
         private Guna.UI.WinForms.GunaComboBox 三連ComboBox;
         private System.Windows.Forms.Label 重置計時器156R3Label;
@@ -3053,8 +3095,8 @@
         private System.Windows.Forms.Label 陰陽陣按鍵Label;
         private Guna.UI.WinForms.GunaCheckBox TopMost156R3CheckBox;
         private System.Windows.Forms.Label 三連按鍵Label;
-        private Guna.UI.WinForms.GunaButton 控場156R3設定音效Button;
-        private System.Windows.Forms.Label 控場156R3按鍵Label;
+        private Guna.UI.WinForms.GunaButton R3156控場設定音效Button;
+        private System.Windows.Forms.Label R3156控場按鍵Label;
         private Guna.UI.WinForms.GunaButton 三連設定音效Button;
         private Guna.UI.WinForms.GunaButton 大黑設定音效Button;
         private Guna.UI.WinForms.GunaButton 陰陽陣設定音效Button;
@@ -3062,6 +3104,10 @@
         private System.Windows.Forms.Timer 翻桌Timer;
         private System.Windows.Forms.Timer 大刺Timer;
         private System.Windows.Forms.Timer 大招Timer;
+        private System.Windows.Forms.Timer R3156控場Timer;
+        private System.Windows.Forms.Timer 三連Timer;
+        private System.Windows.Forms.Timer 陰陽陣Timer;
+        private System.Windows.Forms.Timer 大黑Timer;
     }
 }
 
