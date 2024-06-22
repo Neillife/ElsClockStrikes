@@ -170,15 +170,6 @@ namespace ElsClockStrikes
 
         private void ProcessWindowsSetting(bool isBackToOriginCheck)
         {
-            小荊棘ComboBox.Visible = !小荊棘ComboBox.Visible;
-            小荊棘TextBox.Visible = !小荊棘TextBox.Visible;
-            雷射ComboBox.Visible = !雷射ComboBox.Visible;
-            雷射TextBox.Visible = !雷射TextBox.Visible;
-            荊棘延遲ComboBox.Visible = !荊棘延遲ComboBox.Visible;
-            荊棘延遲TextBox.Visible = !荊棘延遲TextBox.Visible;
-            控場ComboBox.Visible = !控場ComboBox.Visible;
-            控場TextBox.Visible = !控場TextBox.Visible;
-            重置計時器ComboBox.Visible = !重置計時器ComboBox.Visible;
             小荊棘CDLabel.Visible = !小荊棘CDLabel.Visible;
             雷射CDLabel.Visible = !雷射CDLabel.Visible;
             荊棘延遲CDLabel.Visible = !荊棘延遲CDLabel.Visible;
