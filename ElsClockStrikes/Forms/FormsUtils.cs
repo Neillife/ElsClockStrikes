@@ -1,7 +1,7 @@
 ﻿using ElsClockStrikes.Core;
 using Guna.UI.WinForms;
 using System;
-using System.ComponentModel;
+using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -9,42 +9,48 @@ namespace ElsClockStrikes.Forms
 {
     public class FormsUtils
     {
-        public static Timer getTimerByNamingPattern(string namePattern, ComponentCollection components)
+        public static Timer getTimerByNamingPattern(Control parent, string namePattern)
         {
             Timer result = null;
-            foreach (IComponent component in components)
+            FieldInfo[] fields = parent.GetType().GetFields(BindingFlags.NonPublic | BindingFlags.Instance);
+
+            foreach (FieldInfo field in fields)
             {
-                if (component is Timer timer)
+                if (field.FieldType == typeof(Timer))
                 {
-                    int subStringIndex = namePattern.Length;
-                    for (int i = 1; i < subStringIndex; i++)
+                    Timer timer = (Timer)field.GetValue(parent);
+                    if (timer != null)
                     {
-                        if (timer.Tag.ToString().StartsWith(namePattern.Substring(0, subStringIndex - i)))
+                        int subStringIndex = namePattern.Length;
+                        for (int i = 1; i < subStringIndex; i++)
                         {
-                            result = timer;
+                            if (timer.Tag.ToString().StartsWith(namePattern.Substring(0, subStringIndex - i) + "Timer"))
+                            {
+                                result = timer;
+                                break;
+                            }
+                        }
+                        if(result != null)
+                        {
                             break;
                         }
-                    }
-                    if (result != null)
-                    {
-                        break;
                     }
                 }
             }
             return result;
         }
 
-        public static Label getLabelByNamingPattern(Control parent, string namePattern)
+        public static System.Windows.Forms.Label getLabelByNamingPattern(Control parent, string namePattern)
         {
-            Label result = null;
+            System.Windows.Forms.Label result = null;
             foreach (Control control in parent.Controls)
             {
-                if (control is Label label)
+                if (control is System.Windows.Forms.Label label)
                 {
                     int subStringIndex = namePattern.Length;
                     for (int i = 1; i < subStringIndex; i++)
                     {
-                        if (label.Name.StartsWith(namePattern.Substring(0, subStringIndex - i)))
+                        if (label.Name.StartsWith(namePattern.Substring(0, subStringIndex - i) + "CDLabel"))
                         {
                             result = label;
                             break;
@@ -69,7 +75,7 @@ namespace ElsClockStrikes.Forms
                     int subStringIndex = namePattern.Length;
                     for (int i = 1; i < subStringIndex; i++)
                     {
-                        if (textBox.Name.StartsWith(namePattern.Substring(0, subStringIndex - i)))
+                        if (textBox.Name.StartsWith(namePattern.Substring(0, subStringIndex - i) + "TextBox"))
                         {
                             result = textBox;
                             break;
@@ -94,7 +100,7 @@ namespace ElsClockStrikes.Forms
                 int subStringIndex = namePattern.Length;
                 for (int i = 1; i < subStringIndex; i++)
                 {
-                    if (method.Name.Substring(3).StartsWith(namePattern.Substring(0, subStringIndex - i)))
+                    if (method.Name.Substring(3).StartsWith(namePattern.Substring(0, subStringIndex - i) + "Time"))
                     {
                         result = method;
                         break;
@@ -129,6 +135,41 @@ namespace ElsClockStrikes.Forms
                 }
             }
             return result;
+        }
+
+        public static int GetLabelMaxWidth(Control parent)
+        {
+            int maxWidth = 0;
+            foreach (Control control in parent.Controls)
+            {
+                if (control is System.Windows.Forms.Label && maxWidth < control.Width && control.Text != FormsConstant.copyrightTag)
+                {
+                    maxWidth = control.Width;
+                }
+            }
+            return maxWidth;
+        }
+
+        public static void ProcessKeyPress(KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
+        }
+
+        public static AudioPlayer ProcessSelectSoundFile(UnmanagedMemoryStream defaultSound)
+        {
+            AudioPlayer ap = new AudioPlayer(defaultSound);
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "請選擇音效檔";
+            openFileDialog.Filter = "MP3 Files (*.mp3)|*.mp3|WAV Files (*.wav)|*.wav";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                ap = new AudioPlayer(openFileDialog.FileName);
+            }
+            return ap;
         }
     }
 }
