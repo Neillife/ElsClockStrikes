@@ -99,6 +99,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\HotKeySet.cs" />
+    <Compile Include="Forms\ElsClockStrikesForm156R1.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\FormsUtils.cs" />
     <Compile Include="Core\AudioPlayer.cs" />
     <Compile Include="Core\HotKeyContainer.cs" />
@@ -146,10 +149,10 @@
     <Content Include="DllImport\MetroSuite 2.0.dll" />
     <Content Include="DllImport\Siticone.UI.dll" />
     <Content Include="hg.ico" />
+    <Content Include="Resources\小荊棘大招大黑DefultSound.wav" />
     <Content Include="Resources\控場DefultSound.wav" />
-    <None Include="Resources\雷射DefultSound.wav" />
-    <None Include="Resources\荊棘延遲DefultSound.wav" />
-    <None Include="Resources\小荊棘DefultSound.wav" />
+    <Content Include="Resources\荊棘延遲翻桌陰陽陣DefultSound.wav" />
+    <Content Include="Resources\雷射大刺三連DefultSound.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
