@@ -4,6 +4,7 @@ using ElsClockStrikes.Forms;
 using ElsClockStrikes.Core;
 using MetroSuite;
 using System.Drawing;
+using System.Diagnostics;
 
 namespace ElsClockStrikes
 {
@@ -408,6 +409,11 @@ namespace ElsClockStrikes
                 TopMost156R1CheckBox.Checked = false;
                 TopMost156R3CheckBox.Checked = false;
             }
+        }
+
+        private void GoToGitHubButton_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/Neillife/ElsClockStrikes");
         }
     }
 }
