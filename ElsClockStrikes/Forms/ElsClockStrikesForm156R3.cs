@@ -1,6 +1,7 @@
 ﻿using ElsClockStrikes.Core;
 using ElsClockStrikes.Forms;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -16,6 +17,12 @@ namespace ElsClockStrikes
         private AudioPlayer 陰陽陣TimeupAudioPlayer;
         private AudioPlayer 三連TimeupAudioPlayer;
         private AudioPlayer R3156控場TimeupAudioPlayer;
+        private static bool IsFirstStart陰陽陣;
+
+        public static void InitFirstStart陰陽陣()
+        {
+            IsFirstStart陰陽陣 = true;
+        }
 
         private void 大黑Timer_Tick(object sender, EventArgs e)
         {
@@ -43,6 +50,12 @@ namespace ElsClockStrikes
 
         private void 陰陽陣Timer_Tick(object sender, EventArgs e)
         {
+            if (IsFirstStart陰陽陣)
+            {
+                FormsConstant.set陰陽陣Time("290");
+                IsFirstStart陰陽陣 = false;
+            }
+
             陰陽陣CDLabel.Text = FormsConstant.陰陽陣Time == 0 ? "0" : (--FormsConstant.陰陽陣Time).ToString();
 
             if (FormsConstant.陰陽陣Time <= 10)
@@ -251,6 +264,18 @@ namespace ElsClockStrikes
             else
             {
                 hotKeyManager = new HotKeyManager(this.TabPage156R3, typeof(ElsClockStrikesForm));
+                Dictionary<string, List<HotKeyContainer>> keyMapWithContainer = hotKeyManager.GetKeyMapWithContainer();
+                foreach (KeyValuePair<string, List<HotKeyContainer>> kvp in keyMapWithContainer)
+                {
+                    if (kvp.Key.Equals(重置計時器156R3ComboBox.Text))
+                    {
+                        foreach (HotKeyContainer hotKeyContainer in kvp.Value)
+                        {
+                            hotKeyContainer.actionMethod = typeof(ElsClockStrikesForm).GetMethod("InitFirstStart陰陽陣");
+                        }
+                        break;
+                    }
+                }
             }
         }
 

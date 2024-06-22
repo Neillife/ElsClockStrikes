@@ -48,6 +48,7 @@ namespace ElsClockStrikes
             陰陽陣LabelOriginPos = 陰陽陣Label.Location;
             三連LabelOriginPos = 三連Label.Location;
             控場156R3LabelOriginPos = R3156控場Label.Location;
+            InitFirstStart陰陽陣();
 
             預設音效RadioButton.Checked = true;
             預設音效156R1RadioButton.Checked = true;
