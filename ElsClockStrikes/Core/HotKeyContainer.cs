@@ -11,5 +11,6 @@ namespace ElsClockStrikes.Core
         public Timer timer { get; set; }
         public MethodInfo method { get; set; }
         public AudioPlayer audioPlayer { get; set; }
+        public MethodInfo actionMethod { get; set; }
     }
 }

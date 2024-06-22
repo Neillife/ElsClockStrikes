@@ -19,6 +19,11 @@ namespace ElsClockStrikes.Core
             keyMapWithContainer = this.GetKeyMapWithContainerByComboBoxSelect(parent, type);
         }
 
+        public Dictionary<string, List<HotKeyContainer>> GetKeyMapWithContainer()
+        {
+            return keyMapWithContainer;
+        }
+
         public static Dictionary<string, int> GetEnumMapByComboBoxSelect(Dictionary<string, List<HotKeyContainer>> keyMapWithContainer)
         {
             Dictionary<string, int> enumMap = new Dictionary<string, int>();
@@ -101,6 +106,16 @@ namespace ElsClockStrikes.Core
                                         if (nonResetHotKeyContainer.audioPlayer != null)
                                         {
                                             nonResetHotKeyContainer.audioPlayer.Stop();
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    foreach (HotKeyContainer resetHotKeyContainer in keyMapWithContainer[kvp.Key])
+                                    {
+                                        if (resetHotKeyContainer.actionMethod != null)
+                                        {
+                                            resetHotKeyContainer.actionMethod.Invoke(null, null);
                                         }
                                     }
                                 }
