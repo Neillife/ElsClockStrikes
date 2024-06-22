@@ -44,6 +44,11 @@ namespace ElsClockStrikes
             翻桌LabelOriginPos = 翻桌Label.Location;
             控場156R1LabelOriginPos = R1156控場Label.Location;
 
+            大黑LabelOriginPos = 大黑Label.Location;
+            陰陽陣LabelOriginPos = 陰陽陣Label.Location;
+            三連LabelOriginPos = 三連Label.Location;
+            控場156R3LabelOriginPos = R3156控場Label.Location;
+
             預設音效RadioButton.Checked = true;
             預設音效156R1RadioButton.Checked = true;
             預設音效156R3RadioButton.Checked = true;
@@ -381,7 +386,6 @@ namespace ElsClockStrikes
 
         private void 雷射設定音效Button_Click(object sender, EventArgs e)
         {
-            
             雷射TimeupAudioPlayer = FormsUtils.ProcessSelectSoundFile(Properties.Resources.雷射大刺三連DefultSound);
         }
 
@@ -393,6 +397,16 @@ namespace ElsClockStrikes
         private void 控場設定音效Button_Click(object sender, EventArgs e)
         {
             控場TimeupAudioPlayer = FormsUtils.ProcessSelectSoundFile(Properties.Resources.控場DefultSound);
+        }
+
+        private void metroTabControlVS1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (TopMostCheckBox.Checked || TopMost156R1CheckBox.Checked || TopMost156R3CheckBox.Checked)
+            {
+                TopMostCheckBox.Checked = false;
+                TopMost156R1CheckBox.Checked = false;
+                TopMost156R3CheckBox.Checked = false;
+            }
         }
     }
 }
