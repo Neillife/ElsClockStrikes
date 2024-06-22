@@ -13,11 +13,11 @@ namespace ElsClockStrikes.Core
         private IKeyboardMouseEvents globalHook;
         private Dictionary<string, List<HotKeyContainer>> keyMapWithContainer;
 
-        public HotKeyManager(Control parent, ComponentCollection components, Type type)
+        public HotKeyManager(Control parent, Type type)
         {
             globalHook = Hook.GlobalEvents();
             globalHook.KeyDown += GlobalHookKeyDown;
-            keyMapWithContainer = this.GetKeyMapWithContainerByComboBoxSelect(parent, components, type);
+            keyMapWithContainer = this.GetKeyMapWithContainerByComboBoxSelect(parent, type);
         }
 
         public static Dictionary<string, int> GetEnumMapByComboBoxSelect(Dictionary<string, List<HotKeyContainer>> keyMapWithContainer)
@@ -112,11 +112,12 @@ namespace ElsClockStrikes.Core
             }
         }
 
-        private Dictionary<string, List<HotKeyContainer>> GetKeyMapWithContainerByComboBoxSelect(Control parent, ComponentCollection components, Type type)
+        private Dictionary<string, List<HotKeyContainer>> GetKeyMapWithContainerByComboBoxSelect(Control parent, Type type)
         {
             Dictionary<string, List<HotKeyContainer>> keyMapWithContainer = new Dictionary<string, List<HotKeyContainer>>();
             foreach (Control control in parent.Controls)
             {
+                //System.IO.File.WriteAllText(".\\_" + control.Name, "");
                 if (control is ComboBox comboBox && comboBox.SelectedItem != null)
                 {
                     string selectKey = comboBox.SelectedItem.ToString();
@@ -126,9 +127,9 @@ namespace ElsClockStrikes.Core
                         HotKeyContainer hotKeyContainer = new HotKeyContainer();
                         hotKeyContainer.label = FormsUtils.getLabelByNamingPattern(parent, comboBox.Name);
                         hotKeyContainer.textBox = FormsUtils.getGunaLineTextBoxByNamingPattern(parent, comboBox.Name);
-                        hotKeyContainer.timer = FormsUtils.getTimerByNamingPattern(comboBox.Name, components);
+                        hotKeyContainer.timer = FormsUtils.getTimerByNamingPattern(parent.Parent.Parent, comboBox.Name);
                         hotKeyContainer.method = FormsUtils.getMethodInfoByNamingPattern(comboBox.Name);
-                        hotKeyContainer.audioPlayer = FormsUtils.getAudioPlayerFieldByNamingPattern(type, parent, comboBox.Name);
+                        hotKeyContainer.audioPlayer = FormsUtils.getAudioPlayerFieldByNamingPattern(type, parent.Parent.Parent, comboBox.Name);
                         value.Add(hotKeyContainer);
                     }
                     else
@@ -136,9 +137,9 @@ namespace ElsClockStrikes.Core
                         HotKeyContainer hotKeyContainer = new HotKeyContainer();
                         hotKeyContainer.label = FormsUtils.getLabelByNamingPattern(parent, comboBox.Name);
                         hotKeyContainer.textBox = FormsUtils.getGunaLineTextBoxByNamingPattern(parent, comboBox.Name);
-                        hotKeyContainer.timer = FormsUtils.getTimerByNamingPattern(comboBox.Name, components);
+                        hotKeyContainer.timer = FormsUtils.getTimerByNamingPattern(parent.Parent.Parent, comboBox.Name);
                         hotKeyContainer.method = FormsUtils.getMethodInfoByNamingPattern(comboBox.Name);
-                        hotKeyContainer.audioPlayer = FormsUtils.getAudioPlayerFieldByNamingPattern(type, parent, comboBox.Name);
+                        hotKeyContainer.audioPlayer = FormsUtils.getAudioPlayerFieldByNamingPattern(type, parent.Parent.Parent, comboBox.Name);
                         List<HotKeyContainer> hotKeyContainerList = new List<HotKeyContainer>();
                         keyMapWithContainer.Add(selectKey, hotKeyContainerList);
                         hotKeyContainerList.Add(hotKeyContainer);
