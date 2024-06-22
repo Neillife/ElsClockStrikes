@@ -2,7 +2,6 @@
 using Gma.System.MouseKeyHook;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -117,7 +116,6 @@ namespace ElsClockStrikes.Core
             Dictionary<string, List<HotKeyContainer>> keyMapWithContainer = new Dictionary<string, List<HotKeyContainer>>();
             foreach (Control control in parent.Controls)
             {
-                //System.IO.File.WriteAllText(".\\_" + control.Name, "");
                 if (control is ComboBox comboBox && comboBox.SelectedItem != null)
                 {
                     string selectKey = comboBox.SelectedItem.ToString();
