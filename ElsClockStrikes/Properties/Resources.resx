@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="小荊棘DefultSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\小荊棘DefultSound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="小荊棘大招大黑DefultSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\小荊棘大招大黑DefultSound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="控場DefultSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\控場DefultSound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="荊棘延遲DefultSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\荊棘延遲DefultSound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="荊棘延遲翻桌陰陽陣DefultSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\荊棘延遲翻桌陰陽陣DefultSound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="雷射DefultSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\雷射DefultSound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="雷射大刺三連DefultSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\雷射大刺三連DefultSound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

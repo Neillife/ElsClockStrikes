@@ -63,9 +63,9 @@ namespace ElsClockStrikes.Properties {
         /// <summary>
         ///   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream 小荊棘DefultSound {
+        internal static System.IO.UnmanagedMemoryStream 小荊棘大招大黑DefultSound {
             get {
-                return ResourceManager.GetStream("小荊棘DefultSound", resourceCulture);
+                return ResourceManager.GetStream("小荊棘大招大黑DefultSound", resourceCulture);
             }
         }
         
@@ -81,18 +81,18 @@ namespace ElsClockStrikes.Properties {
         /// <summary>
         ///   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream 荊棘延遲DefultSound {
+        internal static System.IO.UnmanagedMemoryStream 荊棘延遲翻桌陰陽陣DefultSound {
             get {
-                return ResourceManager.GetStream("荊棘延遲DefultSound", resourceCulture);
+                return ResourceManager.GetStream("荊棘延遲翻桌陰陽陣DefultSound", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream 雷射DefultSound {
+        internal static System.IO.UnmanagedMemoryStream 雷射大刺三連DefultSound {
             get {
-                return ResourceManager.GetStream("雷射DefultSound", resourceCulture);
+                return ResourceManager.GetStream("雷射大刺三連DefultSound", resourceCulture);
             }
         }
     }
