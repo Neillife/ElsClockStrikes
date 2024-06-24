@@ -18,15 +18,41 @@ namespace ElsClockStrikes
         private AudioPlayer 三連TimeupAudioPlayer;
         private AudioPlayer R3156控場TimeupAudioPlayer;
         private static bool IsFirstStart陰陽陣;
+        private bool Is大黑Delay;
+        private bool Is陰陽陣Delay;
 
         public static void InitFirstStart陰陽陣()
         {
             IsFirstStart陰陽陣 = true;
         }
 
+        public void Process大黑Delay()
+        {
+            if (FormsConstant.陰陽陣Time <= 80)
+            {
+                Is大黑Delay = true;
+            }
+        }
+
+        public void Process陰陽陣Delay()
+        {
+            if (FormsConstant.大黑Time <= 80)
+            {
+                Is陰陽陣Delay = true;
+            }
+        }
+
         private void 大黑Timer_Tick(object sender, EventArgs e)
         {
-            大黑CDLabel.Text = FormsConstant.大黑Time == 0 ? "0" : (--FormsConstant.大黑Time).ToString();
+            if (Is大黑Delay)
+            {
+                FormsConstant.set陰陽陣Time("80");
+                Is大黑Delay = false;
+            }
+            else
+            {
+                大黑CDLabel.Text = FormsConstant.大黑Time == 0 ? "0" : (--FormsConstant.大黑Time).ToString();
+            }
 
             if (FormsConstant.大黑Time <= 10)
             {
@@ -55,8 +81,15 @@ namespace ElsClockStrikes
                 FormsConstant.set陰陽陣Time("290");
                 IsFirstStart陰陽陣 = false;
             }
-
-            陰陽陣CDLabel.Text = FormsConstant.陰陽陣Time == 0 ? "0" : (--FormsConstant.陰陽陣Time).ToString();
+            if (Is陰陽陣Delay)
+            {
+                FormsConstant.set大黑Time("80");
+                Is陰陽陣Delay = false;
+            }
+            else
+            {
+                陰陽陣CDLabel.Text = FormsConstant.陰陽陣Time == 0 ? "0" : (--FormsConstant.陰陽陣Time).ToString();
+            }
 
             if (FormsConstant.陰陽陣Time <= 10)
             {
@@ -265,6 +298,7 @@ namespace ElsClockStrikes
             {
                 hotKeyManager = new HotKeyManager(this.TabPage156R3, typeof(ElsClockStrikesForm));
                 Dictionary<string, List<HotKeyContainer>> keyMapWithContainer = hotKeyManager.GetKeyMapWithContainer();
+                int isCanBreakCount = 0;
                 foreach (KeyValuePair<string, List<HotKeyContainer>> kvp in keyMapWithContainer)
                 {
                     if (kvp.Key.Equals(重置計時器156R3ComboBox.Text))
@@ -273,6 +307,29 @@ namespace ElsClockStrikes
                         {
                             hotKeyContainer.actionMethod = typeof(ElsClockStrikesForm).GetMethod("InitFirstStart陰陽陣");
                         }
+                        isCanBreakCount++;
+                    }
+
+                    if (kvp.Key.Equals(大黑ComboBox.Text))
+                    {
+                        foreach (HotKeyContainer hotKeyContainer in kvp.Value)
+                        {
+                            hotKeyContainer.actionMethod = typeof(ElsClockStrikesForm).GetMethod("Process大黑Delay");
+                        }
+                        isCanBreakCount++;
+                    }
+
+                    if (kvp.Key.Equals(陰陽陣ComboBox.Text))
+                    {
+                        foreach (HotKeyContainer hotKeyContainer in kvp.Value)
+                        {
+                            hotKeyContainer.actionMethod = typeof(ElsClockStrikesForm).GetMethod("Process陰陽陣Delay");
+                        }
+                        isCanBreakCount++;
+                    }
+
+                    if (isCanBreakCount == 3)
+                    {
                         break;
                     }
                 }

@@ -11,11 +11,13 @@ namespace ElsClockStrikes.Core
     {
         private IKeyboardMouseEvents globalHook;
         private Dictionary<string, List<HotKeyContainer>> keyMapWithContainer;
+        private Control formsInstance;
 
         public HotKeyManager(Control parent, Type type)
         {
             globalHook = Hook.GlobalEvents();
             globalHook.KeyDown += GlobalHookKeyDown;
+            formsInstance = parent;
             keyMapWithContainer = this.GetKeyMapWithContainerByComboBoxSelect(parent, type);
         }
 
@@ -80,6 +82,10 @@ namespace ElsClockStrikes.Core
                             if (hotKeyContainer.audioPlayer != null)
                             {
                                 hotKeyContainer.audioPlayer.Stop();
+                            }
+                            if (hotKeyContainer.actionMethod != null)
+                            {
+                                hotKeyContainer.actionMethod.Invoke(formsInstance.Parent.Parent, null);
                             }
                         }
                         else if (hotKeyContainer.timer != null)
