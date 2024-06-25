@@ -350,6 +350,7 @@ namespace ElsClockStrikes
                 WindowsSetting156R3.Text = "設定完成";
                 this.ProcessRegisterHotKey156R3(true);
                 this.ProcessWindowsSetting156R3(true);
+                InitFirstStart陰陽陣();
             }
         }
 
