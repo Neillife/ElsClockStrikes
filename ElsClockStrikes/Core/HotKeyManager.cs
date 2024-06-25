@@ -96,6 +96,10 @@ namespace ElsClockStrikes.Core
                             {
                                 hotKeyContainer.audioPlayer.Stop();
                             }
+                            if (hotKeyContainer.actionMethod != null)
+                            {
+                                hotKeyContainer.actionMethod.Invoke(formsInstance.Parent.Parent, null);
+                            }
                         }
                         else
                         {
