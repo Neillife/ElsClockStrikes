@@ -28,7 +28,7 @@ namespace ElsClockStrikes
 
         public void Process大黑Delay()
         {
-            if (FormsConstant.陰陽陣Time <= 80)
+            if (FormsConstant.大黑Time <= 80)
             {
                 Is大黑Delay = true;
             }
@@ -36,7 +36,7 @@ namespace ElsClockStrikes
 
         public void Process陰陽陣Delay()
         {
-            if (FormsConstant.大黑Time <= 80)
+            if (FormsConstant.陰陽陣Time <= 80)
             {
                 Is陰陽陣Delay = true;
             }
@@ -46,13 +46,11 @@ namespace ElsClockStrikes
         {
             if (Is大黑Delay)
             {
-                FormsConstant.set陰陽陣Time("80");
+                FormsConstant.set大黑Time("80");
                 Is大黑Delay = false;
             }
-            else
-            {
-                大黑CDLabel.Text = FormsConstant.大黑Time == 0 ? "0" : (--FormsConstant.大黑Time).ToString();
-            }
+
+            大黑CDLabel.Text = FormsConstant.大黑Time == 0 ? "0" : (--FormsConstant.大黑Time).ToString();
 
             if (FormsConstant.大黑Time <= 10)
             {
@@ -83,13 +81,11 @@ namespace ElsClockStrikes
             }
             if (Is陰陽陣Delay)
             {
-                FormsConstant.set大黑Time("80");
+                FormsConstant.set陰陽陣Time("80");
                 Is陰陽陣Delay = false;
             }
-            else
-            {
-                陰陽陣CDLabel.Text = FormsConstant.陰陽陣Time == 0 ? "0" : (--FormsConstant.陰陽陣Time).ToString();
-            }
+
+            陰陽陣CDLabel.Text = FormsConstant.陰陽陣Time == 0 ? "0" : (--FormsConstant.陰陽陣Time).ToString();
 
             if (FormsConstant.陰陽陣Time <= 10)
             {
@@ -314,7 +310,7 @@ namespace ElsClockStrikes
                     {
                         foreach (HotKeyContainer hotKeyContainer in kvp.Value)
                         {
-                            hotKeyContainer.actionMethod = typeof(ElsClockStrikesForm).GetMethod("Process大黑Delay");
+                            hotKeyContainer.actionMethod = typeof(ElsClockStrikesForm).GetMethod("Process陰陽陣Delay");
                         }
                         isCanBreakCount++;
                     }
@@ -323,7 +319,7 @@ namespace ElsClockStrikes
                     {
                         foreach (HotKeyContainer hotKeyContainer in kvp.Value)
                         {
-                            hotKeyContainer.actionMethod = typeof(ElsClockStrikesForm).GetMethod("Process陰陽陣Delay");
+                            hotKeyContainer.actionMethod = typeof(ElsClockStrikesForm).GetMethod("Process大黑Delay");
                         }
                         isCanBreakCount++;
                     }
