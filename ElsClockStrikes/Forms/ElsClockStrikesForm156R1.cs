@@ -231,11 +231,11 @@ namespace ElsClockStrikes
             TopMost156R1CheckBox.Location = isBackToOriginCheck ? TopMostCheckBoxOriginPos : new Point(this.Size.Width / 2 - TopMost156R1CheckBox.Width / 2, 重置計時器156R1按鍵Label.Location.Y + KeyLabelAddY);
             WindowsSetting156R1.Location = isBackToOriginCheck ? WindowsSettingOriginPos : new Point(this.Size.Width / 2 - WindowsSetting156R1.Width / 2, TopMost156R1CheckBox.Location.Y + KeyLabelAddY);
 
-            大招按鍵Label.Text = FormsUtils.ProcessLayoutStringSize(大招按鍵Label, 大招ComboBox.Text);
-            大刺按鍵Label.Text = FormsUtils.ProcessLayoutStringSize(大刺按鍵Label, 大刺ComboBox.Text);
-            翻桌按鍵Label.Text = FormsUtils.ProcessLayoutStringSize(翻桌按鍵Label, 翻桌ComboBox.Text);
-            R1156控場按鍵Label.Text = FormsUtils.ProcessLayoutStringSize(R1156控場按鍵Label, R1156控場ComboBox.Text);
-            重置計時器156R1按鍵Label.Text = FormsUtils.ProcessLayoutStringSize(重置計時器156R1按鍵Label, 重置計時器156R1ComboBox.Text);
+            大招按鍵Label.Text = FormsUtils.ProcessLayoutString(大招按鍵Label, 大招ComboBox.Text);
+            大刺按鍵Label.Text = FormsUtils.ProcessLayoutString(大刺按鍵Label, 大刺ComboBox.Text);
+            翻桌按鍵Label.Text = FormsUtils.ProcessLayoutString(翻桌按鍵Label, 翻桌ComboBox.Text);
+            R1156控場按鍵Label.Text = FormsUtils.ProcessLayoutString(R1156控場按鍵Label, R1156控場ComboBox.Text);
+            重置計時器156R1按鍵Label.Text = FormsUtils.ProcessLayoutString(重置計時器156R1按鍵Label, 重置計時器156R1ComboBox.Text);
             大招CDLabel.Text = 大招TextBox.Text;
             大刺CDLabel.Text = 大刺TextBox.Text;
             翻桌CDLabel.Text = 翻桌TextBox.Text;
