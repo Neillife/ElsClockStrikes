@@ -227,15 +227,15 @@ namespace ElsClockStrikes
             R1156控場CDLabel.Location = new Point(R1156控場Label.Left + R1156控場Label.Width, R1156控場按鍵Label.Location.Y);
 
             重置計時器156R1按鍵Label.Location = new Point(R1156控場按鍵Label.Location.X, R1156控場按鍵Label.Location.Y + KeyLabelAddY);
-            重置計時器156R1Label.Location = isBackToOriginCheck ? 重置計時器LabelOriginPos : new Point(大招Label.Left + 大招Label.Width - 重置計時器156R1Label.Width + 10, 重置計時器156R1按鍵Label.Top + 重置計時器156R1按鍵Label.Height - 重置計時器156R1Label.Height - 3); ;
+            重置計時器156R1Label.Location = isBackToOriginCheck ? 重置計時器LabelOriginPos : new Point(大招Label.Left + 大招Label.Width - 重置計時器156R1Label.Width + 27, 重置計時器156R1按鍵Label.Top + 重置計時器156R1按鍵Label.Height - 重置計時器156R1Label.Height - 3); ;
             TopMost156R1CheckBox.Location = isBackToOriginCheck ? TopMostCheckBoxOriginPos : new Point(this.Size.Width / 2 - TopMost156R1CheckBox.Width / 2, 重置計時器156R1按鍵Label.Location.Y + KeyLabelAddY);
             WindowsSetting156R1.Location = isBackToOriginCheck ? WindowsSettingOriginPos : new Point(this.Size.Width / 2 - WindowsSetting156R1.Width / 2, TopMost156R1CheckBox.Location.Y + KeyLabelAddY);
 
-            大招按鍵Label.Text = 大招ComboBox.Text;
-            大刺按鍵Label.Text = 大刺ComboBox.Text;
-            翻桌按鍵Label.Text = 翻桌ComboBox.Text;
-            R1156控場按鍵Label.Text = R1156控場ComboBox.Text;
-            重置計時器156R1按鍵Label.Text = 重置計時器156R1ComboBox.Text;
+            大招按鍵Label.Text = FormsUtils.ProcessLayoutString(大招按鍵Label, 大招ComboBox.Text);
+            大刺按鍵Label.Text = FormsUtils.ProcessLayoutString(大刺按鍵Label, 大刺ComboBox.Text);
+            翻桌按鍵Label.Text = FormsUtils.ProcessLayoutString(翻桌按鍵Label, 翻桌ComboBox.Text);
+            R1156控場按鍵Label.Text = FormsUtils.ProcessLayoutString(R1156控場按鍵Label, R1156控場ComboBox.Text);
+            重置計時器156R1按鍵Label.Text = FormsUtils.ProcessLayoutString(重置計時器156R1按鍵Label, 重置計時器156R1ComboBox.Text);
             大招CDLabel.Text = 大招TextBox.Text;
             大刺CDLabel.Text = 大刺TextBox.Text;
             翻桌CDLabel.Text = 翻桌TextBox.Text;

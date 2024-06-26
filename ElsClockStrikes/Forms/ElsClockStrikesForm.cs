@@ -286,15 +286,15 @@ namespace ElsClockStrikes
             控場CDLabel.Location = new Point(控場Label.Left + 控場Label.Width, 控場按鍵Label.Location.Y);
 
             重置計時器按鍵Label.Location = new Point(控場按鍵Label.Location.X, 控場按鍵Label.Location.Y + KeyLabelAddY);
-            重置計時器Label.Location = isBackToOriginCheck ? 重置計時器LabelOriginPos : new Point(小荊棘Label.Left + 小荊棘Label.Width - 重置計時器Label.Width + 10, 重置計時器按鍵Label.Top + 重置計時器按鍵Label.Height - 重置計時器Label.Height - 3); ;
+            重置計時器Label.Location = isBackToOriginCheck ? 重置計時器LabelOriginPos : new Point(小荊棘Label.Left + 小荊棘Label.Width - 重置計時器Label.Width + 27, 重置計時器按鍵Label.Top + 重置計時器按鍵Label.Height - 重置計時器Label.Height - 3); ;
             TopMostCheckBox.Location = isBackToOriginCheck ? TopMostCheckBoxOriginPos : new Point(this.Size.Width / 2 - TopMostCheckBox.Width / 2, 重置計時器按鍵Label.Location.Y + KeyLabelAddY);
             WindowsSetting.Location = isBackToOriginCheck ? WindowsSettingOriginPos : new Point(this.Size.Width / 2 - WindowsSetting.Width / 2, TopMostCheckBox.Location.Y + KeyLabelAddY);
 
-            小荊棘按鍵Label.Text = 小荊棘ComboBox.Text;
-            雷射按鍵Label.Text = 雷射ComboBox.Text;
-            荊棘延遲按鍵Label.Text = 荊棘延遲ComboBox.Text;
-            控場按鍵Label.Text = 控場ComboBox.Text;
-            重置計時器按鍵Label.Text = 重置計時器ComboBox.Text;
+            小荊棘按鍵Label.Text = FormsUtils.ProcessLayoutString(小荊棘按鍵Label, 小荊棘ComboBox.Text);
+            雷射按鍵Label.Text = FormsUtils.ProcessLayoutString(雷射按鍵Label, 雷射ComboBox.Text);
+            荊棘延遲按鍵Label.Text = FormsUtils.ProcessLayoutString(荊棘延遲按鍵Label, 荊棘延遲ComboBox.Text);
+            控場按鍵Label.Text = FormsUtils.ProcessLayoutString(控場按鍵Label, 控場ComboBox.Text);
+            重置計時器按鍵Label.Text = FormsUtils.ProcessLayoutString(重置計時器按鍵Label, 重置計時器ComboBox.Text);
             小荊棘CDLabel.Text = 小荊棘TextBox.Text;
             雷射CDLabel.Text = 雷射TextBox.Text;
             荊棘延遲CDLabel.Text = 荊棘延遲TextBox.Text;
