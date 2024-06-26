@@ -269,15 +269,15 @@ namespace ElsClockStrikes
             R3156控場CDLabel.Location = new Point(R3156控場Label.Left + R3156控場Label.Width, R3156控場按鍵Label.Location.Y);
 
             重置計時器156R3按鍵Label.Location = new Point(R3156控場按鍵Label.Location.X, R3156控場按鍵Label.Location.Y + KeyLabelAddY);
-            重置計時器156R3Label.Location = isBackToOriginCheck ? 重置計時器LabelOriginPos : new Point(大黑Label.Left + 大黑Label.Width - 重置計時器156R3Label.Width + 10, 重置計時器156R3按鍵Label.Top + 重置計時器156R3按鍵Label.Height - 重置計時器156R3Label.Height - 3); ;
+            重置計時器156R3Label.Location = isBackToOriginCheck ? 重置計時器LabelOriginPos : new Point(大黑Label.Left + 大黑Label.Width - 重置計時器156R3Label.Width + 27, 重置計時器156R3按鍵Label.Top + 重置計時器156R3按鍵Label.Height - 重置計時器156R3Label.Height - 3); ;
             TopMost156R3CheckBox.Location = isBackToOriginCheck ? TopMostCheckBoxOriginPos : new Point(this.Size.Width / 2 - TopMost156R3CheckBox.Width / 2, 重置計時器156R3按鍵Label.Location.Y + KeyLabelAddY);
             WindowsSetting156R3.Location = isBackToOriginCheck ? WindowsSettingOriginPos : new Point(this.Size.Width / 2 - WindowsSetting156R3.Width / 2, TopMost156R3CheckBox.Location.Y + KeyLabelAddY);
 
-            大黑按鍵Label.Text = 大黑ComboBox.Text;
-            陰陽陣按鍵Label.Text = 陰陽陣ComboBox.Text;
-            三連按鍵Label.Text = 三連ComboBox.Text;
-            R3156控場按鍵Label.Text = R3156控場ComboBox.Text;
-            重置計時器156R3按鍵Label.Text = 重置計時器156R3ComboBox.Text;
+            大黑按鍵Label.Text = FormsUtils.ProcessLayoutStringSize(大黑按鍵Label, 大黑ComboBox.Text);
+            陰陽陣按鍵Label.Text = FormsUtils.ProcessLayoutStringSize(陰陽陣按鍵Label, 陰陽陣ComboBox.Text);
+            三連按鍵Label.Text = FormsUtils.ProcessLayoutStringSize(三連按鍵Label, 三連ComboBox.Text);
+            R3156控場按鍵Label.Text = FormsUtils.ProcessLayoutStringSize(R3156控場按鍵Label, R3156控場ComboBox.Text);
+            重置計時器156R3按鍵Label.Text = FormsUtils.ProcessLayoutStringSize(重置計時器156R3按鍵Label, 重置計時器156R3ComboBox.Text);
             大黑CDLabel.Text = 大黑TextBox.Text;
             陰陽陣CDLabel.Text = 陰陽陣TextBox.Text;
             三連CDLabel.Text = 三連TextBox.Text;
