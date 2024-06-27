@@ -172,7 +172,7 @@ namespace ElsClockStrikes.Forms
             return ap;
         }
 
-        public static string ProcessLayoutString(Label keyLabel, string comboBoxText)
+        public static string ProcessLayoutString(string comboBoxText)
         {
             string[] keySet = {
                 nameof(HotKeySet.KeySet.主鍵盤0),
