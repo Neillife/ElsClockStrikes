@@ -410,6 +410,7 @@ namespace ElsClockStrikes
                 TopMostCheckBox.Checked = false;
                 TopMost156R1CheckBox.Checked = false;
                 TopMost156R3CheckBox.Checked = false;
+                TopMostCustomizeCheckBox.Checked = false;
             }
         }
 
