@@ -12,5 +12,6 @@ namespace ElsClockStrikes.Core
         public MethodInfo method { get; set; }
         public AudioPlayer audioPlayer { get; set; }
         public MethodInfo actionMethod { get; set; }
+        public object invokeObj { get; set; } = null;
     }
 }
