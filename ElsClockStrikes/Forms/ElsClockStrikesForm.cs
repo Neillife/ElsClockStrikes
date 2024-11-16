@@ -18,6 +18,7 @@ namespace ElsClockStrikes
         private Point TopMostCheckBoxOriginPos;
         private Point WindowsSettingOriginPos;
         private Size WindowsOriginSize;
+        private Size metroTabControlVS1OriginSize;
         private AudioPlayer 小荊棘TimeupAudioPlayer;
         private AudioPlayer 雷射TimeupAudioPlayer;
         private AudioPlayer 荊棘延遲TimeupAudioPlayer;
@@ -39,6 +40,8 @@ namespace ElsClockStrikes
             TopMostCheckBoxOriginPos = TopMostCheckBox.Location;
             WindowsSettingOriginPos = WindowsSetting.Location;
             WindowsOriginSize = this.Size;
+            CustomizeTabWinFormsSize = this.Size;
+            metroTabControlVS1OriginSize = this.metroTabControlVS1.Size;
 
             大招LabelOriginPos = 大招Label.Location;
             大刺LabelOriginPos = 大刺Label.Location;
@@ -411,6 +414,14 @@ namespace ElsClockStrikes
                 TopMost156R1CheckBox.Checked = false;
                 TopMost156R3CheckBox.Checked = false;
                 TopMostCustomizeCheckBox.Checked = false;
+            }
+            if (metroTabControlVS1.SelectedTab.Name == TabPageCustomize.Name)
+            {
+                this.Size = CustomizeTabWinFormsSize;
+            }
+            else
+            {
+                this.Size = WindowsOriginSize;
             }
         }
 

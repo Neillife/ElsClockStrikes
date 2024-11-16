@@ -19,5 +19,20 @@ namespace ElsClockStrikes.Forms
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
+        private void FeatureNameTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                AddFeatureNameButton.Focus();
+                AddFeatureNameButton_Click(sender, e);
+                FeatureNameTextBox.Focus();
+            }
+        }
+
+        private void ElsClockStrikesFormCustomizeSetting_Activated(object sender, EventArgs e)
+        {
+            FeatureNameTextBox.Focus();
+        }
     }
 }

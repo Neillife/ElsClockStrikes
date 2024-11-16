@@ -141,6 +141,9 @@
             this.大黑設定音效Button = new Guna.UI.WinForms.GunaButton();
             this.陰陽陣設定音效Button = new Guna.UI.WinForms.GunaButton();
             this.TabPageCustomize = new System.Windows.Forms.TabPage();
+            this.重置計時器Customize按鍵Label = new System.Windows.Forms.Label();
+            this.重置計時器CustomizeComboBox = new Guna.UI.WinForms.GunaComboBox();
+            this.重置計時器CustomizeLabel = new System.Windows.Forms.Label();
             this.WindowsSettingCustomize = new Guna.UI.WinForms.GunaButton();
             this.TopMostCustomizeCheckBox = new Guna.UI.WinForms.GunaCheckBox();
             this.Testlabel = new System.Windows.Forms.Label();
@@ -2896,6 +2899,9 @@
             // TabPageCustomize
             // 
             this.TabPageCustomize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.TabPageCustomize.Controls.Add(this.重置計時器Customize按鍵Label);
+            this.TabPageCustomize.Controls.Add(this.重置計時器CustomizeComboBox);
+            this.TabPageCustomize.Controls.Add(this.重置計時器CustomizeLabel);
             this.TabPageCustomize.Controls.Add(this.WindowsSettingCustomize);
             this.TabPageCustomize.Controls.Add(this.TopMostCustomizeCheckBox);
             this.TabPageCustomize.Controls.Add(this.Testlabel);
@@ -2907,6 +2913,108 @@
             this.TabPageCustomize.Size = new System.Drawing.Size(534, 509);
             this.TabPageCustomize.TabIndex = 3;
             this.TabPageCustomize.Text = "自定義";
+            this.TabPageCustomize.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.TabPageCustomize_ControlAdded);
+            this.TabPageCustomize.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.TabPageCustomize_ControlRemoved);
+            // 
+            // 重置計時器Customize按鍵Label
+            // 
+            this.重置計時器Customize按鍵Label.AutoSize = true;
+            this.重置計時器Customize按鍵Label.Font = new System.Drawing.Font("Segoe UI", 15.25F, System.Drawing.FontStyle.Bold);
+            this.重置計時器Customize按鍵Label.Location = new System.Drawing.Point(106, 6);
+            this.重置計時器Customize按鍵Label.Name = "重置計時器Customize按鍵Label";
+            this.重置計時器Customize按鍵Label.Size = new System.Drawing.Size(36, 30);
+            this.重置計時器Customize按鍵Label.TabIndex = 160;
+            this.重置計時器Customize按鍵Label.Text = "F5";
+            this.重置計時器Customize按鍵Label.Visible = false;
+            // 
+            // 重置計時器CustomizeComboBox
+            // 
+            this.重置計時器CustomizeComboBox.BackColor = System.Drawing.Color.Transparent;
+            this.重置計時器CustomizeComboBox.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.重置計時器CustomizeComboBox.BorderColor = System.Drawing.Color.Silver;
+            this.重置計時器CustomizeComboBox.BorderSize = 1;
+            this.重置計時器CustomizeComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.重置計時器CustomizeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.重置計時器CustomizeComboBox.FocusedColor = System.Drawing.Color.Empty;
+            this.重置計時器CustomizeComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.重置計時器CustomizeComboBox.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.重置計時器CustomizeComboBox.FormattingEnabled = true;
+            this.重置計時器CustomizeComboBox.Items.AddRange(new object[] {
+            "F1",
+            "F2",
+            "F3",
+            "F4",
+            "F5",
+            "F6",
+            "F7",
+            "F8",
+            "F9",
+            "F10",
+            "F11",
+            "F12",
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "O",
+            "P",
+            "Q",
+            "R",
+            "S",
+            "T",
+            "U",
+            "V",
+            "W",
+            "X",
+            "Y",
+            "Z",
+            "主鍵盤0",
+            "主鍵盤1",
+            "主鍵盤2",
+            "主鍵盤3",
+            "主鍵盤4",
+            "主鍵盤5",
+            "主鍵盤6",
+            "主鍵盤7",
+            "主鍵盤8",
+            "主鍵盤9",
+            "小鍵盤0",
+            "小鍵盤1",
+            "小鍵盤2",
+            "小鍵盤3",
+            "小鍵盤4",
+            "小鍵盤5",
+            "小鍵盤6",
+            "小鍵盤7",
+            "小鍵盤8",
+            "小鍵盤9"});
+            this.重置計時器CustomizeComboBox.Location = new System.Drawing.Point(111, 39);
+            this.重置計時器CustomizeComboBox.Name = "重置計時器CustomizeComboBox";
+            this.重置計時器CustomizeComboBox.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.重置計時器CustomizeComboBox.OnHoverItemForeColor = System.Drawing.SystemColors.ControlDark;
+            this.重置計時器CustomizeComboBox.Size = new System.Drawing.Size(84, 26);
+            this.重置計時器CustomizeComboBox.StartIndex = 4;
+            this.重置計時器CustomizeComboBox.TabIndex = 159;
+            // 
+            // 重置計時器CustomizeLabel
+            // 
+            this.重置計時器CustomizeLabel.AutoSize = true;
+            this.重置計時器CustomizeLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.重置計時器CustomizeLabel.Location = new System.Drawing.Point(220, 42);
+            this.重置計時器CustomizeLabel.Name = "重置計時器CustomizeLabel";
+            this.重置計時器CustomizeLabel.Size = new System.Drawing.Size(94, 20);
+            this.重置計時器CustomizeLabel.TabIndex = 158;
+            this.重置計時器CustomizeLabel.Text = "重置計時器";
             // 
             // WindowsSettingCustomize
             // 
@@ -3340,6 +3448,9 @@
         private System.Windows.Forms.Label Testlabel;
         private Guna.UI.WinForms.GunaCheckBox TopMostCustomizeCheckBox;
         private Guna.UI.WinForms.GunaButton WindowsSettingCustomize;
+        private System.Windows.Forms.Label 重置計時器Customize按鍵Label;
+        private Guna.UI.WinForms.GunaComboBox 重置計時器CustomizeComboBox;
+        private System.Windows.Forms.Label 重置計時器CustomizeLabel;
     }
 }
 

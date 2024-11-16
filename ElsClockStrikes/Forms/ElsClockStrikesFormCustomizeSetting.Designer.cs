@@ -68,6 +68,7 @@
             this.FeatureNameTextBox.TabIndex = 158;
             this.FeatureNameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.FeatureNameTextBox.TextOffsetX = 3;
+            this.FeatureNameTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FeatureNameTextBox_KeyDown);
             // 
             // AddFeatureNameButton
             // 
@@ -123,6 +124,7 @@
             this.State = MetroSuite.MetroForm.FormState.Custom;
             this.Style = MetroSuite.Design.Style.Custom;
             this.Text = "ElsClockStrikes | Author by DC:  .le._.vi.";
+            this.Activated += new System.EventHandler(this.ElsClockStrikesFormCustomizeSetting_Activated);
             this.ResumeLayout(false);
             this.PerformLayout();
 
