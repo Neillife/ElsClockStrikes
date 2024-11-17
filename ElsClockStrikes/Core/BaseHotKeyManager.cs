@@ -1,4 +1,5 @@
-﻿using Gma.System.MouseKeyHook;
+﻿using ElsClockStrikes.Forms;
+using Gma.System.MouseKeyHook;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -114,7 +115,7 @@ namespace ElsClockStrikes.Core
                                     {
                                         nonResetHotKeyContainer.label.Text = nonResetHotKeyContainer.textBox.Text;
                                         nonResetHotKeyContainer.label.ForeColor = Color.FromArgb(245, 245, 245);
-                                        nonResetHotKeyContainer.method.Invoke(null, new object[] { nonResetHotKeyContainer.textBox.Text });
+                                        nonResetHotKeyContainer.method.Invoke(nonResetHotKeyContainer.invokeObj, new object[] { nonResetHotKeyContainer.textBox.Text });
                                         nonResetHotKeyContainer.timer.Stop();
                                         if (nonResetHotKeyContainer.audioPlayer != null)
                                         {
