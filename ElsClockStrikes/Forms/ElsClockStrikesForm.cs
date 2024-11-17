@@ -17,6 +17,7 @@ namespace ElsClockStrikes
         private Point 重置計時器LabelOriginPos;
         private Point TopMostCheckBoxOriginPos;
         private Point WindowsSettingOriginPos;
+        private Point CopyrightTagLabelOriginPos;
         private Size WindowsOriginSize;
         private Size metroTabControlVS1OriginSize;
         private AudioPlayer 小荊棘TimeupAudioPlayer;
@@ -39,9 +40,12 @@ namespace ElsClockStrikes
             重置計時器LabelOriginPos = 重置計時器Label.Location;
             TopMostCheckBoxOriginPos = TopMostCheckBox.Location;
             WindowsSettingOriginPos = WindowsSetting.Location;
+            CopyrightTagLabelOriginPos = CopyrightTagLabel.Location;
+            CustomizeTabCopyrightTagLabelPos = CopyrightTagLabel.Location;
             WindowsOriginSize = this.Size;
             CustomizeTabWinFormsSize = this.Size;
             metroTabControlVS1OriginSize = this.metroTabControlVS1.Size;
+            CustomizeMetroTabControlVS1Size = this.metroTabControlVS1.Size;
 
             大招LabelOriginPos = 大招Label.Location;
             大刺LabelOriginPos = 大刺Label.Location;
@@ -289,7 +293,7 @@ namespace ElsClockStrikes
             控場CDLabel.Location = new Point(控場Label.Left + 控場Label.Width, 控場按鍵Label.Location.Y);
 
             重置計時器按鍵Label.Location = new Point(控場按鍵Label.Location.X, 控場按鍵Label.Location.Y + KeyLabelAddY);
-            重置計時器Label.Location = isBackToOriginCheck ? 重置計時器LabelOriginPos : new Point(小荊棘Label.Left + 小荊棘Label.Width - 重置計時器Label.Width + 27, 重置計時器按鍵Label.Top + 重置計時器按鍵Label.Height - 重置計時器Label.Height - 3); ;
+            重置計時器Label.Location = isBackToOriginCheck ? 重置計時器LabelOriginPos : new Point(小荊棘Label.Left + 小荊棘Label.Width - 重置計時器Label.Width + 27, 重置計時器按鍵Label.Top + 重置計時器按鍵Label.Height - 重置計時器Label.Height - 3);
             TopMostCheckBox.Location = isBackToOriginCheck ? TopMostCheckBoxOriginPos : new Point(this.Size.Width / 2 - TopMostCheckBox.Width / 2, 重置計時器按鍵Label.Location.Y + KeyLabelAddY);
             WindowsSetting.Location = isBackToOriginCheck ? WindowsSettingOriginPos : new Point(this.Size.Width / 2 - WindowsSetting.Width / 2, TopMostCheckBox.Location.Y + KeyLabelAddY);
 
@@ -418,10 +422,14 @@ namespace ElsClockStrikes
             if (metroTabControlVS1.SelectedTab.Name == TabPageCustomize.Name)
             {
                 this.Size = CustomizeTabWinFormsSize;
+                this.metroTabControlVS1.Size = CustomizeMetroTabControlVS1Size;
+                CopyrightTagLabel.Location = CustomizeTabCopyrightTagLabelPos;
             }
             else
             {
                 this.Size = WindowsOriginSize;
+                this.metroTabControlVS1.Size = metroTabControlVS1OriginSize;
+                CopyrightTagLabel.Location = CopyrightTagLabelOriginPos;
             }
         }
 
