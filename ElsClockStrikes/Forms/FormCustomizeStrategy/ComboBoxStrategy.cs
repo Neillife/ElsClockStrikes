@@ -95,7 +95,7 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
 
         private Point ProcessGunaComboBoxLayout(GunaComboBox lastGunaComboBox)
         {
-            return new Point(111, lastGunaComboBox == null ? 111 : lastGunaComboBox.Location.Y + LayoutYAxisNum);
+            return new Point(111, lastGunaComboBox == null ? 39 : lastGunaComboBox.Location.Y + LayoutYAxisNum);
         }
     }
 }

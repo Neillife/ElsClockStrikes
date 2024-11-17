@@ -12,7 +12,7 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
             controlStrategyParameters.tabPage.Controls.Add(label);
             label.AutoSize = true;
             label.Font = new Font(Font, 15.25F, FontStyle.Bold);
-            label.Location = this.ProcessLabelLayout(label, lastLabel, 49, 114);
+            label.Location = this.ProcessLabelLayout(label, lastLabel, 49, 42);
             label.Name = $"{FormsConstant.timeLeftLabelBaseName}{FormsConstant.indexForCustomizeName}";
             label.Size = new Size(49, 30);
             label.Text = "10";

@@ -10,7 +10,7 @@ namespace ElsClockStrikes.Forms
 {
     public class FormsCustomizeUtils
     {
-        public const int LayoutSign = 317;
+        public const int LayoutSign = 327;
         public const int FormLayoutYAxisNum = 75;
         public const int LayoutYAxisNum = 72;
 
