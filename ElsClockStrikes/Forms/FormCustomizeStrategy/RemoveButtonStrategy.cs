@@ -39,8 +39,8 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
             gunaButton.TextAlign = HorizontalAlignment.Center;
             gunaButton.Click += new EventHandler(
             (object sender, EventArgs e) => {
-                    this.ProcessRemoveComponent(controlStrategyParameters, gunaButton, controlStrategyParameters.customizeTaskTimerList);
-                    this.ProcessComponentNameIndex(controlStrategyParameters, gunaButton, controlStrategyParameters.customizeTaskTimerList);
+                    this.ProcessRemoveComponent(controlStrategyParameters, gunaButton);
+                    this.ProcessComponentNameIndex(controlStrategyParameters, gunaButton);
             }
                 );
             controlStrategyParameters.tabPage.Controls.Add(gunaButton);
@@ -56,7 +56,7 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
             return FormsCustomizeUtils.GetIndexOfString(removeGunaButton.Name);
         }
 
-        private void ProcessComponentNameIndex(ControlStrategyParameters controlStrategyParameters, GunaButton gunaButton, List<CustomizeTaskTimer> customizeTaskTimerList)
+        private void ProcessComponentNameIndex(ControlStrategyParameters controlStrategyParameters, GunaButton gunaButton)
         {
             int currentButtonNameIndex = Int32.Parse(this.GetRemoveIndex(gunaButton));
             if (currentButtonNameIndex == FormsConstant.indexForCustomizeName)
@@ -74,7 +74,7 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
                         string labelName = FormsCustomizeUtils.GetRemoveIndexCharOfStrgin(label.Name);
                         label.Name = $"{labelName}{parseNum - 1}";
                         if (labelName == FormsConstant.timeLeftLabelBaseName) {
-                            foreach (CustomizeTaskTimer customizeTaskTimer in customizeTaskTimerList)
+                            foreach (CustomizeTaskTimer customizeTaskTimer in controlStrategyParameters.customizeTaskTimerList)
                             {
                                 int tagIndex;
                                 if (Int32.TryParse(FormsCustomizeUtils.GetIndexOfString(customizeTaskTimer.Tag.ToString()), out tagIndex) && tagIndex == (parseNum - 1))
@@ -92,7 +92,7 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
                     else if (control is GunaLineTextBox gunaLineTextBox && Int32.TryParse(FormsCustomizeUtils.GetIndexOfString(gunaLineTextBox.Name), out parseNum) && parseNum > currentButtonNameIndex)
                     {
                         gunaLineTextBox.Name = $"{FormsConstant.textBoxBaseName}{parseNum - 1}";
-                        foreach (CustomizeTaskTimer customizeTaskTimer in customizeTaskTimerList)
+                        foreach (CustomizeTaskTimer customizeTaskTimer in controlStrategyParameters.customizeTaskTimerList)
                         {
                             int tagIndex;
                             if (Int32.TryParse(FormsCustomizeUtils.GetIndexOfString(customizeTaskTimer.Tag.ToString()), out tagIndex) && tagIndex == (parseNum - 1))
@@ -110,7 +110,7 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
             }
         }
 
-        private void ProcessRemoveComponent(ControlStrategyParameters controlStrategyParameters, GunaButton gunaButton, List<CustomizeTaskTimer> customizeTaskTimerList)
+        private void ProcessRemoveComponent(ControlStrategyParameters controlStrategyParameters, GunaButton gunaButton)
         {
             int breakCheck = 0;
             List<Control> controls = new List<Control>();
@@ -142,9 +142,9 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
                 controlStrategyParameters.tabPage.Controls.Remove(control);
             }
             
-            if (customizeTaskTimerList.Any())
+            if (controlStrategyParameters.customizeTaskTimerList.Any())
             {
-                customizeTaskTimerList.RemoveAt(customizeTaskTimerList.Count - 1);
+                controlStrategyParameters.customizeTaskTimerList.RemoveAt(controlStrategyParameters.customizeTaskTimerList.Count - 1);
             }
         }
     }
