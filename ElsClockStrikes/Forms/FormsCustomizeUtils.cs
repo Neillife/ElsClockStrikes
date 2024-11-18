@@ -14,11 +14,6 @@ namespace ElsClockStrikes.Forms
         public const int FormLayoutYAxisNum = 75;
         public const int LayoutYAxisNum = 72;
 
-        public static void testPrintToPath(string outFIlePath, string outData)
-        {
-            System.IO.File.WriteAllText(outFIlePath, outData);
-        }
-
         public static string GetRemoveIndexCharOfStrgin(string str)
         {
             string[] prefixes = {

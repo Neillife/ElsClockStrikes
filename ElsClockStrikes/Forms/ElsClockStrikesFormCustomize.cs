@@ -75,29 +75,9 @@ namespace ElsClockStrikes
                                               .RegisterStrategy(new RemoveButtonStrategy())
                                               .RegisterStrategy(new CustomizeTaskTimerStrategy());
                         controlStrategyManager.ExecuteAll();
-                        //FormsCustomizeUtils.StartAddCustomizeWithLayoutCheck(this.TabPageCustomize, inputData, customizeTaskTimerList);
                     }
                 }
             }
-
-            //foreach (CustomizeTaskTimer customizeTaskTimer in customizeTaskTimerList)
-            //{
-            //    this.components.Add(customizeTaskTimer);
-            //}
-
-            //GunaLineTextBox result = FormsCustomizeUtils.getGunaLineTextBoxByCustomizeIndex(this.TabPageCustomize, 2);
-            //if (result == null)
-            //{
-            //    Testlabel.Text = $"null {customizeTaskTimerList.Count}";
-            //}
-            //else
-            //{
-            //    Testlabel.Text = $"!!!!!!!!! {result.Name}";
-            //}
-            //Testlabel.Text = FormsCustomizeUtils.getTimerByCustomizeIndex(this.TabPageCustomize, 2).Tag.ToString();
-
-            //Testlabel.Text = "10";
-            //customizeTaskTimer.Start();
         }
 
         private void ProcessResetComponent(bool idAdd)
@@ -266,21 +246,15 @@ namespace ElsClockStrikes
                     }
                     if (control is Label timeLeftLabel && FormsCustomizeUtils.GetRemoveIndexCharOfStrgin(timeLeftLabel.Name) == FormsConstant.timeLeftLabelBaseName)
                     {
-                        // timeleft
                         customizeLabelMap[timeLeftLabel.Name].Location = new Point(
                             customizeLabelMap[$"{FormsConstant.mechanicLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(timeLeftLabel.Name)}"].Left + 
                             customizeLabelMap[$"{FormsConstant.mechanicLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(timeLeftLabel.Name)}"].Width, 
                             customizeLabelMap[$"{FormsConstant.hotKeyLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(timeLeftLabel.Name)}"].Location.Y
-                            ); 
-                        //小荊棘CDLabel.Location = new Point(小荊棘Label.Left + 小荊棘Label.Width, 小荊棘按鍵Label.Location.Y);
-                        //雷射CDLabel.Location = new Point(雷射Label.Left + 雷射Label.Width, 雷射按鍵Label.Location.Y);
+                            );
                     }
                     else if (control is Label hotKeyLable && FormsCustomizeUtils.GetRemoveIndexCharOfStrgin(hotKeyLable.Name) == FormsConstant.hotKeyLabelBaseName)
                     {
-                        // hotkey
                         customizeLabelMap[hotKeyLable.Name].Location = new Point(labelSign.Location.X, labelSign.Location.Y + KeyLabelAddY);
-                        //小荊棘按鍵Label.Location = new Point(5, 30);
-                        //雷射按鍵Label.Location = new Point(小荊棘按鍵Label.Location.X, 小荊棘按鍵Label.Location.Y + KeyLabelAddY);
                         labelSign = hotKeyLable;
                     }
                     else if (control is Label label && FormsCustomizeUtils.GetRemoveIndexCharOfStrgin(label.Name) == FormsConstant.mechanicLabelBaseName)
@@ -305,11 +279,6 @@ namespace ElsClockStrikes
                                 label.Height - 3
                                 );
                         }
-                        // label
-                        //小荊棘Label.Location = isBackToOriginCheck ? 小荊棘LabelOriginPos :
-                        //    new Point(MaxLabelWidth - 小荊棘Label.Width + 小荊棘按鍵Label.Width - 5, 小荊棘按鍵Label.Top + 小荊棘按鍵Label.Height - 小荊棘Label.Height - 3);
-                        //雷射Label.Location = isBackToOriginCheck ? 雷射LabelOriginPos :
-                        //    new Point(小荊棘Label.Left + 小荊棘Label.Width - 雷射Label.Width, 雷射按鍵Label.Top + 雷射按鍵Label.Height - 雷射Label.Height - 3);
                     }
                 }
                 重置計時器Customize按鍵Label.Location = new Point(labelSign.Location.X, labelSign.Location.Y + KeyLabelAddY);
