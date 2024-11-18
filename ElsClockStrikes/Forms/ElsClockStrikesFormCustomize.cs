@@ -54,7 +54,7 @@ namespace ElsClockStrikes
 
         private void AddCustomizeTimer_Click(object sender, EventArgs e)
         {
-            using (ElsClockStrikesFormCustomizeSetting elsClockStrikesFormCustomizeSetting = new ElsClockStrikesFormCustomizeSetting())
+            using (ElsClockStrikesFormCustomizeSetting elsClockStrikesFormCustomizeSetting = new ElsClockStrikesFormCustomizeSetting(this.TopMost))
             {
                 if (elsClockStrikesFormCustomizeSetting.ShowDialog() == DialogResult.OK)
                 {

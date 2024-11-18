@@ -8,8 +8,9 @@ namespace ElsClockStrikes.Forms
     {
         public string inputData { get; set; }
 
-        public ElsClockStrikesFormCustomizeSetting()
+        public ElsClockStrikesFormCustomizeSetting(bool topMost)
         {
+            this.TopMost = topMost;
             InitializeComponent();
         }
 
