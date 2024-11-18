@@ -47,7 +47,7 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
 
         private Point ProcessButtonLayout(GunaButton lastGunaButton)
         {
-            return new Point(20, lastGunaButton == null ? 29 : lastGunaButton.Location.Y + LayoutYAxisNum);
+            return new Point(20, lastGunaButton == null ? 29 : lastGunaButton.Location.Y + FormsConstant.ControlLayoutOffset);
         }
 
         private string GetRemoveIndex(GunaButton removeGunaButton)

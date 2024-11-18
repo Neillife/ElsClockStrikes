@@ -10,10 +10,6 @@ namespace ElsClockStrikes.Forms
 {
     public class FormsCustomizeUtils
     {
-        public const int LayoutSign = 327;
-        public const int FormLayoutYAxisNum = 75;
-        public const int LayoutYAxisNum = 72;
-
         public static string GetRemoveIndexCharOfStrgin(string str)
         {
             string[] prefixes = {
@@ -232,12 +228,12 @@ namespace ElsClockStrikes.Forms
                     GunaLineTextBox gunaLineTextBox = getGunaLineTextBoxByCustomizeIndex(tabPage, findIndex);
                     GunaComboBox gunaComboBox = getGunaComboBoxByCustomizeIndex(tabPage, findIndex);
 
-                    customizeTimeLeftLabel.Location = new Point(customizeTimeLeftLabel.Location.X, customizeTimeLeftLabel.Location.Y - LayoutYAxisNum);
-                    customizeHotKeyLabel.Location = new Point(customizeHotKeyLabel.Location.X, customizeHotKeyLabel.Location.Y - LayoutYAxisNum);
-                    customizeMechanicLabel.Location = new Point(customizeMechanicLabel.Location.X, customizeMechanicLabel.Location.Y - LayoutYAxisNum);
-                    GButton.Location = new Point(GButton.Location.X, GButton.Location.Y - LayoutYAxisNum);
-                    gunaLineTextBox.Location = new Point(gunaLineTextBox.Location.X, gunaLineTextBox.Location.Y - LayoutYAxisNum);
-                    gunaComboBox.Location = new Point(gunaComboBox.Location.X, gunaComboBox.Location.Y - LayoutYAxisNum);
+                    customizeTimeLeftLabel.Location = new Point(customizeTimeLeftLabel.Location.X, customizeTimeLeftLabel.Location.Y - FormsConstant.ControlLayoutOffset);
+                    customizeHotKeyLabel.Location = new Point(customizeHotKeyLabel.Location.X, customizeHotKeyLabel.Location.Y - FormsConstant.ControlLayoutOffset);
+                    customizeMechanicLabel.Location = new Point(customizeMechanicLabel.Location.X, customizeMechanicLabel.Location.Y - FormsConstant.ControlLayoutOffset);
+                    GButton.Location = new Point(GButton.Location.X, GButton.Location.Y - FormsConstant.ControlLayoutOffset);
+                    gunaLineTextBox.Location = new Point(gunaLineTextBox.Location.X, gunaLineTextBox.Location.Y - FormsConstant.ControlLayoutOffset);
+                    gunaComboBox.Location = new Point(gunaComboBox.Location.X, gunaComboBox.Location.Y - FormsConstant.ControlLayoutOffset);
                 }
             }
         }

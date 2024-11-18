@@ -37,7 +37,7 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
 
         private Point ProcessGunaLineTextBoxLayout(GunaLineTextBox lastGunaLineTextBox)
         {
-            return new Point(333, lastGunaLineTextBox == null ? 29 : lastGunaLineTextBox.Location.Y + LayoutYAxisNum);
+            return new Point(333, lastGunaLineTextBox == null ? 29 : lastGunaLineTextBox.Location.Y + FormsConstant.ControlLayoutOffset);
         }
     }
 }

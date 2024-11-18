@@ -44,7 +44,7 @@ namespace ElsClockStrikes
             if (e.Control is GunaLineTextBox)
             {
                 ProcessResetComponent(true);
-                if (重置計時器CustomizeComboBox.Location.Y > FormsCustomizeUtils.LayoutSign)
+                if (重置計時器CustomizeComboBox.Location.Y > FormsConstant.LayoutSign)
                 {
                     ProcessWindowsSizeWithLayout(true);
                 }
@@ -100,26 +100,26 @@ namespace ElsClockStrikes
         {
             if (isAdd)
             {
-                this.CustomizeTabWinFormsSize = new Size(this.Size.Width, this.Size.Height + FormsCustomizeUtils.FormLayoutYAxisNum);
+                this.CustomizeTabWinFormsSize = new Size(this.Size.Width, this.Size.Height + FormsConstant.FormSizeOffset);
                 this.Size = CustomizeTabWinFormsSize;
-                this.CustomizeMetroTabControlVS1Size = new Size(this.metroTabControlVS1.Width, this.metroTabControlVS1.Height + FormsCustomizeUtils.FormLayoutYAxisNum);
+                this.CustomizeMetroTabControlVS1Size = new Size(this.metroTabControlVS1.Width, this.metroTabControlVS1.Height + FormsConstant.FormSizeOffset);
                 this.metroTabControlVS1.Size = CustomizeMetroTabControlVS1Size;
-                TopMostCustomizeCheckBox.Location = new Point(TopMostCustomizeCheckBox.Location.X, TopMostCustomizeCheckBox.Location.Y + FormsCustomizeUtils.FormLayoutYAxisNum);
-                WindowsSettingCustomize.Location = new Point(WindowsSettingCustomize.Location.X, WindowsSettingCustomize.Location.Y + FormsCustomizeUtils.FormLayoutYAxisNum);
-                AddCustomizeTimer.Location = new Point(AddCustomizeTimer.Location.X, AddCustomizeTimer.Location.Y + FormsCustomizeUtils.FormLayoutYAxisNum);
-                this.CustomizeTabCopyrightTagLabelPos = new Point(CopyrightTagLabel.Location.X, CopyrightTagLabel.Location.Y + FormsCustomizeUtils.FormLayoutYAxisNum);
+                TopMostCustomizeCheckBox.Location = new Point(TopMostCustomizeCheckBox.Location.X, TopMostCustomizeCheckBox.Location.Y + FormsConstant.FormSizeOffset);
+                WindowsSettingCustomize.Location = new Point(WindowsSettingCustomize.Location.X, WindowsSettingCustomize.Location.Y + FormsConstant.FormSizeOffset);
+                AddCustomizeTimer.Location = new Point(AddCustomizeTimer.Location.X, AddCustomizeTimer.Location.Y + FormsConstant.FormSizeOffset);
+                this.CustomizeTabCopyrightTagLabelPos = new Point(CopyrightTagLabel.Location.X, CopyrightTagLabel.Location.Y + FormsConstant.FormSizeOffset);
                 CopyrightTagLabel.Location = CustomizeTabCopyrightTagLabelPos;
             }
             else
             {
-                this.CustomizeTabWinFormsSize = new Size(this.Size.Width, this.Size.Height - FormsCustomizeUtils.FormLayoutYAxisNum);
+                this.CustomizeTabWinFormsSize = new Size(this.Size.Width, this.Size.Height - FormsConstant.FormSizeOffset);
                 this.Size = CustomizeTabWinFormsSize;
-                this.CustomizeMetroTabControlVS1Size = new Size(this.metroTabControlVS1.Width, this.metroTabControlVS1.Height - FormsCustomizeUtils.FormLayoutYAxisNum);
+                this.CustomizeMetroTabControlVS1Size = new Size(this.metroTabControlVS1.Width, this.metroTabControlVS1.Height - FormsConstant.FormSizeOffset);
                 this.metroTabControlVS1.Size = CustomizeMetroTabControlVS1Size;
-                TopMostCustomizeCheckBox.Location = new Point(TopMostCustomizeCheckBox.Location.X, TopMostCustomizeCheckBox.Location.Y - FormsCustomizeUtils.FormLayoutYAxisNum);
-                WindowsSettingCustomize.Location = new Point(WindowsSettingCustomize.Location.X, WindowsSettingCustomize.Location.Y - FormsCustomizeUtils.FormLayoutYAxisNum);
-                AddCustomizeTimer.Location = new Point(AddCustomizeTimer.Location.X, AddCustomizeTimer.Location.Y - FormsCustomizeUtils.FormLayoutYAxisNum);
-                this.CustomizeTabCopyrightTagLabelPos = new Point(CopyrightTagLabel.Location.X, CopyrightTagLabel.Location.Y - FormsCustomizeUtils.FormLayoutYAxisNum);
+                TopMostCustomizeCheckBox.Location = new Point(TopMostCustomizeCheckBox.Location.X, TopMostCustomizeCheckBox.Location.Y - FormsConstant.FormSizeOffset);
+                WindowsSettingCustomize.Location = new Point(WindowsSettingCustomize.Location.X, WindowsSettingCustomize.Location.Y - FormsConstant.FormSizeOffset);
+                AddCustomizeTimer.Location = new Point(AddCustomizeTimer.Location.X, AddCustomizeTimer.Location.Y - FormsConstant.FormSizeOffset);
+                this.CustomizeTabCopyrightTagLabelPos = new Point(CopyrightTagLabel.Location.X, CopyrightTagLabel.Location.Y - FormsConstant.FormSizeOffset);
                 CopyrightTagLabel.Location = CustomizeTabCopyrightTagLabelPos;
             }
         }

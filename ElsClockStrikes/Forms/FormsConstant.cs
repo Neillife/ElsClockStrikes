@@ -19,6 +19,9 @@ namespace ElsClockStrikes.Forms
         public static int 三連Time;
         public static int R3156控場Time;
         public static int indexForCustomizeName = 0;
+        public const int LayoutSign = 327;
+        public const int FormSizeOffset = 75;
+        public const int ControlLayoutOffset = 72;
         public const string timeLeftLabelBaseName = "CustomizeTimeLeftLabelName";
         public const string hotKeyLabelBaseName = "CustomizeHotKeyLabelName";
         public const string mechanicLabelBaseName = "CustomizeMechanicLabelName";
