@@ -5,6 +5,7 @@ using Guna.UI.WinForms;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ElsClockStrikes
@@ -290,6 +291,11 @@ namespace ElsClockStrikes
 
         private void WindowsSettingCustomize_Click(object sender, EventArgs e)
         {
+            if (!customizeTaskTimerList.Any())
+            {
+                return;
+            }
+
             if (WindowsSettingCustomize.Text.Equals("設定完成"))
             {
                 WindowsSettingCustomize.BaseColor = Color.FromArgb(65, 105, 225);
