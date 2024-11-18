@@ -146,7 +146,6 @@
             this.重置計時器CustomizeLabel = new System.Windows.Forms.Label();
             this.WindowsSettingCustomize = new Guna.UI.WinForms.GunaButton();
             this.TopMostCustomizeCheckBox = new Guna.UI.WinForms.GunaCheckBox();
-            this.Testlabel = new System.Windows.Forms.Label();
             this.AddCustomizeTimer = new Guna.UI.WinForms.GunaButton();
             this.TabPageAbout = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
@@ -2904,7 +2903,6 @@
             this.TabPageCustomize.Controls.Add(this.重置計時器CustomizeLabel);
             this.TabPageCustomize.Controls.Add(this.WindowsSettingCustomize);
             this.TabPageCustomize.Controls.Add(this.TopMostCustomizeCheckBox);
-            this.TabPageCustomize.Controls.Add(this.Testlabel);
             this.TabPageCustomize.Controls.Add(this.AddCustomizeTimer);
             this.TabPageCustomize.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.TabPageCustomize.Location = new System.Drawing.Point(4, 20);
@@ -3057,16 +3055,6 @@
             this.TopMostCustomizeCheckBox.TabIndex = 156;
             this.TopMostCustomizeCheckBox.Text = "置頂視窗";
             this.TopMostCustomizeCheckBox.CheckedChanged += new System.EventHandler(this.TopMostCustomizeCheckBox_CheckedChanged);
-            // 
-            // Testlabel
-            // 
-            this.Testlabel.AutoSize = true;
-            this.Testlabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Testlabel.Location = new System.Drawing.Point(173, 358);
-            this.Testlabel.Name = "Testlabel";
-            this.Testlabel.Size = new System.Drawing.Size(38, 20);
-            this.Testlabel.TabIndex = 95;
-            this.Testlabel.Text = "Test";
             // 
             // AddCustomizeTimer
             // 
@@ -3445,7 +3433,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label3;
         private Guna.UI.WinForms.GunaButton AddCustomizeTimer;
-        private System.Windows.Forms.Label Testlabel;
         private Guna.UI.WinForms.GunaCheckBox TopMostCustomizeCheckBox;
         private Guna.UI.WinForms.GunaButton WindowsSettingCustomize;
         private System.Windows.Forms.Label 重置計時器Customize按鍵Label;
