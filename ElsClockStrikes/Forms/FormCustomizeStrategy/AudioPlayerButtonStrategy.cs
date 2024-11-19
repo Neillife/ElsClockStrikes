@@ -7,6 +7,13 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
 {
     public class AudioPlayerButtonStrategy : BaseControlStrategy
     {
+        private bool isVisible;
+
+        public AudioPlayerButtonStrategy(bool isVisible)
+        {
+            this.isVisible = isVisible;
+        }
+
         public override void AddControl(ControlStrategyParameters controlStrategyParameters)
         {
             GunaButton lastGunaButton = this.GetControlByName<GunaButton>(controlStrategyParameters.tabPage, $"{FormsConstant.audioPlayerButtonBaseName}{FormsConstant.indexForCustomizeName - 1}");
@@ -33,7 +40,7 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
             gunaButton.Size = new Size(84, 42);
             gunaButton.Text = "設定音效";
             gunaButton.TextAlign = HorizontalAlignment.Center;
-            gunaButton.Visible = false;
+            gunaButton.Visible = isVisible;
             gunaButton.Click += new EventHandler(
                 (object sender, EventArgs e) => {
                     this.ProcessAudioPlayerButtonClick(controlStrategyParameters, gunaButton);

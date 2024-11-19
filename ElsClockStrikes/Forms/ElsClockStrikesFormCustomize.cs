@@ -77,7 +77,7 @@ namespace ElsClockStrikes
                                               .RegisterStrategy(new LineTextBoxStrategy())
                                               .RegisterStrategy(new RemoveButtonStrategy())
                                               .RegisterStrategy(new CustomizeTaskTimerStrategy())
-                                              .RegisterStrategy(new AudioPlayerButtonStrategy());
+                                              .RegisterStrategy(new AudioPlayerButtonStrategy(自訂音效CustomizeRadioButton.Checked));
                         controlStrategyManager.ExecuteAll();
                     }
                 }
