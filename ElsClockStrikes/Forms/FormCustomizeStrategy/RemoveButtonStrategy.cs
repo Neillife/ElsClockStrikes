@@ -26,7 +26,7 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
             gunaButton.ForeColor = Color.WhiteSmoke;
             gunaButton.Image = null;
             gunaButton.ImageSize = new Size(24, 24);
-            gunaButton.Location = ProcessButtonLayout(lastGunaButton, 20, 29);
+            gunaButton.Location = ProcessButtonLayout(lastGunaButton, 20);
             gunaButton.Name = $"{FormsConstant.buttonBaseName}{FormsConstant.indexForCustomizeName}";
             gunaButton.OnHoverBaseColor = Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             gunaButton.OnHoverBorderColor = Color.Black;

@@ -28,9 +28,9 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
             return new Point(x - (label == null ? 0 : label.Width), lastLabel == null ? y : lastLabel.Location.Y + FormsConstant.ControlLayoutOffset);
         }
 
-        protected Point ProcessButtonLayout(GunaButton lastGunaButton, int x, int y)
+        protected Point ProcessButtonLayout(GunaButton lastGunaButton, int x)
         {
-            return new Point(x, lastGunaButton == null ? y : lastGunaButton.Location.Y + FormsConstant.ControlLayoutOffset);
+            return new Point(x, lastGunaButton == null ? 30 : lastGunaButton.Location.Y + FormsConstant.ControlLayoutOffset);
         }
 
         public abstract void AddControl(ControlStrategyParameters controlStrategyParameters);
