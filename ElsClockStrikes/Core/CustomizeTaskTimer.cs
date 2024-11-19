@@ -25,6 +25,11 @@ namespace ElsClockStrikes.Core
             return audioPlayer;
         }
 
+        public void setAudioPlayer(AudioPlayer audioPlayer)
+        {
+            this.audioPlayer = audioPlayer;
+        }
+
         public CustomizeTaskTimer setCustomTimeGunaLineTextBox(GunaLineTextBox textBox)
         {
             this.customTimeGunaLineTextBox = textBox;
@@ -60,10 +65,10 @@ namespace ElsClockStrikes.Core
             {
                 this.setCustomTimeLabel(customTimeGunaLineTextBox.Text);
                 this.Stop();
-                //if (預設音效RadioButton.Checked || 自訂音效RadioButton.Checked)
-                //{
-                audioPlayer.Play();
-                //}
+                if (audioPlayer != null)
+                {
+                    audioPlayer.Play();
+                }
             }
         }
     }

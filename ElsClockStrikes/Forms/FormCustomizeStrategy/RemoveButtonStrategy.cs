@@ -26,7 +26,7 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
             gunaButton.ForeColor = Color.WhiteSmoke;
             gunaButton.Image = null;
             gunaButton.ImageSize = new Size(24, 24);
-            gunaButton.Location = ProcessButtonLayout(lastGunaButton);
+            gunaButton.Location = ProcessButtonLayout(lastGunaButton, 20, 29);
             gunaButton.Name = $"{FormsConstant.buttonBaseName}{FormsConstant.indexForCustomizeName}";
             gunaButton.OnHoverBaseColor = Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             gunaButton.OnHoverBorderColor = Color.Black;
@@ -37,17 +37,12 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
             gunaButton.Text = "移除";
             gunaButton.TextAlign = HorizontalAlignment.Center;
             gunaButton.Click += new EventHandler(
-            (object sender, EventArgs e) => {
-                    this.ProcessRemoveComponent(controlStrategyParameters, gunaButton);
-                    this.ProcessComponentNameIndex(controlStrategyParameters, gunaButton);
-            }
-                );
+                (object sender, EventArgs e) => {
+                        this.ProcessRemoveComponent(controlStrategyParameters, gunaButton);
+                        this.ProcessComponentNameIndex(controlStrategyParameters, gunaButton);
+                }
+            );
             controlStrategyParameters.tabPage.Controls.Add(gunaButton);
-        }
-
-        private Point ProcessButtonLayout(GunaButton lastGunaButton)
-        {
-            return new Point(20, lastGunaButton == null ? 29 : lastGunaButton.Location.Y + FormsConstant.ControlLayoutOffset);
         }
 
         private string GetRemoveIndex(GunaButton removeGunaButton)
@@ -103,7 +98,7 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
                     }
                     else if (control is GunaButton GButton && Int32.TryParse(FormsCustomizeUtils.GetIndexOfString(GButton.Name), out parseNum) && parseNum > currentButtonNameIndex)
                     {
-                        GButton.Name = $"{FormsConstant.buttonBaseName}{parseNum - 1}";
+                        GButton.Name = $"{FormsCustomizeUtils.GetRemoveIndexCharOfStrgin(GButton.Name)}{parseNum - 1}";
                     }
                 }
             }
@@ -133,7 +128,12 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
                     controls.Add(gunaLineTextBox);
                     breakCheck++;
                 }
-                if (breakCheck == 5) { break; } // Increase execution performance and avoid excessive invalid loops...
+                else if (control is GunaButton audioPlayerButton && FormsCustomizeUtils.GetIndexOfString(audioPlayerButton.Name) == currentButtonNameIndex)
+                {
+                    controls.Add(audioPlayerButton);
+                    breakCheck++;
+                }
+                if (breakCheck == 6) { break; } // Increase execution performance and avoid excessive invalid loops...
             }
 
             foreach (Control control in controls)

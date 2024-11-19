@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using Guna.UI.WinForms;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ElsClockStrikes.Forms.FormCustomizeStrategy
@@ -25,6 +26,11 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
         protected Point ProcessLabelLayout(Label label, Label lastLabel, int x, int y)
         {
             return new Point(x - (label == null ? 0 : label.Width), lastLabel == null ? y : lastLabel.Location.Y + FormsConstant.ControlLayoutOffset);
+        }
+
+        protected Point ProcessButtonLayout(GunaButton lastGunaButton, int x, int y)
+        {
+            return new Point(x, lastGunaButton == null ? y : lastGunaButton.Location.Y + FormsConstant.ControlLayoutOffset);
         }
 
         public abstract void AddControl(ControlStrategyParameters controlStrategyParameters);
