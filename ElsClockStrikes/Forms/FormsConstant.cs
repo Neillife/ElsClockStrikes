@@ -4,8 +4,9 @@ namespace ElsClockStrikes.Forms
 {
     public class FormsConstant
     {
-        public static string titleName = "ElsClockStrikes | Author by DC:  .le._.vi.";
+        public const string titleName = "ElsClockStrikes | Author by DC:  .le._.vi.";
         public static string copyrightTag = $"Copyright © {DateTime.Today.Year}, Levi. All rights reserved.";
+        public const string sourceCodeGitHubURL = "https://github.com/Neillife/ElsClockStrikes";
         public static int 小荊棘Time;
         public static int 雷射Time;
         public static int 荊棘延遲Time;
