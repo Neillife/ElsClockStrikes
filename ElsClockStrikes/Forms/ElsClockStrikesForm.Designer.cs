@@ -141,8 +141,25 @@
             this.大黑設定音效Button = new Guna.UI.WinForms.GunaButton();
             this.陰陽陣設定音效Button = new Guna.UI.WinForms.GunaButton();
             this.TabPageCustomize = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
+            this.音效設定CustomizeGroupBox = new System.Windows.Forms.GroupBox();
+            this.關閉音效CustomizeRadioButton = new Guna.UI.WinForms.GunaRadioButton();
+            this.預設音效CustomizeRadioButton = new Guna.UI.WinForms.GunaRadioButton();
+            this.自訂音效CustomizeRadioButton = new Guna.UI.WinForms.GunaRadioButton();
+            this.重置計時器Customize按鍵Label = new System.Windows.Forms.Label();
+            this.重置計時器CustomizeComboBox = new Guna.UI.WinForms.GunaComboBox();
+            this.重置計時器CustomizeLabel = new System.Windows.Forms.Label();
+            this.WindowsSettingCustomize = new Guna.UI.WinForms.GunaButton();
+            this.TopMostCustomizeCheckBox = new Guna.UI.WinForms.GunaCheckBox();
+            this.AddCustomizeTimer = new Guna.UI.WinForms.GunaButton();
             this.TabPageAbout = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.GoToGitHubButton = new Guna.UI.WinForms.GunaButton();
             this.R1156控場Timer = new System.Windows.Forms.Timer(this.components);
             this.翻桌Timer = new System.Windows.Forms.Timer(this.components);
@@ -152,14 +169,6 @@
             this.三連Timer = new System.Windows.Forms.Timer(this.components);
             this.陰陽陣Timer = new System.Windows.Forms.Timer(this.components);
             this.大黑Timer = new System.Windows.Forms.Timer(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.音效設定GroupBox.SuspendLayout();
             this.metroTabControlVS1.SuspendLayout();
             this.TabPage127R3.SuspendLayout();
@@ -168,6 +177,7 @@
             this.TabPage156R3.SuspendLayout();
             this.音效設定156R3GroupBox.SuspendLayout();
             this.TabPageCustomize.SuspendLayout();
+            this.音效設定CustomizeGroupBox.SuspendLayout();
             this.TabPageAbout.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -2893,7 +2903,13 @@
             // TabPageCustomize
             // 
             this.TabPageCustomize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.TabPageCustomize.Controls.Add(this.label1);
+            this.TabPageCustomize.Controls.Add(this.音效設定CustomizeGroupBox);
+            this.TabPageCustomize.Controls.Add(this.重置計時器Customize按鍵Label);
+            this.TabPageCustomize.Controls.Add(this.重置計時器CustomizeComboBox);
+            this.TabPageCustomize.Controls.Add(this.重置計時器CustomizeLabel);
+            this.TabPageCustomize.Controls.Add(this.WindowsSettingCustomize);
+            this.TabPageCustomize.Controls.Add(this.TopMostCustomizeCheckBox);
+            this.TabPageCustomize.Controls.Add(this.AddCustomizeTimer);
             this.TabPageCustomize.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.TabPageCustomize.Location = new System.Drawing.Point(4, 20);
             this.TabPageCustomize.Name = "TabPageCustomize";
@@ -2901,16 +2917,231 @@
             this.TabPageCustomize.Size = new System.Drawing.Size(534, 509);
             this.TabPageCustomize.TabIndex = 3;
             this.TabPageCustomize.Text = "自定義";
+            this.TabPageCustomize.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.TabPageCustomize_ControlAdded);
+            this.TabPageCustomize.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.TabPageCustomize_ControlRemoved);
             // 
-            // label1
+            // 音效設定CustomizeGroupBox
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 99.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 161);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(494, 175);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "施工中";
+            this.音效設定CustomizeGroupBox.Controls.Add(this.關閉音效CustomizeRadioButton);
+            this.音效設定CustomizeGroupBox.Controls.Add(this.預設音效CustomizeRadioButton);
+            this.音效設定CustomizeGroupBox.Controls.Add(this.自訂音效CustomizeRadioButton);
+            this.音效設定CustomizeGroupBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.音效設定CustomizeGroupBox.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.音效設定CustomizeGroupBox.Location = new System.Drawing.Point(115, 441);
+            this.音效設定CustomizeGroupBox.Name = "音效設定CustomizeGroupBox";
+            this.音效設定CustomizeGroupBox.Size = new System.Drawing.Size(304, 50);
+            this.音效設定CustomizeGroupBox.TabIndex = 184;
+            this.音效設定CustomizeGroupBox.TabStop = false;
+            this.音效設定CustomizeGroupBox.Text = "計時器音效設定";
+            // 
+            // 關閉音效CustomizeRadioButton
+            // 
+            this.關閉音效CustomizeRadioButton.BaseColor = System.Drawing.SystemColors.Control;
+            this.關閉音效CustomizeRadioButton.CheckedOffColor = System.Drawing.Color.Gray;
+            this.關閉音效CustomizeRadioButton.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.關閉音效CustomizeRadioButton.FillColor = System.Drawing.Color.White;
+            this.關閉音效CustomizeRadioButton.Location = new System.Drawing.Point(228, 20);
+            this.關閉音效CustomizeRadioButton.Name = "關閉音效CustomizeRadioButton";
+            this.關閉音效CustomizeRadioButton.Size = new System.Drawing.Size(55, 20);
+            this.關閉音效CustomizeRadioButton.TabIndex = 79;
+            this.關閉音效CustomizeRadioButton.Text = "關閉";
+            this.關閉音效CustomizeRadioButton.CheckedChanged += new System.EventHandler(this.關閉音效CustomizeRadioButton_CheckedChanged);
+            // 
+            // 預設音效CustomizeRadioButton
+            // 
+            this.預設音效CustomizeRadioButton.BaseColor = System.Drawing.SystemColors.Control;
+            this.預設音效CustomizeRadioButton.Checked = true;
+            this.預設音效CustomizeRadioButton.CheckedOffColor = System.Drawing.Color.Gray;
+            this.預設音效CustomizeRadioButton.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.預設音效CustomizeRadioButton.FillColor = System.Drawing.Color.White;
+            this.預設音效CustomizeRadioButton.Location = new System.Drawing.Point(20, 20);
+            this.預設音效CustomizeRadioButton.Name = "預設音效CustomizeRadioButton";
+            this.預設音效CustomizeRadioButton.Size = new System.Drawing.Size(55, 20);
+            this.預設音效CustomizeRadioButton.TabIndex = 77;
+            this.預設音效CustomizeRadioButton.Text = "預設";
+            this.預設音效CustomizeRadioButton.CheckedChanged += new System.EventHandler(this.預設音效CustomizeRadioButton_CheckedChanged);
+            // 
+            // 自訂音效CustomizeRadioButton
+            // 
+            this.自訂音效CustomizeRadioButton.BaseColor = System.Drawing.SystemColors.Control;
+            this.自訂音效CustomizeRadioButton.CheckedOffColor = System.Drawing.Color.Gray;
+            this.自訂音效CustomizeRadioButton.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.自訂音效CustomizeRadioButton.FillColor = System.Drawing.Color.White;
+            this.自訂音效CustomizeRadioButton.Location = new System.Drawing.Point(124, 20);
+            this.自訂音效CustomizeRadioButton.Name = "自訂音效CustomizeRadioButton";
+            this.自訂音效CustomizeRadioButton.Size = new System.Drawing.Size(55, 20);
+            this.自訂音效CustomizeRadioButton.TabIndex = 78;
+            this.自訂音效CustomizeRadioButton.Text = "自訂";
+            this.自訂音效CustomizeRadioButton.CheckedChanged += new System.EventHandler(this.自訂音效CustomizeRadioButton_CheckedChanged);
+            // 
+            // 重置計時器Customize按鍵Label
+            // 
+            this.重置計時器Customize按鍵Label.AutoSize = true;
+            this.重置計時器Customize按鍵Label.Font = new System.Drawing.Font("Segoe UI", 15.25F, System.Drawing.FontStyle.Bold);
+            this.重置計時器Customize按鍵Label.Location = new System.Drawing.Point(106, 6);
+            this.重置計時器Customize按鍵Label.Name = "重置計時器Customize按鍵Label";
+            this.重置計時器Customize按鍵Label.Size = new System.Drawing.Size(36, 30);
+            this.重置計時器Customize按鍵Label.TabIndex = 160;
+            this.重置計時器Customize按鍵Label.Text = "F5";
+            this.重置計時器Customize按鍵Label.Visible = false;
+            // 
+            // 重置計時器CustomizeComboBox
+            // 
+            this.重置計時器CustomizeComboBox.BackColor = System.Drawing.Color.Transparent;
+            this.重置計時器CustomizeComboBox.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.重置計時器CustomizeComboBox.BorderColor = System.Drawing.Color.Silver;
+            this.重置計時器CustomizeComboBox.BorderSize = 1;
+            this.重置計時器CustomizeComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.重置計時器CustomizeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.重置計時器CustomizeComboBox.FocusedColor = System.Drawing.Color.Empty;
+            this.重置計時器CustomizeComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.重置計時器CustomizeComboBox.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.重置計時器CustomizeComboBox.FormattingEnabled = true;
+            this.重置計時器CustomizeComboBox.Items.AddRange(new object[] {
+            "F1",
+            "F2",
+            "F3",
+            "F4",
+            "F5",
+            "F6",
+            "F7",
+            "F8",
+            "F9",
+            "F10",
+            "F11",
+            "F12",
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "O",
+            "P",
+            "Q",
+            "R",
+            "S",
+            "T",
+            "U",
+            "V",
+            "W",
+            "X",
+            "Y",
+            "Z",
+            "主鍵盤0",
+            "主鍵盤1",
+            "主鍵盤2",
+            "主鍵盤3",
+            "主鍵盤4",
+            "主鍵盤5",
+            "主鍵盤6",
+            "主鍵盤7",
+            "主鍵盤8",
+            "主鍵盤9",
+            "小鍵盤0",
+            "小鍵盤1",
+            "小鍵盤2",
+            "小鍵盤3",
+            "小鍵盤4",
+            "小鍵盤5",
+            "小鍵盤6",
+            "小鍵盤7",
+            "小鍵盤8",
+            "小鍵盤9"});
+            this.重置計時器CustomizeComboBox.Location = new System.Drawing.Point(111, 39);
+            this.重置計時器CustomizeComboBox.Name = "重置計時器CustomizeComboBox";
+            this.重置計時器CustomizeComboBox.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.重置計時器CustomizeComboBox.OnHoverItemForeColor = System.Drawing.SystemColors.ControlDark;
+            this.重置計時器CustomizeComboBox.Size = new System.Drawing.Size(84, 26);
+            this.重置計時器CustomizeComboBox.StartIndex = 4;
+            this.重置計時器CustomizeComboBox.TabIndex = 159;
+            // 
+            // 重置計時器CustomizeLabel
+            // 
+            this.重置計時器CustomizeLabel.AutoSize = true;
+            this.重置計時器CustomizeLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.重置計時器CustomizeLabel.Location = new System.Drawing.Point(216, 42);
+            this.重置計時器CustomizeLabel.Name = "重置計時器CustomizeLabel";
+            this.重置計時器CustomizeLabel.Size = new System.Drawing.Size(94, 20);
+            this.重置計時器CustomizeLabel.TabIndex = 158;
+            this.重置計時器CustomizeLabel.Text = "重置計時器";
+            // 
+            // WindowsSettingCustomize
+            // 
+            this.WindowsSettingCustomize.Animated = true;
+            this.WindowsSettingCustomize.AnimationHoverSpeed = 0.07F;
+            this.WindowsSettingCustomize.AnimationSpeed = 0.03F;
+            this.WindowsSettingCustomize.BackColor = System.Drawing.Color.Transparent;
+            this.WindowsSettingCustomize.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.WindowsSettingCustomize.BorderColor = System.Drawing.Color.Transparent;
+            this.WindowsSettingCustomize.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.WindowsSettingCustomize.FocusedColor = System.Drawing.Color.Empty;
+            this.WindowsSettingCustomize.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.WindowsSettingCustomize.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.WindowsSettingCustomize.Image = null;
+            this.WindowsSettingCustomize.ImageSize = new System.Drawing.Size(24, 24);
+            this.WindowsSettingCustomize.Location = new System.Drawing.Point(323, 382);
+            this.WindowsSettingCustomize.Name = "WindowsSettingCustomize";
+            this.WindowsSettingCustomize.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.WindowsSettingCustomize.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.WindowsSettingCustomize.OnHoverForeColor = System.Drawing.Color.White;
+            this.WindowsSettingCustomize.OnHoverImage = null;
+            this.WindowsSettingCustomize.OnPressedColor = System.Drawing.Color.Black;
+            this.WindowsSettingCustomize.Size = new System.Drawing.Size(100, 42);
+            this.WindowsSettingCustomize.TabIndex = 157;
+            this.WindowsSettingCustomize.Text = "設定完成";
+            this.WindowsSettingCustomize.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.WindowsSettingCustomize.Click += new System.EventHandler(this.WindowsSettingCustomize_Click);
+            // 
+            // TopMostCustomizeCheckBox
+            // 
+            this.TopMostCustomizeCheckBox.BaseColor = System.Drawing.Color.White;
+            this.TopMostCustomizeCheckBox.CheckedOffColor = System.Drawing.Color.Gray;
+            this.TopMostCustomizeCheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.TopMostCustomizeCheckBox.FillColor = System.Drawing.Color.White;
+            this.TopMostCustomizeCheckBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TopMostCustomizeCheckBox.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.TopMostCustomizeCheckBox.Location = new System.Drawing.Point(111, 399);
+            this.TopMostCustomizeCheckBox.Name = "TopMostCustomizeCheckBox";
+            this.TopMostCustomizeCheckBox.Size = new System.Drawing.Size(100, 25);
+            this.TopMostCustomizeCheckBox.TabIndex = 156;
+            this.TopMostCustomizeCheckBox.Text = "置頂視窗";
+            this.TopMostCustomizeCheckBox.CheckedChanged += new System.EventHandler(this.TopMostCustomizeCheckBox_CheckedChanged);
+            // 
+            // AddCustomizeTimer
+            // 
+            this.AddCustomizeTimer.Animated = true;
+            this.AddCustomizeTimer.AnimationHoverSpeed = 0.07F;
+            this.AddCustomizeTimer.AnimationSpeed = 0.03F;
+            this.AddCustomizeTimer.BackColor = System.Drawing.Color.Transparent;
+            this.AddCustomizeTimer.BaseColor = System.Drawing.Color.RoyalBlue;
+            this.AddCustomizeTimer.BorderColor = System.Drawing.Color.Transparent;
+            this.AddCustomizeTimer.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.AddCustomizeTimer.FocusedColor = System.Drawing.Color.Empty;
+            this.AddCustomizeTimer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.AddCustomizeTimer.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.AddCustomizeTimer.Image = null;
+            this.AddCustomizeTimer.ImageSize = new System.Drawing.Size(24, 24);
+            this.AddCustomizeTimer.Location = new System.Drawing.Point(213, 382);
+            this.AddCustomizeTimer.Name = "AddCustomizeTimer";
+            this.AddCustomizeTimer.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(85)))), ((int)(((byte)(205)))));
+            this.AddCustomizeTimer.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.AddCustomizeTimer.OnHoverForeColor = System.Drawing.Color.White;
+            this.AddCustomizeTimer.OnHoverImage = null;
+            this.AddCustomizeTimer.OnPressedColor = System.Drawing.Color.Black;
+            this.AddCustomizeTimer.Size = new System.Drawing.Size(100, 42);
+            this.AddCustomizeTimer.TabIndex = 92;
+            this.AddCustomizeTimer.Text = "新增計時器";
+            this.AddCustomizeTimer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.AddCustomizeTimer.Click += new System.EventHandler(this.AddCustomizeTimer_Click);
             // 
             // TabPageAbout
             // 
@@ -2931,6 +3162,87 @@
             this.TabPageAbout.Size = new System.Drawing.Size(534, 509);
             this.TabPageAbout.TabIndex = 4;
             this.TabPageAbout.Text = "關於";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(10, 266);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(172, 21);
+            this.label3.TabIndex = 101;
+            this.label3.Text = "期待你的反饋和貢獻";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(10, 61);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(460, 21);
+            this.label9.TabIndex = 100;
+            this.label9.Text = "所以決定自己開發一個，希望這個計時器能夠幫助到你。";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(10, 20);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(478, 21);
+            this.label8.TabIndex = 99;
+            this.label8.Text = "主要是因為一些現有的計時器，都是寫死的沒辦法自定義，";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(10, 225);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(518, 21);
+            this.label7.TabIndex = 98;
+            this.label7.Text = "非常歡迎大家向我的專案提交 PR，喜歡的話請不吝嗇給個 Star。";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(10, 143);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(208, 21);
+            this.label6.TabIndex = 97;
+            this.label6.Text = "可以點擊下面的按鈕訪問";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(10, 102);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(432, 21);
+            this.label5.TabIndex = 96;
+            this.label5.Text = "原始碼開放在 GitHub 上，供大家下載、研究和使用。";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(10, 184);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(525, 21);
+            this.label4.TabIndex = 95;
+            this.label4.Text = "有問題或是功能需求可以發 issues ，也可加我的 Discord 跟我說。";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Coral;
+            this.label2.Location = new System.Drawing.Point(112, 420);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(317, 37);
+            this.label2.TabIndex = 93;
+            this.label2.Text = "!!! 免費程式請勿販售 !!!";
             // 
             // GoToGitHubButton
             // 
@@ -3007,87 +3319,6 @@
             this.大黑Timer.Tag = "大黑Timer";
             this.大黑Timer.Tick += new System.EventHandler(this.大黑Timer_Tick);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Coral;
-            this.label2.Location = new System.Drawing.Point(112, 420);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(317, 37);
-            this.label2.TabIndex = 93;
-            this.label2.Text = "!!! 免費程式請勿販售 !!!";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(10, 184);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(525, 21);
-            this.label4.TabIndex = 95;
-            this.label4.Text = "有問題或是功能需求可以發 issues ，也可加我的 Discord 跟我說。";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(10, 102);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(432, 21);
-            this.label5.TabIndex = 96;
-            this.label5.Text = "原始碼開放在 GitHub 上，供大家下載、研究和使用。";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(10, 143);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(208, 21);
-            this.label6.TabIndex = 97;
-            this.label6.Text = "可以點擊下面的按鈕訪問";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(10, 225);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(518, 21);
-            this.label7.TabIndex = 98;
-            this.label7.Text = "非常歡迎大家向我的專案提交 PR，喜歡的話請不吝嗇給個 Star。";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(10, 20);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(478, 21);
-            this.label8.TabIndex = 99;
-            this.label8.Text = "主要是因為一些現有的計時器，都是寫死的沒辦法自定義，";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(10, 61);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(460, 21);
-            this.label9.TabIndex = 100;
-            this.label9.Text = "所以決定自己開發一個，希望這個計時器能夠幫助到你。";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(10, 266);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(172, 21);
-            this.label3.TabIndex = 101;
-            this.label3.Text = "期待你的反饋和貢獻";
-            // 
             // ElsClockStrikesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -3124,6 +3355,8 @@
             this.音效設定156R3GroupBox.PerformLayout();
             this.TabPageCustomize.ResumeLayout(false);
             this.TabPageCustomize.PerformLayout();
+            this.音效設定CustomizeGroupBox.ResumeLayout(false);
+            this.音效設定CustomizeGroupBox.PerformLayout();
             this.TabPageAbout.ResumeLayout(false);
             this.TabPageAbout.PerformLayout();
             this.ResumeLayout(false);
@@ -3252,7 +3485,6 @@
         private System.Windows.Forms.Timer 三連Timer;
         private System.Windows.Forms.Timer 陰陽陣Timer;
         private System.Windows.Forms.Timer 大黑Timer;
-        private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaButton GoToGitHubButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
@@ -3262,6 +3494,16 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label3;
+        private Guna.UI.WinForms.GunaButton AddCustomizeTimer;
+        private Guna.UI.WinForms.GunaCheckBox TopMostCustomizeCheckBox;
+        private Guna.UI.WinForms.GunaButton WindowsSettingCustomize;
+        private System.Windows.Forms.Label 重置計時器Customize按鍵Label;
+        private Guna.UI.WinForms.GunaComboBox 重置計時器CustomizeComboBox;
+        private System.Windows.Forms.Label 重置計時器CustomizeLabel;
+        private System.Windows.Forms.GroupBox 音效設定CustomizeGroupBox;
+        private Guna.UI.WinForms.GunaRadioButton 關閉音效CustomizeRadioButton;
+        private Guna.UI.WinForms.GunaRadioButton 預設音效CustomizeRadioButton;
+        private Guna.UI.WinForms.GunaRadioButton 自訂音效CustomizeRadioButton;
     }
 }
 

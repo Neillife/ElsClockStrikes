@@ -18,6 +18,18 @@ namespace ElsClockStrikes.Forms
         public static int 陰陽陣Time;
         public static int 三連Time;
         public static int R3156控場Time;
+        public static int indexForCustomizeName = 0;
+        public const int LayoutSign = 327;
+        public const int FormSizeOffset = 75;
+        public const int ControlLayoutOffset = 72;
+        public const string timeLeftLabelBaseName = "CustomizeTimeLeftLabelName";
+        public const string hotKeyLabelBaseName = "CustomizeHotKeyLabelName";
+        public const string mechanicLabelBaseName = "CustomizeMechanicLabelName";
+        public const string comboBoxBaseName = "CustomizeComboBoxName";
+        public const string textBoxBaseName = "CustomizeTextBoxName";
+        public const string buttonBaseName = "CustomizeButtonName";
+        public const string timerBaseName = "CustomizeTimerName";
+        public const string audioPlayerButtonBaseName = "CustomizeAudioPlayer";
 
         public static void init127Timer(string init小荊棘Time, string init雷射Time, string init荊棘延遲Time, string init控場Time)
         {

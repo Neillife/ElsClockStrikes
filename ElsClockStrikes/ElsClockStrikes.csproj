@@ -98,6 +98,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\BaseHotKeyManager.cs" />
+    <Compile Include="Core\CustomizeTaskTimer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Core\HotKeyManagerForCustomize.cs" />
     <Compile Include="Core\HotKeySet.cs" />
     <Compile Include="Forms\ElsClockStrikesForm156R1.cs">
       <SubType>Form</SubType>
@@ -105,6 +110,27 @@
     <Compile Include="Forms\ElsClockStrikesForm156R3.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\ElsClockStrikesFormCustomize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ElsClockStrikesFormCustomizeSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ElsClockStrikesFormCustomizeSetting.Designer.cs">
+      <DependentUpon>ElsClockStrikesFormCustomizeSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCustomizeStrategy\AudioPlayerButtonStrategy.cs" />
+    <Compile Include="Forms\FormCustomizeStrategy\ComboBoxStrategy.cs" />
+    <Compile Include="Forms\FormCustomizeStrategy\ControlStrategyManager.cs" />
+    <Compile Include="Forms\FormCustomizeStrategy\ControlStrategyParameters.cs" />
+    <Compile Include="Forms\FormCustomizeStrategy\BaseControlStrategy.cs" />
+    <Compile Include="Forms\FormCustomizeStrategy\CustomizeTaskTimerStrategy.cs" />
+    <Compile Include="Forms\FormCustomizeStrategy\HotKeyLabelStrategy.cs" />
+    <Compile Include="Forms\FormCustomizeStrategy\LineTextBoxStrategy.cs" />
+    <Compile Include="Forms\FormCustomizeStrategy\MechanicNameLabelStrategy.cs" />
+    <Compile Include="Forms\FormCustomizeStrategy\RemoveButtonStrategy.cs" />
+    <Compile Include="Forms\FormCustomizeStrategy\TimeLeftLabelStrategy.cs" />
+    <Compile Include="Forms\FormsCustomizeUtils.cs" />
     <Compile Include="Forms\FormsUtils.cs" />
     <Compile Include="Core\AudioPlayer.cs" />
     <Compile Include="Core\HotKeyContainer.cs" />
@@ -120,6 +146,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\ElsClockStrikesForm.resx">
       <DependentUpon>ElsClockStrikesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ElsClockStrikesFormCustomizeSetting.resx">
+      <DependentUpon>ElsClockStrikesFormCustomizeSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
