@@ -47,6 +47,7 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
             nameof(HotKeySet.KeySet.X),
             nameof(HotKeySet.KeySet.Y),
             nameof(HotKeySet.KeySet.Z),
+            nameof(HotKeySet.KeySet.Ctrl),
             nameof(HotKeySet.KeySet.主鍵盤0),
             nameof(HotKeySet.KeySet.主鍵盤1),
             nameof(HotKeySet.KeySet.主鍵盤2),
