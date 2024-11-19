@@ -99,7 +99,6 @@
             this.重置計時器156R1Label = new System.Windows.Forms.Label();
             this.大刺ComboBox = new Guna.UI.WinForms.GunaComboBox();
             this.大刺按鍵Label = new System.Windows.Forms.Label();
-            this.TopMost156R1CheckBox = new Guna.UI.WinForms.GunaCheckBox();
             this.翻桌按鍵Label = new System.Windows.Forms.Label();
             this.R1156控場設定音效Button = new Guna.UI.WinForms.GunaButton();
             this.R1156控場按鍵Label = new System.Windows.Forms.Label();
@@ -133,7 +132,6 @@
             this.重置計時器156R3Label = new System.Windows.Forms.Label();
             this.陰陽陣ComboBox = new Guna.UI.WinForms.GunaComboBox();
             this.陰陽陣按鍵Label = new System.Windows.Forms.Label();
-            this.TopMost156R3CheckBox = new Guna.UI.WinForms.GunaCheckBox();
             this.三連按鍵Label = new System.Windows.Forms.Label();
             this.R3156控場設定音效Button = new Guna.UI.WinForms.GunaButton();
             this.R3156控場按鍵Label = new System.Windows.Forms.Label();
@@ -149,7 +147,6 @@
             this.重置計時器CustomizeComboBox = new Guna.UI.WinForms.GunaComboBox();
             this.重置計時器CustomizeLabel = new System.Windows.Forms.Label();
             this.WindowsSettingCustomize = new Guna.UI.WinForms.GunaButton();
-            this.TopMostCustomizeCheckBox = new Guna.UI.WinForms.GunaCheckBox();
             this.AddCustomizeTimer = new Guna.UI.WinForms.GunaButton();
             this.TabPageAbout = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
@@ -1180,7 +1177,6 @@
             this.TabPage156R1.Controls.Add(this.重置計時器156R1Label);
             this.TabPage156R1.Controls.Add(this.大刺ComboBox);
             this.TabPage156R1.Controls.Add(this.大刺按鍵Label);
-            this.TabPage156R1.Controls.Add(this.TopMost156R1CheckBox);
             this.TabPage156R1.Controls.Add(this.翻桌按鍵Label);
             this.TabPage156R1.Controls.Add(this.R1156控場設定音效Button);
             this.TabPage156R1.Controls.Add(this.R1156控場按鍵Label);
@@ -1878,21 +1874,6 @@
             this.大刺按鍵Label.Text = "F2";
             this.大刺按鍵Label.Visible = false;
             // 
-            // TopMost156R1CheckBox
-            // 
-            this.TopMost156R1CheckBox.BaseColor = System.Drawing.Color.White;
-            this.TopMost156R1CheckBox.CheckedOffColor = System.Drawing.Color.Gray;
-            this.TopMost156R1CheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.TopMost156R1CheckBox.FillColor = System.Drawing.Color.White;
-            this.TopMost156R1CheckBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TopMost156R1CheckBox.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.TopMost156R1CheckBox.Location = new System.Drawing.Point(111, 399);
-            this.TopMost156R1CheckBox.Name = "TopMost156R1CheckBox";
-            this.TopMost156R1CheckBox.Size = new System.Drawing.Size(100, 25);
-            this.TopMost156R1CheckBox.TabIndex = 125;
-            this.TopMost156R1CheckBox.Text = "置頂視窗";
-            this.TopMost156R1CheckBox.CheckedChanged += new System.EventHandler(this.TopMost156R1CheckBox_CheckedChanged);
-            // 
             // 翻桌按鍵Label
             // 
             this.翻桌按鍵Label.AutoSize = true;
@@ -2053,7 +2034,6 @@
             this.TabPage156R3.Controls.Add(this.重置計時器156R3Label);
             this.TabPage156R3.Controls.Add(this.陰陽陣ComboBox);
             this.TabPage156R3.Controls.Add(this.陰陽陣按鍵Label);
-            this.TabPage156R3.Controls.Add(this.TopMost156R3CheckBox);
             this.TabPage156R3.Controls.Add(this.三連按鍵Label);
             this.TabPage156R3.Controls.Add(this.R3156控場設定音效Button);
             this.TabPage156R3.Controls.Add(this.R3156控場按鍵Label);
@@ -2751,21 +2731,6 @@
             this.陰陽陣按鍵Label.Text = "F2";
             this.陰陽陣按鍵Label.Visible = false;
             // 
-            // TopMost156R3CheckBox
-            // 
-            this.TopMost156R3CheckBox.BaseColor = System.Drawing.Color.White;
-            this.TopMost156R3CheckBox.CheckedOffColor = System.Drawing.Color.Gray;
-            this.TopMost156R3CheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.TopMost156R3CheckBox.FillColor = System.Drawing.Color.White;
-            this.TopMost156R3CheckBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TopMost156R3CheckBox.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.TopMost156R3CheckBox.Location = new System.Drawing.Point(111, 399);
-            this.TopMost156R3CheckBox.Name = "TopMost156R3CheckBox";
-            this.TopMost156R3CheckBox.Size = new System.Drawing.Size(100, 25);
-            this.TopMost156R3CheckBox.TabIndex = 155;
-            this.TopMost156R3CheckBox.Text = "置頂視窗";
-            this.TopMost156R3CheckBox.CheckedChanged += new System.EventHandler(this.TopMost156R3CheckBox_CheckedChanged);
-            // 
             // 三連按鍵Label
             // 
             this.三連按鍵Label.AutoSize = true;
@@ -2908,7 +2873,6 @@
             this.TabPageCustomize.Controls.Add(this.重置計時器CustomizeComboBox);
             this.TabPageCustomize.Controls.Add(this.重置計時器CustomizeLabel);
             this.TabPageCustomize.Controls.Add(this.WindowsSettingCustomize);
-            this.TabPageCustomize.Controls.Add(this.TopMostCustomizeCheckBox);
             this.TabPageCustomize.Controls.Add(this.AddCustomizeTimer);
             this.TabPageCustomize.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.TabPageCustomize.Location = new System.Drawing.Point(4, 20);
@@ -3100,21 +3064,6 @@
             this.WindowsSettingCustomize.Text = "設定完成";
             this.WindowsSettingCustomize.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.WindowsSettingCustomize.Click += new System.EventHandler(this.WindowsSettingCustomize_Click);
-            // 
-            // TopMostCustomizeCheckBox
-            // 
-            this.TopMostCustomizeCheckBox.BaseColor = System.Drawing.Color.White;
-            this.TopMostCustomizeCheckBox.CheckedOffColor = System.Drawing.Color.Gray;
-            this.TopMostCustomizeCheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.TopMostCustomizeCheckBox.FillColor = System.Drawing.Color.White;
-            this.TopMostCustomizeCheckBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TopMostCustomizeCheckBox.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.TopMostCustomizeCheckBox.Location = new System.Drawing.Point(111, 399);
-            this.TopMostCustomizeCheckBox.Name = "TopMostCustomizeCheckBox";
-            this.TopMostCustomizeCheckBox.Size = new System.Drawing.Size(100, 25);
-            this.TopMostCustomizeCheckBox.TabIndex = 156;
-            this.TopMostCustomizeCheckBox.Text = "置頂視窗";
-            this.TopMostCustomizeCheckBox.CheckedChanged += new System.EventHandler(this.TopMostCustomizeCheckBox_CheckedChanged);
             // 
             // AddCustomizeTimer
             // 
@@ -3437,7 +3386,6 @@
         private System.Windows.Forms.Label 重置計時器156R1Label;
         private Guna.UI.WinForms.GunaComboBox 大刺ComboBox;
         private System.Windows.Forms.Label 大刺按鍵Label;
-        private Guna.UI.WinForms.GunaCheckBox TopMost156R1CheckBox;
         private System.Windows.Forms.Label 翻桌按鍵Label;
         private Guna.UI.WinForms.GunaButton R1156控場設定音效Button;
         private System.Windows.Forms.Label R1156控場按鍵Label;
@@ -3470,7 +3418,6 @@
         private System.Windows.Forms.Label 重置計時器156R3Label;
         private Guna.UI.WinForms.GunaComboBox 陰陽陣ComboBox;
         private System.Windows.Forms.Label 陰陽陣按鍵Label;
-        private Guna.UI.WinForms.GunaCheckBox TopMost156R3CheckBox;
         private System.Windows.Forms.Label 三連按鍵Label;
         private Guna.UI.WinForms.GunaButton R3156控場設定音效Button;
         private System.Windows.Forms.Label R3156控場按鍵Label;
@@ -3495,7 +3442,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label3;
         private Guna.UI.WinForms.GunaButton AddCustomizeTimer;
-        private Guna.UI.WinForms.GunaCheckBox TopMostCustomizeCheckBox;
         private Guna.UI.WinForms.GunaButton WindowsSettingCustomize;
         private System.Windows.Forms.Label 重置計時器Customize按鍵Label;
         private Guna.UI.WinForms.GunaComboBox 重置計時器CustomizeComboBox;

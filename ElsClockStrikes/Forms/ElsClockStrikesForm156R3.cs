@@ -155,11 +155,6 @@ namespace ElsClockStrikes
             }
         }
 
-        private void TopMost156R3CheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            this.TopMost = !this.TopMost;
-        }
-
         private void ProcessWindowsSetting156R3(bool isBackToOriginCheck)
         {
             大黑CDLabel.Visible = !大黑CDLabel.Visible;
@@ -191,7 +186,6 @@ namespace ElsClockStrikes
                 this.Controls.Remove(R3156控場CDLabel);
                 this.Controls.Remove(重置計時器156R3按鍵Label);
                 this.Controls.Remove(重置計時器156R3Label);
-                this.Controls.Remove(TopMost156R3CheckBox);
                 this.Controls.Remove(WindowsSetting156R3);
 
                 TabPage156R3.Controls.Add(大黑按鍵Label);
@@ -208,7 +202,6 @@ namespace ElsClockStrikes
                 TabPage156R3.Controls.Add(R3156控場CDLabel);
                 TabPage156R3.Controls.Add(重置計時器156R3按鍵Label);
                 TabPage156R3.Controls.Add(重置計時器156R3Label);
-                TabPage156R3.Controls.Add(TopMost156R3CheckBox);
                 TabPage156R3.Controls.Add(WindowsSetting156R3);
             }
             else
@@ -227,7 +220,6 @@ namespace ElsClockStrikes
                 TabPage156R3.Controls.Remove(R3156控場CDLabel);
                 TabPage156R3.Controls.Remove(重置計時器156R3按鍵Label);
                 TabPage156R3.Controls.Remove(重置計時器156R3Label);
-                TabPage156R3.Controls.Remove(TopMost156R3CheckBox);
                 TabPage156R3.Controls.Remove(WindowsSetting156R3);
 
                 this.Controls.Add(大黑按鍵Label);
@@ -244,7 +236,6 @@ namespace ElsClockStrikes
                 this.Controls.Add(R3156控場CDLabel);
                 this.Controls.Add(重置計時器156R3按鍵Label);
                 this.Controls.Add(重置計時器156R3Label);
-                this.Controls.Add(TopMost156R3CheckBox);
                 this.Controls.Add(WindowsSetting156R3);
             }
 
@@ -270,8 +261,8 @@ namespace ElsClockStrikes
 
             重置計時器156R3按鍵Label.Location = new Point(R3156控場按鍵Label.Location.X, R3156控場按鍵Label.Location.Y + KeyLabelAddY);
             重置計時器156R3Label.Location = isBackToOriginCheck ? 重置計時器LabelOriginPos : new Point(大黑Label.Left + 大黑Label.Width - 重置計時器156R3Label.Width + 27, 重置計時器156R3按鍵Label.Top + 重置計時器156R3按鍵Label.Height - 重置計時器156R3Label.Height - 3); ;
-            TopMost156R3CheckBox.Location = isBackToOriginCheck ? TopMostCheckBoxOriginPos : new Point(this.Size.Width / 2 - TopMost156R3CheckBox.Width / 2, 重置計時器156R3按鍵Label.Location.Y + KeyLabelAddY);
-            WindowsSetting156R3.Location = isBackToOriginCheck ? WindowsSettingOriginPos : new Point(this.Size.Width / 2 - WindowsSetting156R3.Width / 2, TopMost156R3CheckBox.Location.Y + KeyLabelAddY);
+            TopMostCheckBox.Location = isBackToOriginCheck ? TopMostCheckBoxOriginPos : new Point(this.Size.Width / 2 - TopMostCheckBox.Width / 2, 重置計時器156R3按鍵Label.Location.Y + KeyLabelAddY);
+            WindowsSetting156R3.Location = isBackToOriginCheck ? WindowsSettingOriginPos : new Point(this.Size.Width / 2 - WindowsSetting156R3.Width / 2, TopMostCheckBox.Location.Y + KeyLabelAddY);
 
             大黑按鍵Label.Text = FormsUtils.ProcessLayoutString(大黑ComboBox.Text);
             陰陽陣按鍵Label.Text = FormsUtils.ProcessLayoutString(陰陽陣ComboBox.Text);

@@ -33,12 +33,17 @@ namespace ElsClockStrikes
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.metroTabControlVS1.Controls.Remove(TopMostCheckBox);
+            this.Controls.Add(TopMostCheckBox);
+            TopMostCheckBox.BringToFront();
+            TopMostCheckBox.Location = new Point(119, 453);
             小荊棘LabelOriginPos = 小荊棘Label.Location;
             雷射LabelOriginPos = 雷射Label.Location;
             荊棘延遲LabelOriginPos = 荊棘延遲Label.Location;
             控場LabelOriginPos = 控場Label.Location;
             重置計時器LabelOriginPos = 重置計時器Label.Location;
             TopMostCheckBoxOriginPos = TopMostCheckBox.Location;
+            CustomizeTopMostCheckBoxPos = TopMostCheckBox.Location;
             WindowsSettingOriginPos = WindowsSetting.Location;
             CopyrightTagLabelOriginPos = CopyrightTagLabel.Location;
             CustomizeTabCopyrightTagLabelPos = CopyrightTagLabel.Location;
@@ -215,7 +220,6 @@ namespace ElsClockStrikes
                 this.Controls.Remove(控場CDLabel);
                 this.Controls.Remove(重置計時器按鍵Label);
                 this.Controls.Remove(重置計時器Label);
-                this.Controls.Remove(TopMostCheckBox);
                 this.Controls.Remove(WindowsSetting);
 
                 TabPage127R3.Controls.Add(小荊棘按鍵Label);
@@ -232,7 +236,6 @@ namespace ElsClockStrikes
                 TabPage127R3.Controls.Add(控場CDLabel);
                 TabPage127R3.Controls.Add(重置計時器按鍵Label);
                 TabPage127R3.Controls.Add(重置計時器Label);
-                TabPage127R3.Controls.Add(TopMostCheckBox);
                 TabPage127R3.Controls.Add(WindowsSetting);
             }
             else
@@ -251,7 +254,6 @@ namespace ElsClockStrikes
                 TabPage127R3.Controls.Remove(控場CDLabel);
                 TabPage127R3.Controls.Remove(重置計時器按鍵Label);
                 TabPage127R3.Controls.Remove(重置計時器Label);
-                TabPage127R3.Controls.Remove(TopMostCheckBox);
                 TabPage127R3.Controls.Remove(WindowsSetting);
 
                 this.Controls.Add(小荊棘按鍵Label);
@@ -268,7 +270,6 @@ namespace ElsClockStrikes
                 this.Controls.Add(控場CDLabel);
                 this.Controls.Add(重置計時器按鍵Label);
                 this.Controls.Add(重置計時器Label);
-                this.Controls.Add(TopMostCheckBox);
                 this.Controls.Add(WindowsSetting);
             }
 
@@ -412,21 +413,22 @@ namespace ElsClockStrikes
 
         private void metroTabControlVS1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (TopMostCheckBox.Checked || TopMost156R1CheckBox.Checked || TopMost156R3CheckBox.Checked)
+            if (metroTabControlVS1.SelectedTab.Name == TabPageAbout.Name)
             {
-                TopMostCheckBox.Checked = false;
-                TopMost156R1CheckBox.Checked = false;
-                TopMost156R3CheckBox.Checked = false;
-                TopMostCustomizeCheckBox.Checked = false;
+                TopMostCheckBox.Visible = false;
             }
-            if (metroTabControlVS1.SelectedTab.Name == TabPageCustomize.Name)
+            else if (metroTabControlVS1.SelectedTab.Name == TabPageCustomize.Name)
             {
+                TopMostCheckBox.Visible = true;
+                TopMostCheckBox.Location = CustomizeTopMostCheckBoxPos;
                 this.Size = CustomizeTabWinFormsSize;
                 this.metroTabControlVS1.Size = CustomizeMetroTabControlVS1Size;
                 CopyrightTagLabel.Location = CustomizeTabCopyrightTagLabelPos;
             }
             else
             {
+                TopMostCheckBox.Visible = true;
+                TopMostCheckBox.Location = TopMostCheckBoxOriginPos;
                 this.Size = WindowsOriginSize;
                 this.metroTabControlVS1.Size = metroTabControlVS1OriginSize;
                 CopyrightTagLabel.Location = CopyrightTagLabelOriginPos;
@@ -435,7 +437,7 @@ namespace ElsClockStrikes
 
         private void GoToGitHubButton_Click(object sender, EventArgs e)
         {
-            Process.Start("https://github.com/Neillife/ElsClockStrikes");
+            Process.Start(FormsConstant.sourceCodeGitHubURL);
         }
     }
 }
