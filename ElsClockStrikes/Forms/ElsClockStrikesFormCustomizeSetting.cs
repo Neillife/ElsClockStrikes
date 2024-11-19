@@ -6,11 +6,13 @@ namespace ElsClockStrikes.Forms
 {
     public partial class ElsClockStrikesFormCustomizeSetting : MetroForm
     {
+        private bool topMost;
+
         public string inputData { get; set; }
 
         public ElsClockStrikesFormCustomizeSetting(bool topMost)
         {
-            this.TopMost = topMost;
+            this.topMost = topMost;
             InitializeComponent();
         }
 
@@ -34,6 +36,7 @@ namespace ElsClockStrikes.Forms
         private void ElsClockStrikesFormCustomizeSetting_Activated(object sender, EventArgs e)
         {
             FeatureNameTextBox.Focus();
+            this.TopMost = topMost;
         }
     }
 }
