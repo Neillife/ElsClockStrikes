@@ -62,13 +62,11 @@
 - [x] 127R3 機制計時
 - [x] 156R1 機制計時
 - [x] 156R3 機制計時
+- [x] 完全自定義計時器
 
 # 待新增
 
-- [ ] 完全自定義計時器
-- [ ] 156R3 開場陰陽陣計時時間自定義 (目前寫死 290s)
-- [ ] English ver? maybe
-- [ ] English README.md
+- [ ] 儲存設定/讀取設定 功能
 
 # 資料夾說明
 
@@ -92,13 +90,13 @@
 
 # 如何提交 PR
 
-如果您有更好的建議或想法，請 Fork 本 Repo 並建立 PR，您也可以簡單的使用 ```enhancement``` Tag 來開啟 ```issues```，我會非常歡迎您所做的任何貢獻，請不要吝嗇點下你的 Start。
+如果您有更好的建議或想法，請 Fork 本 Repo 並建立 PR，您也可以簡單的使用 ```enhancement``` Tag 來開啟 [issues](https://github.com/Neillife/ElsClockStrikes/issues)，我會非常歡迎您所做的任何貢獻，請不要吝嗇點下你的 Start。
 
 1. Fork Repo
 2. 建立您的 Branch 功能 ```git checkout -b feature/FeatureName```
 3. 提交您的更改 ```git commit -m "Your commit message"```
 4. 推送到遠端 Branch ```git push origin feature/FeatureName```
-5. 打開 Pull Request
+5. 打開 [Pull Request](https://github.com/Neillife/ElsClockStrikes/pulls)
 
 # 免責聲明
 
