@@ -271,7 +271,7 @@
             this.小荊棘TextBox.PasswordChar = '\0';
             this.小荊棘TextBox.Size = new System.Drawing.Size(90, 42);
             this.小荊棘TextBox.TabIndex = 93;
-            this.小荊棘TextBox.Text = "150";
+            this.小荊棘TextBox.Text = "160";
             this.小荊棘TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.小荊棘TextBox.TextOffsetX = 3;
             this.小荊棘TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.小荊棘TextBox_KeyPress);
