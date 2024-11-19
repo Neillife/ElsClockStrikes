@@ -119,6 +119,7 @@
     <Compile Include="Forms\ElsClockStrikesFormCustomizeSetting.Designer.cs">
       <DependentUpon>ElsClockStrikesFormCustomizeSetting.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormCustomizeStrategy\AudioPlayerButtonStrategy.cs" />
     <Compile Include="Forms\FormCustomizeStrategy\ComboBoxStrategy.cs" />
     <Compile Include="Forms\FormCustomizeStrategy\ControlStrategyManager.cs" />
     <Compile Include="Forms\FormCustomizeStrategy\ControlStrategyParameters.cs" />
