@@ -19,6 +19,7 @@ namespace ElsClockStrikes
         private Size CustomizeTabWinFormsSize;
         private Size CustomizeMetroTabControlVS1Size;
         private Point CustomizeTabCopyrightTagLabelPos;
+        private Point CustomizeTopMostCheckBoxPos;
 
         private void TabPageCustomize_ControlRemoved(object sender, ControlEventArgs e)
         {
@@ -120,7 +121,8 @@ namespace ElsClockStrikes
                 this.Size = CustomizeTabWinFormsSize;
                 this.CustomizeMetroTabControlVS1Size = new Size(this.metroTabControlVS1.Width, this.metroTabControlVS1.Height + FormsConstant.FormSizeOffset);
                 this.metroTabControlVS1.Size = CustomizeMetroTabControlVS1Size;
-                TopMostCustomizeCheckBox.Location = new Point(TopMostCustomizeCheckBox.Location.X, TopMostCustomizeCheckBox.Location.Y + FormsConstant.FormSizeOffset);
+                this.CustomizeTopMostCheckBoxPos = new Point(TopMostCheckBox.Location.X, TopMostCheckBox.Location.Y + FormsConstant.FormSizeOffset);
+                TopMostCheckBox.Location = CustomizeTopMostCheckBoxPos;
                 WindowsSettingCustomize.Location = new Point(WindowsSettingCustomize.Location.X, WindowsSettingCustomize.Location.Y + FormsConstant.FormSizeOffset);
                 AddCustomizeTimer.Location = new Point(AddCustomizeTimer.Location.X, AddCustomizeTimer.Location.Y + FormsConstant.FormSizeOffset);
                 this.CustomizeTabCopyrightTagLabelPos = new Point(CopyrightTagLabel.Location.X, CopyrightTagLabel.Location.Y + FormsConstant.FormSizeOffset);
@@ -132,17 +134,13 @@ namespace ElsClockStrikes
                 this.Size = CustomizeTabWinFormsSize;
                 this.CustomizeMetroTabControlVS1Size = new Size(this.metroTabControlVS1.Width, this.metroTabControlVS1.Height - FormsConstant.FormSizeOffset);
                 this.metroTabControlVS1.Size = CustomizeMetroTabControlVS1Size;
-                TopMostCustomizeCheckBox.Location = new Point(TopMostCustomizeCheckBox.Location.X, TopMostCustomizeCheckBox.Location.Y - FormsConstant.FormSizeOffset);
+                this.CustomizeTopMostCheckBoxPos = new Point(TopMostCheckBox.Location.X, TopMostCheckBox.Location.Y - FormsConstant.FormSizeOffset);
+                TopMostCheckBox.Location = CustomizeTopMostCheckBoxPos;
                 WindowsSettingCustomize.Location = new Point(WindowsSettingCustomize.Location.X, WindowsSettingCustomize.Location.Y - FormsConstant.FormSizeOffset);
                 AddCustomizeTimer.Location = new Point(AddCustomizeTimer.Location.X, AddCustomizeTimer.Location.Y - FormsConstant.FormSizeOffset);
                 this.CustomizeTabCopyrightTagLabelPos = new Point(CopyrightTagLabel.Location.X, CopyrightTagLabel.Location.Y - FormsConstant.FormSizeOffset);
                 CopyrightTagLabel.Location = CustomizeTabCopyrightTagLabelPos;
             }
-        }
-
-        private void TopMostCustomizeCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            this.TopMost = !this.TopMost;
         }
 
         private void ProcessRegisterHotKeyCustomize(bool isBackToOriginCheck)
@@ -175,22 +173,18 @@ namespace ElsClockStrikes
                 this.Controls.Remove(重置計時器Customize按鍵Label);
                 this.Controls.Remove(重置計時器CustomizeLabel);
                 this.Controls.Remove(WindowsSettingCustomize);
-                this.Controls.Remove(TopMostCustomizeCheckBox);
                 TabPageCustomize.Controls.Add(重置計時器Customize按鍵Label);
                 TabPageCustomize.Controls.Add(重置計時器CustomizeLabel);
                 TabPageCustomize.Controls.Add(WindowsSettingCustomize);
-                TabPageCustomize.Controls.Add(TopMostCustomizeCheckBox);
             }
             else
             {
                 TabPageCustomize.Controls.Remove(重置計時器Customize按鍵Label);
                 TabPageCustomize.Controls.Remove(重置計時器CustomizeLabel);
                 TabPageCustomize.Controls.Remove(WindowsSettingCustomize);
-                TabPageCustomize.Controls.Remove(TopMostCustomizeCheckBox);
                 this.Controls.Add(重置計時器Customize按鍵Label);
                 this.Controls.Add(重置計時器CustomizeLabel);
                 this.Controls.Add(WindowsSettingCustomize);
-                this.Controls.Add(TopMostCustomizeCheckBox);
             }
 
             this.Size = isBackToOriginCheck ? CustomizeTabWinFormsSize : 
@@ -218,7 +212,7 @@ namespace ElsClockStrikes
             customizeComponentOriginPosMap.Add(重置計時器Customize按鍵Label.Name, 重置計時器Customize按鍵Label.Location);
             customizeComponentOriginPosMap.Add(重置計時器CustomizeLabel.Name, 重置計時器CustomizeLabel.Location);
             customizeComponentOriginPosMap.Add(重置計時器CustomizeComboBox.Name, 重置計時器CustomizeComboBox.Location);
-            customizeComponentOriginPosMap.Add(TopMostCustomizeCheckBox.Name, TopMostCustomizeCheckBox.Location);
+            customizeComponentOriginPosMap.Add(TopMostCheckBox.Name, TopMostCheckBox.Location);
             customizeComponentOriginPosMap.Add(WindowsSettingCustomize.Name, WindowsSettingCustomize.Location);
         }
 
@@ -243,7 +237,7 @@ namespace ElsClockStrikes
                 重置計時器Customize按鍵Label.Location = customizeComponentOriginPosMap[重置計時器Customize按鍵Label.Name];
                 重置計時器CustomizeLabel.Location = customizeComponentOriginPosMap[重置計時器CustomizeLabel.Name];
                 重置計時器CustomizeComboBox.Location = customizeComponentOriginPosMap[重置計時器CustomizeComboBox.Name];
-                TopMostCustomizeCheckBox.Location = customizeComponentOriginPosMap[TopMostCustomizeCheckBox.Name];
+                TopMostCheckBox.Location = customizeComponentOriginPosMap[TopMostCheckBox.Name];
                 WindowsSettingCustomize.Location = customizeComponentOriginPosMap[WindowsSettingCustomize.Name];
                 customizeComponentOriginPosMap.Clear();
                 customizeLabelMap.Clear();
@@ -299,8 +293,8 @@ namespace ElsClockStrikes
                 }
                 重置計時器Customize按鍵Label.Location = new Point(labelSign.Location.X, labelSign.Location.Y + KeyLabelAddY);
                 重置計時器CustomizeLabel.Location = new Point(firstCustLabel.Left + firstCustLabel.Width - 重置計時器CustomizeLabel.Width + 27, 重置計時器Customize按鍵Label.Top + 重置計時器Customize按鍵Label.Height - 重置計時器CustomizeLabel.Height - 3);
-                TopMostCustomizeCheckBox.Location = new Point(this.Size.Width / 2 - TopMostCustomizeCheckBox.Width / 2, 重置計時器Customize按鍵Label.Location.Y + KeyLabelAddY);
-                WindowsSettingCustomize.Location = new Point(this.Size.Width / 2 - WindowsSettingCustomize.Width / 2, TopMostCustomizeCheckBox.Location.Y + 40);
+                TopMostCheckBox.Location = new Point(this.Size.Width / 2 - TopMostCheckBox.Width / 2, 重置計時器Customize按鍵Label.Location.Y + KeyLabelAddY);
+                WindowsSettingCustomize.Location = new Point(this.Size.Width / 2 - WindowsSettingCustomize.Width / 2, TopMostCheckBox.Location.Y + 40);
             }
         }
 
