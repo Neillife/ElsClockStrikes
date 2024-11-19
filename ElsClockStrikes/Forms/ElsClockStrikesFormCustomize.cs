@@ -337,14 +337,6 @@ namespace ElsClockStrikes
             {
                 return;
             }
-
-            foreach (Control control in this.TabPageCustomize.Controls)
-            {
-                if (control is GunaButton gunaButton && FormsCustomizeUtils.GetRemoveIndexCharOfStrgin(gunaButton.Name) == FormsConstant.audioPlayerButtonBaseName)
-                {
-                    gunaButton.Visible = !gunaButton.Visible;
-                }
-            }
             this.LoadCustomizeFeatureDefaultSound();
         }
 
@@ -354,6 +346,15 @@ namespace ElsClockStrikes
             {
                 return;
             }
+
+            foreach (Control control in this.TabPageCustomize.Controls)
+            {
+                if (control is GunaButton gunaButton && FormsCustomizeUtils.GetRemoveIndexCharOfStrgin(gunaButton.Name) == FormsConstant.audioPlayerButtonBaseName)
+                {
+                    gunaButton.Visible = !gunaButton.Visible;
+                }
+            }
+ 
             this.LoadCustomizeFeatureDefaultSound();
         }
 
