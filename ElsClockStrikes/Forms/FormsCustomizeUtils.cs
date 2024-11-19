@@ -19,7 +19,8 @@ namespace ElsClockStrikes.Forms
                 FormsConstant.comboBoxBaseName,
                 FormsConstant.textBoxBaseName,
                 FormsConstant.buttonBaseName,
-                FormsConstant.timerBaseName
+                FormsConstant.timerBaseName,
+                FormsConstant.audioPlayerButtonBaseName
             };
 
             foreach (string prefix in prefixes)
@@ -206,6 +207,24 @@ namespace ElsClockStrikes.Forms
             return result;
         }
 
+        public static GunaButton getAudioPlayerButtonByCustomizeIndex(Control parent, int customizeIndex)
+        {
+            GunaButton result = null;
+            foreach (Control control in parent.Controls)
+            {
+                if (control is GunaButton audioPlayerButton)
+                {
+                    if (GetIndexOfString(audioPlayerButton.Name) == customizeIndex.ToString() &&
+                        GetRemoveIndexCharOfStrgin(audioPlayerButton.Name) == FormsConstant.audioPlayerButtonBaseName)
+                    {
+                        result = audioPlayerButton;
+                        break;
+                    }
+                }
+            }
+            return result;
+        }
+
         public static void ProcessComponentLayout(TabPage tabPage, GunaButton gunaButton)
         {
             int currentButtonNameIndex = Int32.Parse(GetIndexOfString(gunaButton.Name));
@@ -227,6 +246,7 @@ namespace ElsClockStrikes.Forms
                     Label customizeMechanicLabel = getLabelByCustomizeIndex(tabPage, FormsConstant.mechanicLabelBaseName, findIndex);
                     GunaLineTextBox gunaLineTextBox = getGunaLineTextBoxByCustomizeIndex(tabPage, findIndex);
                     GunaComboBox gunaComboBox = getGunaComboBoxByCustomizeIndex(tabPage, findIndex);
+                    GunaButton audioPlayerButton = getAudioPlayerButtonByCustomizeIndex(tabPage, findIndex); 
 
                     customizeTimeLeftLabel.Location = new Point(customizeTimeLeftLabel.Location.X, customizeTimeLeftLabel.Location.Y - FormsConstant.ControlLayoutOffset);
                     customizeHotKeyLabel.Location = new Point(customizeHotKeyLabel.Location.X, customizeHotKeyLabel.Location.Y - FormsConstant.ControlLayoutOffset);
@@ -234,6 +254,7 @@ namespace ElsClockStrikes.Forms
                     GButton.Location = new Point(GButton.Location.X, GButton.Location.Y - FormsConstant.ControlLayoutOffset);
                     gunaLineTextBox.Location = new Point(gunaLineTextBox.Location.X, gunaLineTextBox.Location.Y - FormsConstant.ControlLayoutOffset);
                     gunaComboBox.Location = new Point(gunaComboBox.Location.X, gunaComboBox.Location.Y - FormsConstant.ControlLayoutOffset);
+                    audioPlayerButton.Location = new Point(audioPlayerButton.Location.X, audioPlayerButton.Location.Y - FormsConstant.ControlLayoutOffset);
                 }
             }
         }

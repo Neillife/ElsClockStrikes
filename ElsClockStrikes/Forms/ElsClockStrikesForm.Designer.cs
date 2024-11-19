@@ -141,6 +141,10 @@
             this.大黑設定音效Button = new Guna.UI.WinForms.GunaButton();
             this.陰陽陣設定音效Button = new Guna.UI.WinForms.GunaButton();
             this.TabPageCustomize = new System.Windows.Forms.TabPage();
+            this.音效設定CustomizeGroupBox = new System.Windows.Forms.GroupBox();
+            this.關閉音效CustomizeRadioButton = new Guna.UI.WinForms.GunaRadioButton();
+            this.預設音效CustomizeRadioButton = new Guna.UI.WinForms.GunaRadioButton();
+            this.自訂音效CustomizeRadioButton = new Guna.UI.WinForms.GunaRadioButton();
             this.重置計時器Customize按鍵Label = new System.Windows.Forms.Label();
             this.重置計時器CustomizeComboBox = new Guna.UI.WinForms.GunaComboBox();
             this.重置計時器CustomizeLabel = new System.Windows.Forms.Label();
@@ -173,6 +177,7 @@
             this.TabPage156R3.SuspendLayout();
             this.音效設定156R3GroupBox.SuspendLayout();
             this.TabPageCustomize.SuspendLayout();
+            this.音效設定CustomizeGroupBox.SuspendLayout();
             this.TabPageAbout.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -2898,6 +2903,7 @@
             // TabPageCustomize
             // 
             this.TabPageCustomize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.TabPageCustomize.Controls.Add(this.音效設定CustomizeGroupBox);
             this.TabPageCustomize.Controls.Add(this.重置計時器Customize按鍵Label);
             this.TabPageCustomize.Controls.Add(this.重置計時器CustomizeComboBox);
             this.TabPageCustomize.Controls.Add(this.重置計時器CustomizeLabel);
@@ -2913,6 +2919,60 @@
             this.TabPageCustomize.Text = "自定義";
             this.TabPageCustomize.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.TabPageCustomize_ControlAdded);
             this.TabPageCustomize.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.TabPageCustomize_ControlRemoved);
+            // 
+            // 音效設定CustomizeGroupBox
+            // 
+            this.音效設定CustomizeGroupBox.Controls.Add(this.關閉音效CustomizeRadioButton);
+            this.音效設定CustomizeGroupBox.Controls.Add(this.預設音效CustomizeRadioButton);
+            this.音效設定CustomizeGroupBox.Controls.Add(this.自訂音效CustomizeRadioButton);
+            this.音效設定CustomizeGroupBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.音效設定CustomizeGroupBox.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.音效設定CustomizeGroupBox.Location = new System.Drawing.Point(115, 441);
+            this.音效設定CustomizeGroupBox.Name = "音效設定CustomizeGroupBox";
+            this.音效設定CustomizeGroupBox.Size = new System.Drawing.Size(304, 50);
+            this.音效設定CustomizeGroupBox.TabIndex = 184;
+            this.音效設定CustomizeGroupBox.TabStop = false;
+            this.音效設定CustomizeGroupBox.Text = "計時器音效設定";
+            // 
+            // 關閉音效CustomizeRadioButton
+            // 
+            this.關閉音效CustomizeRadioButton.BaseColor = System.Drawing.SystemColors.Control;
+            this.關閉音效CustomizeRadioButton.CheckedOffColor = System.Drawing.Color.Gray;
+            this.關閉音效CustomizeRadioButton.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.關閉音效CustomizeRadioButton.FillColor = System.Drawing.Color.White;
+            this.關閉音效CustomizeRadioButton.Location = new System.Drawing.Point(228, 20);
+            this.關閉音效CustomizeRadioButton.Name = "關閉音效CustomizeRadioButton";
+            this.關閉音效CustomizeRadioButton.Size = new System.Drawing.Size(55, 20);
+            this.關閉音效CustomizeRadioButton.TabIndex = 79;
+            this.關閉音效CustomizeRadioButton.Text = "關閉";
+            this.關閉音效CustomizeRadioButton.CheckedChanged += new System.EventHandler(this.關閉音效CustomizeRadioButton_CheckedChanged);
+            // 
+            // 預設音效CustomizeRadioButton
+            // 
+            this.預設音效CustomizeRadioButton.BaseColor = System.Drawing.SystemColors.Control;
+            this.預設音效CustomizeRadioButton.Checked = true;
+            this.預設音效CustomizeRadioButton.CheckedOffColor = System.Drawing.Color.Gray;
+            this.預設音效CustomizeRadioButton.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.預設音效CustomizeRadioButton.FillColor = System.Drawing.Color.White;
+            this.預設音效CustomizeRadioButton.Location = new System.Drawing.Point(20, 20);
+            this.預設音效CustomizeRadioButton.Name = "預設音效CustomizeRadioButton";
+            this.預設音效CustomizeRadioButton.Size = new System.Drawing.Size(55, 20);
+            this.預設音效CustomizeRadioButton.TabIndex = 77;
+            this.預設音效CustomizeRadioButton.Text = "預設";
+            this.預設音效CustomizeRadioButton.CheckedChanged += new System.EventHandler(this.預設音效CustomizeRadioButton_CheckedChanged);
+            // 
+            // 自訂音效CustomizeRadioButton
+            // 
+            this.自訂音效CustomizeRadioButton.BaseColor = System.Drawing.SystemColors.Control;
+            this.自訂音效CustomizeRadioButton.CheckedOffColor = System.Drawing.Color.Gray;
+            this.自訂音效CustomizeRadioButton.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.自訂音效CustomizeRadioButton.FillColor = System.Drawing.Color.White;
+            this.自訂音效CustomizeRadioButton.Location = new System.Drawing.Point(124, 20);
+            this.自訂音效CustomizeRadioButton.Name = "自訂音效CustomizeRadioButton";
+            this.自訂音效CustomizeRadioButton.Size = new System.Drawing.Size(55, 20);
+            this.自訂音效CustomizeRadioButton.TabIndex = 78;
+            this.自訂音效CustomizeRadioButton.Text = "自訂";
+            this.自訂音效CustomizeRadioButton.CheckedChanged += new System.EventHandler(this.自訂音效CustomizeRadioButton_CheckedChanged);
             // 
             // 重置計時器Customize按鍵Label
             // 
@@ -3028,14 +3088,14 @@
             this.WindowsSettingCustomize.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.WindowsSettingCustomize.Image = null;
             this.WindowsSettingCustomize.ImageSize = new System.Drawing.Size(24, 24);
-            this.WindowsSettingCustomize.Location = new System.Drawing.Point(273, 382);
+            this.WindowsSettingCustomize.Location = new System.Drawing.Point(323, 382);
             this.WindowsSettingCustomize.Name = "WindowsSettingCustomize";
             this.WindowsSettingCustomize.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.WindowsSettingCustomize.OnHoverBorderColor = System.Drawing.Color.Black;
             this.WindowsSettingCustomize.OnHoverForeColor = System.Drawing.Color.White;
             this.WindowsSettingCustomize.OnHoverImage = null;
             this.WindowsSettingCustomize.OnPressedColor = System.Drawing.Color.Black;
-            this.WindowsSettingCustomize.Size = new System.Drawing.Size(150, 42);
+            this.WindowsSettingCustomize.Size = new System.Drawing.Size(100, 42);
             this.WindowsSettingCustomize.TabIndex = 157;
             this.WindowsSettingCustomize.Text = "設定完成";
             this.WindowsSettingCustomize.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3070,14 +3130,14 @@
             this.AddCustomizeTimer.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.AddCustomizeTimer.Image = null;
             this.AddCustomizeTimer.ImageSize = new System.Drawing.Size(24, 24);
-            this.AddCustomizeTimer.Location = new System.Drawing.Point(112, 441);
+            this.AddCustomizeTimer.Location = new System.Drawing.Point(213, 382);
             this.AddCustomizeTimer.Name = "AddCustomizeTimer";
             this.AddCustomizeTimer.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(85)))), ((int)(((byte)(205)))));
             this.AddCustomizeTimer.OnHoverBorderColor = System.Drawing.Color.Black;
             this.AddCustomizeTimer.OnHoverForeColor = System.Drawing.Color.White;
             this.AddCustomizeTimer.OnHoverImage = null;
             this.AddCustomizeTimer.OnPressedColor = System.Drawing.Color.Black;
-            this.AddCustomizeTimer.Size = new System.Drawing.Size(311, 42);
+            this.AddCustomizeTimer.Size = new System.Drawing.Size(100, 42);
             this.AddCustomizeTimer.TabIndex = 92;
             this.AddCustomizeTimer.Text = "新增計時器";
             this.AddCustomizeTimer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3295,6 +3355,8 @@
             this.音效設定156R3GroupBox.PerformLayout();
             this.TabPageCustomize.ResumeLayout(false);
             this.TabPageCustomize.PerformLayout();
+            this.音效設定CustomizeGroupBox.ResumeLayout(false);
+            this.音效設定CustomizeGroupBox.PerformLayout();
             this.TabPageAbout.ResumeLayout(false);
             this.TabPageAbout.PerformLayout();
             this.ResumeLayout(false);
@@ -3438,6 +3500,10 @@
         private System.Windows.Forms.Label 重置計時器Customize按鍵Label;
         private Guna.UI.WinForms.GunaComboBox 重置計時器CustomizeComboBox;
         private System.Windows.Forms.Label 重置計時器CustomizeLabel;
+        private System.Windows.Forms.GroupBox 音效設定CustomizeGroupBox;
+        private Guna.UI.WinForms.GunaRadioButton 關閉音效CustomizeRadioButton;
+        private Guna.UI.WinForms.GunaRadioButton 預設音效CustomizeRadioButton;
+        private Guna.UI.WinForms.GunaRadioButton 自訂音效CustomizeRadioButton;
     }
 }
 

@@ -31,6 +31,7 @@ namespace ElsClockStrikes
                     {
                         ProcessWindowsSizeWithLayout(false);
                         ProcessResetComponent(false);
+                        ProcessSoundSettingCustomizeGroupBox(false);
                     }
                     else
                     {
@@ -48,6 +49,7 @@ namespace ElsClockStrikes
                 if (重置計時器CustomizeComboBox.Location.Y > FormsConstant.LayoutSign)
                 {
                     ProcessWindowsSizeWithLayout(true);
+                    ProcessSoundSettingCustomizeGroupBox(true);
                 }
             }
         }
@@ -74,10 +76,23 @@ namespace ElsClockStrikes
                                               .RegisterStrategy(new ComboBoxStrategy())
                                               .RegisterStrategy(new LineTextBoxStrategy())
                                               .RegisterStrategy(new RemoveButtonStrategy())
-                                              .RegisterStrategy(new CustomizeTaskTimerStrategy());
+                                              .RegisterStrategy(new CustomizeTaskTimerStrategy())
+                                              .RegisterStrategy(new AudioPlayerButtonStrategy());
                         controlStrategyManager.ExecuteAll();
                     }
                 }
+            }
+        }
+
+        private void ProcessSoundSettingCustomizeGroupBox(bool isAdd)
+        {
+            if (isAdd)
+            {
+                音效設定CustomizeGroupBox.Location = new Point(音效設定CustomizeGroupBox.Location.X, 音效設定CustomizeGroupBox.Location.Y + FormsConstant.ControlLayoutOffset);
+            }
+            else
+            {
+                音效設定CustomizeGroupBox.Location = new Point(音效設定CustomizeGroupBox.Location.X, 音效設定CustomizeGroupBox.Location.Y - FormsConstant.ControlLayoutOffset);
             }
         }
 
@@ -85,15 +100,15 @@ namespace ElsClockStrikes
         {
             if (idAdd)
             {
-                重置計時器CustomizeLabel.Location = new Point(重置計時器CustomizeLabel.Location.X, 重置計時器CustomizeLabel.Location.Y + 72);
-                重置計時器Customize按鍵Label.Location = new Point(重置計時器Customize按鍵Label.Location.X, 重置計時器Customize按鍵Label.Location.Y + 72);
-                重置計時器CustomizeComboBox.Location = new Point(重置計時器CustomizeComboBox.Location.X, 重置計時器CustomizeComboBox.Location.Y + 72);
+                重置計時器CustomizeLabel.Location = new Point(重置計時器CustomizeLabel.Location.X, 重置計時器CustomizeLabel.Location.Y + FormsConstant.ControlLayoutOffset);
+                重置計時器Customize按鍵Label.Location = new Point(重置計時器Customize按鍵Label.Location.X, 重置計時器Customize按鍵Label.Location.Y + FormsConstant.ControlLayoutOffset);
+                重置計時器CustomizeComboBox.Location = new Point(重置計時器CustomizeComboBox.Location.X, 重置計時器CustomizeComboBox.Location.Y + FormsConstant.ControlLayoutOffset);
             }
             else
             {
-                重置計時器CustomizeLabel.Location = new Point(重置計時器CustomizeLabel.Location.X, 重置計時器CustomizeLabel.Location.Y - 72);
-                重置計時器Customize按鍵Label.Location = new Point(重置計時器Customize按鍵Label.Location.X, 重置計時器Customize按鍵Label.Location.Y - 72);
-                重置計時器CustomizeComboBox.Location = new Point(重置計時器CustomizeComboBox.Location.X, 重置計時器CustomizeComboBox.Location.Y - 72);
+                重置計時器CustomizeLabel.Location = new Point(重置計時器CustomizeLabel.Location.X, 重置計時器CustomizeLabel.Location.Y - FormsConstant.ControlLayoutOffset);
+                重置計時器Customize按鍵Label.Location = new Point(重置計時器Customize按鍵Label.Location.X, 重置計時器Customize按鍵Label.Location.Y - FormsConstant.ControlLayoutOffset);
+                重置計時器CustomizeComboBox.Location = new Point(重置計時器CustomizeComboBox.Location.X, 重置計時器CustomizeComboBox.Location.Y - FormsConstant.ControlLayoutOffset);
             }
         }
 
@@ -311,6 +326,53 @@ namespace ElsClockStrikes
                 WindowsSettingCustomize.Text = "設定完成";
                 this.ProcessRegisterHotKeyCustomize(true);
                 this.ProcessWindowsSettingCustomize(true);
+            }
+        }
+
+        private void LoadCustomizeFeatureDefaultSound()
+        {
+            foreach (CustomizeTaskTimer customizeTaskTimer in customizeTaskTimerList)
+            {
+                customizeTaskTimer.setAudioPlayer(new AudioPlayer(Properties.Resources.荊棘延遲翻桌陰陽陣DefultSound));
+            }
+        }
+
+        private void 預設音效CustomizeRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!customizeTaskTimerList.Any())
+            {
+                return;
+            }
+
+            foreach (Control control in this.TabPageCustomize.Controls)
+            {
+                if (control is GunaButton gunaButton && FormsCustomizeUtils.GetRemoveIndexCharOfStrgin(gunaButton.Name) == FormsConstant.audioPlayerButtonBaseName)
+                {
+                    gunaButton.Visible = !gunaButton.Visible;
+                }
+            }
+            this.LoadCustomizeFeatureDefaultSound();
+        }
+
+        private void 自訂音效CustomizeRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!customizeTaskTimerList.Any())
+            {
+                return;
+            }
+            this.LoadCustomizeFeatureDefaultSound();
+        }
+
+        private void 關閉音效CustomizeRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!customizeTaskTimerList.Any())
+            {
+                return;
+            }
+
+            foreach (CustomizeTaskTimer customizeTaskTimer in customizeTaskTimerList)
+            {
+                customizeTaskTimer.setAudioPlayer(null);
             }
         }
     }
