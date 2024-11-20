@@ -181,6 +181,7 @@
     <Content Include="DllImport\MetroSuite 2.0.dll" />
     <Content Include="DllImport\Siticone.UI.dll" />
     <Content Include="hg.ico" />
+    <Content Include="Resources\setimg.png" />
     <Content Include="Resources\小荊棘大招大黑DefultSound.wav" />
     <Content Include="Resources\控場DefultSound.wav" />
     <Content Include="Resources\荊棘延遲翻桌陰陽陣DefultSound.wav" />
