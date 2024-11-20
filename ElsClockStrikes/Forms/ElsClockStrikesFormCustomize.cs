@@ -18,6 +18,7 @@ namespace ElsClockStrikes
         private HotKeyManagerForCustomize hotKeyManagerForCustomize;
         private Size CustomizeTabWinFormsSize;
         private Size CustomizeMetroTabControlVS1Size;
+        private Size CustomizeWindowsSettingButtonOriginSize;
         private Point CustomizeTabCopyrightTagLabelPos;
         private Point CustomizeTopMostCheckBoxPos;
 
@@ -89,11 +90,11 @@ namespace ElsClockStrikes
         {
             if (isAdd)
             {
-                音效設定CustomizeGroupBox.Location = new Point(音效設定CustomizeGroupBox.Location.X, 音效設定CustomizeGroupBox.Location.Y + FormsConstant.ControlLayoutOffset);
+                音效設定CustomizeGroupBox.Location = new Point(音效設定CustomizeGroupBox.Location.X, 音效設定CustomizeGroupBox.Location.Y + FormsConstant.FormSizeOffset);
             }
             else
             {
-                音效設定CustomizeGroupBox.Location = new Point(音效設定CustomizeGroupBox.Location.X, 音效設定CustomizeGroupBox.Location.Y - FormsConstant.ControlLayoutOffset);
+                音效設定CustomizeGroupBox.Location = new Point(音效設定CustomizeGroupBox.Location.X, 音效設定CustomizeGroupBox.Location.Y - FormsConstant.FormSizeOffset);
             }
         }
 
@@ -187,8 +188,8 @@ namespace ElsClockStrikes
                 this.Controls.Add(WindowsSettingCustomize);
             }
 
-            this.Size = isBackToOriginCheck ? CustomizeTabWinFormsSize : 
-                new Size(180, 150 + ((customizeLabelMap.Count / 3 == 4) ? customizeLabelMap.Count / 3 * 45 : customizeLabelMap.Count / 3 * 42));
+            this.Size = isBackToOriginCheck ? CustomizeTabWinFormsSize : new Size(180, customizeLabelMap.Count / 3 * 39 + 69);
+            TopMostCheckBox.Visible = !TopMostCheckBox.Visible;
             this.ProcessComponentLocation(isBackToOriginCheck);
         }
 
@@ -212,7 +213,6 @@ namespace ElsClockStrikes
             customizeComponentOriginPosMap.Add(重置計時器Customize按鍵Label.Name, 重置計時器Customize按鍵Label.Location);
             customizeComponentOriginPosMap.Add(重置計時器CustomizeLabel.Name, 重置計時器CustomizeLabel.Location);
             customizeComponentOriginPosMap.Add(重置計時器CustomizeComboBox.Name, 重置計時器CustomizeComboBox.Location);
-            customizeComponentOriginPosMap.Add(TopMostCheckBox.Name, TopMostCheckBox.Location);
             customizeComponentOriginPosMap.Add(WindowsSettingCustomize.Name, WindowsSettingCustomize.Location);
         }
 
@@ -237,7 +237,6 @@ namespace ElsClockStrikes
                 重置計時器Customize按鍵Label.Location = customizeComponentOriginPosMap[重置計時器Customize按鍵Label.Name];
                 重置計時器CustomizeLabel.Location = customizeComponentOriginPosMap[重置計時器CustomizeLabel.Name];
                 重置計時器CustomizeComboBox.Location = customizeComponentOriginPosMap[重置計時器CustomizeComboBox.Name];
-                TopMostCheckBox.Location = customizeComponentOriginPosMap[TopMostCheckBox.Name];
                 WindowsSettingCustomize.Location = customizeComponentOriginPosMap[WindowsSettingCustomize.Name];
                 customizeComponentOriginPosMap.Clear();
                 customizeLabelMap.Clear();
@@ -293,8 +292,7 @@ namespace ElsClockStrikes
                 }
                 重置計時器Customize按鍵Label.Location = new Point(labelSign.Location.X, labelSign.Location.Y + KeyLabelAddY);
                 重置計時器CustomizeLabel.Location = new Point(firstCustLabel.Left + firstCustLabel.Width - 重置計時器CustomizeLabel.Width + 27, 重置計時器Customize按鍵Label.Top + 重置計時器Customize按鍵Label.Height - 重置計時器CustomizeLabel.Height - 3);
-                TopMostCheckBox.Location = new Point(this.Size.Width / 2 - TopMostCheckBox.Width / 2, 重置計時器Customize按鍵Label.Location.Y + KeyLabelAddY);
-                WindowsSettingCustomize.Location = new Point(this.Size.Width / 2 - WindowsSettingCustomize.Width / 2, TopMostCheckBox.Location.Y + 40);
+                WindowsSettingCustomize.Location = new Point(130, 5);
             }
         }
 
@@ -307,9 +305,11 @@ namespace ElsClockStrikes
 
             if (WindowsSettingCustomize.Text.Equals("設定完成"))
             {
-                WindowsSettingCustomize.BaseColor = Color.FromArgb(65, 105, 225);
-                WindowsSettingCustomize.OnHoverBaseColor = Color.FromArgb(45, 85, 205);
-                WindowsSettingCustomize.Text = "調整設定";
+                WindowsSettingCustomize.BaseColor = Color.FromArgb(40, 40, 40);
+                WindowsSettingCustomize.OnHoverBaseColor = Color.FromArgb(120, 120, 120);
+                WindowsSettingCustomize.Text = "";
+                WindowsSettingCustomize.Image = Properties.Resources.setimg;
+                WindowsSettingCustomize.Size = new Size(43, 25);
                 this.ProcessRegisterHotKeyCustomize(false);
                 this.ProcessWindowsSettingCustomize(false);
             }
@@ -318,6 +318,8 @@ namespace ElsClockStrikes
                 WindowsSettingCustomize.BaseColor = Color.FromArgb(184, 44, 44);
                 WindowsSettingCustomize.OnHoverBaseColor = Color.FromArgb(150, 20, 20);
                 WindowsSettingCustomize.Text = "設定完成";
+                WindowsSettingCustomize.Image = null;
+                WindowsSettingCustomize.Size = CustomizeWindowsSettingButtonOriginSize;
                 this.ProcessRegisterHotKeyCustomize(true);
                 this.ProcessWindowsSettingCustomize(true);
             }

@@ -20,6 +20,7 @@ namespace ElsClockStrikes
         private Point CopyrightTagLabelOriginPos;
         private Size WindowsOriginSize;
         private Size metroTabControlVS1OriginSize;
+        private Size WindowsSettingButtonOriginSize;
         private AudioPlayer 小荊棘TimeupAudioPlayer;
         private AudioPlayer 雷射TimeupAudioPlayer;
         private AudioPlayer 荊棘延遲TimeupAudioPlayer;
@@ -51,6 +52,8 @@ namespace ElsClockStrikes
             CustomizeTabWinFormsSize = this.Size;
             metroTabControlVS1OriginSize = this.metroTabControlVS1.Size;
             CustomizeMetroTabControlVS1Size = this.metroTabControlVS1.Size;
+            WindowsSettingButtonOriginSize = this.WindowsSetting.Size;
+            CustomizeWindowsSettingButtonOriginSize = this.WindowsSettingCustomize.Size;
 
             大招LabelOriginPos = 大招Label.Location;
             大刺LabelOriginPos = 大刺Label.Location;
@@ -273,7 +276,7 @@ namespace ElsClockStrikes
                 this.Controls.Add(WindowsSetting);
             }
 
-            this.Size = isBackToOriginCheck ? WindowsOriginSize : new Size(180, 330);
+            this.Size = isBackToOriginCheck ? WindowsOriginSize : new Size(180, 225);
 
             int MaxLabelWidth = FormsUtils.GetLabelMaxWidth(this);
             int KeyLabelAddY = 40;
@@ -295,8 +298,8 @@ namespace ElsClockStrikes
 
             重置計時器按鍵Label.Location = new Point(控場按鍵Label.Location.X, 控場按鍵Label.Location.Y + KeyLabelAddY);
             重置計時器Label.Location = isBackToOriginCheck ? 重置計時器LabelOriginPos : new Point(小荊棘Label.Left + 小荊棘Label.Width - 重置計時器Label.Width + 27, 重置計時器按鍵Label.Top + 重置計時器按鍵Label.Height - 重置計時器Label.Height - 3);
-            TopMostCheckBox.Location = isBackToOriginCheck ? TopMostCheckBoxOriginPos : new Point(this.Size.Width / 2 - TopMostCheckBox.Width / 2, 重置計時器按鍵Label.Location.Y + KeyLabelAddY);
-            WindowsSetting.Location = isBackToOriginCheck ? WindowsSettingOriginPos : new Point(this.Size.Width / 2 - WindowsSetting.Width / 2, TopMostCheckBox.Location.Y + KeyLabelAddY);
+            TopMostCheckBox.Visible = !TopMostCheckBox.Visible;
+            WindowsSetting.Location = isBackToOriginCheck ? WindowsSettingOriginPos : new Point(130, 5);
 
             小荊棘按鍵Label.Text = FormsUtils.ProcessLayoutString(小荊棘ComboBox.Text);
             雷射按鍵Label.Text = FormsUtils.ProcessLayoutString(雷射ComboBox.Text);
@@ -325,9 +328,11 @@ namespace ElsClockStrikes
         {
             if (WindowsSetting.Text.Equals("設定完成"))
             {
-                WindowsSetting.BaseColor = Color.FromArgb(65, 105, 225);
-                WindowsSetting.OnHoverBaseColor = Color.FromArgb(45, 85, 205);
-                WindowsSetting.Text = "調整設定";
+                WindowsSetting.BaseColor = Color.FromArgb(40, 40, 40);
+                WindowsSetting.OnHoverBaseColor = Color.FromArgb(120, 120, 120);
+                WindowsSetting.Text = "";
+                WindowsSetting.Image = Properties.Resources.setimg;
+                WindowsSetting.Size = new Size(43, 25);
                 this.ProcessRegisterHotKey(false);
                 this.ProcessWindowsSetting(false);
                 FormsConstant.init127Timer(小荊棘TextBox.Text, 雷射TextBox.Text, 荊棘延遲TextBox.Text, 控場TextBox.Text);
@@ -336,6 +341,8 @@ namespace ElsClockStrikes
                 WindowsSetting.BaseColor = Color.FromArgb(184, 44, 44);
                 WindowsSetting.OnHoverBaseColor = Color.FromArgb(150, 20, 20);
                 WindowsSetting.Text = "設定完成";
+                WindowsSetting.Image = null;
+                WindowsSetting.Size = WindowsSettingButtonOriginSize;
                 this.ProcessRegisterHotKey(true);
                 this.ProcessWindowsSetting(true);
             }

@@ -239,7 +239,7 @@ namespace ElsClockStrikes
                 this.Controls.Add(WindowsSetting156R3);
             }
 
-            this.Size = isBackToOriginCheck ? WindowsOriginSize : new Size(180, 330);
+            this.Size = isBackToOriginCheck ? WindowsOriginSize : new Size(180, 225);
 
             int MaxLabelWidth = FormsUtils.GetLabelMaxWidth(this);
             int KeyLabelAddY = 40;
@@ -261,8 +261,8 @@ namespace ElsClockStrikes
 
             重置計時器156R3按鍵Label.Location = new Point(R3156控場按鍵Label.Location.X, R3156控場按鍵Label.Location.Y + KeyLabelAddY);
             重置計時器156R3Label.Location = isBackToOriginCheck ? 重置計時器LabelOriginPos : new Point(大黑Label.Left + 大黑Label.Width - 重置計時器156R3Label.Width + 27, 重置計時器156R3按鍵Label.Top + 重置計時器156R3按鍵Label.Height - 重置計時器156R3Label.Height - 3); ;
-            TopMostCheckBox.Location = isBackToOriginCheck ? TopMostCheckBoxOriginPos : new Point(this.Size.Width / 2 - TopMostCheckBox.Width / 2, 重置計時器156R3按鍵Label.Location.Y + KeyLabelAddY);
-            WindowsSetting156R3.Location = isBackToOriginCheck ? WindowsSettingOriginPos : new Point(this.Size.Width / 2 - WindowsSetting156R3.Width / 2, TopMostCheckBox.Location.Y + KeyLabelAddY);
+            TopMostCheckBox.Visible = !TopMostCheckBox.Visible;
+            WindowsSetting156R3.Location = isBackToOriginCheck ? WindowsSettingOriginPos : new Point(130, 5);
 
             大黑按鍵Label.Text = FormsUtils.ProcessLayoutString(大黑ComboBox.Text);
             陰陽陣按鍵Label.Text = FormsUtils.ProcessLayoutString(陰陽陣ComboBox.Text);
@@ -327,9 +327,11 @@ namespace ElsClockStrikes
         {
             if (WindowsSetting156R3.Text.Equals("設定完成"))
             {
-                WindowsSetting156R3.BaseColor = Color.FromArgb(65, 105, 225);
-                WindowsSetting156R3.OnHoverBaseColor = Color.FromArgb(45, 85, 205);
-                WindowsSetting156R3.Text = "調整設定";
+                WindowsSetting156R3.BaseColor = Color.FromArgb(40, 40, 40);
+                WindowsSetting156R3.OnHoverBaseColor = Color.FromArgb(120, 120, 120);
+                WindowsSetting156R3.Text = "";
+                WindowsSetting156R3.Image = Properties.Resources.setimg;
+                WindowsSetting156R3.Size = new Size(43, 25);
                 this.ProcessRegisterHotKey156R3(false);
                 this.ProcessWindowsSetting156R3(false);
                 FormsConstant.init156R3Timer(大黑TextBox.Text, 陰陽陣TextBox.Text, 三連TextBox.Text, R3156控場TextBox.Text);
@@ -339,6 +341,8 @@ namespace ElsClockStrikes
                 WindowsSetting156R3.BaseColor = Color.FromArgb(184, 44, 44);
                 WindowsSetting156R3.OnHoverBaseColor = Color.FromArgb(150, 20, 20);
                 WindowsSetting156R3.Text = "設定完成";
+                WindowsSetting156R3.Image = null;
+                WindowsSetting156R3.Size = WindowsSettingButtonOriginSize;
                 this.ProcessRegisterHotKey156R3(true);
                 this.ProcessWindowsSetting156R3(true);
                 InitFirstStart陰陽陣();
