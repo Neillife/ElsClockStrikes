@@ -50,6 +50,7 @@ namespace ElsClockStrikes
         {
             IniManager iniManager = new IniManager();
             TopMostCheckBox.Checked = iniManager.GetBoolValue(FormsConstant.configGlobalSectionName, topMostStr);
+            AutoLoadCheckBox.Checked = iniManager.GetBoolValue(FormsConstant.configGlobalSectionName, autoLoadStr);
             this.LoadConfig127R3(iniManager);
             this.LoadConfig156R1(iniManager);
             this.LoadConfig156R3(iniManager);
