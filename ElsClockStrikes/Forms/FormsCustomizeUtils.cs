@@ -40,6 +40,29 @@ namespace ElsClockStrikes.Forms
             return new string(name.Where(char.IsDigit).ToArray());
         }
 
+        public static void ProcessLoadConfigRemoveComponent(TabPage tabPage)
+        {
+            List<Control> removeControl = new List<Control>();
+            foreach (Control control in tabPage.Controls)
+            {
+                if (GetRemoveIndexCharOfStrgin(control.Name) == FormsConstant.timeLeftLabelBaseName ||
+                    GetRemoveIndexCharOfStrgin(control.Name) == FormsConstant.hotKeyLabelBaseName ||
+                    GetRemoveIndexCharOfStrgin(control.Name) == FormsConstant.mechanicLabelBaseName ||
+                    GetRemoveIndexCharOfStrgin(control.Name) == FormsConstant.comboBoxBaseName ||
+                    GetRemoveIndexCharOfStrgin(control.Name) == FormsConstant.textBoxBaseName ||
+                    GetRemoveIndexCharOfStrgin(control.Name) == FormsConstant.buttonBaseName ||
+                    GetRemoveIndexCharOfStrgin(control.Name) == FormsConstant.timerBaseName ||
+                    GetRemoveIndexCharOfStrgin(control.Name) == FormsConstant.audioPlayerButtonBaseName)
+                {
+                    removeControl.Add(control);
+                }
+            }
+            foreach (Control control in removeControl)
+            {
+                tabPage.Controls.Remove(control);
+            }
+        }
+
         public static void ProcessComponentDisplaySettings(TabPage tabPage, bool isBackToOriginCheck)
         {
             List<Label> labels = new List<Label>();

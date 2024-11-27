@@ -148,6 +148,11 @@
             this.重置計時器CustomizeLabel = new System.Windows.Forms.Label();
             this.WindowsSettingCustomize = new Guna.UI.WinForms.GunaButton();
             this.AddCustomizeTimer = new Guna.UI.WinForms.GunaButton();
+            this.TabPageConfig = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.AutoLoadCheckBox = new Guna.UI.WinForms.GunaCheckBox();
+            this.SaveSettingButton = new Guna.UI.WinForms.GunaButton();
+            this.LoadSettingButton = new Guna.UI.WinForms.GunaButton();
             this.TabPageAbout = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -175,6 +180,7 @@
             this.音效設定156R3GroupBox.SuspendLayout();
             this.TabPageCustomize.SuspendLayout();
             this.音效設定CustomizeGroupBox.SuspendLayout();
+            this.TabPageConfig.SuspendLayout();
             this.TabPageAbout.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -1095,6 +1101,7 @@
             this.metroTabControlVS1.Controls.Add(this.TabPage156R1);
             this.metroTabControlVS1.Controls.Add(this.TabPage156R3);
             this.metroTabControlVS1.Controls.Add(this.TabPageCustomize);
+            this.metroTabControlVS1.Controls.Add(this.TabPageConfig);
             this.metroTabControlVS1.Controls.Add(this.TabPageAbout);
             this.metroTabControlVS1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.metroTabControlVS1.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -3108,6 +3115,99 @@
             this.AddCustomizeTimer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.AddCustomizeTimer.Click += new System.EventHandler(this.AddCustomizeTimer_Click);
             // 
+            // TabPageConfig
+            // 
+            this.TabPageConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.TabPageConfig.Controls.Add(this.label1);
+            this.TabPageConfig.Controls.Add(this.AutoLoadCheckBox);
+            this.TabPageConfig.Controls.Add(this.SaveSettingButton);
+            this.TabPageConfig.Controls.Add(this.LoadSettingButton);
+            this.TabPageConfig.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.TabPageConfig.Location = new System.Drawing.Point(4, 20);
+            this.TabPageConfig.Name = "TabPageConfig";
+            this.TabPageConfig.Padding = new System.Windows.Forms.Padding(3);
+            this.TabPageConfig.Size = new System.Drawing.Size(534, 509);
+            this.TabPageConfig.TabIndex = 5;
+            this.TabPageConfig.Text = "存取";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(5, 72);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(532, 21);
+            this.label1.TabIndex = 160;
+            this.label1.Text = "需要開啟程式自動讀取設定，請勾選「啟動時自動讀取」並保存。";
+            // 
+            // AutoLoadCheckBox
+            // 
+            this.AutoLoadCheckBox.BaseColor = System.Drawing.Color.White;
+            this.AutoLoadCheckBox.CheckedOffColor = System.Drawing.Color.Gray;
+            this.AutoLoadCheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.AutoLoadCheckBox.FillColor = System.Drawing.Color.White;
+            this.AutoLoadCheckBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AutoLoadCheckBox.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.AutoLoadCheckBox.Location = new System.Drawing.Point(190, 157);
+            this.AutoLoadCheckBox.Name = "AutoLoadCheckBox";
+            this.AutoLoadCheckBox.Size = new System.Drawing.Size(152, 25);
+            this.AutoLoadCheckBox.TabIndex = 159;
+            this.AutoLoadCheckBox.Text = "啟動時自動讀取";
+            // 
+            // SaveSettingButton
+            // 
+            this.SaveSettingButton.Animated = true;
+            this.SaveSettingButton.AnimationHoverSpeed = 0.07F;
+            this.SaveSettingButton.AnimationSpeed = 0.03F;
+            this.SaveSettingButton.BackColor = System.Drawing.Color.Transparent;
+            this.SaveSettingButton.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.SaveSettingButton.BorderColor = System.Drawing.Color.Transparent;
+            this.SaveSettingButton.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.SaveSettingButton.FocusedColor = System.Drawing.Color.Empty;
+            this.SaveSettingButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.SaveSettingButton.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.SaveSettingButton.Image = null;
+            this.SaveSettingButton.ImageSize = new System.Drawing.Size(24, 24);
+            this.SaveSettingButton.Location = new System.Drawing.Point(192, 394);
+            this.SaveSettingButton.Name = "SaveSettingButton";
+            this.SaveSettingButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.SaveSettingButton.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.SaveSettingButton.OnHoverForeColor = System.Drawing.Color.White;
+            this.SaveSettingButton.OnHoverImage = null;
+            this.SaveSettingButton.OnPressedColor = System.Drawing.Color.Black;
+            this.SaveSettingButton.Size = new System.Drawing.Size(150, 42);
+            this.SaveSettingButton.TabIndex = 158;
+            this.SaveSettingButton.Text = "保存設定";
+            this.SaveSettingButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.SaveSettingButton.Click += new System.EventHandler(this.SaveSettingButton_Click);
+            // 
+            // LoadSettingButton
+            // 
+            this.LoadSettingButton.Animated = true;
+            this.LoadSettingButton.AnimationHoverSpeed = 0.07F;
+            this.LoadSettingButton.AnimationSpeed = 0.03F;
+            this.LoadSettingButton.BackColor = System.Drawing.Color.Transparent;
+            this.LoadSettingButton.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(149)))), ((int)(((byte)(180)))));
+            this.LoadSettingButton.BorderColor = System.Drawing.Color.Transparent;
+            this.LoadSettingButton.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.LoadSettingButton.FocusedColor = System.Drawing.Color.Empty;
+            this.LoadSettingButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.LoadSettingButton.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.LoadSettingButton.Image = null;
+            this.LoadSettingButton.ImageSize = new System.Drawing.Size(24, 24);
+            this.LoadSettingButton.Location = new System.Drawing.Point(192, 267);
+            this.LoadSettingButton.Name = "LoadSettingButton";
+            this.LoadSettingButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(120)))), ((int)(((byte)(170)))));
+            this.LoadSettingButton.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.LoadSettingButton.OnHoverForeColor = System.Drawing.Color.White;
+            this.LoadSettingButton.OnHoverImage = null;
+            this.LoadSettingButton.OnPressedColor = System.Drawing.Color.Black;
+            this.LoadSettingButton.Size = new System.Drawing.Size(150, 42);
+            this.LoadSettingButton.TabIndex = 157;
+            this.LoadSettingButton.Text = "讀取設定";
+            this.LoadSettingButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.LoadSettingButton.Click += new System.EventHandler(this.LoadSettingButton_Click);
+            // 
             // TabPageAbout
             // 
             this.TabPageAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
@@ -3322,6 +3422,8 @@
             this.TabPageCustomize.PerformLayout();
             this.音效設定CustomizeGroupBox.ResumeLayout(false);
             this.音效設定CustomizeGroupBox.PerformLayout();
+            this.TabPageConfig.ResumeLayout(false);
+            this.TabPageConfig.PerformLayout();
             this.TabPageAbout.ResumeLayout(false);
             this.TabPageAbout.PerformLayout();
             this.ResumeLayout(false);
@@ -3466,6 +3568,11 @@
         private Guna.UI.WinForms.GunaRadioButton 關閉音效CustomizeRadioButton;
         private Guna.UI.WinForms.GunaRadioButton 預設音效CustomizeRadioButton;
         private Guna.UI.WinForms.GunaRadioButton 自訂音效CustomizeRadioButton;
+        private System.Windows.Forms.TabPage TabPageConfig;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI.WinForms.GunaCheckBox AutoLoadCheckBox;
+        private Guna.UI.WinForms.GunaButton SaveSettingButton;
+        private Guna.UI.WinForms.GunaButton LoadSettingButton;
     }
 }
 

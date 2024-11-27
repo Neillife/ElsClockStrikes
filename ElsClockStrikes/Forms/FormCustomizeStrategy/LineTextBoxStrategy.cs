@@ -6,6 +6,13 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
 {
     public class LineTextBoxStrategy : BaseControlStrategy
     {
+        private string textBoxText;
+
+        public LineTextBoxStrategy(string textBoxText)
+        {
+            this.textBoxText = textBoxText;
+        }
+
         public override void AddControl(ControlStrategyParameters controlStrategyParameters)
         {
             GunaLineTextBox lastGunaLineTextBox = this.GetControlByName<GunaLineTextBox>(controlStrategyParameters.tabPage, $"{FormsConstant.textBoxBaseName}{FormsConstant.indexForCustomizeName - 1}");
@@ -23,7 +30,7 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
             gunaLineTextBox.PasswordChar = '\0';
             gunaLineTextBox.Size = new Size(90, 42);
             gunaLineTextBox.TabIndex = 999;
-            gunaLineTextBox.Text = "10";
+            gunaLineTextBox.Text = this.textBoxText;
             gunaLineTextBox.TextAlign = HorizontalAlignment.Center;
             gunaLineTextBox.TextOffsetX = 3;
             gunaLineTextBox.KeyPress += new KeyPressEventHandler(
