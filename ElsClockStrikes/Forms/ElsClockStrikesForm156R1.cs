@@ -34,7 +34,7 @@ namespace ElsClockStrikes
             {
                 FormsConstant.set大招Time(大招TextBox.Text);
                 大招Timer.Stop();
-                if (預設音效RadioButton.Checked || 自訂音效RadioButton.Checked)
+                if (預設音效156R1RadioButton.Checked || 自訂音效156R1RadioButton.Checked)
                 {
                     大招TimeupAudioPlayer.Play();
                 }
@@ -58,7 +58,7 @@ namespace ElsClockStrikes
             {
                 FormsConstant.set大刺Time(大刺TextBox.Text);
                 大刺Timer.Stop();
-                if (預設音效RadioButton.Checked || 自訂音效RadioButton.Checked)
+                if (預設音效156R1RadioButton.Checked || 自訂音效156R1RadioButton.Checked)
                 {
                     大刺TimeupAudioPlayer.Play();
                 }
@@ -82,7 +82,7 @@ namespace ElsClockStrikes
             {
                 FormsConstant.set翻桌Time(翻桌TextBox.Text);
                 翻桌Timer.Stop();
-                if (預設音效RadioButton.Checked || 自訂音效RadioButton.Checked)
+                if (預設音效156R1RadioButton.Checked || 自訂音效156R1RadioButton.Checked)
                 {
                     翻桌TimeupAudioPlayer.Play();
                 }
@@ -106,7 +106,7 @@ namespace ElsClockStrikes
             {
                 FormsConstant.setR1156控場Time(R1156控場TextBox.Text);
                 R1156控場Timer.Stop();
-                if (預設音效RadioButton.Checked || 自訂音效RadioButton.Checked)
+                if (預設音效156R1RadioButton.Checked || 自訂音效156R1RadioButton.Checked)
                 {
                     R1156控場TimeupAudioPlayer.Play();
                 }
@@ -305,7 +305,7 @@ namespace ElsClockStrikes
 
         private void 自訂音效156R1RadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            if (自訂音效RadioButton.Checked)
+            if (自訂音效156R1RadioButton.Checked)
             {
                 大招設定音效Button.Visible = true;
                 大刺設定音效Button.Visible = true;

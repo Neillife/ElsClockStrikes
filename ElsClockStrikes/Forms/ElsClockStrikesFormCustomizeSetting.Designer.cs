@@ -76,7 +76,7 @@
             this.AddFeatureNameButton.AnimationHoverSpeed = 0.07F;
             this.AddFeatureNameButton.AnimationSpeed = 0.03F;
             this.AddFeatureNameButton.BackColor = System.Drawing.Color.Transparent;
-            this.AddFeatureNameButton.BaseColor = System.Drawing.Color.RoyalBlue;
+            this.AddFeatureNameButton.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(149)))), ((int)(((byte)(180)))));
             this.AddFeatureNameButton.BorderColor = System.Drawing.Color.Transparent;
             this.AddFeatureNameButton.DialogResult = System.Windows.Forms.DialogResult.None;
             this.AddFeatureNameButton.FocusedColor = System.Drawing.Color.Empty;
@@ -86,7 +86,7 @@
             this.AddFeatureNameButton.ImageSize = new System.Drawing.Size(24, 24);
             this.AddFeatureNameButton.Location = new System.Drawing.Point(250, 77);
             this.AddFeatureNameButton.Name = "AddFeatureNameButton";
-            this.AddFeatureNameButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(85)))), ((int)(((byte)(205)))));
+            this.AddFeatureNameButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(120)))), ((int)(((byte)(170)))));
             this.AddFeatureNameButton.OnHoverBorderColor = System.Drawing.Color.Black;
             this.AddFeatureNameButton.OnHoverForeColor = System.Drawing.Color.White;
             this.AddFeatureNameButton.OnHoverImage = null;
