@@ -47,6 +47,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>DllImport\Guna.UI.dll</HintPath>
     </Reference>
+    <Reference Include="INIFileParser, Version=2.5.2.0, Culture=neutral, PublicKeyToken=79af7b307b65cf3c, processorArchitecture=MSIL">
+      <HintPath>..\packages\ini-parser.2.5.2\lib\net20\INIFileParser.dll</HintPath>
+    </Reference>
     <Reference Include="MetroSuite 2.0, Version=2.0.2.1, Culture=neutral, PublicKeyToken=7b7d08837f2e598f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>DllImport\MetroSuite 2.0.dll</HintPath>
@@ -104,10 +107,14 @@
     </Compile>
     <Compile Include="Core\HotKeyManagerForCustomize.cs" />
     <Compile Include="Core\HotKeySet.cs" />
+    <Compile Include="Core\IniManager.cs" />
     <Compile Include="Forms\ElsClockStrikesForm156R1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ElsClockStrikesForm156R3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ElsClockStrikesFormAccessConfig.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ElsClockStrikesFormCustomize.cs">
