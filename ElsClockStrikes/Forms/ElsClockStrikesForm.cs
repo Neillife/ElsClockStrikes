@@ -72,6 +72,7 @@ namespace ElsClockStrikes
             預設音效156R1RadioButton.Checked = true;
             預設音效156R3RadioButton.Checked = true;
             CopyrightTagLabel.Text = FormsConstant.copyrightTag;
+            this.ProcessAutoLoadConfig();
         }
 
         private void ElsClockStrikesForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -189,7 +190,14 @@ namespace ElsClockStrikes
 
         private void TopMostCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            this.TopMost = !this.TopMost;
+            if (TopMostCheckBox.Checked)
+            {
+                this.TopMost = true;
+            }
+            else
+            {
+                this.TopMost = false;
+            }
         }
 
         private void ProcessWindowsSetting(bool isBackToOriginCheck)
@@ -383,10 +391,20 @@ namespace ElsClockStrikes
 
         private void 自訂音效RadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            小荊棘設定音效Button.Visible = !小荊棘設定音效Button.Visible;
-            雷射設定音效Button.Visible = !雷射設定音效Button.Visible;
-            荊棘延遲設定音效Button.Visible = !荊棘延遲設定音效Button.Visible;
-            控場設定音效Button.Visible = !控場設定音效Button.Visible;
+            if (自訂音效RadioButton.Checked)
+            {
+                小荊棘設定音效Button.Visible = true;
+                雷射設定音效Button.Visible = true;
+                荊棘延遲設定音效Button.Visible = true;
+                控場設定音效Button.Visible = true;
+            }
+            else
+            {
+                小荊棘設定音效Button.Visible = false;
+                雷射設定音效Button.Visible = false;
+                荊棘延遲設定音效Button.Visible = false;
+                控場設定音效Button.Visible = false;
+            }
             this.LoadDefaultSound();
         }
 
@@ -420,21 +438,28 @@ namespace ElsClockStrikes
 
         private void metroTabControlVS1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (metroTabControlVS1.SelectedTab.Name == TabPageAbout.Name)
-            {
-                TopMostCheckBox.Visible = false;
-            }
-            else if (metroTabControlVS1.SelectedTab.Name == TabPageCustomize.Name)
+            if (metroTabControlVS1.SelectedTab.Name == TabPageCustomize.Name)
             {
                 TopMostCheckBox.Visible = true;
                 TopMostCheckBox.Location = CustomizeTopMostCheckBoxPos;
                 this.Size = CustomizeTabWinFormsSize;
                 this.metroTabControlVS1.Size = CustomizeMetroTabControlVS1Size;
                 CopyrightTagLabel.Location = CustomizeTabCopyrightTagLabelPos;
+
+                if (isLoadCustomizeConfig)
+                {
+                    this.TriggerLoadCustomizeConfig();
+                }
             }
             else
             {
-                TopMostCheckBox.Visible = true;
+                if (metroTabControlVS1.SelectedTab.Name == TabPageAbout.Name || metroTabControlVS1.SelectedTab.Name == TabPageConfig.Name)
+                {
+                    TopMostCheckBox.Visible = false;
+                } else
+                {
+                    TopMostCheckBox.Visible = true;
+                }
                 TopMostCheckBox.Location = TopMostCheckBoxOriginPos;
                 this.Size = WindowsOriginSize;
                 this.metroTabControlVS1.Size = metroTabControlVS1OriginSize;

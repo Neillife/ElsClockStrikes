@@ -17,7 +17,6 @@ namespace ElsClockStrikes.Core
             this.Interval = 1000;
             this.Tick += OnTick;
             this.Tag = LastRetrievedTimerName;
-            this.audioPlayer = new AudioPlayer(Properties.Resources.荊棘延遲翻桌陰陽陣DefultSound);
         }
 
         public AudioPlayer getAudioPlayer()

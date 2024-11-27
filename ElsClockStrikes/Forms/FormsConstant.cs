@@ -7,6 +7,12 @@ namespace ElsClockStrikes.Forms
         public const string titleName = "ElsClockStrikes | Author by DC:  .le._.vi.";
         public static string copyrightTag = $"Copyright © {DateTime.Today.Year}, Levi. All rights reserved.";
         public const string sourceCodeGitHubURL = "https://github.com/Neillife/ElsClockStrikes";
+        public const string configININame = "config.ini";
+        public const string config127R3SectionName = "127R3";
+        public const string config156R1SectionName = "156R1";
+        public const string config156R3SectionName = "156R3";
+        public const string configCustomizeSectionName = "customize";
+        public const string configGlobalSectionName = "global";
         public static int 小荊棘Time;
         public static int 雷射Time;
         public static int 荊棘延遲Time;

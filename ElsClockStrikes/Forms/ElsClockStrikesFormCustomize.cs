@@ -75,15 +75,33 @@ namespace ElsClockStrikes
                         controlStrategyManager.RegisterStrategy(new HotKeyLabelStrategy())
                                               .RegisterStrategy(new MechanicNameLabelStrategy())
                                               .RegisterStrategy(new TimeLeftLabelStrategy())
-                                              .RegisterStrategy(new ComboBoxStrategy())
-                                              .RegisterStrategy(new LineTextBoxStrategy())
+                                              .RegisterStrategy(new ComboBoxStrategy(null))
+                                              .RegisterStrategy(new LineTextBoxStrategy("10"))
                                               .RegisterStrategy(new RemoveButtonStrategy())
-                                              .RegisterStrategy(new CustomizeTaskTimerStrategy())
+                                              .RegisterStrategy(new CustomizeTaskTimerStrategy(關閉音效CustomizeRadioButton.Checked))
                                               .RegisterStrategy(new AudioPlayerButtonStrategy(自訂音效CustomizeRadioButton.Checked));
                         controlStrategyManager.ExecuteAll();
                     }
                 }
             }
+        }
+
+        private void ProcessCompoenetBackOriginPos()
+        {
+            this.CustomizeTabWinFormsSize = WindowsOriginSize;
+
+            this.CustomizeTopMostCheckBoxPos = TopMostCheckBoxOriginPos;
+            TopMostCheckBox.Location = CustomizeTopMostCheckBoxPos;
+
+            WindowsSettingCustomize.Location = new Point(323, 382);
+            AddCustomizeTimer.Location = new Point(213, 382);
+
+            this.CustomizeMetroTabControlVS1Size = metroTabControlVS1OriginSize;
+
+            音效設定CustomizeGroupBox.Location = new Point(115, 441);
+
+            this.CustomizeTabCopyrightTagLabelPos = CopyrightTagLabelOriginPos;
+            CopyrightTagLabel.Location = CustomizeTabCopyrightTagLabelPos;
         }
 
         private void ProcessSoundSettingCustomizeGroupBox(bool isAdd)
