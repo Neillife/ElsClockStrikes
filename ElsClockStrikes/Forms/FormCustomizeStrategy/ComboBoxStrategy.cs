@@ -7,6 +7,7 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
 {
     public class ComboBoxStrategy : BaseControlStrategy
     {
+        private string comboBoxText;
         private readonly object[] keySet =
         {
             nameof(HotKeySet.KeySet.F1),
@@ -70,6 +71,11 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
             nameof(HotKeySet.KeySet.小鍵盤9)
         };
 
+        public ComboBoxStrategy(string comboBoxText)
+        {
+            this.comboBoxText = comboBoxText;
+        }
+
         public override void AddControl(ControlStrategyParameters controlStrategyParameters)
         {
             GunaComboBox lastgunaComboBox = this.GetControlByName<GunaComboBox>(controlStrategyParameters.tabPage, $"{FormsConstant.comboBoxBaseName}{FormsConstant.indexForCustomizeName - 1}");
@@ -91,6 +97,10 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
             gunaComboBox.OnHoverItemForeColor = SystemColors.ControlDark;
             gunaComboBox.Size = new Size(84, 26);
             gunaComboBox.StartIndex = 0;
+            if (this.comboBoxText != null)
+            {
+                gunaComboBox.Text = this.comboBoxText;
+            }
             controlStrategyParameters.tabPage.Controls.Add(gunaComboBox);
         }
 
