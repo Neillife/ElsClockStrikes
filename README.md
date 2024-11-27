@@ -63,10 +63,7 @@
 - [x] 156R1 機制計時
 - [x] 156R3 機制計時
 - [x] 完全自定義計時器
-
-# 待新增
-
-- [ ] 儲存設定/讀取設定 功能
+- [x] 儲存設定/讀取設定 功能
 
 # 資料夾說明
 
@@ -83,6 +80,7 @@
 
 - [NAudio v2.2.1](https://github.com/naudio/NAudio)
 - [MouseKeyHook v5.7.1](https://github.com/gmamaladze/globalmousekeyhook)
+- [INI-Parser v2.5.2](https://github.com/rickyah/ini-parser)
 - 一些 Forms 元件 Lib 取得來源為網路上
   - Guna.UI v1.9.0
   - MetroSuite v2.0
