@@ -3094,7 +3094,7 @@
             this.AddCustomizeTimer.AnimationHoverSpeed = 0.07F;
             this.AddCustomizeTimer.AnimationSpeed = 0.03F;
             this.AddCustomizeTimer.BackColor = System.Drawing.Color.Transparent;
-            this.AddCustomizeTimer.BaseColor = System.Drawing.Color.RoyalBlue;
+            this.AddCustomizeTimer.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(149)))), ((int)(((byte)(180)))));
             this.AddCustomizeTimer.BorderColor = System.Drawing.Color.Transparent;
             this.AddCustomizeTimer.DialogResult = System.Windows.Forms.DialogResult.None;
             this.AddCustomizeTimer.FocusedColor = System.Drawing.Color.Empty;
@@ -3104,7 +3104,7 @@
             this.AddCustomizeTimer.ImageSize = new System.Drawing.Size(24, 24);
             this.AddCustomizeTimer.Location = new System.Drawing.Point(213, 382);
             this.AddCustomizeTimer.Name = "AddCustomizeTimer";
-            this.AddCustomizeTimer.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(85)))), ((int)(((byte)(205)))));
+            this.AddCustomizeTimer.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(120)))), ((int)(((byte)(170)))));
             this.AddCustomizeTimer.OnHoverBorderColor = System.Drawing.Color.Black;
             this.AddCustomizeTimer.OnHoverForeColor = System.Drawing.Color.White;
             this.AddCustomizeTimer.OnHoverImage = null;
