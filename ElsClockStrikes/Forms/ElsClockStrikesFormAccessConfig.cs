@@ -377,6 +377,13 @@ namespace ElsClockStrikes
             iniManager.SetValue(FormsConstant.configCustomizeSectionName, 預設音效CustomizeRadioButton.Name, 預設音效CustomizeRadioButton.Checked.ToString());
             iniManager.SetValue(FormsConstant.configCustomizeSectionName, 自訂音效CustomizeRadioButton.Name, 自訂音效CustomizeRadioButton.Checked.ToString());
             iniManager.SetValue(FormsConstant.configCustomizeSectionName, 關閉音效CustomizeRadioButton.Name, 關閉音效CustomizeRadioButton.Checked.ToString());
+
+            // TriggerLoadCustomizeConfig Method may not be triggered yet and store empty data...
+            if (isLoadCustomizeConfig)
+            {
+                return;
+            }
+
             iniManager.SetValue(FormsConstant.configCustomizeSectionName, indexForCustomizeNameStr, FormsConstant.indexForCustomizeName.ToString());
 
             Dictionary<string, Label> mechanicLabelMap = FormsCustomizeUtils.GetTheSetControlMap<Label>(this.TabPageCustomize, FormsConstant.mechanicLabelBaseName);
