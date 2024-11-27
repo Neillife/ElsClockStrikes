@@ -384,10 +384,20 @@ namespace ElsClockStrikes
 
         private void 自訂音效156R3RadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            大黑設定音效Button.Visible = !大黑設定音效Button.Visible;
-            陰陽陣設定音效Button.Visible = !陰陽陣設定音效Button.Visible;
-            三連設定音效Button.Visible = !三連設定音效Button.Visible;
-            R3156控場設定音效Button.Visible = !R3156控場設定音效Button.Visible;
+            if (自訂音效RadioButton.Checked)
+            {
+                大黑設定音效Button.Visible = true;
+                陰陽陣設定音效Button.Visible = true;
+                三連設定音效Button.Visible = true;
+                R3156控場設定音效Button.Visible = true;
+            }
+            else
+            {
+                大黑設定音效Button.Visible = false;
+                陰陽陣設定音效Button.Visible = false;
+                三連設定音效Button.Visible = false;
+                R3156控場設定音效Button.Visible = false;
+            }
             this.LoadDefaultSound156R3();
         }
 
