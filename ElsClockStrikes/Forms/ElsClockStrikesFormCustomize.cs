@@ -29,15 +29,28 @@ namespace ElsClockStrikes
                 if (FormsCustomizeUtils.GetRemoveIndexCharOfStrgin(gunaButton.Name) == FormsConstant.buttonBaseName)
                 {
                     FormsCustomizeUtils.ProcessComponentLayout(this.TabPageCustomize, gunaButton);
-                    if (this.Size.Height != WindowsOriginSize.Height)
+                    ProcessResetComponent(false);
+                    if (this.Size.Height > WindowsOriginSize.Height)
                     {
-                        ProcessWindowsSizeWithLayout(false);
-                        ProcessResetComponent(false);
+                        ProcessWindowsSize(false);
+                    }
+                    if (metroTabControlVS1.Size.Height > metroTabControlVS1OriginSize.Height)
+                    {
+                        ProcessTabControlSize(false);
+                    }
+                    if (TopMostCheckBox.Location.Y > TopMostCheckBoxOriginPos.Y)
+                    {
+                        ProcessTopMostCheckBoxLocation(false);
+                    }
+                    if (重置計時器CustomizeComboBox.Location.Y >= FormsConstant.LayoutSign)
+                    {
+                        ProcessWindowsSettingCustomizeLocation(false);
+                        ProcessAddCustomizeTimerLocation(false);
                         ProcessSoundSettingCustomizeGroupBox(false);
                     }
-                    else
+                    if (CopyrightTagLabel.Location.Y > CopyrightTagLabelOriginPos.Y)
                     {
-                        ProcessResetComponent(false);
+                        ProcessCopyrightTagLabelLocation(false);
                     }
                 }
             }
@@ -50,8 +63,13 @@ namespace ElsClockStrikes
                 ProcessResetComponent(true);
                 if (重置計時器CustomizeComboBox.Location.Y > FormsConstant.LayoutSign)
                 {
-                    ProcessWindowsSizeWithLayout(true);
+                    ProcessWindowsSize(true);
+                    ProcessTabControlSize(true);
+                    ProcessTopMostCheckBoxLocation(true);
+                    ProcessWindowsSettingCustomizeLocation(true);
+                    ProcessAddCustomizeTimerLocation(true);
                     ProcessSoundSettingCustomizeGroupBox(true);
+                    ProcessCopyrightTagLabelLocation(true);
                 }
             }
         }
@@ -132,31 +150,86 @@ namespace ElsClockStrikes
             }
         }
 
-        private void ProcessWindowsSizeWithLayout(bool isAdd)
+        private void ProcessWindowsSize(bool isAdd)
         {
             if (isAdd)
             {
-                this.CustomizeTabWinFormsSize = new Size(this.Size.Width, this.Size.Height + FormsConstant.FormSizeOffset);
+                this.CustomizeTabWinFormsSize = new Size(550, this.Size.Height + FormsConstant.FormSizeOffset);
                 this.Size = CustomizeTabWinFormsSize;
+            }
+            else
+            {
+                int CustomizeTabWinFormsSizeHeight = this.Size.Height - FormsConstant.FormSizeOffset;
+                if (CustomizeTabWinFormsSizeHeight < WindowsOriginSize.Height)
+                {
+                    CustomizeTabWinFormsSizeHeight = WindowsOriginSize.Height;
+                }
+                this.CustomizeTabWinFormsSize = new Size(550, CustomizeTabWinFormsSizeHeight);
+                this.Size = CustomizeTabWinFormsSize;
+            }
+        }
+
+        private void ProcessTabControlSize(bool isAdd)
+        {
+            if (isAdd)
+            {
                 this.CustomizeMetroTabControlVS1Size = new Size(this.metroTabControlVS1.Width, this.metroTabControlVS1.Height + FormsConstant.FormSizeOffset);
                 this.metroTabControlVS1.Size = CustomizeMetroTabControlVS1Size;
+            }
+            else
+            {
+                this.CustomizeMetroTabControlVS1Size = new Size(this.metroTabControlVS1.Width, this.metroTabControlVS1.Height - FormsConstant.FormSizeOffset);
+                this.metroTabControlVS1.Size = CustomizeMetroTabControlVS1Size;
+            }
+        }
+
+        private void ProcessTopMostCheckBoxLocation(bool isAdd)
+        {
+            if (isAdd)
+            {
                 this.CustomizeTopMostCheckBoxPos = new Point(TopMostCheckBox.Location.X, TopMostCheckBox.Location.Y + FormsConstant.FormSizeOffset);
                 TopMostCheckBox.Location = CustomizeTopMostCheckBoxPos;
+            }
+            else
+            {
+                this.CustomizeTopMostCheckBoxPos = new Point(TopMostCheckBox.Location.X, TopMostCheckBox.Location.Y - FormsConstant.FormSizeOffset);
+                TopMostCheckBox.Location = CustomizeTopMostCheckBoxPos;
+            }
+        }
+
+        private void ProcessWindowsSettingCustomizeLocation(bool isAdd)
+        {
+            if (isAdd)
+            {
                 WindowsSettingCustomize.Location = new Point(WindowsSettingCustomize.Location.X, WindowsSettingCustomize.Location.Y + FormsConstant.FormSizeOffset);
+            }
+            else
+            {
+                WindowsSettingCustomize.Location = new Point(WindowsSettingCustomize.Location.X, WindowsSettingCustomize.Location.Y - FormsConstant.FormSizeOffset);
+            }
+        }
+
+        private void ProcessAddCustomizeTimerLocation(bool isAdd)
+        {
+            if (isAdd)
+            {
                 AddCustomizeTimer.Location = new Point(AddCustomizeTimer.Location.X, AddCustomizeTimer.Location.Y + FormsConstant.FormSizeOffset);
+            }
+            else
+            {
+                AddCustomizeTimer.Location = new Point(AddCustomizeTimer.Location.X, AddCustomizeTimer.Location.Y - FormsConstant.FormSizeOffset);
+            }
+        }
+
+        private void ProcessCopyrightTagLabelLocation(bool isAdd)
+        {
+            if (isAdd)
+            {
                 this.CustomizeTabCopyrightTagLabelPos = new Point(CopyrightTagLabel.Location.X, CopyrightTagLabel.Location.Y + FormsConstant.FormSizeOffset);
                 CopyrightTagLabel.Location = CustomizeTabCopyrightTagLabelPos;
             }
             else
             {
-                this.CustomizeTabWinFormsSize = new Size(this.Size.Width, this.Size.Height - FormsConstant.FormSizeOffset);
-                this.Size = CustomizeTabWinFormsSize;
-                this.CustomizeMetroTabControlVS1Size = new Size(this.metroTabControlVS1.Width, this.metroTabControlVS1.Height - FormsConstant.FormSizeOffset);
-                this.metroTabControlVS1.Size = CustomizeMetroTabControlVS1Size;
-                this.CustomizeTopMostCheckBoxPos = new Point(TopMostCheckBox.Location.X, TopMostCheckBox.Location.Y - FormsConstant.FormSizeOffset);
-                TopMostCheckBox.Location = CustomizeTopMostCheckBoxPos;
-                WindowsSettingCustomize.Location = new Point(WindowsSettingCustomize.Location.X, WindowsSettingCustomize.Location.Y - FormsConstant.FormSizeOffset);
-                AddCustomizeTimer.Location = new Point(AddCustomizeTimer.Location.X, AddCustomizeTimer.Location.Y - FormsConstant.FormSizeOffset);
                 this.CustomizeTabCopyrightTagLabelPos = new Point(CopyrightTagLabel.Location.X, CopyrightTagLabel.Location.Y - FormsConstant.FormSizeOffset);
                 CopyrightTagLabel.Location = CustomizeTabCopyrightTagLabelPos;
             }
@@ -206,7 +279,17 @@ namespace ElsClockStrikes
                 this.Controls.Add(WindowsSettingCustomize);
             }
 
-            this.Size = isBackToOriginCheck ? CustomizeTabWinFormsSize : new Size(180, customizeLabelMap.Count / 3 * 39 + 69);
+            int custSizeHeight = 225;
+
+            if (customizeLabelMap.Count / 3 < 4)
+            {
+                custSizeHeight = customizeLabelMap.Count / 3 * 39 + 69;
+            } else
+            {
+                custSizeHeight += (customizeLabelMap.Count / 3  - 4) * 40;
+            }
+
+            this.Size = isBackToOriginCheck ? CustomizeTabWinFormsSize : new Size(180, custSizeHeight);
             TopMostCheckBox.Visible = !TopMostCheckBox.Visible;
             this.ProcessComponentLocation(isBackToOriginCheck);
         }
