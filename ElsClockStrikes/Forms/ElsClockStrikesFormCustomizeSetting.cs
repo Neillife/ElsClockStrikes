@@ -31,6 +31,10 @@ namespace ElsClockStrikes.Forms
                 AddFeatureNameButton_Click(sender, e);
                 FeatureNameTextBox.Focus();
             }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
         }
 
         private void ElsClockStrikesFormCustomizeSetting_Activated(object sender, EventArgs e)
