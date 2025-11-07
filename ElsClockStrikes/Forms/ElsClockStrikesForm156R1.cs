@@ -256,6 +256,7 @@ namespace ElsClockStrikes
                 WindowsSetting156R1.Size = new Size(43, 25);
                 this.ProcessRegisterHotKey156R1(false);
                 this.ProcessWindowsSetting156R1(false);
+                this.ProcessSoundVolume156R1();
                 FormsConstant.init156R1Timer(大招TextBox.Text, 大刺TextBox.Text, 翻桌TextBox.Text, R1156控場TextBox.Text);
             }
             else
@@ -288,6 +289,66 @@ namespace ElsClockStrikes
         private void R1156控場TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             FormsUtils.ProcessKeyPress(e);
+        }
+
+        private void 大招音量TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            FormsUtils.ProcessKeyPress(e);
+        }
+
+        private void 大刺音量TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            FormsUtils.ProcessKeyPress(e);
+        }
+
+        private void 翻桌音量TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            FormsUtils.ProcessKeyPress(e);
+        }
+
+        private void R1156控場音量TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            FormsUtils.ProcessKeyPress(e);
+        }
+
+        private void 大招音量TextBox_Leave(object sender, EventArgs e)
+        {
+            FormsUtils.ProcessSoundTextBoxLeave(大招音量TextBox);
+        }
+
+        private void 大刺音量TextBox_Leave(object sender, EventArgs e)
+        {
+            FormsUtils.ProcessSoundTextBoxLeave(大刺音量TextBox);
+        }
+
+        private void 翻桌音量TextBox_Leave(object sender, EventArgs e)
+        {
+            FormsUtils.ProcessSoundTextBoxLeave(翻桌音量TextBox);
+        }
+
+        private void R1156控場音量TextBox_Leave(object sender, EventArgs e)
+        {
+            FormsUtils.ProcessSoundTextBoxLeave(R1156控場音量TextBox);
+        }
+
+        private void ProcessSoundVolume156R1()
+        {
+            if (大招TimeupAudioPlayer != null)
+            {
+                大招TimeupAudioPlayer.Volume = Int32.Parse(大招音量TextBox.Text) / 100f;
+            }
+            if (大刺TimeupAudioPlayer != null)
+            {
+                大刺TimeupAudioPlayer.Volume = Int32.Parse(大刺音量TextBox.Text) / 100f;
+            }
+            if (翻桌TimeupAudioPlayer != null)
+            {
+                翻桌TimeupAudioPlayer.Volume = Int32.Parse(翻桌音量TextBox.Text) / 100f;
+            }
+            if (R1156控場TimeupAudioPlayer != null)
+            {
+                R1156控場TimeupAudioPlayer.Volume = Int32.Parse(R1156控場音量TextBox.Text) / 100f;
+            }
         }
 
         private void LoadDefaultSound156R1()

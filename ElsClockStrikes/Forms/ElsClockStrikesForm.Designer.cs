@@ -1295,6 +1295,8 @@
             this.控場音量TextBox.Text = "100";
             this.控場音量TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.控場音量TextBox.TextOffsetX = 3;
+            this.控場音量TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.控場音量TextBox_KeyPress);
+            this.控場音量TextBox.Leave += new System.EventHandler(this.控場音量TextBox_Leave);
             // 
             // 荊棘延遲GunaPanel
             // 
@@ -1351,6 +1353,8 @@
             this.荊棘延遲音量TextBox.Text = "100";
             this.荊棘延遲音量TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.荊棘延遲音量TextBox.TextOffsetX = 3;
+            this.荊棘延遲音量TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.荊棘延遲音量TextBox_KeyPress);
+            this.荊棘延遲音量TextBox.Leave += new System.EventHandler(this.荊棘延遲音量TextBox_Leave);
             // 
             // 雷射GunaPanel
             // 
@@ -1397,6 +1401,8 @@
             this.雷射音量TextBox.Text = "100";
             this.雷射音量TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.雷射音量TextBox.TextOffsetX = 3;
+            this.雷射音量TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.雷射音量TextBox_KeyPress);
+            this.雷射音量TextBox.Leave += new System.EventHandler(this.雷射音量TextBox_Leave);
             // 
             // 雷射音量Label
             // 
@@ -1453,6 +1459,8 @@
             this.小荊棘音量TextBox.Text = "100";
             this.小荊棘音量TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.小荊棘音量TextBox.TextOffsetX = 3;
+            this.小荊棘音量TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.小荊棘音量TextBox_KeyPress);
+            this.小荊棘音量TextBox.Leave += new System.EventHandler(this.小荊棘音量TextBox_Leave);
             // 
             // 小荊棘音量Label
             // 
@@ -1671,6 +1679,8 @@
             this.R1156控場音量TextBox.Text = "100";
             this.R1156控場音量TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.R1156控場音量TextBox.TextOffsetX = 3;
+            this.R1156控場音量TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.R1156控場音量TextBox_KeyPress);
+            this.R1156控場音量TextBox.Leave += new System.EventHandler(this.R1156控場音量TextBox_Leave);
             // 
             // R1156控場設定音效Button
             // 
@@ -1755,6 +1765,8 @@
             this.翻桌音量TextBox.Text = "100";
             this.翻桌音量TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.翻桌音量TextBox.TextOffsetX = 3;
+            this.翻桌音量TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.翻桌音量TextBox_KeyPress);
+            this.翻桌音量TextBox.Leave += new System.EventHandler(this.翻桌音量TextBox_Leave);
             // 
             // 翻桌設定音效Button
             // 
@@ -1829,6 +1841,8 @@
             this.大刺音量TextBox.Text = "100";
             this.大刺音量TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.大刺音量TextBox.TextOffsetX = 3;
+            this.大刺音量TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.大刺音量TextBox_KeyPress);
+            this.大刺音量TextBox.Leave += new System.EventHandler(this.大刺音量TextBox_Leave);
             // 
             // 大刺音量Label
             // 
@@ -1913,6 +1927,8 @@
             this.大招音量TextBox.Text = "100";
             this.大招音量TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.大招音量TextBox.TextOffsetX = 3;
+            this.大招音量TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.大招音量TextBox_KeyPress);
+            this.大招音量TextBox.Leave += new System.EventHandler(this.大招音量TextBox_Leave);
             // 
             // 大招音量Label
             // 
@@ -2869,6 +2885,8 @@
             this.R3156控場音量TextBox.Text = "100";
             this.R3156控場音量TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.R3156控場音量TextBox.TextOffsetX = 3;
+            this.R3156控場音量TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.R3156控場音量TextBox_KeyPress);
+            this.R3156控場音量TextBox.Leave += new System.EventHandler(this.R3156控場音量TextBox_Leave);
             // 
             // R3156控場設定音效Button
             // 
@@ -2953,6 +2971,8 @@
             this.三連音量TextBox.Text = "100";
             this.三連音量TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.三連音量TextBox.TextOffsetX = 3;
+            this.三連音量TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.三連音量TextBox_KeyPress);
+            this.三連音量TextBox.Leave += new System.EventHandler(this.三連音量TextBox_Leave);
             // 
             // 三連設定音效Button
             // 
@@ -3027,6 +3047,8 @@
             this.陰陽陣音量TextBox.Text = "100";
             this.陰陽陣音量TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.陰陽陣音量TextBox.TextOffsetX = 3;
+            this.陰陽陣音量TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.陰陽陣音量TextBox_KeyPress);
+            this.陰陽陣音量TextBox.Leave += new System.EventHandler(this.陰陽陣音量TextBox_Leave);
             // 
             // 陰陽陣音量Label
             // 
@@ -3111,6 +3133,8 @@
             this.大黑音量TextBox.Text = "100";
             this.大黑音量TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.大黑音量TextBox.TextOffsetX = 3;
+            this.大黑音量TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.大黑音量TextBox_KeyPress);
+            this.大黑音量TextBox.Leave += new System.EventHandler(this.大黑音量TextBox_Leave);
             // 
             // 大黑音量Label
             // 

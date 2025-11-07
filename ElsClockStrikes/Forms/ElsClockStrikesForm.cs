@@ -343,8 +343,10 @@ namespace ElsClockStrikes
                 WindowsSetting.Size = new Size(43, 25);
                 this.ProcessRegisterHotKey(false);
                 this.ProcessWindowsSetting(false);
+                this.ProcessSoundVolume();
                 FormsConstant.init127Timer(小荊棘TextBox.Text, 雷射TextBox.Text, 荊棘延遲TextBox.Text, 控場TextBox.Text);
-            } else
+            }
+            else
             {
                 WindowsSetting.BaseColor = Color.FromArgb(184, 44, 44);
                 WindowsSetting.OnHoverBaseColor = Color.FromArgb(150, 20, 20);
@@ -374,6 +376,66 @@ namespace ElsClockStrikes
         private void 控場TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             FormsUtils.ProcessKeyPress(e);
+        }
+
+        private void 小荊棘音量TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            FormsUtils.ProcessKeyPress(e);
+        }
+
+        private void 雷射音量TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            FormsUtils.ProcessKeyPress(e);
+        }
+
+        private void 荊棘延遲音量TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            FormsUtils.ProcessKeyPress(e);
+        }
+
+        private void 控場音量TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            FormsUtils.ProcessKeyPress(e);
+        }
+
+        private void 小荊棘音量TextBox_Leave(object sender, EventArgs e)
+        {
+            FormsUtils.ProcessSoundTextBoxLeave(小荊棘音量TextBox);
+        }
+
+        private void 雷射音量TextBox_Leave(object sender, EventArgs e)
+        {
+            FormsUtils.ProcessSoundTextBoxLeave(雷射音量TextBox);
+        }
+
+        private void 荊棘延遲音量TextBox_Leave(object sender, EventArgs e)
+        {
+            FormsUtils.ProcessSoundTextBoxLeave(荊棘延遲音量TextBox);
+        }
+
+        private void 控場音量TextBox_Leave(object sender, EventArgs e)
+        {
+            FormsUtils.ProcessSoundTextBoxLeave(控場音量TextBox);
+        }
+
+        private void ProcessSoundVolume()
+        {
+            if (小荊棘TimeupAudioPlayer != null)
+            {
+                小荊棘TimeupAudioPlayer.Volume = Int32.Parse(小荊棘音量TextBox.Text) / 100f;
+            }
+            if (雷射TimeupAudioPlayer != null)
+            {
+                雷射TimeupAudioPlayer.Volume = Int32.Parse(雷射音量TextBox.Text) / 100f;
+            }
+            if (荊棘延遲TimeupAudioPlayer != null)
+            {
+                荊棘延遲TimeupAudioPlayer.Volume = Int32.Parse(荊棘延遲音量TextBox.Text) / 100f;
+            }
+            if (控場TimeupAudioPlayer != null)
+            {
+                控場TimeupAudioPlayer.Volume = Int32.Parse(控場音量TextBox.Text) / 100f;
+            }
         }
 
         private void LoadDefaultSound()
@@ -480,7 +542,8 @@ namespace ElsClockStrikes
                 if (metroTabControlVS1.SelectedTab.Name == TabPageAbout.Name || metroTabControlVS1.SelectedTab.Name == TabPageConfig.Name)
                 {
                     TopMostCheckBox.Visible = false;
-                } else
+                }
+                else
                 {
                     TopMostCheckBox.Visible = true;
                 }

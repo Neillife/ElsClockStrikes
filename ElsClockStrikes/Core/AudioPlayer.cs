@@ -1,5 +1,6 @@
-﻿using System.IO;
-using NAudio.Wave;
+﻿using NAudio.Wave;
+using NAudio.Wave.SampleProviders;
+using System.IO;
 
 
 namespace ElsClockStrikes.Core
@@ -10,7 +11,9 @@ namespace ElsClockStrikes.Core
         private AudioFileReader audioFileReader;
         private WaveStream waveStream;
         public UnmanagedMemoryStream unmanagedMemoryStream;
+        private VolumeSampleProvider volumeProvider;
         public string filePath { get; set; }
+        public float Volume { get; set; } = 1.0f;
 
         public AudioPlayer(UnmanagedMemoryStream unmanagedMemoryStream)
         {
@@ -28,12 +31,14 @@ namespace ElsClockStrikes.Core
             if (unmanagedMemoryStream == null)
             {
                 audioFileReader = new AudioFileReader(filePath);
-                waveOutDevice.Init(audioFileReader);
+                volumeProvider = new VolumeSampleProvider(audioFileReader);
             } else
             {
                 waveStream = new WaveFileReader(unmanagedMemoryStream);
-                waveOutDevice.Init(waveStream);
+                volumeProvider = new VolumeSampleProvider(waveStream.ToSampleProvider());
             }
+            volumeProvider.Volume = Volume;
+            waveOutDevice.Init(volumeProvider);
             waveOutDevice.Play();
             waveOutDevice.PlaybackStopped += OnPlaybackStopped;
         }
