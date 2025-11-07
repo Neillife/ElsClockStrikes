@@ -1,10 +1,10 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using ElsClockStrikes.Core;
 using ElsClockStrikes.Forms;
-using ElsClockStrikes.Core;
 using MetroSuite;
-using System.Drawing;
+using System;
 using System.Diagnostics;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace ElsClockStrikes
 {
@@ -393,17 +393,17 @@ namespace ElsClockStrikes
         {
             if (自訂音效RadioButton.Checked)
             {
-                小荊棘設定音效Button.Visible = true;
-                雷射設定音效Button.Visible = true;
-                荊棘延遲設定音效Button.Visible = true;
-                控場設定音效Button.Visible = true;
+                小荊棘設定音效Button.Enabled = true;
+                雷射設定音效Button.Enabled = true;
+                荊棘延遲設定音效Button.Enabled = true;
+                控場設定音效Button.Enabled = true;
             }
             else
             {
-                小荊棘設定音效Button.Visible = false;
-                雷射設定音效Button.Visible = false;
-                荊棘延遲設定音效Button.Visible = false;
-                控場設定音效Button.Visible = false;
+                小荊棘設定音效Button.Enabled = false;
+                雷射設定音效Button.Enabled = false;
+                荊棘延遲設定音效Button.Enabled = false;
+                控場設定音效Button.Enabled = false;
             }
             this.LoadDefaultSound();
         }
@@ -434,6 +434,30 @@ namespace ElsClockStrikes
         private void 控場設定音效Button_Click(object sender, EventArgs e)
         {
             控場TimeupAudioPlayer = FormsUtils.ProcessSelectSoundFile(Properties.Resources.控場DefultSound);
+        }
+
+        private void 小荊棘設定Button_Click(object sender, EventArgs e)
+        {
+            FormsUtils.ProcessSettingBtnClick(小荊棘GunaPanel, 小荊棘設定Button);
+            FormsUtils.StartExpandAnimation(小荊棘GunaPanel);
+        }
+
+        private void 雷射設定Button_Click(object sender, EventArgs e)
+        {
+            FormsUtils.ProcessSettingBtnClick(雷射GunaPanel, 雷射設定Button);
+            FormsUtils.StartExpandAnimation(雷射GunaPanel);
+        }
+
+        private void 荊棘延遲設定Button_Click(object sender, EventArgs e)
+        {
+            FormsUtils.ProcessSettingBtnClick(荊棘延遲GunaPanel, 荊棘延遲設定Button);
+            FormsUtils.StartExpandAnimation(荊棘延遲GunaPanel);
+        }
+
+        private void 控場設定Button_Click(object sender, EventArgs e)
+        {
+            FormsUtils.ProcessSettingBtnClick(控場GunaPanel, 控場設定Button);
+            FormsUtils.StartExpandAnimation(控場GunaPanel);
         }
 
         private void metroTabControlVS1_SelectedIndexChanged(object sender, EventArgs e)

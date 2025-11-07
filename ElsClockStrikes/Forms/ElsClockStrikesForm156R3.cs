@@ -386,17 +386,17 @@ namespace ElsClockStrikes
         {
             if (自訂音效156R3RadioButton.Checked)
             {
-                大黑設定音效Button.Visible = true;
-                陰陽陣設定音效Button.Visible = true;
-                三連設定音效Button.Visible = true;
-                R3156控場設定音效Button.Visible = true;
+                大黑設定音效Button.Enabled = true;
+                陰陽陣設定音效Button.Enabled = true;
+                三連設定音效Button.Enabled = true;
+                R3156控場設定音效Button.Enabled = true;
             }
             else
             {
-                大黑設定音效Button.Visible = false;
-                陰陽陣設定音效Button.Visible = false;
-                三連設定音效Button.Visible = false;
-                R3156控場設定音效Button.Visible = false;
+                大黑設定音效Button.Enabled = false;
+                陰陽陣設定音效Button.Enabled = false;
+                三連設定音效Button.Enabled = false;
+                R3156控場設定音效Button.Enabled = false;
             }
             this.LoadDefaultSound156R3();
         }
@@ -427,6 +427,30 @@ namespace ElsClockStrikes
         private void R3156控場設定音效Button_Click(object sender, EventArgs e)
         {
             R3156控場TimeupAudioPlayer = FormsUtils.ProcessSelectSoundFile(Properties.Resources.控場DefultSound);
+        }
+
+        private void 大黑設定Button_Click(object sender, EventArgs e)
+        {
+            FormsUtils.ProcessSettingBtnClick(大黑GunaPanel, 大黑設定Button);
+            FormsUtils.StartExpandAnimation(大黑GunaPanel);
+        }
+
+        private void 陰陽陣設定Button_Click(object sender, EventArgs e)
+        {
+            FormsUtils.ProcessSettingBtnClick(陰陽陣GunaPanel, 陰陽陣設定Button);
+            FormsUtils.StartExpandAnimation(陰陽陣GunaPanel);
+        }
+
+        private void 三連設定Button_Click(object sender, EventArgs e)
+        {
+            FormsUtils.ProcessSettingBtnClick(三連GunaPanel, 三連設定Button);
+            FormsUtils.StartExpandAnimation(三連GunaPanel);
+        }
+
+        private void R3156控場設定Button_Click(object sender, EventArgs e)
+        {
+            FormsUtils.ProcessSettingBtnClick(R3156控場GunaPanel, R3156控場設定Button);
+            FormsUtils.StartExpandAnimation(R3156控場GunaPanel);
         }
     }
 }

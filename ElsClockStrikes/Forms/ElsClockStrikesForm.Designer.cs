@@ -72,7 +72,51 @@
             this.CopyrightTagLabel = new System.Windows.Forms.Label();
             this.metroTabControlVS1 = new MetroSuite.MetroTabControlVS();
             this.TabPage127R3 = new System.Windows.Forms.TabPage();
+            this.控場GunaPanel = new Guna.UI.WinForms.GunaPanel();
+            this.控場音量Label = new System.Windows.Forms.Label();
+            this.控場分離視窗CheckBox = new Guna.UI.WinForms.GunaCheckBox();
+            this.控場音量TextBox = new Guna.UI.WinForms.GunaLineTextBox();
+            this.荊棘延遲GunaPanel = new Guna.UI.WinForms.GunaPanel();
+            this.荊棘延遲分離視窗CheckBox = new Guna.UI.WinForms.GunaCheckBox();
+            this.荊棘延遲音量Label = new System.Windows.Forms.Label();
+            this.荊棘延遲音量TextBox = new Guna.UI.WinForms.GunaLineTextBox();
+            this.雷射GunaPanel = new Guna.UI.WinForms.GunaPanel();
+            this.雷射分離視窗CheckBox = new Guna.UI.WinForms.GunaCheckBox();
+            this.雷射音量TextBox = new Guna.UI.WinForms.GunaLineTextBox();
+            this.雷射音量Label = new System.Windows.Forms.Label();
+            this.小荊棘GunaPanel = new Guna.UI.WinForms.GunaPanel();
+            this.小荊棘分離視窗CheckBox = new Guna.UI.WinForms.GunaCheckBox();
+            this.小荊棘音量TextBox = new Guna.UI.WinForms.GunaLineTextBox();
+            this.小荊棘音量Label = new System.Windows.Forms.Label();
+            this.控場設定Button = new Guna.UI.WinForms.GunaButton();
+            this.荊棘延遲設定Button = new Guna.UI.WinForms.GunaButton();
+            this.雷射設定Button = new Guna.UI.WinForms.GunaButton();
+            this.小荊棘設定Button = new Guna.UI.WinForms.GunaButton();
             this.TabPage156R1 = new System.Windows.Forms.TabPage();
+            this.R1156控場GunaPanel = new Guna.UI.WinForms.GunaPanel();
+            this.R1156控場音量Label = new System.Windows.Forms.Label();
+            this.R1156控場分離視窗CheckBox = new Guna.UI.WinForms.GunaCheckBox();
+            this.R1156控場音量TextBox = new Guna.UI.WinForms.GunaLineTextBox();
+            this.R1156控場設定音效Button = new Guna.UI.WinForms.GunaButton();
+            this.翻桌GunaPanel = new Guna.UI.WinForms.GunaPanel();
+            this.翻桌分離視窗CheckBox = new Guna.UI.WinForms.GunaCheckBox();
+            this.翻桌音量Label = new System.Windows.Forms.Label();
+            this.翻桌音量TextBox = new Guna.UI.WinForms.GunaLineTextBox();
+            this.翻桌設定音效Button = new Guna.UI.WinForms.GunaButton();
+            this.大刺GunaPanel = new Guna.UI.WinForms.GunaPanel();
+            this.大刺分離視窗CheckBox = new Guna.UI.WinForms.GunaCheckBox();
+            this.大刺音量TextBox = new Guna.UI.WinForms.GunaLineTextBox();
+            this.大刺音量Label = new System.Windows.Forms.Label();
+            this.大刺設定音效Button = new Guna.UI.WinForms.GunaButton();
+            this.大招GunaPanel = new Guna.UI.WinForms.GunaPanel();
+            this.大招分離視窗CheckBox = new Guna.UI.WinForms.GunaCheckBox();
+            this.大招音量TextBox = new Guna.UI.WinForms.GunaLineTextBox();
+            this.大招音量Label = new System.Windows.Forms.Label();
+            this.大招設定音效Button = new Guna.UI.WinForms.GunaButton();
+            this.R1156控場設定Button = new Guna.UI.WinForms.GunaButton();
+            this.翻桌設定Button = new Guna.UI.WinForms.GunaButton();
+            this.大刺設定Button = new Guna.UI.WinForms.GunaButton();
+            this.大招設定Button = new Guna.UI.WinForms.GunaButton();
             this.R1156控場Label = new System.Windows.Forms.Label();
             this.WindowsSetting156R1 = new Guna.UI.WinForms.GunaButton();
             this.音效設定156R1GroupBox = new System.Windows.Forms.GroupBox();
@@ -100,12 +144,32 @@
             this.大刺ComboBox = new Guna.UI.WinForms.GunaComboBox();
             this.大刺按鍵Label = new System.Windows.Forms.Label();
             this.翻桌按鍵Label = new System.Windows.Forms.Label();
-            this.R1156控場設定音效Button = new Guna.UI.WinForms.GunaButton();
             this.R1156控場按鍵Label = new System.Windows.Forms.Label();
-            this.翻桌設定音效Button = new Guna.UI.WinForms.GunaButton();
-            this.大招設定音效Button = new Guna.UI.WinForms.GunaButton();
-            this.大刺設定音效Button = new Guna.UI.WinForms.GunaButton();
             this.TabPage156R3 = new System.Windows.Forms.TabPage();
+            this.R3156控場GunaPanel = new Guna.UI.WinForms.GunaPanel();
+            this.R3156控場音量Label = new System.Windows.Forms.Label();
+            this.R3156控場分離視窗CheckBox = new Guna.UI.WinForms.GunaCheckBox();
+            this.R3156控場音量TextBox = new Guna.UI.WinForms.GunaLineTextBox();
+            this.R3156控場設定音效Button = new Guna.UI.WinForms.GunaButton();
+            this.三連GunaPanel = new Guna.UI.WinForms.GunaPanel();
+            this.三連分離視窗CheckBox = new Guna.UI.WinForms.GunaCheckBox();
+            this.三連音量Label = new System.Windows.Forms.Label();
+            this.三連音量TextBox = new Guna.UI.WinForms.GunaLineTextBox();
+            this.三連設定音效Button = new Guna.UI.WinForms.GunaButton();
+            this.陰陽陣GunaPanel = new Guna.UI.WinForms.GunaPanel();
+            this.陰陽陣分離視窗CheckBox = new Guna.UI.WinForms.GunaCheckBox();
+            this.陰陽陣音量TextBox = new Guna.UI.WinForms.GunaLineTextBox();
+            this.陰陽陣音量Label = new System.Windows.Forms.Label();
+            this.陰陽陣設定音效Button = new Guna.UI.WinForms.GunaButton();
+            this.大黑GunaPanel = new Guna.UI.WinForms.GunaPanel();
+            this.大黑分離視窗CheckBox = new Guna.UI.WinForms.GunaCheckBox();
+            this.大黑音量TextBox = new Guna.UI.WinForms.GunaLineTextBox();
+            this.大黑音量Label = new System.Windows.Forms.Label();
+            this.大黑設定音效Button = new Guna.UI.WinForms.GunaButton();
+            this.R3156控場設定Button = new Guna.UI.WinForms.GunaButton();
+            this.三連設定Button = new Guna.UI.WinForms.GunaButton();
+            this.陰陽陣設定Button = new Guna.UI.WinForms.GunaButton();
+            this.大黑設定Button = new Guna.UI.WinForms.GunaButton();
             this.R3156控場Label = new System.Windows.Forms.Label();
             this.WindowsSetting156R3 = new Guna.UI.WinForms.GunaButton();
             this.音效設定156R3GroupBox = new System.Windows.Forms.GroupBox();
@@ -133,11 +197,7 @@
             this.陰陽陣ComboBox = new Guna.UI.WinForms.GunaComboBox();
             this.陰陽陣按鍵Label = new System.Windows.Forms.Label();
             this.三連按鍵Label = new System.Windows.Forms.Label();
-            this.R3156控場設定音效Button = new Guna.UI.WinForms.GunaButton();
             this.R3156控場按鍵Label = new System.Windows.Forms.Label();
-            this.三連設定音效Button = new Guna.UI.WinForms.GunaButton();
-            this.大黑設定音效Button = new Guna.UI.WinForms.GunaButton();
-            this.陰陽陣設定音效Button = new Guna.UI.WinForms.GunaButton();
             this.TabPageCustomize = new System.Windows.Forms.TabPage();
             this.音效設定CustomizeGroupBox = new System.Windows.Forms.GroupBox();
             this.關閉音效CustomizeRadioButton = new Guna.UI.WinForms.GunaRadioButton();
@@ -174,9 +234,21 @@
             this.音效設定GroupBox.SuspendLayout();
             this.metroTabControlVS1.SuspendLayout();
             this.TabPage127R3.SuspendLayout();
+            this.控場GunaPanel.SuspendLayout();
+            this.荊棘延遲GunaPanel.SuspendLayout();
+            this.雷射GunaPanel.SuspendLayout();
+            this.小荊棘GunaPanel.SuspendLayout();
             this.TabPage156R1.SuspendLayout();
+            this.R1156控場GunaPanel.SuspendLayout();
+            this.翻桌GunaPanel.SuspendLayout();
+            this.大刺GunaPanel.SuspendLayout();
+            this.大招GunaPanel.SuspendLayout();
             this.音效設定156R1GroupBox.SuspendLayout();
             this.TabPage156R3.SuspendLayout();
+            this.R3156控場GunaPanel.SuspendLayout();
+            this.三連GunaPanel.SuspendLayout();
+            this.陰陽陣GunaPanel.SuspendLayout();
+            this.大黑GunaPanel.SuspendLayout();
             this.音效設定156R3GroupBox.SuspendLayout();
             this.TabPageCustomize.SuspendLayout();
             this.音效設定CustomizeGroupBox.SuspendLayout();
@@ -269,6 +341,7 @@
             this.小荊棘TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.小荊棘TextBox.FocusedLineColor = System.Drawing.Color.Red;
             this.小荊棘TextBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.小荊棘TextBox.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.小荊棘TextBox.LineColor = System.Drawing.Color.Gainsboro;
             this.小荊棘TextBox.LineSize = 1;
             this.小荊棘TextBox.Location = new System.Drawing.Point(333, 29);
@@ -921,12 +994,13 @@
             this.小荊棘設定音效Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.小荊棘設定音效Button.BorderColor = System.Drawing.Color.Transparent;
             this.小荊棘設定音效Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.小荊棘設定音效Button.Enabled = false;
             this.小荊棘設定音效Button.FocusedColor = System.Drawing.Color.Empty;
             this.小荊棘設定音效Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.小荊棘設定音效Button.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.小荊棘設定音效Button.Image = null;
             this.小荊棘設定音效Button.ImageSize = new System.Drawing.Size(24, 24);
-            this.小荊棘設定音效Button.Location = new System.Drawing.Point(429, 30);
+            this.小荊棘設定音效Button.Location = new System.Drawing.Point(20, 10);
             this.小荊棘設定音效Button.Name = "小荊棘設定音效Button";
             this.小荊棘設定音效Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.小荊棘設定音效Button.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -937,7 +1011,6 @@
             this.小荊棘設定音效Button.TabIndex = 119;
             this.小荊棘設定音效Button.Text = "設定音效";
             this.小荊棘設定音效Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.小荊棘設定音效Button.Visible = false;
             this.小荊棘設定音效Button.Click += new System.EventHandler(this.小荊棘設定音效Button_Click);
             // 
             // 雷射設定音效Button
@@ -949,12 +1022,13 @@
             this.雷射設定音效Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.雷射設定音效Button.BorderColor = System.Drawing.Color.Transparent;
             this.雷射設定音效Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.雷射設定音效Button.Enabled = false;
             this.雷射設定音效Button.FocusedColor = System.Drawing.Color.Empty;
             this.雷射設定音效Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.雷射設定音效Button.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.雷射設定音效Button.Image = null;
             this.雷射設定音效Button.ImageSize = new System.Drawing.Size(24, 24);
-            this.雷射設定音效Button.Location = new System.Drawing.Point(429, 101);
+            this.雷射設定音效Button.Location = new System.Drawing.Point(20, 10);
             this.雷射設定音效Button.Name = "雷射設定音效Button";
             this.雷射設定音效Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.雷射設定音效Button.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -965,7 +1039,6 @@
             this.雷射設定音效Button.TabIndex = 120;
             this.雷射設定音效Button.Text = "設定音效";
             this.雷射設定音效Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.雷射設定音效Button.Visible = false;
             this.雷射設定音效Button.Click += new System.EventHandler(this.雷射設定音效Button_Click);
             // 
             // 荊棘延遲設定音效Button
@@ -977,12 +1050,13 @@
             this.荊棘延遲設定音效Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.荊棘延遲設定音效Button.BorderColor = System.Drawing.Color.Transparent;
             this.荊棘延遲設定音效Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.荊棘延遲設定音效Button.Enabled = false;
             this.荊棘延遲設定音效Button.FocusedColor = System.Drawing.Color.Empty;
             this.荊棘延遲設定音效Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.荊棘延遲設定音效Button.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.荊棘延遲設定音效Button.Image = null;
             this.荊棘延遲設定音效Button.ImageSize = new System.Drawing.Size(24, 24);
-            this.荊棘延遲設定音效Button.Location = new System.Drawing.Point(429, 173);
+            this.荊棘延遲設定音效Button.Location = new System.Drawing.Point(20, 10);
             this.荊棘延遲設定音效Button.Name = "荊棘延遲設定音效Button";
             this.荊棘延遲設定音效Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.荊棘延遲設定音效Button.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -993,7 +1067,6 @@
             this.荊棘延遲設定音效Button.TabIndex = 121;
             this.荊棘延遲設定音效Button.Text = "設定音效";
             this.荊棘延遲設定音效Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.荊棘延遲設定音效Button.Visible = false;
             this.荊棘延遲設定音效Button.Click += new System.EventHandler(this.荊棘延遲設定音效Button_Click);
             // 
             // 控場設定音效Button
@@ -1005,12 +1078,13 @@
             this.控場設定音效Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.控場設定音效Button.BorderColor = System.Drawing.Color.Transparent;
             this.控場設定音效Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.控場設定音效Button.Enabled = false;
             this.控場設定音效Button.FocusedColor = System.Drawing.Color.Empty;
             this.控場設定音效Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.控場設定音效Button.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.控場設定音效Button.Image = null;
             this.控場設定音效Button.ImageSize = new System.Drawing.Size(24, 24);
-            this.控場設定音效Button.Location = new System.Drawing.Point(429, 245);
+            this.控場設定音效Button.Location = new System.Drawing.Point(20, 10);
             this.控場設定音效Button.Name = "控場設定音效Button";
             this.控場設定音效Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.控場設定音效Button.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -1021,7 +1095,6 @@
             this.控場設定音效Button.TabIndex = 122;
             this.控場設定音效Button.Text = "設定音效";
             this.控場設定音效Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.控場設定音效Button.Visible = false;
             this.控場設定音效Button.Click += new System.EventHandler(this.控場設定音效Button_Click);
             // 
             // 音效設定GroupBox
@@ -1125,6 +1198,14 @@
             // TabPage127R3
             // 
             this.TabPage127R3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.TabPage127R3.Controls.Add(this.控場GunaPanel);
+            this.TabPage127R3.Controls.Add(this.荊棘延遲GunaPanel);
+            this.TabPage127R3.Controls.Add(this.雷射GunaPanel);
+            this.TabPage127R3.Controls.Add(this.小荊棘GunaPanel);
+            this.TabPage127R3.Controls.Add(this.控場設定Button);
+            this.TabPage127R3.Controls.Add(this.荊棘延遲設定Button);
+            this.TabPage127R3.Controls.Add(this.雷射設定Button);
+            this.TabPage127R3.Controls.Add(this.小荊棘設定Button);
             this.TabPage127R3.Controls.Add(this.控場Label);
             this.TabPage127R3.Controls.Add(this.WindowsSetting);
             this.TabPage127R3.Controls.Add(this.音效設定GroupBox);
@@ -1150,11 +1231,7 @@
             this.TabPage127R3.Controls.Add(this.雷射按鍵Label);
             this.TabPage127R3.Controls.Add(this.TopMostCheckBox);
             this.TabPage127R3.Controls.Add(this.荊棘延遲按鍵Label);
-            this.TabPage127R3.Controls.Add(this.控場設定音效Button);
             this.TabPage127R3.Controls.Add(this.控場按鍵Label);
-            this.TabPage127R3.Controls.Add(this.荊棘延遲設定音效Button);
-            this.TabPage127R3.Controls.Add(this.小荊棘設定音效Button);
-            this.TabPage127R3.Controls.Add(this.雷射設定音效Button);
             this.TabPage127R3.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.TabPage127R3.Location = new System.Drawing.Point(4, 20);
             this.TabPage127R3.Name = "TabPage127R3";
@@ -1163,9 +1240,349 @@
             this.TabPage127R3.TabIndex = 0;
             this.TabPage127R3.Text = "127R3";
             // 
+            // 控場GunaPanel
+            // 
+            this.控場GunaPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.控場GunaPanel.Controls.Add(this.控場音量Label);
+            this.控場GunaPanel.Controls.Add(this.控場分離視窗CheckBox);
+            this.控場GunaPanel.Controls.Add(this.控場音量TextBox);
+            this.控場GunaPanel.Controls.Add(this.控場設定音效Button);
+            this.控場GunaPanel.Location = new System.Drawing.Point(293, 245);
+            this.控場GunaPanel.Name = "控場GunaPanel";
+            this.控場GunaPanel.Size = new System.Drawing.Size(130, 0);
+            this.控場GunaPanel.TabIndex = 193;
+            this.控場GunaPanel.Visible = false;
+            // 
+            // 控場音量Label
+            // 
+            this.控場音量Label.AutoSize = true;
+            this.控場音量Label.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.控場音量Label.Location = new System.Drawing.Point(3, 72);
+            this.控場音量Label.Name = "控場音量Label";
+            this.控場音量Label.Size = new System.Drawing.Size(72, 20);
+            this.控場音量Label.TabIndex = 201;
+            this.控場音量Label.Text = "音量 (%)";
+            // 
+            // 控場分離視窗CheckBox
+            // 
+            this.控場分離視窗CheckBox.BaseColor = System.Drawing.Color.White;
+            this.控場分離視窗CheckBox.CheckedOffColor = System.Drawing.Color.Gray;
+            this.控場分離視窗CheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.控場分離視窗CheckBox.FillColor = System.Drawing.Color.White;
+            this.控場分離視窗CheckBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.控場分離視窗CheckBox.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.控場分離視窗CheckBox.Location = new System.Drawing.Point(20, 107);
+            this.控場分離視窗CheckBox.Name = "控場分離視窗CheckBox";
+            this.控場分離視窗CheckBox.Size = new System.Drawing.Size(100, 25);
+            this.控場分離視窗CheckBox.TabIndex = 121;
+            this.控場分離視窗CheckBox.Text = "分離介面";
+            // 
+            // 控場音量TextBox
+            // 
+            this.控場音量TextBox.Animated = true;
+            this.控場音量TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.控場音量TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.控場音量TextBox.FocusedLineColor = System.Drawing.Color.Red;
+            this.控場音量TextBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.控場音量TextBox.LineColor = System.Drawing.Color.Gainsboro;
+            this.控場音量TextBox.LineSize = 1;
+            this.控場音量TextBox.Location = new System.Drawing.Point(75, 59);
+            this.控場音量TextBox.MaxLength = 3;
+            this.控場音量TextBox.Name = "控場音量TextBox";
+            this.控場音量TextBox.PasswordChar = '\0';
+            this.控場音量TextBox.Size = new System.Drawing.Size(45, 42);
+            this.控場音量TextBox.TabIndex = 200;
+            this.控場音量TextBox.Text = "100";
+            this.控場音量TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.控場音量TextBox.TextOffsetX = 3;
+            // 
+            // 荊棘延遲GunaPanel
+            // 
+            this.荊棘延遲GunaPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.荊棘延遲GunaPanel.Controls.Add(this.荊棘延遲分離視窗CheckBox);
+            this.荊棘延遲GunaPanel.Controls.Add(this.荊棘延遲設定音效Button);
+            this.荊棘延遲GunaPanel.Controls.Add(this.荊棘延遲音量Label);
+            this.荊棘延遲GunaPanel.Controls.Add(this.荊棘延遲音量TextBox);
+            this.荊棘延遲GunaPanel.Location = new System.Drawing.Point(293, 173);
+            this.荊棘延遲GunaPanel.Name = "荊棘延遲GunaPanel";
+            this.荊棘延遲GunaPanel.Size = new System.Drawing.Size(130, 0);
+            this.荊棘延遲GunaPanel.TabIndex = 192;
+            this.荊棘延遲GunaPanel.Visible = false;
+            // 
+            // 荊棘延遲分離視窗CheckBox
+            // 
+            this.荊棘延遲分離視窗CheckBox.BaseColor = System.Drawing.Color.White;
+            this.荊棘延遲分離視窗CheckBox.CheckedOffColor = System.Drawing.Color.Gray;
+            this.荊棘延遲分離視窗CheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.荊棘延遲分離視窗CheckBox.FillColor = System.Drawing.Color.White;
+            this.荊棘延遲分離視窗CheckBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.荊棘延遲分離視窗CheckBox.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.荊棘延遲分離視窗CheckBox.Location = new System.Drawing.Point(20, 107);
+            this.荊棘延遲分離視窗CheckBox.Name = "荊棘延遲分離視窗CheckBox";
+            this.荊棘延遲分離視窗CheckBox.Size = new System.Drawing.Size(100, 25);
+            this.荊棘延遲分離視窗CheckBox.TabIndex = 121;
+            this.荊棘延遲分離視窗CheckBox.Text = "分離介面";
+            // 
+            // 荊棘延遲音量Label
+            // 
+            this.荊棘延遲音量Label.AutoSize = true;
+            this.荊棘延遲音量Label.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.荊棘延遲音量Label.Location = new System.Drawing.Point(3, 72);
+            this.荊棘延遲音量Label.Name = "荊棘延遲音量Label";
+            this.荊棘延遲音量Label.Size = new System.Drawing.Size(72, 20);
+            this.荊棘延遲音量Label.TabIndex = 199;
+            this.荊棘延遲音量Label.Text = "音量 (%)";
+            // 
+            // 荊棘延遲音量TextBox
+            // 
+            this.荊棘延遲音量TextBox.Animated = true;
+            this.荊棘延遲音量TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.荊棘延遲音量TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.荊棘延遲音量TextBox.FocusedLineColor = System.Drawing.Color.Red;
+            this.荊棘延遲音量TextBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.荊棘延遲音量TextBox.LineColor = System.Drawing.Color.Gainsboro;
+            this.荊棘延遲音量TextBox.LineSize = 1;
+            this.荊棘延遲音量TextBox.Location = new System.Drawing.Point(75, 59);
+            this.荊棘延遲音量TextBox.MaxLength = 3;
+            this.荊棘延遲音量TextBox.Name = "荊棘延遲音量TextBox";
+            this.荊棘延遲音量TextBox.PasswordChar = '\0';
+            this.荊棘延遲音量TextBox.Size = new System.Drawing.Size(45, 42);
+            this.荊棘延遲音量TextBox.TabIndex = 198;
+            this.荊棘延遲音量TextBox.Text = "100";
+            this.荊棘延遲音量TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.荊棘延遲音量TextBox.TextOffsetX = 3;
+            // 
+            // 雷射GunaPanel
+            // 
+            this.雷射GunaPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.雷射GunaPanel.Controls.Add(this.雷射分離視窗CheckBox);
+            this.雷射GunaPanel.Controls.Add(this.雷射設定音效Button);
+            this.雷射GunaPanel.Controls.Add(this.雷射音量TextBox);
+            this.雷射GunaPanel.Controls.Add(this.雷射音量Label);
+            this.雷射GunaPanel.Location = new System.Drawing.Point(293, 101);
+            this.雷射GunaPanel.Name = "雷射GunaPanel";
+            this.雷射GunaPanel.Size = new System.Drawing.Size(130, 0);
+            this.雷射GunaPanel.TabIndex = 192;
+            this.雷射GunaPanel.Visible = false;
+            // 
+            // 雷射分離視窗CheckBox
+            // 
+            this.雷射分離視窗CheckBox.BaseColor = System.Drawing.Color.White;
+            this.雷射分離視窗CheckBox.CheckedOffColor = System.Drawing.Color.Gray;
+            this.雷射分離視窗CheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.雷射分離視窗CheckBox.FillColor = System.Drawing.Color.White;
+            this.雷射分離視窗CheckBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.雷射分離視窗CheckBox.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.雷射分離視窗CheckBox.Location = new System.Drawing.Point(20, 107);
+            this.雷射分離視窗CheckBox.Name = "雷射分離視窗CheckBox";
+            this.雷射分離視窗CheckBox.Size = new System.Drawing.Size(100, 25);
+            this.雷射分離視窗CheckBox.TabIndex = 121;
+            this.雷射分離視窗CheckBox.Text = "分離介面";
+            // 
+            // 雷射音量TextBox
+            // 
+            this.雷射音量TextBox.Animated = true;
+            this.雷射音量TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.雷射音量TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.雷射音量TextBox.FocusedLineColor = System.Drawing.Color.Red;
+            this.雷射音量TextBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.雷射音量TextBox.LineColor = System.Drawing.Color.Gainsboro;
+            this.雷射音量TextBox.LineSize = 1;
+            this.雷射音量TextBox.Location = new System.Drawing.Point(75, 59);
+            this.雷射音量TextBox.MaxLength = 3;
+            this.雷射音量TextBox.Name = "雷射音量TextBox";
+            this.雷射音量TextBox.PasswordChar = '\0';
+            this.雷射音量TextBox.Size = new System.Drawing.Size(45, 42);
+            this.雷射音量TextBox.TabIndex = 196;
+            this.雷射音量TextBox.Text = "100";
+            this.雷射音量TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.雷射音量TextBox.TextOffsetX = 3;
+            // 
+            // 雷射音量Label
+            // 
+            this.雷射音量Label.AutoSize = true;
+            this.雷射音量Label.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.雷射音量Label.Location = new System.Drawing.Point(3, 72);
+            this.雷射音量Label.Name = "雷射音量Label";
+            this.雷射音量Label.Size = new System.Drawing.Size(72, 20);
+            this.雷射音量Label.TabIndex = 197;
+            this.雷射音量Label.Text = "音量 (%)";
+            // 
+            // 小荊棘GunaPanel
+            // 
+            this.小荊棘GunaPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.小荊棘GunaPanel.Controls.Add(this.小荊棘分離視窗CheckBox);
+            this.小荊棘GunaPanel.Controls.Add(this.小荊棘設定音效Button);
+            this.小荊棘GunaPanel.Controls.Add(this.小荊棘音量TextBox);
+            this.小荊棘GunaPanel.Controls.Add(this.小荊棘音量Label);
+            this.小荊棘GunaPanel.Location = new System.Drawing.Point(293, 29);
+            this.小荊棘GunaPanel.Name = "小荊棘GunaPanel";
+            this.小荊棘GunaPanel.Size = new System.Drawing.Size(130, 0);
+            this.小荊棘GunaPanel.TabIndex = 191;
+            this.小荊棘GunaPanel.Visible = false;
+            // 
+            // 小荊棘分離視窗CheckBox
+            // 
+            this.小荊棘分離視窗CheckBox.BaseColor = System.Drawing.Color.White;
+            this.小荊棘分離視窗CheckBox.CheckedOffColor = System.Drawing.Color.Gray;
+            this.小荊棘分離視窗CheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.小荊棘分離視窗CheckBox.FillColor = System.Drawing.Color.White;
+            this.小荊棘分離視窗CheckBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.小荊棘分離視窗CheckBox.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.小荊棘分離視窗CheckBox.Location = new System.Drawing.Point(20, 107);
+            this.小荊棘分離視窗CheckBox.Name = "小荊棘分離視窗CheckBox";
+            this.小荊棘分離視窗CheckBox.Size = new System.Drawing.Size(100, 25);
+            this.小荊棘分離視窗CheckBox.TabIndex = 121;
+            this.小荊棘分離視窗CheckBox.Text = "分離介面";
+            // 
+            // 小荊棘音量TextBox
+            // 
+            this.小荊棘音量TextBox.Animated = true;
+            this.小荊棘音量TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.小荊棘音量TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.小荊棘音量TextBox.FocusedLineColor = System.Drawing.Color.Red;
+            this.小荊棘音量TextBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.小荊棘音量TextBox.LineColor = System.Drawing.Color.Gainsboro;
+            this.小荊棘音量TextBox.LineSize = 1;
+            this.小荊棘音量TextBox.Location = new System.Drawing.Point(75, 59);
+            this.小荊棘音量TextBox.MaxLength = 3;
+            this.小荊棘音量TextBox.Name = "小荊棘音量TextBox";
+            this.小荊棘音量TextBox.PasswordChar = '\0';
+            this.小荊棘音量TextBox.Size = new System.Drawing.Size(45, 42);
+            this.小荊棘音量TextBox.TabIndex = 194;
+            this.小荊棘音量TextBox.Text = "100";
+            this.小荊棘音量TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.小荊棘音量TextBox.TextOffsetX = 3;
+            // 
+            // 小荊棘音量Label
+            // 
+            this.小荊棘音量Label.AutoSize = true;
+            this.小荊棘音量Label.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.小荊棘音量Label.Location = new System.Drawing.Point(3, 72);
+            this.小荊棘音量Label.Name = "小荊棘音量Label";
+            this.小荊棘音量Label.Size = new System.Drawing.Size(72, 20);
+            this.小荊棘音量Label.TabIndex = 195;
+            this.小荊棘音量Label.Text = "音量 (%)";
+            // 
+            // 控場設定Button
+            // 
+            this.控場設定Button.Animated = true;
+            this.控場設定Button.AnimationHoverSpeed = 0.07F;
+            this.控場設定Button.AnimationSpeed = 0.03F;
+            this.控場設定Button.BackColor = System.Drawing.Color.Transparent;
+            this.控場設定Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(138)))), ((int)(((byte)(149)))));
+            this.控場設定Button.BorderColor = System.Drawing.Color.Transparent;
+            this.控場設定Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.控場設定Button.FocusedColor = System.Drawing.Color.Empty;
+            this.控場設定Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.控場設定Button.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.控場設定Button.Image = ((System.Drawing.Image)(resources.GetObject("控場設定Button.Image")));
+            this.控場設定Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.控場設定Button.ImageSize = new System.Drawing.Size(24, 24);
+            this.控場設定Button.Location = new System.Drawing.Point(429, 245);
+            this.控場設定Button.Name = "控場設定Button";
+            this.控場設定Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.控場設定Button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.控場設定Button.OnHoverForeColor = System.Drawing.Color.White;
+            this.控場設定Button.OnHoverImage = null;
+            this.控場設定Button.OnPressedColor = System.Drawing.Color.Black;
+            this.控場設定Button.Size = new System.Drawing.Size(84, 42);
+            this.控場設定Button.TabIndex = 190;
+            this.控場設定Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.控場設定Button.Click += new System.EventHandler(this.控場設定Button_Click);
+            // 
+            // 荊棘延遲設定Button
+            // 
+            this.荊棘延遲設定Button.Animated = true;
+            this.荊棘延遲設定Button.AnimationHoverSpeed = 0.07F;
+            this.荊棘延遲設定Button.AnimationSpeed = 0.03F;
+            this.荊棘延遲設定Button.BackColor = System.Drawing.Color.Transparent;
+            this.荊棘延遲設定Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(138)))), ((int)(((byte)(149)))));
+            this.荊棘延遲設定Button.BorderColor = System.Drawing.Color.Transparent;
+            this.荊棘延遲設定Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.荊棘延遲設定Button.FocusedColor = System.Drawing.Color.Empty;
+            this.荊棘延遲設定Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.荊棘延遲設定Button.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.荊棘延遲設定Button.Image = ((System.Drawing.Image)(resources.GetObject("荊棘延遲設定Button.Image")));
+            this.荊棘延遲設定Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.荊棘延遲設定Button.ImageSize = new System.Drawing.Size(24, 24);
+            this.荊棘延遲設定Button.Location = new System.Drawing.Point(429, 173);
+            this.荊棘延遲設定Button.Name = "荊棘延遲設定Button";
+            this.荊棘延遲設定Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.荊棘延遲設定Button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.荊棘延遲設定Button.OnHoverForeColor = System.Drawing.Color.White;
+            this.荊棘延遲設定Button.OnHoverImage = null;
+            this.荊棘延遲設定Button.OnPressedColor = System.Drawing.Color.Black;
+            this.荊棘延遲設定Button.Size = new System.Drawing.Size(84, 42);
+            this.荊棘延遲設定Button.TabIndex = 189;
+            this.荊棘延遲設定Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.荊棘延遲設定Button.Click += new System.EventHandler(this.荊棘延遲設定Button_Click);
+            // 
+            // 雷射設定Button
+            // 
+            this.雷射設定Button.Animated = true;
+            this.雷射設定Button.AnimationHoverSpeed = 0.07F;
+            this.雷射設定Button.AnimationSpeed = 0.03F;
+            this.雷射設定Button.BackColor = System.Drawing.Color.Transparent;
+            this.雷射設定Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(138)))), ((int)(((byte)(149)))));
+            this.雷射設定Button.BorderColor = System.Drawing.Color.Transparent;
+            this.雷射設定Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.雷射設定Button.FocusedColor = System.Drawing.Color.Empty;
+            this.雷射設定Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.雷射設定Button.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.雷射設定Button.Image = ((System.Drawing.Image)(resources.GetObject("雷射設定Button.Image")));
+            this.雷射設定Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.雷射設定Button.ImageSize = new System.Drawing.Size(24, 24);
+            this.雷射設定Button.Location = new System.Drawing.Point(429, 101);
+            this.雷射設定Button.Name = "雷射設定Button";
+            this.雷射設定Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.雷射設定Button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.雷射設定Button.OnHoverForeColor = System.Drawing.Color.White;
+            this.雷射設定Button.OnHoverImage = null;
+            this.雷射設定Button.OnPressedColor = System.Drawing.Color.Black;
+            this.雷射設定Button.Size = new System.Drawing.Size(84, 42);
+            this.雷射設定Button.TabIndex = 188;
+            this.雷射設定Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.雷射設定Button.Click += new System.EventHandler(this.雷射設定Button_Click);
+            // 
+            // 小荊棘設定Button
+            // 
+            this.小荊棘設定Button.Animated = true;
+            this.小荊棘設定Button.AnimationHoverSpeed = 0.07F;
+            this.小荊棘設定Button.AnimationSpeed = 0.03F;
+            this.小荊棘設定Button.BackColor = System.Drawing.Color.Transparent;
+            this.小荊棘設定Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(138)))), ((int)(((byte)(149)))));
+            this.小荊棘設定Button.BorderColor = System.Drawing.Color.Transparent;
+            this.小荊棘設定Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.小荊棘設定Button.FocusedColor = System.Drawing.Color.Empty;
+            this.小荊棘設定Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.小荊棘設定Button.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.小荊棘設定Button.Image = ((System.Drawing.Image)(resources.GetObject("小荊棘設定Button.Image")));
+            this.小荊棘設定Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.小荊棘設定Button.ImageSize = new System.Drawing.Size(24, 24);
+            this.小荊棘設定Button.Location = new System.Drawing.Point(429, 29);
+            this.小荊棘設定Button.Name = "小荊棘設定Button";
+            this.小荊棘設定Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.小荊棘設定Button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.小荊棘設定Button.OnHoverForeColor = System.Drawing.Color.White;
+            this.小荊棘設定Button.OnHoverImage = null;
+            this.小荊棘設定Button.OnPressedColor = System.Drawing.Color.Black;
+            this.小荊棘設定Button.Size = new System.Drawing.Size(84, 42);
+            this.小荊棘設定Button.TabIndex = 187;
+            this.小荊棘設定Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.小荊棘設定Button.Click += new System.EventHandler(this.小荊棘設定Button_Click);
+            // 
             // TabPage156R1
             // 
             this.TabPage156R1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.TabPage156R1.Controls.Add(this.R1156控場GunaPanel);
+            this.TabPage156R1.Controls.Add(this.翻桌GunaPanel);
+            this.TabPage156R1.Controls.Add(this.大刺GunaPanel);
+            this.TabPage156R1.Controls.Add(this.大招GunaPanel);
+            this.TabPage156R1.Controls.Add(this.R1156控場設定Button);
+            this.TabPage156R1.Controls.Add(this.翻桌設定Button);
+            this.TabPage156R1.Controls.Add(this.大刺設定Button);
+            this.TabPage156R1.Controls.Add(this.大招設定Button);
             this.TabPage156R1.Controls.Add(this.R1156控場Label);
             this.TabPage156R1.Controls.Add(this.WindowsSetting156R1);
             this.TabPage156R1.Controls.Add(this.音效設定156R1GroupBox);
@@ -1190,11 +1607,7 @@
             this.TabPage156R1.Controls.Add(this.大刺ComboBox);
             this.TabPage156R1.Controls.Add(this.大刺按鍵Label);
             this.TabPage156R1.Controls.Add(this.翻桌按鍵Label);
-            this.TabPage156R1.Controls.Add(this.R1156控場設定音效Button);
             this.TabPage156R1.Controls.Add(this.R1156控場按鍵Label);
-            this.TabPage156R1.Controls.Add(this.翻桌設定音效Button);
-            this.TabPage156R1.Controls.Add(this.大招設定音效Button);
-            this.TabPage156R1.Controls.Add(this.大刺設定音效Button);
             this.TabPage156R1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.TabPage156R1.Location = new System.Drawing.Point(4, 20);
             this.TabPage156R1.Name = "TabPage156R1";
@@ -1202,6 +1615,450 @@
             this.TabPage156R1.Size = new System.Drawing.Size(534, 509);
             this.TabPage156R1.TabIndex = 1;
             this.TabPage156R1.Text = "156R1";
+            // 
+            // R1156控場GunaPanel
+            // 
+            this.R1156控場GunaPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.R1156控場GunaPanel.Controls.Add(this.R1156控場音量Label);
+            this.R1156控場GunaPanel.Controls.Add(this.R1156控場分離視窗CheckBox);
+            this.R1156控場GunaPanel.Controls.Add(this.R1156控場音量TextBox);
+            this.R1156控場GunaPanel.Controls.Add(this.R1156控場設定音效Button);
+            this.R1156控場GunaPanel.Location = new System.Drawing.Point(293, 245);
+            this.R1156控場GunaPanel.Name = "R1156控場GunaPanel";
+            this.R1156控場GunaPanel.Size = new System.Drawing.Size(130, 0);
+            this.R1156控場GunaPanel.TabIndex = 201;
+            this.R1156控場GunaPanel.Visible = false;
+            // 
+            // R1156控場音量Label
+            // 
+            this.R1156控場音量Label.AutoSize = true;
+            this.R1156控場音量Label.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.R1156控場音量Label.Location = new System.Drawing.Point(3, 72);
+            this.R1156控場音量Label.Name = "R1156控場音量Label";
+            this.R1156控場音量Label.Size = new System.Drawing.Size(72, 20);
+            this.R1156控場音量Label.TabIndex = 201;
+            this.R1156控場音量Label.Text = "音量 (%)";
+            // 
+            // R1156控場分離視窗CheckBox
+            // 
+            this.R1156控場分離視窗CheckBox.BaseColor = System.Drawing.Color.White;
+            this.R1156控場分離視窗CheckBox.CheckedOffColor = System.Drawing.Color.Gray;
+            this.R1156控場分離視窗CheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.R1156控場分離視窗CheckBox.FillColor = System.Drawing.Color.White;
+            this.R1156控場分離視窗CheckBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.R1156控場分離視窗CheckBox.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.R1156控場分離視窗CheckBox.Location = new System.Drawing.Point(20, 107);
+            this.R1156控場分離視窗CheckBox.Name = "R1156控場分離視窗CheckBox";
+            this.R1156控場分離視窗CheckBox.Size = new System.Drawing.Size(100, 25);
+            this.R1156控場分離視窗CheckBox.TabIndex = 121;
+            this.R1156控場分離視窗CheckBox.Text = "分離介面";
+            // 
+            // R1156控場音量TextBox
+            // 
+            this.R1156控場音量TextBox.Animated = true;
+            this.R1156控場音量TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.R1156控場音量TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.R1156控場音量TextBox.FocusedLineColor = System.Drawing.Color.Red;
+            this.R1156控場音量TextBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.R1156控場音量TextBox.LineColor = System.Drawing.Color.Gainsboro;
+            this.R1156控場音量TextBox.LineSize = 1;
+            this.R1156控場音量TextBox.Location = new System.Drawing.Point(75, 59);
+            this.R1156控場音量TextBox.MaxLength = 3;
+            this.R1156控場音量TextBox.Name = "R1156控場音量TextBox";
+            this.R1156控場音量TextBox.PasswordChar = '\0';
+            this.R1156控場音量TextBox.Size = new System.Drawing.Size(45, 42);
+            this.R1156控場音量TextBox.TabIndex = 200;
+            this.R1156控場音量TextBox.Text = "100";
+            this.R1156控場音量TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.R1156控場音量TextBox.TextOffsetX = 3;
+            // 
+            // R1156控場設定音效Button
+            // 
+            this.R1156控場設定音效Button.Animated = true;
+            this.R1156控場設定音效Button.AnimationHoverSpeed = 0.07F;
+            this.R1156控場設定音效Button.AnimationSpeed = 0.03F;
+            this.R1156控場設定音效Button.BackColor = System.Drawing.Color.Transparent;
+            this.R1156控場設定音效Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.R1156控場設定音效Button.BorderColor = System.Drawing.Color.Transparent;
+            this.R1156控場設定音效Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.R1156控場設定音效Button.Enabled = false;
+            this.R1156控場設定音效Button.FocusedColor = System.Drawing.Color.Empty;
+            this.R1156控場設定音效Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.R1156控場設定音效Button.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.R1156控場設定音效Button.Image = null;
+            this.R1156控場設定音效Button.ImageSize = new System.Drawing.Size(24, 24);
+            this.R1156控場設定音效Button.Location = new System.Drawing.Point(20, 10);
+            this.R1156控場設定音效Button.Name = "R1156控場設定音效Button";
+            this.R1156控場設定音效Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.R1156控場設定音效Button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.R1156控場設定音效Button.OnHoverForeColor = System.Drawing.Color.White;
+            this.R1156控場設定音效Button.OnHoverImage = null;
+            this.R1156控場設定音效Button.OnPressedColor = System.Drawing.Color.Black;
+            this.R1156控場設定音效Button.Size = new System.Drawing.Size(84, 42);
+            this.R1156控場設定音效Button.TabIndex = 152;
+            this.R1156控場設定音效Button.Text = "設定音效";
+            this.R1156控場設定音效Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.R1156控場設定音效Button.Click += new System.EventHandler(this.R1156控場設定音效Button_Click);
+            // 
+            // 翻桌GunaPanel
+            // 
+            this.翻桌GunaPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.翻桌GunaPanel.Controls.Add(this.翻桌分離視窗CheckBox);
+            this.翻桌GunaPanel.Controls.Add(this.翻桌音量Label);
+            this.翻桌GunaPanel.Controls.Add(this.翻桌音量TextBox);
+            this.翻桌GunaPanel.Controls.Add(this.翻桌設定音效Button);
+            this.翻桌GunaPanel.Location = new System.Drawing.Point(293, 173);
+            this.翻桌GunaPanel.Name = "翻桌GunaPanel";
+            this.翻桌GunaPanel.Size = new System.Drawing.Size(130, 0);
+            this.翻桌GunaPanel.TabIndex = 200;
+            this.翻桌GunaPanel.Visible = false;
+            // 
+            // 翻桌分離視窗CheckBox
+            // 
+            this.翻桌分離視窗CheckBox.BaseColor = System.Drawing.Color.White;
+            this.翻桌分離視窗CheckBox.CheckedOffColor = System.Drawing.Color.Gray;
+            this.翻桌分離視窗CheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.翻桌分離視窗CheckBox.FillColor = System.Drawing.Color.White;
+            this.翻桌分離視窗CheckBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.翻桌分離視窗CheckBox.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.翻桌分離視窗CheckBox.Location = new System.Drawing.Point(20, 107);
+            this.翻桌分離視窗CheckBox.Name = "翻桌分離視窗CheckBox";
+            this.翻桌分離視窗CheckBox.Size = new System.Drawing.Size(100, 25);
+            this.翻桌分離視窗CheckBox.TabIndex = 121;
+            this.翻桌分離視窗CheckBox.Text = "分離介面";
+            // 
+            // 翻桌音量Label
+            // 
+            this.翻桌音量Label.AutoSize = true;
+            this.翻桌音量Label.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.翻桌音量Label.Location = new System.Drawing.Point(3, 72);
+            this.翻桌音量Label.Name = "翻桌音量Label";
+            this.翻桌音量Label.Size = new System.Drawing.Size(72, 20);
+            this.翻桌音量Label.TabIndex = 199;
+            this.翻桌音量Label.Text = "音量 (%)";
+            // 
+            // 翻桌音量TextBox
+            // 
+            this.翻桌音量TextBox.Animated = true;
+            this.翻桌音量TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.翻桌音量TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.翻桌音量TextBox.FocusedLineColor = System.Drawing.Color.Red;
+            this.翻桌音量TextBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.翻桌音量TextBox.LineColor = System.Drawing.Color.Gainsboro;
+            this.翻桌音量TextBox.LineSize = 1;
+            this.翻桌音量TextBox.Location = new System.Drawing.Point(75, 59);
+            this.翻桌音量TextBox.MaxLength = 3;
+            this.翻桌音量TextBox.Name = "翻桌音量TextBox";
+            this.翻桌音量TextBox.PasswordChar = '\0';
+            this.翻桌音量TextBox.Size = new System.Drawing.Size(45, 42);
+            this.翻桌音量TextBox.TabIndex = 198;
+            this.翻桌音量TextBox.Text = "100";
+            this.翻桌音量TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.翻桌音量TextBox.TextOffsetX = 3;
+            // 
+            // 翻桌設定音效Button
+            // 
+            this.翻桌設定音效Button.Animated = true;
+            this.翻桌設定音效Button.AnimationHoverSpeed = 0.07F;
+            this.翻桌設定音效Button.AnimationSpeed = 0.03F;
+            this.翻桌設定音效Button.BackColor = System.Drawing.Color.Transparent;
+            this.翻桌設定音效Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.翻桌設定音效Button.BorderColor = System.Drawing.Color.Transparent;
+            this.翻桌設定音效Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.翻桌設定音效Button.Enabled = false;
+            this.翻桌設定音效Button.FocusedColor = System.Drawing.Color.Empty;
+            this.翻桌設定音效Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.翻桌設定音效Button.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.翻桌設定音效Button.Image = null;
+            this.翻桌設定音效Button.ImageSize = new System.Drawing.Size(24, 24);
+            this.翻桌設定音效Button.Location = new System.Drawing.Point(20, 10);
+            this.翻桌設定音效Button.Name = "翻桌設定音效Button";
+            this.翻桌設定音效Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.翻桌設定音效Button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.翻桌設定音效Button.OnHoverForeColor = System.Drawing.Color.White;
+            this.翻桌設定音效Button.OnHoverImage = null;
+            this.翻桌設定音效Button.OnPressedColor = System.Drawing.Color.Black;
+            this.翻桌設定音效Button.Size = new System.Drawing.Size(84, 42);
+            this.翻桌設定音效Button.TabIndex = 151;
+            this.翻桌設定音效Button.Text = "設定音效";
+            this.翻桌設定音效Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.翻桌設定音效Button.Click += new System.EventHandler(this.翻桌設定音效Button_Click);
+            // 
+            // 大刺GunaPanel
+            // 
+            this.大刺GunaPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.大刺GunaPanel.Controls.Add(this.大刺分離視窗CheckBox);
+            this.大刺GunaPanel.Controls.Add(this.大刺音量TextBox);
+            this.大刺GunaPanel.Controls.Add(this.大刺音量Label);
+            this.大刺GunaPanel.Controls.Add(this.大刺設定音效Button);
+            this.大刺GunaPanel.Location = new System.Drawing.Point(293, 101);
+            this.大刺GunaPanel.Name = "大刺GunaPanel";
+            this.大刺GunaPanel.Size = new System.Drawing.Size(130, 0);
+            this.大刺GunaPanel.TabIndex = 199;
+            this.大刺GunaPanel.Visible = false;
+            // 
+            // 大刺分離視窗CheckBox
+            // 
+            this.大刺分離視窗CheckBox.BaseColor = System.Drawing.Color.White;
+            this.大刺分離視窗CheckBox.CheckedOffColor = System.Drawing.Color.Gray;
+            this.大刺分離視窗CheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.大刺分離視窗CheckBox.FillColor = System.Drawing.Color.White;
+            this.大刺分離視窗CheckBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.大刺分離視窗CheckBox.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.大刺分離視窗CheckBox.Location = new System.Drawing.Point(20, 107);
+            this.大刺分離視窗CheckBox.Name = "大刺分離視窗CheckBox";
+            this.大刺分離視窗CheckBox.Size = new System.Drawing.Size(100, 25);
+            this.大刺分離視窗CheckBox.TabIndex = 121;
+            this.大刺分離視窗CheckBox.Text = "分離介面";
+            // 
+            // 大刺音量TextBox
+            // 
+            this.大刺音量TextBox.Animated = true;
+            this.大刺音量TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.大刺音量TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.大刺音量TextBox.FocusedLineColor = System.Drawing.Color.Red;
+            this.大刺音量TextBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.大刺音量TextBox.LineColor = System.Drawing.Color.Gainsboro;
+            this.大刺音量TextBox.LineSize = 1;
+            this.大刺音量TextBox.Location = new System.Drawing.Point(75, 59);
+            this.大刺音量TextBox.MaxLength = 3;
+            this.大刺音量TextBox.Name = "大刺音量TextBox";
+            this.大刺音量TextBox.PasswordChar = '\0';
+            this.大刺音量TextBox.Size = new System.Drawing.Size(45, 42);
+            this.大刺音量TextBox.TabIndex = 196;
+            this.大刺音量TextBox.Text = "100";
+            this.大刺音量TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.大刺音量TextBox.TextOffsetX = 3;
+            // 
+            // 大刺音量Label
+            // 
+            this.大刺音量Label.AutoSize = true;
+            this.大刺音量Label.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.大刺音量Label.Location = new System.Drawing.Point(3, 72);
+            this.大刺音量Label.Name = "大刺音量Label";
+            this.大刺音量Label.Size = new System.Drawing.Size(72, 20);
+            this.大刺音量Label.TabIndex = 197;
+            this.大刺音量Label.Text = "音量 (%)";
+            // 
+            // 大刺設定音效Button
+            // 
+            this.大刺設定音效Button.Animated = true;
+            this.大刺設定音效Button.AnimationHoverSpeed = 0.07F;
+            this.大刺設定音效Button.AnimationSpeed = 0.03F;
+            this.大刺設定音效Button.BackColor = System.Drawing.Color.Transparent;
+            this.大刺設定音效Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.大刺設定音效Button.BorderColor = System.Drawing.Color.Transparent;
+            this.大刺設定音效Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.大刺設定音效Button.Enabled = false;
+            this.大刺設定音效Button.FocusedColor = System.Drawing.Color.Empty;
+            this.大刺設定音效Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.大刺設定音效Button.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.大刺設定音效Button.Image = null;
+            this.大刺設定音效Button.ImageSize = new System.Drawing.Size(24, 24);
+            this.大刺設定音效Button.Location = new System.Drawing.Point(20, 10);
+            this.大刺設定音效Button.Name = "大刺設定音效Button";
+            this.大刺設定音效Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.大刺設定音效Button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.大刺設定音效Button.OnHoverForeColor = System.Drawing.Color.White;
+            this.大刺設定音效Button.OnHoverImage = null;
+            this.大刺設定音效Button.OnPressedColor = System.Drawing.Color.Black;
+            this.大刺設定音效Button.Size = new System.Drawing.Size(84, 42);
+            this.大刺設定音效Button.TabIndex = 150;
+            this.大刺設定音效Button.Text = "設定音效";
+            this.大刺設定音效Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.大刺設定音效Button.Click += new System.EventHandler(this.大刺設定音效Button_Click);
+            // 
+            // 大招GunaPanel
+            // 
+            this.大招GunaPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.大招GunaPanel.Controls.Add(this.大招分離視窗CheckBox);
+            this.大招GunaPanel.Controls.Add(this.大招音量TextBox);
+            this.大招GunaPanel.Controls.Add(this.大招音量Label);
+            this.大招GunaPanel.Controls.Add(this.大招設定音效Button);
+            this.大招GunaPanel.Location = new System.Drawing.Point(293, 29);
+            this.大招GunaPanel.Name = "大招GunaPanel";
+            this.大招GunaPanel.Size = new System.Drawing.Size(130, 0);
+            this.大招GunaPanel.TabIndex = 198;
+            this.大招GunaPanel.Visible = false;
+            // 
+            // 大招分離視窗CheckBox
+            // 
+            this.大招分離視窗CheckBox.BaseColor = System.Drawing.Color.White;
+            this.大招分離視窗CheckBox.CheckedOffColor = System.Drawing.Color.Gray;
+            this.大招分離視窗CheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.大招分離視窗CheckBox.FillColor = System.Drawing.Color.White;
+            this.大招分離視窗CheckBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.大招分離視窗CheckBox.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.大招分離視窗CheckBox.Location = new System.Drawing.Point(20, 107);
+            this.大招分離視窗CheckBox.Name = "大招分離視窗CheckBox";
+            this.大招分離視窗CheckBox.Size = new System.Drawing.Size(100, 25);
+            this.大招分離視窗CheckBox.TabIndex = 121;
+            this.大招分離視窗CheckBox.Text = "分離介面";
+            // 
+            // 大招音量TextBox
+            // 
+            this.大招音量TextBox.Animated = true;
+            this.大招音量TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.大招音量TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.大招音量TextBox.FocusedLineColor = System.Drawing.Color.Red;
+            this.大招音量TextBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.大招音量TextBox.LineColor = System.Drawing.Color.Gainsboro;
+            this.大招音量TextBox.LineSize = 1;
+            this.大招音量TextBox.Location = new System.Drawing.Point(75, 59);
+            this.大招音量TextBox.MaxLength = 3;
+            this.大招音量TextBox.Name = "大招音量TextBox";
+            this.大招音量TextBox.PasswordChar = '\0';
+            this.大招音量TextBox.Size = new System.Drawing.Size(45, 42);
+            this.大招音量TextBox.TabIndex = 194;
+            this.大招音量TextBox.Text = "100";
+            this.大招音量TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.大招音量TextBox.TextOffsetX = 3;
+            // 
+            // 大招音量Label
+            // 
+            this.大招音量Label.AutoSize = true;
+            this.大招音量Label.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.大招音量Label.Location = new System.Drawing.Point(3, 72);
+            this.大招音量Label.Name = "大招音量Label";
+            this.大招音量Label.Size = new System.Drawing.Size(72, 20);
+            this.大招音量Label.TabIndex = 195;
+            this.大招音量Label.Text = "音量 (%)";
+            // 
+            // 大招設定音效Button
+            // 
+            this.大招設定音效Button.Animated = true;
+            this.大招設定音效Button.AnimationHoverSpeed = 0.07F;
+            this.大招設定音效Button.AnimationSpeed = 0.03F;
+            this.大招設定音效Button.BackColor = System.Drawing.Color.Transparent;
+            this.大招設定音效Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.大招設定音效Button.BorderColor = System.Drawing.Color.Transparent;
+            this.大招設定音效Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.大招設定音效Button.Enabled = false;
+            this.大招設定音效Button.FocusedColor = System.Drawing.Color.Empty;
+            this.大招設定音效Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.大招設定音效Button.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.大招設定音效Button.Image = null;
+            this.大招設定音效Button.ImageSize = new System.Drawing.Size(24, 24);
+            this.大招設定音效Button.Location = new System.Drawing.Point(20, 10);
+            this.大招設定音效Button.Name = "大招設定音效Button";
+            this.大招設定音效Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.大招設定音效Button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.大招設定音效Button.OnHoverForeColor = System.Drawing.Color.White;
+            this.大招設定音效Button.OnHoverImage = null;
+            this.大招設定音效Button.OnPressedColor = System.Drawing.Color.Black;
+            this.大招設定音效Button.Size = new System.Drawing.Size(84, 42);
+            this.大招設定音效Button.TabIndex = 149;
+            this.大招設定音效Button.Text = "設定音效";
+            this.大招設定音效Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.大招設定音效Button.Click += new System.EventHandler(this.大招設定音效Button_Click);
+            // 
+            // R1156控場設定Button
+            // 
+            this.R1156控場設定Button.Animated = true;
+            this.R1156控場設定Button.AnimationHoverSpeed = 0.07F;
+            this.R1156控場設定Button.AnimationSpeed = 0.03F;
+            this.R1156控場設定Button.BackColor = System.Drawing.Color.Transparent;
+            this.R1156控場設定Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(138)))), ((int)(((byte)(149)))));
+            this.R1156控場設定Button.BorderColor = System.Drawing.Color.Transparent;
+            this.R1156控場設定Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.R1156控場設定Button.FocusedColor = System.Drawing.Color.Empty;
+            this.R1156控場設定Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.R1156控場設定Button.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.R1156控場設定Button.Image = ((System.Drawing.Image)(resources.GetObject("R1156控場設定Button.Image")));
+            this.R1156控場設定Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.R1156控場設定Button.ImageSize = new System.Drawing.Size(24, 24);
+            this.R1156控場設定Button.Location = new System.Drawing.Point(429, 245);
+            this.R1156控場設定Button.Name = "R1156控場設定Button";
+            this.R1156控場設定Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.R1156控場設定Button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.R1156控場設定Button.OnHoverForeColor = System.Drawing.Color.White;
+            this.R1156控場設定Button.OnHoverImage = null;
+            this.R1156控場設定Button.OnPressedColor = System.Drawing.Color.Black;
+            this.R1156控場設定Button.Size = new System.Drawing.Size(84, 42);
+            this.R1156控場設定Button.TabIndex = 197;
+            this.R1156控場設定Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.R1156控場設定Button.Click += new System.EventHandler(this.R1156控場設定Button_Click);
+            // 
+            // 翻桌設定Button
+            // 
+            this.翻桌設定Button.Animated = true;
+            this.翻桌設定Button.AnimationHoverSpeed = 0.07F;
+            this.翻桌設定Button.AnimationSpeed = 0.03F;
+            this.翻桌設定Button.BackColor = System.Drawing.Color.Transparent;
+            this.翻桌設定Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(138)))), ((int)(((byte)(149)))));
+            this.翻桌設定Button.BorderColor = System.Drawing.Color.Transparent;
+            this.翻桌設定Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.翻桌設定Button.FocusedColor = System.Drawing.Color.Empty;
+            this.翻桌設定Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.翻桌設定Button.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.翻桌設定Button.Image = ((System.Drawing.Image)(resources.GetObject("翻桌設定Button.Image")));
+            this.翻桌設定Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.翻桌設定Button.ImageSize = new System.Drawing.Size(24, 24);
+            this.翻桌設定Button.Location = new System.Drawing.Point(429, 173);
+            this.翻桌設定Button.Name = "翻桌設定Button";
+            this.翻桌設定Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.翻桌設定Button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.翻桌設定Button.OnHoverForeColor = System.Drawing.Color.White;
+            this.翻桌設定Button.OnHoverImage = null;
+            this.翻桌設定Button.OnPressedColor = System.Drawing.Color.Black;
+            this.翻桌設定Button.Size = new System.Drawing.Size(84, 42);
+            this.翻桌設定Button.TabIndex = 196;
+            this.翻桌設定Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.翻桌設定Button.Click += new System.EventHandler(this.翻桌設定Button_Click);
+            // 
+            // 大刺設定Button
+            // 
+            this.大刺設定Button.Animated = true;
+            this.大刺設定Button.AnimationHoverSpeed = 0.07F;
+            this.大刺設定Button.AnimationSpeed = 0.03F;
+            this.大刺設定Button.BackColor = System.Drawing.Color.Transparent;
+            this.大刺設定Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(138)))), ((int)(((byte)(149)))));
+            this.大刺設定Button.BorderColor = System.Drawing.Color.Transparent;
+            this.大刺設定Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.大刺設定Button.FocusedColor = System.Drawing.Color.Empty;
+            this.大刺設定Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.大刺設定Button.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.大刺設定Button.Image = ((System.Drawing.Image)(resources.GetObject("大刺設定Button.Image")));
+            this.大刺設定Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.大刺設定Button.ImageSize = new System.Drawing.Size(24, 24);
+            this.大刺設定Button.Location = new System.Drawing.Point(429, 101);
+            this.大刺設定Button.Name = "大刺設定Button";
+            this.大刺設定Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.大刺設定Button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.大刺設定Button.OnHoverForeColor = System.Drawing.Color.White;
+            this.大刺設定Button.OnHoverImage = null;
+            this.大刺設定Button.OnPressedColor = System.Drawing.Color.Black;
+            this.大刺設定Button.Size = new System.Drawing.Size(84, 42);
+            this.大刺設定Button.TabIndex = 195;
+            this.大刺設定Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.大刺設定Button.Click += new System.EventHandler(this.大刺設定Button_Click);
+            // 
+            // 大招設定Button
+            // 
+            this.大招設定Button.Animated = true;
+            this.大招設定Button.AnimationHoverSpeed = 0.07F;
+            this.大招設定Button.AnimationSpeed = 0.03F;
+            this.大招設定Button.BackColor = System.Drawing.Color.Transparent;
+            this.大招設定Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(138)))), ((int)(((byte)(149)))));
+            this.大招設定Button.BorderColor = System.Drawing.Color.Transparent;
+            this.大招設定Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.大招設定Button.FocusedColor = System.Drawing.Color.Empty;
+            this.大招設定Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.大招設定Button.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.大招設定Button.Image = ((System.Drawing.Image)(resources.GetObject("大招設定Button.Image")));
+            this.大招設定Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.大招設定Button.ImageSize = new System.Drawing.Size(24, 24);
+            this.大招設定Button.Location = new System.Drawing.Point(429, 29);
+            this.大招設定Button.Name = "大招設定Button";
+            this.大招設定Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.大招設定Button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.大招設定Button.OnHoverForeColor = System.Drawing.Color.White;
+            this.大招設定Button.OnHoverImage = null;
+            this.大招設定Button.OnPressedColor = System.Drawing.Color.Black;
+            this.大招設定Button.Size = new System.Drawing.Size(84, 42);
+            this.大招設定Button.TabIndex = 194;
+            this.大招設定Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.大招設定Button.Click += new System.EventHandler(this.大招設定Button_Click);
             // 
             // R1156控場Label
             // 
@@ -1902,34 +2759,6 @@
             this.翻桌按鍵Label.Text = "F3";
             this.翻桌按鍵Label.Visible = false;
             // 
-            // R1156控場設定音效Button
-            // 
-            this.R1156控場設定音效Button.Animated = true;
-            this.R1156控場設定音效Button.AnimationHoverSpeed = 0.07F;
-            this.R1156控場設定音效Button.AnimationSpeed = 0.03F;
-            this.R1156控場設定音效Button.BackColor = System.Drawing.Color.Transparent;
-            this.R1156控場設定音效Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.R1156控場設定音效Button.BorderColor = System.Drawing.Color.Transparent;
-            this.R1156控場設定音效Button.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.R1156控場設定音效Button.FocusedColor = System.Drawing.Color.Empty;
-            this.R1156控場設定音效Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.R1156控場設定音效Button.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.R1156控場設定音效Button.Image = null;
-            this.R1156控場設定音效Button.ImageSize = new System.Drawing.Size(24, 24);
-            this.R1156控場設定音效Button.Location = new System.Drawing.Point(429, 245);
-            this.R1156控場設定音效Button.Name = "R1156控場設定音效Button";
-            this.R1156控場設定音效Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.R1156控場設定音效Button.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.R1156控場設定音效Button.OnHoverForeColor = System.Drawing.Color.White;
-            this.R1156控場設定音效Button.OnHoverImage = null;
-            this.R1156控場設定音效Button.OnPressedColor = System.Drawing.Color.Black;
-            this.R1156控場設定音效Button.Size = new System.Drawing.Size(84, 42);
-            this.R1156控場設定音效Button.TabIndex = 152;
-            this.R1156控場設定音效Button.Text = "設定音效";
-            this.R1156控場設定音效Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.R1156控場設定音效Button.Visible = false;
-            this.R1156控場設定音效Button.Click += new System.EventHandler(this.R1156控場設定音效Button_Click);
-            // 
             // R1156控場按鍵Label
             // 
             this.R1156控場按鍵Label.AutoSize = true;
@@ -1941,93 +2770,17 @@
             this.R1156控場按鍵Label.Text = "F4";
             this.R1156控場按鍵Label.Visible = false;
             // 
-            // 翻桌設定音效Button
-            // 
-            this.翻桌設定音效Button.Animated = true;
-            this.翻桌設定音效Button.AnimationHoverSpeed = 0.07F;
-            this.翻桌設定音效Button.AnimationSpeed = 0.03F;
-            this.翻桌設定音效Button.BackColor = System.Drawing.Color.Transparent;
-            this.翻桌設定音效Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.翻桌設定音效Button.BorderColor = System.Drawing.Color.Transparent;
-            this.翻桌設定音效Button.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.翻桌設定音效Button.FocusedColor = System.Drawing.Color.Empty;
-            this.翻桌設定音效Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.翻桌設定音效Button.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.翻桌設定音效Button.Image = null;
-            this.翻桌設定音效Button.ImageSize = new System.Drawing.Size(24, 24);
-            this.翻桌設定音效Button.Location = new System.Drawing.Point(429, 173);
-            this.翻桌設定音效Button.Name = "翻桌設定音效Button";
-            this.翻桌設定音效Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.翻桌設定音效Button.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.翻桌設定音效Button.OnHoverForeColor = System.Drawing.Color.White;
-            this.翻桌設定音效Button.OnHoverImage = null;
-            this.翻桌設定音效Button.OnPressedColor = System.Drawing.Color.Black;
-            this.翻桌設定音效Button.Size = new System.Drawing.Size(84, 42);
-            this.翻桌設定音效Button.TabIndex = 151;
-            this.翻桌設定音效Button.Text = "設定音效";
-            this.翻桌設定音效Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.翻桌設定音效Button.Visible = false;
-            this.翻桌設定音效Button.Click += new System.EventHandler(this.翻桌設定音效Button_Click);
-            // 
-            // 大招設定音效Button
-            // 
-            this.大招設定音效Button.Animated = true;
-            this.大招設定音效Button.AnimationHoverSpeed = 0.07F;
-            this.大招設定音效Button.AnimationSpeed = 0.03F;
-            this.大招設定音效Button.BackColor = System.Drawing.Color.Transparent;
-            this.大招設定音效Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.大招設定音效Button.BorderColor = System.Drawing.Color.Transparent;
-            this.大招設定音效Button.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.大招設定音效Button.FocusedColor = System.Drawing.Color.Empty;
-            this.大招設定音效Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.大招設定音效Button.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.大招設定音效Button.Image = null;
-            this.大招設定音效Button.ImageSize = new System.Drawing.Size(24, 24);
-            this.大招設定音效Button.Location = new System.Drawing.Point(429, 30);
-            this.大招設定音效Button.Name = "大招設定音效Button";
-            this.大招設定音效Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.大招設定音效Button.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.大招設定音效Button.OnHoverForeColor = System.Drawing.Color.White;
-            this.大招設定音效Button.OnHoverImage = null;
-            this.大招設定音效Button.OnPressedColor = System.Drawing.Color.Black;
-            this.大招設定音效Button.Size = new System.Drawing.Size(84, 42);
-            this.大招設定音效Button.TabIndex = 149;
-            this.大招設定音效Button.Text = "設定音效";
-            this.大招設定音效Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.大招設定音效Button.Visible = false;
-            this.大招設定音效Button.Click += new System.EventHandler(this.大招設定音效Button_Click);
-            // 
-            // 大刺設定音效Button
-            // 
-            this.大刺設定音效Button.Animated = true;
-            this.大刺設定音效Button.AnimationHoverSpeed = 0.07F;
-            this.大刺設定音效Button.AnimationSpeed = 0.03F;
-            this.大刺設定音效Button.BackColor = System.Drawing.Color.Transparent;
-            this.大刺設定音效Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.大刺設定音效Button.BorderColor = System.Drawing.Color.Transparent;
-            this.大刺設定音效Button.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.大刺設定音效Button.FocusedColor = System.Drawing.Color.Empty;
-            this.大刺設定音效Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.大刺設定音效Button.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.大刺設定音效Button.Image = null;
-            this.大刺設定音效Button.ImageSize = new System.Drawing.Size(24, 24);
-            this.大刺設定音效Button.Location = new System.Drawing.Point(429, 101);
-            this.大刺設定音效Button.Name = "大刺設定音效Button";
-            this.大刺設定音效Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.大刺設定音效Button.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.大刺設定音效Button.OnHoverForeColor = System.Drawing.Color.White;
-            this.大刺設定音效Button.OnHoverImage = null;
-            this.大刺設定音效Button.OnPressedColor = System.Drawing.Color.Black;
-            this.大刺設定音效Button.Size = new System.Drawing.Size(84, 42);
-            this.大刺設定音效Button.TabIndex = 150;
-            this.大刺設定音效Button.Text = "設定音效";
-            this.大刺設定音效Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.大刺設定音效Button.Visible = false;
-            this.大刺設定音效Button.Click += new System.EventHandler(this.大刺設定音效Button_Click);
-            // 
             // TabPage156R3
             // 
             this.TabPage156R3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.TabPage156R3.Controls.Add(this.R3156控場GunaPanel);
+            this.TabPage156R3.Controls.Add(this.三連GunaPanel);
+            this.TabPage156R3.Controls.Add(this.陰陽陣GunaPanel);
+            this.TabPage156R3.Controls.Add(this.大黑GunaPanel);
+            this.TabPage156R3.Controls.Add(this.R3156控場設定Button);
+            this.TabPage156R3.Controls.Add(this.三連設定Button);
+            this.TabPage156R3.Controls.Add(this.陰陽陣設定Button);
+            this.TabPage156R3.Controls.Add(this.大黑設定Button);
             this.TabPage156R3.Controls.Add(this.R3156控場Label);
             this.TabPage156R3.Controls.Add(this.WindowsSetting156R3);
             this.TabPage156R3.Controls.Add(this.音效設定156R3GroupBox);
@@ -2052,11 +2805,7 @@
             this.TabPage156R3.Controls.Add(this.陰陽陣ComboBox);
             this.TabPage156R3.Controls.Add(this.陰陽陣按鍵Label);
             this.TabPage156R3.Controls.Add(this.三連按鍵Label);
-            this.TabPage156R3.Controls.Add(this.R3156控場設定音效Button);
             this.TabPage156R3.Controls.Add(this.R3156控場按鍵Label);
-            this.TabPage156R3.Controls.Add(this.三連設定音效Button);
-            this.TabPage156R3.Controls.Add(this.大黑設定音效Button);
-            this.TabPage156R3.Controls.Add(this.陰陽陣設定音效Button);
             this.TabPage156R3.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.TabPage156R3.Location = new System.Drawing.Point(4, 20);
             this.TabPage156R3.Name = "TabPage156R3";
@@ -2064,6 +2813,450 @@
             this.TabPage156R3.Size = new System.Drawing.Size(534, 509);
             this.TabPage156R3.TabIndex = 2;
             this.TabPage156R3.Text = "156R3";
+            // 
+            // R3156控場GunaPanel
+            // 
+            this.R3156控場GunaPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.R3156控場GunaPanel.Controls.Add(this.R3156控場音量Label);
+            this.R3156控場GunaPanel.Controls.Add(this.R3156控場分離視窗CheckBox);
+            this.R3156控場GunaPanel.Controls.Add(this.R3156控場音量TextBox);
+            this.R3156控場GunaPanel.Controls.Add(this.R3156控場設定音效Button);
+            this.R3156控場GunaPanel.Location = new System.Drawing.Point(293, 245);
+            this.R3156控場GunaPanel.Name = "R3156控場GunaPanel";
+            this.R3156控場GunaPanel.Size = new System.Drawing.Size(130, 0);
+            this.R3156控場GunaPanel.TabIndex = 201;
+            this.R3156控場GunaPanel.Visible = false;
+            // 
+            // R3156控場音量Label
+            // 
+            this.R3156控場音量Label.AutoSize = true;
+            this.R3156控場音量Label.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.R3156控場音量Label.Location = new System.Drawing.Point(3, 72);
+            this.R3156控場音量Label.Name = "R3156控場音量Label";
+            this.R3156控場音量Label.Size = new System.Drawing.Size(72, 20);
+            this.R3156控場音量Label.TabIndex = 201;
+            this.R3156控場音量Label.Text = "音量 (%)";
+            // 
+            // R3156控場分離視窗CheckBox
+            // 
+            this.R3156控場分離視窗CheckBox.BaseColor = System.Drawing.Color.White;
+            this.R3156控場分離視窗CheckBox.CheckedOffColor = System.Drawing.Color.Gray;
+            this.R3156控場分離視窗CheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.R3156控場分離視窗CheckBox.FillColor = System.Drawing.Color.White;
+            this.R3156控場分離視窗CheckBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.R3156控場分離視窗CheckBox.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.R3156控場分離視窗CheckBox.Location = new System.Drawing.Point(20, 107);
+            this.R3156控場分離視窗CheckBox.Name = "R3156控場分離視窗CheckBox";
+            this.R3156控場分離視窗CheckBox.Size = new System.Drawing.Size(100, 25);
+            this.R3156控場分離視窗CheckBox.TabIndex = 121;
+            this.R3156控場分離視窗CheckBox.Text = "分離介面";
+            // 
+            // R3156控場音量TextBox
+            // 
+            this.R3156控場音量TextBox.Animated = true;
+            this.R3156控場音量TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.R3156控場音量TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.R3156控場音量TextBox.FocusedLineColor = System.Drawing.Color.Red;
+            this.R3156控場音量TextBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.R3156控場音量TextBox.LineColor = System.Drawing.Color.Gainsboro;
+            this.R3156控場音量TextBox.LineSize = 1;
+            this.R3156控場音量TextBox.Location = new System.Drawing.Point(75, 59);
+            this.R3156控場音量TextBox.MaxLength = 3;
+            this.R3156控場音量TextBox.Name = "R3156控場音量TextBox";
+            this.R3156控場音量TextBox.PasswordChar = '\0';
+            this.R3156控場音量TextBox.Size = new System.Drawing.Size(45, 42);
+            this.R3156控場音量TextBox.TabIndex = 200;
+            this.R3156控場音量TextBox.Text = "100";
+            this.R3156控場音量TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.R3156控場音量TextBox.TextOffsetX = 3;
+            // 
+            // R3156控場設定音效Button
+            // 
+            this.R3156控場設定音效Button.Animated = true;
+            this.R3156控場設定音效Button.AnimationHoverSpeed = 0.07F;
+            this.R3156控場設定音效Button.AnimationSpeed = 0.03F;
+            this.R3156控場設定音效Button.BackColor = System.Drawing.Color.Transparent;
+            this.R3156控場設定音效Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.R3156控場設定音效Button.BorderColor = System.Drawing.Color.Transparent;
+            this.R3156控場設定音效Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.R3156控場設定音效Button.Enabled = false;
+            this.R3156控場設定音效Button.FocusedColor = System.Drawing.Color.Empty;
+            this.R3156控場設定音效Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.R3156控場設定音效Button.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.R3156控場設定音效Button.Image = null;
+            this.R3156控場設定音效Button.ImageSize = new System.Drawing.Size(24, 24);
+            this.R3156控場設定音效Button.Location = new System.Drawing.Point(20, 10);
+            this.R3156控場設定音效Button.Name = "R3156控場設定音效Button";
+            this.R3156控場設定音效Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.R3156控場設定音效Button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.R3156控場設定音效Button.OnHoverForeColor = System.Drawing.Color.White;
+            this.R3156控場設定音效Button.OnHoverImage = null;
+            this.R3156控場設定音效Button.OnPressedColor = System.Drawing.Color.Black;
+            this.R3156控場設定音效Button.Size = new System.Drawing.Size(84, 42);
+            this.R3156控場設定音效Button.TabIndex = 182;
+            this.R3156控場設定音效Button.Text = "設定音效";
+            this.R3156控場設定音效Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.R3156控場設定音效Button.Click += new System.EventHandler(this.R3156控場設定音效Button_Click);
+            // 
+            // 三連GunaPanel
+            // 
+            this.三連GunaPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.三連GunaPanel.Controls.Add(this.三連分離視窗CheckBox);
+            this.三連GunaPanel.Controls.Add(this.三連音量Label);
+            this.三連GunaPanel.Controls.Add(this.三連音量TextBox);
+            this.三連GunaPanel.Controls.Add(this.三連設定音效Button);
+            this.三連GunaPanel.Location = new System.Drawing.Point(293, 173);
+            this.三連GunaPanel.Name = "三連GunaPanel";
+            this.三連GunaPanel.Size = new System.Drawing.Size(130, 0);
+            this.三連GunaPanel.TabIndex = 199;
+            this.三連GunaPanel.Visible = false;
+            // 
+            // 三連分離視窗CheckBox
+            // 
+            this.三連分離視窗CheckBox.BaseColor = System.Drawing.Color.White;
+            this.三連分離視窗CheckBox.CheckedOffColor = System.Drawing.Color.Gray;
+            this.三連分離視窗CheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.三連分離視窗CheckBox.FillColor = System.Drawing.Color.White;
+            this.三連分離視窗CheckBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.三連分離視窗CheckBox.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.三連分離視窗CheckBox.Location = new System.Drawing.Point(20, 107);
+            this.三連分離視窗CheckBox.Name = "三連分離視窗CheckBox";
+            this.三連分離視窗CheckBox.Size = new System.Drawing.Size(100, 25);
+            this.三連分離視窗CheckBox.TabIndex = 121;
+            this.三連分離視窗CheckBox.Text = "分離介面";
+            // 
+            // 三連音量Label
+            // 
+            this.三連音量Label.AutoSize = true;
+            this.三連音量Label.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.三連音量Label.Location = new System.Drawing.Point(3, 72);
+            this.三連音量Label.Name = "三連音量Label";
+            this.三連音量Label.Size = new System.Drawing.Size(72, 20);
+            this.三連音量Label.TabIndex = 199;
+            this.三連音量Label.Text = "音量 (%)";
+            // 
+            // 三連音量TextBox
+            // 
+            this.三連音量TextBox.Animated = true;
+            this.三連音量TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.三連音量TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.三連音量TextBox.FocusedLineColor = System.Drawing.Color.Red;
+            this.三連音量TextBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.三連音量TextBox.LineColor = System.Drawing.Color.Gainsboro;
+            this.三連音量TextBox.LineSize = 1;
+            this.三連音量TextBox.Location = new System.Drawing.Point(75, 59);
+            this.三連音量TextBox.MaxLength = 3;
+            this.三連音量TextBox.Name = "三連音量TextBox";
+            this.三連音量TextBox.PasswordChar = '\0';
+            this.三連音量TextBox.Size = new System.Drawing.Size(45, 42);
+            this.三連音量TextBox.TabIndex = 198;
+            this.三連音量TextBox.Text = "100";
+            this.三連音量TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.三連音量TextBox.TextOffsetX = 3;
+            // 
+            // 三連設定音效Button
+            // 
+            this.三連設定音效Button.Animated = true;
+            this.三連設定音效Button.AnimationHoverSpeed = 0.07F;
+            this.三連設定音效Button.AnimationSpeed = 0.03F;
+            this.三連設定音效Button.BackColor = System.Drawing.Color.Transparent;
+            this.三連設定音效Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.三連設定音效Button.BorderColor = System.Drawing.Color.Transparent;
+            this.三連設定音效Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.三連設定音效Button.Enabled = false;
+            this.三連設定音效Button.FocusedColor = System.Drawing.Color.Empty;
+            this.三連設定音效Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.三連設定音效Button.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.三連設定音效Button.Image = null;
+            this.三連設定音效Button.ImageSize = new System.Drawing.Size(24, 24);
+            this.三連設定音效Button.Location = new System.Drawing.Point(20, 10);
+            this.三連設定音效Button.Name = "三連設定音效Button";
+            this.三連設定音效Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.三連設定音效Button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.三連設定音效Button.OnHoverForeColor = System.Drawing.Color.White;
+            this.三連設定音效Button.OnHoverImage = null;
+            this.三連設定音效Button.OnPressedColor = System.Drawing.Color.Black;
+            this.三連設定音效Button.Size = new System.Drawing.Size(84, 42);
+            this.三連設定音效Button.TabIndex = 181;
+            this.三連設定音效Button.Text = "設定音效";
+            this.三連設定音效Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.三連設定音效Button.Click += new System.EventHandler(this.三連設定音效Button_Click);
+            // 
+            // 陰陽陣GunaPanel
+            // 
+            this.陰陽陣GunaPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.陰陽陣GunaPanel.Controls.Add(this.陰陽陣分離視窗CheckBox);
+            this.陰陽陣GunaPanel.Controls.Add(this.陰陽陣音量TextBox);
+            this.陰陽陣GunaPanel.Controls.Add(this.陰陽陣音量Label);
+            this.陰陽陣GunaPanel.Controls.Add(this.陰陽陣設定音效Button);
+            this.陰陽陣GunaPanel.Location = new System.Drawing.Point(293, 101);
+            this.陰陽陣GunaPanel.Name = "陰陽陣GunaPanel";
+            this.陰陽陣GunaPanel.Size = new System.Drawing.Size(130, 0);
+            this.陰陽陣GunaPanel.TabIndex = 200;
+            this.陰陽陣GunaPanel.Visible = false;
+            // 
+            // 陰陽陣分離視窗CheckBox
+            // 
+            this.陰陽陣分離視窗CheckBox.BaseColor = System.Drawing.Color.White;
+            this.陰陽陣分離視窗CheckBox.CheckedOffColor = System.Drawing.Color.Gray;
+            this.陰陽陣分離視窗CheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.陰陽陣分離視窗CheckBox.FillColor = System.Drawing.Color.White;
+            this.陰陽陣分離視窗CheckBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.陰陽陣分離視窗CheckBox.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.陰陽陣分離視窗CheckBox.Location = new System.Drawing.Point(20, 107);
+            this.陰陽陣分離視窗CheckBox.Name = "陰陽陣分離視窗CheckBox";
+            this.陰陽陣分離視窗CheckBox.Size = new System.Drawing.Size(100, 25);
+            this.陰陽陣分離視窗CheckBox.TabIndex = 121;
+            this.陰陽陣分離視窗CheckBox.Text = "分離介面";
+            // 
+            // 陰陽陣音量TextBox
+            // 
+            this.陰陽陣音量TextBox.Animated = true;
+            this.陰陽陣音量TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.陰陽陣音量TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.陰陽陣音量TextBox.FocusedLineColor = System.Drawing.Color.Red;
+            this.陰陽陣音量TextBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.陰陽陣音量TextBox.LineColor = System.Drawing.Color.Gainsboro;
+            this.陰陽陣音量TextBox.LineSize = 1;
+            this.陰陽陣音量TextBox.Location = new System.Drawing.Point(75, 59);
+            this.陰陽陣音量TextBox.MaxLength = 3;
+            this.陰陽陣音量TextBox.Name = "陰陽陣音量TextBox";
+            this.陰陽陣音量TextBox.PasswordChar = '\0';
+            this.陰陽陣音量TextBox.Size = new System.Drawing.Size(45, 42);
+            this.陰陽陣音量TextBox.TabIndex = 196;
+            this.陰陽陣音量TextBox.Text = "100";
+            this.陰陽陣音量TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.陰陽陣音量TextBox.TextOffsetX = 3;
+            // 
+            // 陰陽陣音量Label
+            // 
+            this.陰陽陣音量Label.AutoSize = true;
+            this.陰陽陣音量Label.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.陰陽陣音量Label.Location = new System.Drawing.Point(3, 72);
+            this.陰陽陣音量Label.Name = "陰陽陣音量Label";
+            this.陰陽陣音量Label.Size = new System.Drawing.Size(72, 20);
+            this.陰陽陣音量Label.TabIndex = 197;
+            this.陰陽陣音量Label.Text = "音量 (%)";
+            // 
+            // 陰陽陣設定音效Button
+            // 
+            this.陰陽陣設定音效Button.Animated = true;
+            this.陰陽陣設定音效Button.AnimationHoverSpeed = 0.07F;
+            this.陰陽陣設定音效Button.AnimationSpeed = 0.03F;
+            this.陰陽陣設定音效Button.BackColor = System.Drawing.Color.Transparent;
+            this.陰陽陣設定音效Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.陰陽陣設定音效Button.BorderColor = System.Drawing.Color.Transparent;
+            this.陰陽陣設定音效Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.陰陽陣設定音效Button.Enabled = false;
+            this.陰陽陣設定音效Button.FocusedColor = System.Drawing.Color.Empty;
+            this.陰陽陣設定音效Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.陰陽陣設定音效Button.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.陰陽陣設定音效Button.Image = null;
+            this.陰陽陣設定音效Button.ImageSize = new System.Drawing.Size(24, 24);
+            this.陰陽陣設定音效Button.Location = new System.Drawing.Point(20, 10);
+            this.陰陽陣設定音效Button.Name = "陰陽陣設定音效Button";
+            this.陰陽陣設定音效Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.陰陽陣設定音效Button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.陰陽陣設定音效Button.OnHoverForeColor = System.Drawing.Color.White;
+            this.陰陽陣設定音效Button.OnHoverImage = null;
+            this.陰陽陣設定音效Button.OnPressedColor = System.Drawing.Color.Black;
+            this.陰陽陣設定音效Button.Size = new System.Drawing.Size(84, 42);
+            this.陰陽陣設定音效Button.TabIndex = 180;
+            this.陰陽陣設定音效Button.Text = "設定音效";
+            this.陰陽陣設定音效Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.陰陽陣設定音效Button.Click += new System.EventHandler(this.陰陽陣設定音效Button_Click);
+            // 
+            // 大黑GunaPanel
+            // 
+            this.大黑GunaPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.大黑GunaPanel.Controls.Add(this.大黑分離視窗CheckBox);
+            this.大黑GunaPanel.Controls.Add(this.大黑音量TextBox);
+            this.大黑GunaPanel.Controls.Add(this.大黑音量Label);
+            this.大黑GunaPanel.Controls.Add(this.大黑設定音效Button);
+            this.大黑GunaPanel.Location = new System.Drawing.Point(293, 29);
+            this.大黑GunaPanel.Name = "大黑GunaPanel";
+            this.大黑GunaPanel.Size = new System.Drawing.Size(130, 0);
+            this.大黑GunaPanel.TabIndex = 198;
+            this.大黑GunaPanel.Visible = false;
+            // 
+            // 大黑分離視窗CheckBox
+            // 
+            this.大黑分離視窗CheckBox.BaseColor = System.Drawing.Color.White;
+            this.大黑分離視窗CheckBox.CheckedOffColor = System.Drawing.Color.Gray;
+            this.大黑分離視窗CheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.大黑分離視窗CheckBox.FillColor = System.Drawing.Color.White;
+            this.大黑分離視窗CheckBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.大黑分離視窗CheckBox.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.大黑分離視窗CheckBox.Location = new System.Drawing.Point(20, 107);
+            this.大黑分離視窗CheckBox.Name = "大黑分離視窗CheckBox";
+            this.大黑分離視窗CheckBox.Size = new System.Drawing.Size(100, 25);
+            this.大黑分離視窗CheckBox.TabIndex = 121;
+            this.大黑分離視窗CheckBox.Text = "分離介面";
+            // 
+            // 大黑音量TextBox
+            // 
+            this.大黑音量TextBox.Animated = true;
+            this.大黑音量TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.大黑音量TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.大黑音量TextBox.FocusedLineColor = System.Drawing.Color.Red;
+            this.大黑音量TextBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.大黑音量TextBox.LineColor = System.Drawing.Color.Gainsboro;
+            this.大黑音量TextBox.LineSize = 1;
+            this.大黑音量TextBox.Location = new System.Drawing.Point(75, 59);
+            this.大黑音量TextBox.MaxLength = 3;
+            this.大黑音量TextBox.Name = "大黑音量TextBox";
+            this.大黑音量TextBox.PasswordChar = '\0';
+            this.大黑音量TextBox.Size = new System.Drawing.Size(45, 42);
+            this.大黑音量TextBox.TabIndex = 194;
+            this.大黑音量TextBox.Text = "100";
+            this.大黑音量TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.大黑音量TextBox.TextOffsetX = 3;
+            // 
+            // 大黑音量Label
+            // 
+            this.大黑音量Label.AutoSize = true;
+            this.大黑音量Label.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.大黑音量Label.Location = new System.Drawing.Point(3, 72);
+            this.大黑音量Label.Name = "大黑音量Label";
+            this.大黑音量Label.Size = new System.Drawing.Size(72, 20);
+            this.大黑音量Label.TabIndex = 195;
+            this.大黑音量Label.Text = "音量 (%)";
+            // 
+            // 大黑設定音效Button
+            // 
+            this.大黑設定音效Button.Animated = true;
+            this.大黑設定音效Button.AnimationHoverSpeed = 0.07F;
+            this.大黑設定音效Button.AnimationSpeed = 0.03F;
+            this.大黑設定音效Button.BackColor = System.Drawing.Color.Transparent;
+            this.大黑設定音效Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.大黑設定音效Button.BorderColor = System.Drawing.Color.Transparent;
+            this.大黑設定音效Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.大黑設定音效Button.Enabled = false;
+            this.大黑設定音效Button.FocusedColor = System.Drawing.Color.Empty;
+            this.大黑設定音效Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.大黑設定音效Button.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.大黑設定音效Button.Image = null;
+            this.大黑設定音效Button.ImageSize = new System.Drawing.Size(24, 24);
+            this.大黑設定音效Button.Location = new System.Drawing.Point(20, 10);
+            this.大黑設定音效Button.Name = "大黑設定音效Button";
+            this.大黑設定音效Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.大黑設定音效Button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.大黑設定音效Button.OnHoverForeColor = System.Drawing.Color.White;
+            this.大黑設定音效Button.OnHoverImage = null;
+            this.大黑設定音效Button.OnPressedColor = System.Drawing.Color.Black;
+            this.大黑設定音效Button.Size = new System.Drawing.Size(84, 42);
+            this.大黑設定音效Button.TabIndex = 179;
+            this.大黑設定音效Button.Text = "設定音效";
+            this.大黑設定音效Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.大黑設定音效Button.Click += new System.EventHandler(this.大黑設定音效Button_Click);
+            // 
+            // R3156控場設定Button
+            // 
+            this.R3156控場設定Button.Animated = true;
+            this.R3156控場設定Button.AnimationHoverSpeed = 0.07F;
+            this.R3156控場設定Button.AnimationSpeed = 0.03F;
+            this.R3156控場設定Button.BackColor = System.Drawing.Color.Transparent;
+            this.R3156控場設定Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(138)))), ((int)(((byte)(149)))));
+            this.R3156控場設定Button.BorderColor = System.Drawing.Color.Transparent;
+            this.R3156控場設定Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.R3156控場設定Button.FocusedColor = System.Drawing.Color.Empty;
+            this.R3156控場設定Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.R3156控場設定Button.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.R3156控場設定Button.Image = ((System.Drawing.Image)(resources.GetObject("R3156控場設定Button.Image")));
+            this.R3156控場設定Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.R3156控場設定Button.ImageSize = new System.Drawing.Size(24, 24);
+            this.R3156控場設定Button.Location = new System.Drawing.Point(429, 245);
+            this.R3156控場設定Button.Name = "R3156控場設定Button";
+            this.R3156控場設定Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.R3156控場設定Button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.R3156控場設定Button.OnHoverForeColor = System.Drawing.Color.White;
+            this.R3156控場設定Button.OnHoverImage = null;
+            this.R3156控場設定Button.OnPressedColor = System.Drawing.Color.Black;
+            this.R3156控場設定Button.Size = new System.Drawing.Size(84, 42);
+            this.R3156控場設定Button.TabIndex = 205;
+            this.R3156控場設定Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.R3156控場設定Button.Click += new System.EventHandler(this.R3156控場設定Button_Click);
+            // 
+            // 三連設定Button
+            // 
+            this.三連設定Button.Animated = true;
+            this.三連設定Button.AnimationHoverSpeed = 0.07F;
+            this.三連設定Button.AnimationSpeed = 0.03F;
+            this.三連設定Button.BackColor = System.Drawing.Color.Transparent;
+            this.三連設定Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(138)))), ((int)(((byte)(149)))));
+            this.三連設定Button.BorderColor = System.Drawing.Color.Transparent;
+            this.三連設定Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.三連設定Button.FocusedColor = System.Drawing.Color.Empty;
+            this.三連設定Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.三連設定Button.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.三連設定Button.Image = ((System.Drawing.Image)(resources.GetObject("三連設定Button.Image")));
+            this.三連設定Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.三連設定Button.ImageSize = new System.Drawing.Size(24, 24);
+            this.三連設定Button.Location = new System.Drawing.Point(429, 173);
+            this.三連設定Button.Name = "三連設定Button";
+            this.三連設定Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.三連設定Button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.三連設定Button.OnHoverForeColor = System.Drawing.Color.White;
+            this.三連設定Button.OnHoverImage = null;
+            this.三連設定Button.OnPressedColor = System.Drawing.Color.Black;
+            this.三連設定Button.Size = new System.Drawing.Size(84, 42);
+            this.三連設定Button.TabIndex = 204;
+            this.三連設定Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.三連設定Button.Click += new System.EventHandler(this.三連設定Button_Click);
+            // 
+            // 陰陽陣設定Button
+            // 
+            this.陰陽陣設定Button.Animated = true;
+            this.陰陽陣設定Button.AnimationHoverSpeed = 0.07F;
+            this.陰陽陣設定Button.AnimationSpeed = 0.03F;
+            this.陰陽陣設定Button.BackColor = System.Drawing.Color.Transparent;
+            this.陰陽陣設定Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(138)))), ((int)(((byte)(149)))));
+            this.陰陽陣設定Button.BorderColor = System.Drawing.Color.Transparent;
+            this.陰陽陣設定Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.陰陽陣設定Button.FocusedColor = System.Drawing.Color.Empty;
+            this.陰陽陣設定Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.陰陽陣設定Button.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.陰陽陣設定Button.Image = ((System.Drawing.Image)(resources.GetObject("陰陽陣設定Button.Image")));
+            this.陰陽陣設定Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.陰陽陣設定Button.ImageSize = new System.Drawing.Size(24, 24);
+            this.陰陽陣設定Button.Location = new System.Drawing.Point(429, 101);
+            this.陰陽陣設定Button.Name = "陰陽陣設定Button";
+            this.陰陽陣設定Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.陰陽陣設定Button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.陰陽陣設定Button.OnHoverForeColor = System.Drawing.Color.White;
+            this.陰陽陣設定Button.OnHoverImage = null;
+            this.陰陽陣設定Button.OnPressedColor = System.Drawing.Color.Black;
+            this.陰陽陣設定Button.Size = new System.Drawing.Size(84, 42);
+            this.陰陽陣設定Button.TabIndex = 203;
+            this.陰陽陣設定Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.陰陽陣設定Button.Click += new System.EventHandler(this.陰陽陣設定Button_Click);
+            // 
+            // 大黑設定Button
+            // 
+            this.大黑設定Button.Animated = true;
+            this.大黑設定Button.AnimationHoverSpeed = 0.07F;
+            this.大黑設定Button.AnimationSpeed = 0.03F;
+            this.大黑設定Button.BackColor = System.Drawing.Color.Transparent;
+            this.大黑設定Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(138)))), ((int)(((byte)(149)))));
+            this.大黑設定Button.BorderColor = System.Drawing.Color.Transparent;
+            this.大黑設定Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.大黑設定Button.FocusedColor = System.Drawing.Color.Empty;
+            this.大黑設定Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.大黑設定Button.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.大黑設定Button.Image = ((System.Drawing.Image)(resources.GetObject("大黑設定Button.Image")));
+            this.大黑設定Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.大黑設定Button.ImageSize = new System.Drawing.Size(24, 24);
+            this.大黑設定Button.Location = new System.Drawing.Point(429, 29);
+            this.大黑設定Button.Name = "大黑設定Button";
+            this.大黑設定Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.大黑設定Button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.大黑設定Button.OnHoverForeColor = System.Drawing.Color.White;
+            this.大黑設定Button.OnHoverImage = null;
+            this.大黑設定Button.OnPressedColor = System.Drawing.Color.Black;
+            this.大黑設定Button.Size = new System.Drawing.Size(84, 42);
+            this.大黑設定Button.TabIndex = 202;
+            this.大黑設定Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.大黑設定Button.Click += new System.EventHandler(this.大黑設定Button_Click);
             // 
             // R3156控場Label
             // 
@@ -2764,34 +3957,6 @@
             this.三連按鍵Label.Text = "F3";
             this.三連按鍵Label.Visible = false;
             // 
-            // R3156控場設定音效Button
-            // 
-            this.R3156控場設定音效Button.Animated = true;
-            this.R3156控場設定音效Button.AnimationHoverSpeed = 0.07F;
-            this.R3156控場設定音效Button.AnimationSpeed = 0.03F;
-            this.R3156控場設定音效Button.BackColor = System.Drawing.Color.Transparent;
-            this.R3156控場設定音效Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.R3156控場設定音效Button.BorderColor = System.Drawing.Color.Transparent;
-            this.R3156控場設定音效Button.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.R3156控場設定音效Button.FocusedColor = System.Drawing.Color.Empty;
-            this.R3156控場設定音效Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.R3156控場設定音效Button.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.R3156控場設定音效Button.Image = null;
-            this.R3156控場設定音效Button.ImageSize = new System.Drawing.Size(24, 24);
-            this.R3156控場設定音效Button.Location = new System.Drawing.Point(429, 245);
-            this.R3156控場設定音效Button.Name = "R3156控場設定音效Button";
-            this.R3156控場設定音效Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.R3156控場設定音效Button.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.R3156控場設定音效Button.OnHoverForeColor = System.Drawing.Color.White;
-            this.R3156控場設定音效Button.OnHoverImage = null;
-            this.R3156控場設定音效Button.OnPressedColor = System.Drawing.Color.Black;
-            this.R3156控場設定音效Button.Size = new System.Drawing.Size(84, 42);
-            this.R3156控場設定音效Button.TabIndex = 182;
-            this.R3156控場設定音效Button.Text = "設定音效";
-            this.R3156控場設定音效Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.R3156控場設定音效Button.Visible = false;
-            this.R3156控場設定音效Button.Click += new System.EventHandler(this.R3156控場設定音效Button_Click);
-            // 
             // R3156控場按鍵Label
             // 
             this.R3156控場按鍵Label.AutoSize = true;
@@ -2802,90 +3967,6 @@
             this.R3156控場按鍵Label.TabIndex = 177;
             this.R3156控場按鍵Label.Text = "F4";
             this.R3156控場按鍵Label.Visible = false;
-            // 
-            // 三連設定音效Button
-            // 
-            this.三連設定音效Button.Animated = true;
-            this.三連設定音效Button.AnimationHoverSpeed = 0.07F;
-            this.三連設定音效Button.AnimationSpeed = 0.03F;
-            this.三連設定音效Button.BackColor = System.Drawing.Color.Transparent;
-            this.三連設定音效Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.三連設定音效Button.BorderColor = System.Drawing.Color.Transparent;
-            this.三連設定音效Button.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.三連設定音效Button.FocusedColor = System.Drawing.Color.Empty;
-            this.三連設定音效Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.三連設定音效Button.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.三連設定音效Button.Image = null;
-            this.三連設定音效Button.ImageSize = new System.Drawing.Size(24, 24);
-            this.三連設定音效Button.Location = new System.Drawing.Point(429, 173);
-            this.三連設定音效Button.Name = "三連設定音效Button";
-            this.三連設定音效Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.三連設定音效Button.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.三連設定音效Button.OnHoverForeColor = System.Drawing.Color.White;
-            this.三連設定音效Button.OnHoverImage = null;
-            this.三連設定音效Button.OnPressedColor = System.Drawing.Color.Black;
-            this.三連設定音效Button.Size = new System.Drawing.Size(84, 42);
-            this.三連設定音效Button.TabIndex = 181;
-            this.三連設定音效Button.Text = "設定音效";
-            this.三連設定音效Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.三連設定音效Button.Visible = false;
-            this.三連設定音效Button.Click += new System.EventHandler(this.三連設定音效Button_Click);
-            // 
-            // 大黑設定音效Button
-            // 
-            this.大黑設定音效Button.Animated = true;
-            this.大黑設定音效Button.AnimationHoverSpeed = 0.07F;
-            this.大黑設定音效Button.AnimationSpeed = 0.03F;
-            this.大黑設定音效Button.BackColor = System.Drawing.Color.Transparent;
-            this.大黑設定音效Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.大黑設定音效Button.BorderColor = System.Drawing.Color.Transparent;
-            this.大黑設定音效Button.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.大黑設定音效Button.FocusedColor = System.Drawing.Color.Empty;
-            this.大黑設定音效Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.大黑設定音效Button.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.大黑設定音效Button.Image = null;
-            this.大黑設定音效Button.ImageSize = new System.Drawing.Size(24, 24);
-            this.大黑設定音效Button.Location = new System.Drawing.Point(429, 30);
-            this.大黑設定音效Button.Name = "大黑設定音效Button";
-            this.大黑設定音效Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.大黑設定音效Button.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.大黑設定音效Button.OnHoverForeColor = System.Drawing.Color.White;
-            this.大黑設定音效Button.OnHoverImage = null;
-            this.大黑設定音效Button.OnPressedColor = System.Drawing.Color.Black;
-            this.大黑設定音效Button.Size = new System.Drawing.Size(84, 42);
-            this.大黑設定音效Button.TabIndex = 179;
-            this.大黑設定音效Button.Text = "設定音效";
-            this.大黑設定音效Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.大黑設定音效Button.Visible = false;
-            this.大黑設定音效Button.Click += new System.EventHandler(this.大黑設定音效Button_Click);
-            // 
-            // 陰陽陣設定音效Button
-            // 
-            this.陰陽陣設定音效Button.Animated = true;
-            this.陰陽陣設定音效Button.AnimationHoverSpeed = 0.07F;
-            this.陰陽陣設定音效Button.AnimationSpeed = 0.03F;
-            this.陰陽陣設定音效Button.BackColor = System.Drawing.Color.Transparent;
-            this.陰陽陣設定音效Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.陰陽陣設定音效Button.BorderColor = System.Drawing.Color.Transparent;
-            this.陰陽陣設定音效Button.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.陰陽陣設定音效Button.FocusedColor = System.Drawing.Color.Empty;
-            this.陰陽陣設定音效Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.陰陽陣設定音效Button.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.陰陽陣設定音效Button.Image = null;
-            this.陰陽陣設定音效Button.ImageSize = new System.Drawing.Size(24, 24);
-            this.陰陽陣設定音效Button.Location = new System.Drawing.Point(429, 101);
-            this.陰陽陣設定音效Button.Name = "陰陽陣設定音效Button";
-            this.陰陽陣設定音效Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.陰陽陣設定音效Button.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.陰陽陣設定音效Button.OnHoverForeColor = System.Drawing.Color.White;
-            this.陰陽陣設定音效Button.OnHoverImage = null;
-            this.陰陽陣設定音效Button.OnPressedColor = System.Drawing.Color.Black;
-            this.陰陽陣設定音效Button.Size = new System.Drawing.Size(84, 42);
-            this.陰陽陣設定音效Button.TabIndex = 180;
-            this.陰陽陣設定音效Button.Text = "設定音效";
-            this.陰陽陣設定音效Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.陰陽陣設定音效Button.Visible = false;
-            this.陰陽陣設定音效Button.Click += new System.EventHandler(this.陰陽陣設定音效Button_Click);
             // 
             // TabPageCustomize
             // 
@@ -3410,12 +4491,36 @@
             this.metroTabControlVS1.ResumeLayout(false);
             this.TabPage127R3.ResumeLayout(false);
             this.TabPage127R3.PerformLayout();
+            this.控場GunaPanel.ResumeLayout(false);
+            this.控場GunaPanel.PerformLayout();
+            this.荊棘延遲GunaPanel.ResumeLayout(false);
+            this.荊棘延遲GunaPanel.PerformLayout();
+            this.雷射GunaPanel.ResumeLayout(false);
+            this.雷射GunaPanel.PerformLayout();
+            this.小荊棘GunaPanel.ResumeLayout(false);
+            this.小荊棘GunaPanel.PerformLayout();
             this.TabPage156R1.ResumeLayout(false);
             this.TabPage156R1.PerformLayout();
+            this.R1156控場GunaPanel.ResumeLayout(false);
+            this.R1156控場GunaPanel.PerformLayout();
+            this.翻桌GunaPanel.ResumeLayout(false);
+            this.翻桌GunaPanel.PerformLayout();
+            this.大刺GunaPanel.ResumeLayout(false);
+            this.大刺GunaPanel.PerformLayout();
+            this.大招GunaPanel.ResumeLayout(false);
+            this.大招GunaPanel.PerformLayout();
             this.音效設定156R1GroupBox.ResumeLayout(false);
             this.音效設定156R1GroupBox.PerformLayout();
             this.TabPage156R3.ResumeLayout(false);
             this.TabPage156R3.PerformLayout();
+            this.R3156控場GunaPanel.ResumeLayout(false);
+            this.R3156控場GunaPanel.PerformLayout();
+            this.三連GunaPanel.ResumeLayout(false);
+            this.三連GunaPanel.PerformLayout();
+            this.陰陽陣GunaPanel.ResumeLayout(false);
+            this.陰陽陣GunaPanel.PerformLayout();
+            this.大黑GunaPanel.ResumeLayout(false);
+            this.大黑GunaPanel.PerformLayout();
             this.音效設定156R3GroupBox.ResumeLayout(false);
             this.音效設定156R3GroupBox.PerformLayout();
             this.TabPageCustomize.ResumeLayout(false);
@@ -3573,6 +4678,66 @@
         private Guna.UI.WinForms.GunaCheckBox AutoLoadCheckBox;
         private Guna.UI.WinForms.GunaButton SaveSettingButton;
         private Guna.UI.WinForms.GunaButton LoadSettingButton;
+        private Guna.UI.WinForms.GunaButton 控場設定Button;
+        private Guna.UI.WinForms.GunaButton 荊棘延遲設定Button;
+        private Guna.UI.WinForms.GunaButton 雷射設定Button;
+        private Guna.UI.WinForms.GunaButton 小荊棘設定Button;
+        private Guna.UI.WinForms.GunaPanel 控場GunaPanel;
+        private Guna.UI.WinForms.GunaCheckBox 控場分離視窗CheckBox;
+        private Guna.UI.WinForms.GunaPanel 荊棘延遲GunaPanel;
+        private Guna.UI.WinForms.GunaCheckBox 荊棘延遲分離視窗CheckBox;
+        private Guna.UI.WinForms.GunaPanel 雷射GunaPanel;
+        private Guna.UI.WinForms.GunaCheckBox 雷射分離視窗CheckBox;
+        private Guna.UI.WinForms.GunaPanel 小荊棘GunaPanel;
+        private Guna.UI.WinForms.GunaCheckBox 小荊棘分離視窗CheckBox;
+        private System.Windows.Forms.Label 荊棘延遲音量Label;
+        private Guna.UI.WinForms.GunaLineTextBox 荊棘延遲音量TextBox;
+        private System.Windows.Forms.Label 雷射音量Label;
+        private Guna.UI.WinForms.GunaLineTextBox 雷射音量TextBox;
+        private System.Windows.Forms.Label 小荊棘音量Label;
+        private Guna.UI.WinForms.GunaLineTextBox 小荊棘音量TextBox;
+        private System.Windows.Forms.Label 控場音量Label;
+        private Guna.UI.WinForms.GunaLineTextBox 控場音量TextBox;
+        private Guna.UI.WinForms.GunaPanel R1156控場GunaPanel;
+        private System.Windows.Forms.Label R1156控場音量Label;
+        private Guna.UI.WinForms.GunaCheckBox R1156控場分離視窗CheckBox;
+        private Guna.UI.WinForms.GunaLineTextBox R1156控場音量TextBox;
+        private Guna.UI.WinForms.GunaPanel 翻桌GunaPanel;
+        private Guna.UI.WinForms.GunaCheckBox 翻桌分離視窗CheckBox;
+        private System.Windows.Forms.Label 翻桌音量Label;
+        private Guna.UI.WinForms.GunaLineTextBox 翻桌音量TextBox;
+        private Guna.UI.WinForms.GunaPanel 大刺GunaPanel;
+        private Guna.UI.WinForms.GunaCheckBox 大刺分離視窗CheckBox;
+        private Guna.UI.WinForms.GunaLineTextBox 大刺音量TextBox;
+        private System.Windows.Forms.Label 大刺音量Label;
+        private Guna.UI.WinForms.GunaPanel 大招GunaPanel;
+        private Guna.UI.WinForms.GunaCheckBox 大招分離視窗CheckBox;
+        private Guna.UI.WinForms.GunaLineTextBox 大招音量TextBox;
+        private System.Windows.Forms.Label 大招音量Label;
+        private Guna.UI.WinForms.GunaButton R1156控場設定Button;
+        private Guna.UI.WinForms.GunaButton 翻桌設定Button;
+        private Guna.UI.WinForms.GunaButton 大刺設定Button;
+        private Guna.UI.WinForms.GunaButton 大招設定Button;
+        private Guna.UI.WinForms.GunaPanel R3156控場GunaPanel;
+        private System.Windows.Forms.Label R3156控場音量Label;
+        private Guna.UI.WinForms.GunaCheckBox R3156控場分離視窗CheckBox;
+        private Guna.UI.WinForms.GunaLineTextBox R3156控場音量TextBox;
+        private Guna.UI.WinForms.GunaPanel 三連GunaPanel;
+        private Guna.UI.WinForms.GunaCheckBox 三連分離視窗CheckBox;
+        private System.Windows.Forms.Label 三連音量Label;
+        private Guna.UI.WinForms.GunaLineTextBox 三連音量TextBox;
+        private Guna.UI.WinForms.GunaPanel 陰陽陣GunaPanel;
+        private Guna.UI.WinForms.GunaCheckBox 陰陽陣分離視窗CheckBox;
+        private Guna.UI.WinForms.GunaLineTextBox 陰陽陣音量TextBox;
+        private System.Windows.Forms.Label 陰陽陣音量Label;
+        private Guna.UI.WinForms.GunaPanel 大黑GunaPanel;
+        private Guna.UI.WinForms.GunaCheckBox 大黑分離視窗CheckBox;
+        private Guna.UI.WinForms.GunaLineTextBox 大黑音量TextBox;
+        private System.Windows.Forms.Label 大黑音量Label;
+        private Guna.UI.WinForms.GunaButton R3156控場設定Button;
+        private Guna.UI.WinForms.GunaButton 三連設定Button;
+        private Guna.UI.WinForms.GunaButton 陰陽陣設定Button;
+        private Guna.UI.WinForms.GunaButton 大黑設定Button;
     }
 }
 

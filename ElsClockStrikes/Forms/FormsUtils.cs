@@ -1,6 +1,7 @@
 ﻿using ElsClockStrikes.Core;
 using Guna.UI.WinForms;
 using System;
+using System.Drawing;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
@@ -40,12 +41,12 @@ namespace ElsClockStrikes.Forms
             return result;
         }
 
-        public static System.Windows.Forms.Label getLabelByNamingPattern(Control parent, string namePattern)
+        public static Label getLabelByNamingPattern(Control parent, string namePattern)
         {
-            System.Windows.Forms.Label result = null;
+            Label result = null;
             foreach (Control control in parent.Controls)
             {
-                if (control is System.Windows.Forms.Label label)
+                if (control is Label label)
                 {
                     int subStringIndex = namePattern.Length;
                     for (int i = 1; i < subStringIndex; i++)
@@ -142,7 +143,7 @@ namespace ElsClockStrikes.Forms
             int maxWidth = 0;
             foreach (Control control in parent.Controls)
             {
-                if (control is System.Windows.Forms.Label && maxWidth < control.Width && control.Text != FormsConstant.copyrightTag)
+                if (control is Label && maxWidth < control.Width && control.Text != FormsConstant.copyrightTag)
                 {
                     maxWidth = control.Width;
                 }
@@ -207,6 +208,62 @@ namespace ElsClockStrikes.Forms
             }
 
             return comboBoxText;
+        }
+
+        public static void ProcessSettingBtnClick(Panel targetPanel, GunaButton targetButton)
+        {
+            targetPanel.Visible = !targetPanel.Visible;
+            if (targetPanel.Visible)
+            {
+                targetButton.BaseColor = Color.FromArgb(44, 149, 180);
+                targetButton.OnHoverBaseColor = Color.FromArgb(20, 120, 170);
+                targetButton.Image = Properties.Resources.cross;
+            }
+            else
+            {
+                targetButton.BaseColor = Color.FromArgb(143, 138, 149);
+                targetButton.OnHoverBaseColor = Color.FromArgb(120, 120, 120);
+                targetButton.Image = Properties.Resources.setimg;
+            }
+        }
+
+        public static void StartExpandAnimation(Panel targetPanel)
+        {
+            Timer t = new Timer();
+            t.Interval = 15;
+
+            int targetHeight = targetPanel.Visible ? FormsConstant.targetPanelHeight : 0;
+            int adjHeightNum = 10;
+            bool expanding = targetPanel.Visible;
+            targetPanel.BringToFront();
+
+            t.Tick += (s, e) =>
+            {
+                if (expanding)
+                {
+                    targetPanel.Height += adjHeightNum;
+                    if (targetPanel.Height >= targetHeight)
+                    {
+                        targetPanel.Height = targetHeight;
+                        t.Stop();
+                        t.Dispose();
+                    }
+                }
+                else
+                {
+                    targetPanel.Height -= adjHeightNum;
+                    if (targetPanel.Height <= 0)
+                    {
+                        targetPanel.Height = 0;
+                        targetPanel.Visible = false;
+                        t.Stop();
+                        t.Dispose();
+                    }
+                }
+            };
+
+            targetPanel.Visible = true;
+            t.Start();
         }
     }
 }

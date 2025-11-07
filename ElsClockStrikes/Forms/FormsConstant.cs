@@ -25,6 +25,7 @@ namespace ElsClockStrikes.Forms
         public static int 陰陽陣Time;
         public static int 三連Time;
         public static int R3156控場Time;
+        public const int targetPanelHeight = 135;
         public static int indexForCustomizeName = 0;
         public const int LayoutSign = 327;
         public const int FormSizeOffset = 75;
