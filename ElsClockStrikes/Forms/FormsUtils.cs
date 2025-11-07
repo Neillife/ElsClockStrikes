@@ -159,6 +159,14 @@ namespace ElsClockStrikes.Forms
             }
         }
 
+        public static void ProcessSoundTextBoxLeave(GunaLineTextBox soundTextBox)
+        {
+            if (Int32.Parse(soundTextBox.Text) > 100)
+            {
+                soundTextBox.Text = "100";
+            }
+        }
+
         public static AudioPlayer ProcessSelectSoundFile(UnmanagedMemoryStream defaultSound)
         {
             AudioPlayer ap = new AudioPlayer(defaultSound);

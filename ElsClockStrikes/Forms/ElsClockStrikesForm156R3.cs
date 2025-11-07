@@ -334,6 +334,7 @@ namespace ElsClockStrikes
                 WindowsSetting156R3.Size = new Size(43, 25);
                 this.ProcessRegisterHotKey156R3(false);
                 this.ProcessWindowsSetting156R3(false);
+                this.ProcessSoundVolume156R3();
                 FormsConstant.init156R3Timer(大黑TextBox.Text, 陰陽陣TextBox.Text, 三連TextBox.Text, R3156控場TextBox.Text);
             }
             else
@@ -367,6 +368,66 @@ namespace ElsClockStrikes
         private void R3156控場TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             FormsUtils.ProcessKeyPress(e);
+        }
+
+        private void 大黑音量TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            FormsUtils.ProcessKeyPress(e);
+        }
+
+        private void 陰陽陣音量TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            FormsUtils.ProcessKeyPress(e);
+        }
+
+        private void 三連音量TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            FormsUtils.ProcessKeyPress(e);
+        }
+
+        private void R3156控場音量TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            FormsUtils.ProcessKeyPress(e);
+        }
+
+        private void 大黑音量TextBox_Leave(object sender, EventArgs e)
+        {
+            FormsUtils.ProcessSoundTextBoxLeave(大黑音量TextBox);
+        }
+
+        private void 陰陽陣音量TextBox_Leave(object sender, EventArgs e)
+        {
+            FormsUtils.ProcessSoundTextBoxLeave(陰陽陣音量TextBox);
+        }
+
+        private void 三連音量TextBox_Leave(object sender, EventArgs e)
+        {
+            FormsUtils.ProcessSoundTextBoxLeave(三連音量TextBox);
+        }
+
+        private void R3156控場音量TextBox_Leave(object sender, EventArgs e)
+        {
+            FormsUtils.ProcessSoundTextBoxLeave(R3156控場音量TextBox);
+        }
+
+        private void ProcessSoundVolume156R3()
+        {
+            if (大黑TimeupAudioPlayer != null)
+            {
+                大黑TimeupAudioPlayer.Volume = Int32.Parse(大黑音量TextBox.Text) / 100f;
+            }
+            if (陰陽陣TimeupAudioPlayer != null)
+            {
+                陰陽陣TimeupAudioPlayer.Volume = Int32.Parse(陰陽陣音量TextBox.Text) / 100f;
+            }
+            if (三連TimeupAudioPlayer != null)
+            {
+                三連TimeupAudioPlayer.Volume = Int32.Parse(三連音量TextBox.Text) / 100f;
+            }
+            if (R3156控場TimeupAudioPlayer != null)
+            {
+                R3156控場TimeupAudioPlayer.Volume = Int32.Parse(R3156控場音量TextBox.Text) / 100f;
+            }
         }
 
         private void LoadDefaultSound156R3()
