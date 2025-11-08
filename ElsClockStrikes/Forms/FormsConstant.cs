@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ElsClockStrikes.Forms
 {
@@ -17,14 +18,17 @@ namespace ElsClockStrikes.Forms
         public static int 雷射Time;
         public static int 荊棘延遲Time;
         public static int 控場Time;
+        public static readonly List<string> tipNames127R3 = new List<string>() { "小荊棘", "雷射", "荊棘延遲", "控場" };
         public static int 大招Time;
         public static int 大刺Time;
         public static int 翻桌Time;
         public static int R1156控場Time;
+        public static readonly List<string> tipNames156R1 = new List<string>() { "大招", "大刺", "翻桌", "R1156控場" };
         public static int 大黑Time;
         public static int 陰陽陣Time;
         public static int 三連Time;
         public static int R3156控場Time;
+        public static readonly List<string> tipNames156R3 = new List<string>() { "大黑", "陰陽陣", "三連", "R3156控場" };
         public const int targetPanelHeight = 135;
         public static int indexForCustomizeName = 0;
         public const int LayoutSign = 327;

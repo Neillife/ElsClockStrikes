@@ -1,6 +1,7 @@
 ﻿using ElsClockStrikes.Core;
 using Guna.UI.WinForms;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Reflection;
@@ -31,7 +32,7 @@ namespace ElsClockStrikes.Forms
                                 break;
                             }
                         }
-                        if(result != null)
+                        if (result != null)
                         {
                             break;
                         }
@@ -89,6 +90,68 @@ namespace ElsClockStrikes.Forms
                 }
             }
             return result;
+        }
+
+        public static List<GunaCheckBox> GetCheckBoxByMechanicNames(TabPage tabPage, List<string> mechanicNames)
+        {
+            List<GunaCheckBox> result = new List<GunaCheckBox>();
+            GunaCheckBox cb = null;
+            foreach (string name in mechanicNames)
+            {
+                foreach (Control control in tabPage.Controls)
+                {
+                    if (control is GunaPanel gunaPanel && control.Name == $"{name}GunaPanel")
+                    {
+                        foreach (Control gunaPanelControl in gunaPanel.Controls)
+                        {
+                            if (gunaPanelControl is GunaCheckBox checkBox && gunaPanelControl.Name == $"{name}分離視窗CheckBox")
+                            {
+                                cb = checkBox;
+                                break;
+                            }
+                        }
+                        if (cb != null)
+                        {
+                            result.Add(cb);
+                            cb = null;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        public static Dictionary<string, TimerInstanceParameters> GetTIPMapByMechanicNames(Control parent, List<string> mechanicNames)
+        {
+            Dictionary<string, TimerInstanceParameters> controlMap = new Dictionary<string, TimerInstanceParameters>();
+            foreach (string name in mechanicNames)
+            {
+                TimerInstanceParameters param = new TimerInstanceParameters();
+
+                foreach (Control control in parent.Controls)
+                {
+                    if (control is Label keyLabel && control.Name == $"{name}按鍵Label")
+                        param.keyLabel = keyLabel;
+
+                    else if (control is Label nameLabel && control.Name == $"{name}Label")
+                        param.nameLabel = nameLabel;
+
+                    else if (control is Label timeLeftLabel && control.Name == $"{name}CDLabel")
+                        param.timeLeftLabel = timeLeftLabel;
+
+                    if (param.keyLabel != null &&
+                        param.nameLabel != null &&
+                        param.timeLeftLabel != null)
+                    {
+                        controlMap.Add(name, param);
+                        break;
+                    }
+                }
+            }
+
+            return controlMap;
         }
 
         public static MethodInfo getMethodInfoByNamingPattern(string namePattern)
