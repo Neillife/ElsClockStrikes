@@ -1,7 +1,9 @@
 ﻿using ElsClockStrikes.Core;
 using ElsClockStrikes.Forms;
+using Guna.UI.WinForms;
 using MetroSuite;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
@@ -26,6 +28,8 @@ namespace ElsClockStrikes
         private AudioPlayer 荊棘延遲TimeupAudioPlayer;
         private AudioPlayer 控場TimeupAudioPlayer;
         private HotKeyManager hotKeyManager;
+        private List<ElsClockStrikesFormTimerInstance> formTimerInstances;
+        private Dictionary<string, Point> formTimerInstancePos;
 
         public ElsClockStrikesForm()
         {
@@ -200,21 +204,8 @@ namespace ElsClockStrikes
             }
         }
 
-        private void ProcessWindowsSetting(bool isBackToOriginCheck)
+        private void ProcessComponentDisplay(bool isBackToOriginCheck)
         {
-            小荊棘CDLabel.Visible = !小荊棘CDLabel.Visible;
-            雷射CDLabel.Visible = !雷射CDLabel.Visible;
-            荊棘延遲CDLabel.Visible = !荊棘延遲CDLabel.Visible;
-            控場CDLabel.Visible = !控場CDLabel.Visible;
-            小荊棘按鍵Label.Visible = !小荊棘按鍵Label.Visible;
-            雷射按鍵Label.Visible = !雷射按鍵Label.Visible;
-            荊棘延遲按鍵Label.Visible = !荊棘延遲按鍵Label.Visible;
-            控場按鍵Label.Visible = !控場按鍵Label.Visible;
-            重置計時器按鍵Label.Visible = !重置計時器按鍵Label.Visible;
-            ZoomOutControlBox.Visible = !ZoomOutControlBox.Visible;
-            CloseControlBox.Visible = !CloseControlBox.Visible;
-            metroTabControlVS1.Visible = !metroTabControlVS1.Visible;
-
             if (isBackToOriginCheck)
             {
                 this.Controls.Remove(小荊棘按鍵Label);
@@ -283,31 +274,112 @@ namespace ElsClockStrikes
                 this.Controls.Add(重置計時器Label);
                 this.Controls.Add(WindowsSetting);
             }
+        }
 
-            this.Size = isBackToOriginCheck ? WindowsOriginSize : new Size(180, 225);
+        private void ProcessFormInstance(bool isBackToOriginCheck)
+        {
+            if (isBackToOriginCheck)
+            {
+                if (formTimerInstancePos == null)
+                {
+                    formTimerInstancePos = new Dictionary<string, Point>();
+                }
+                foreach (ElsClockStrikesFormTimerInstance timerInstance in formTimerInstances)
+                {
+                    Console.WriteLine($"{timerInstance.GetMechanicName()} {formTimerInstances.Count}");
+                    formTimerInstancePos[timerInstance.GetMechanicName()] = timerInstance.Location;
+                    timerInstance.Close();
+                }
+                this.Size = WindowsOriginSize;
+                小荊棘Label.Location = 小荊棘LabelOriginPos;
+                雷射Label.Location = 雷射LabelOriginPos;
+                荊棘延遲Label.Location = 荊棘延遲LabelOriginPos;
+                控場Label.Location = 控場LabelOriginPos;
+                重置計時器Label.Location = 重置計時器LabelOriginPos;
+                WindowsSetting.Location = WindowsSettingOriginPos;
+            }
+            else
+            {
+                int MaxLabelWidth = FormsUtils.GetLabelMaxWidth(this);
+                int KeyLabelAddY = 40;
+                Dictionary<string, TimerInstanceParameters> nonInstanceMap = new Dictionary<string, TimerInstanceParameters>();
+                List<GunaCheckBox> cbList = FormsUtils.GetCheckBoxByMechanicNames(this.TabPage127R3, FormsConstant.tipNames127R3);
+                Dictionary<string, TimerInstanceParameters> tipMap = FormsUtils.GetTIPMapByMechanicNames(this, FormsConstant.tipNames127R3);
+                formTimerInstances = new List<ElsClockStrikesFormTimerInstance>();
+                foreach (GunaCheckBox checkBox in cbList)
+                {
+                    string tipMapKey = checkBox.Name.Replace("分離視窗CheckBox", "");
+                    Console.WriteLine($"{checkBox.Name} = {checkBox.Checked}");
+                    if (checkBox.Checked)
+                    {
+                        if (formTimerInstancePos != null && formTimerInstancePos.ContainsKey(tipMapKey))
+                        {
+                            formTimerInstances.Add(new ElsClockStrikesFormTimerInstance(tipMap[tipMapKey], WindowsSetting, MaxLabelWidth, this.TopMost, formTimerInstancePos[tipMapKey]));
+                        }
+                        else
+                        {
+                            formTimerInstances.Add(new ElsClockStrikesFormTimerInstance(tipMap[tipMapKey], WindowsSetting, MaxLabelWidth, this.TopMost));
+                        }
+                    }
+                    else
+                    {
+                        nonInstanceMap.Add(tipMapKey, tipMap[tipMapKey]);
+                    }
+                }
 
-            int MaxLabelWidth = FormsUtils.GetLabelMaxWidth(this);
-            int KeyLabelAddY = 40;
-            小荊棘按鍵Label.Location = new Point(5, 30);
-            小荊棘Label.Location = isBackToOriginCheck ? 小荊棘LabelOriginPos : new Point(MaxLabelWidth - 小荊棘Label.Width + 小荊棘按鍵Label.Width - 5, 小荊棘按鍵Label.Top + 小荊棘按鍵Label.Height - 小荊棘Label.Height - 3);
-            小荊棘CDLabel.Location = new Point(小荊棘Label.Left + 小荊棘Label.Width, 小荊棘按鍵Label.Location.Y);
+                foreach (ElsClockStrikesFormTimerInstance timerInstance in formTimerInstances)
+                {
+                    timerInstance.Show();
+                }
 
-            雷射按鍵Label.Location = new Point(小荊棘按鍵Label.Location.X, 小荊棘按鍵Label.Location.Y + KeyLabelAddY);
-            雷射Label.Location = isBackToOriginCheck ? 雷射LabelOriginPos : new Point(小荊棘Label.Left + 小荊棘Label.Width - 雷射Label.Width, 雷射按鍵Label.Top + 雷射按鍵Label.Height - 雷射Label.Height - 3);
-            雷射CDLabel.Location = new Point(雷射Label.Left + 雷射Label.Width, 雷射按鍵Label.Location.Y);
+                this.Size = new Size(180, 225 - (tipMap.Count - nonInstanceMap.Count) * 39);
+                Label firstNameLabel = null;
+                Label labelSign = null;
+                bool firstCheck = false;
 
-            荊棘延遲按鍵Label.Location = new Point(雷射按鍵Label.Location.X, 雷射按鍵Label.Location.Y + KeyLabelAddY);
-            荊棘延遲Label.Location = isBackToOriginCheck ? 荊棘延遲LabelOriginPos : new Point(小荊棘Label.Left + 小荊棘Label.Width - 荊棘延遲Label.Width, 荊棘延遲按鍵Label.Top + 荊棘延遲按鍵Label.Height - 荊棘延遲Label.Height - 3);
-            荊棘延遲CDLabel.Location = new Point(荊棘延遲Label.Left + 荊棘延遲Label.Width, 荊棘延遲按鍵Label.Location.Y);
+                foreach (KeyValuePair<string, TimerInstanceParameters> kvp in nonInstanceMap)
+                {
+                    if (!firstCheck)
+                    {
+                        kvp.Value.keyLabel.Location = new Point(5, 30);
+                        kvp.Value.nameLabel.Location = new Point(MaxLabelWidth - kvp.Value.nameLabel.Width + kvp.Value.keyLabel.Width - 5, kvp.Value.keyLabel.Top + kvp.Value.keyLabel.Height - kvp.Value.nameLabel.Height - 3);
+                        kvp.Value.timeLeftLabel.Location = new Point(kvp.Value.nameLabel.Left + kvp.Value.nameLabel.Width, kvp.Value.keyLabel.Location.Y);
+                        firstNameLabel = kvp.Value.nameLabel;
+                        labelSign = kvp.Value.keyLabel;
+                        firstCheck = true;
+                    }
+                    else
+                    {
+                        kvp.Value.keyLabel.Location = new Point(labelSign.Location.X, labelSign.Location.Y + KeyLabelAddY);
+                        kvp.Value.nameLabel.Location = new Point(firstNameLabel.Left + firstNameLabel.Width - kvp.Value.nameLabel.Width, kvp.Value.keyLabel.Top + kvp.Value.keyLabel.Height - kvp.Value.nameLabel.Height - 3);
+                        kvp.Value.timeLeftLabel.Location = new Point(kvp.Value.nameLabel.Left + kvp.Value.nameLabel.Width, kvp.Value.keyLabel.Location.Y);
+                        labelSign = kvp.Value.keyLabel;
+                    }
+                }
 
-            控場按鍵Label.Location = new Point(荊棘延遲按鍵Label.Location.X, 荊棘延遲按鍵Label.Location.Y + KeyLabelAddY);
-            控場Label.Location = isBackToOriginCheck ? 控場LabelOriginPos : new Point(小荊棘Label.Left + 小荊棘Label.Width - 控場Label.Width, 控場按鍵Label.Top + 控場按鍵Label.Height - 控場Label.Height - 3);
-            控場CDLabel.Location = new Point(控場Label.Left + 控場Label.Width, 控場按鍵Label.Location.Y);
+                重置計時器按鍵Label.Location = new Point(labelSign.Location.X, labelSign.Location.Y + KeyLabelAddY);
+                重置計時器Label.Location = new Point(firstNameLabel.Left + firstNameLabel.Width - 重置計時器Label.Width + 27, 重置計時器按鍵Label.Top + 重置計時器按鍵Label.Height - 重置計時器Label.Height - 3);
+                WindowsSetting.Location = new Point(130, 5);
+            }
+        }
 
-            重置計時器按鍵Label.Location = new Point(控場按鍵Label.Location.X, 控場按鍵Label.Location.Y + KeyLabelAddY);
-            重置計時器Label.Location = isBackToOriginCheck ? 重置計時器LabelOriginPos : new Point(小荊棘Label.Left + 小荊棘Label.Width - 重置計時器Label.Width + 27, 重置計時器按鍵Label.Top + 重置計時器按鍵Label.Height - 重置計時器Label.Height - 3);
-            TopMostCheckBox.Visible = !TopMostCheckBox.Visible;
-            WindowsSetting.Location = isBackToOriginCheck ? WindowsSettingOriginPos : new Point(130, 5);
+        private void ProcessWindowsSetting(bool isBackToOriginCheck)
+        {
+            小荊棘CDLabel.Visible = !小荊棘CDLabel.Visible;
+            雷射CDLabel.Visible = !雷射CDLabel.Visible;
+            荊棘延遲CDLabel.Visible = !荊棘延遲CDLabel.Visible;
+            控場CDLabel.Visible = !控場CDLabel.Visible;
+            小荊棘按鍵Label.Visible = !小荊棘按鍵Label.Visible;
+            雷射按鍵Label.Visible = !雷射按鍵Label.Visible;
+            荊棘延遲按鍵Label.Visible = !荊棘延遲按鍵Label.Visible;
+            控場按鍵Label.Visible = !控場按鍵Label.Visible;
+            重置計時器按鍵Label.Visible = !重置計時器按鍵Label.Visible;
+            ZoomOutControlBox.Visible = !ZoomOutControlBox.Visible;
+            CloseControlBox.Visible = !CloseControlBox.Visible;
+            metroTabControlVS1.Visible = !metroTabControlVS1.Visible;
+
+            ProcessComponentDisplay(isBackToOriginCheck);
+            ProcessFormInstance(isBackToOriginCheck);
 
             小荊棘按鍵Label.Text = FormsUtils.ProcessLayoutString(小荊棘ComboBox.Text);
             雷射按鍵Label.Text = FormsUtils.ProcessLayoutString(雷射ComboBox.Text);

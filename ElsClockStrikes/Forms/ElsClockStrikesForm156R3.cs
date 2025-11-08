@@ -1,5 +1,6 @@
 ﻿using ElsClockStrikes.Core;
 using ElsClockStrikes.Forms;
+using Guna.UI.WinForms;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -155,21 +156,8 @@ namespace ElsClockStrikes
             }
         }
 
-        private void ProcessWindowsSetting156R3(bool isBackToOriginCheck)
+        private void ProcessComponentDisplay156R3(bool isBackToOriginCheck)
         {
-            大黑CDLabel.Visible = !大黑CDLabel.Visible;
-            陰陽陣CDLabel.Visible = !陰陽陣CDLabel.Visible;
-            三連CDLabel.Visible = !三連CDLabel.Visible;
-            R3156控場CDLabel.Visible = !R3156控場CDLabel.Visible;
-            大黑按鍵Label.Visible = !大黑按鍵Label.Visible;
-            陰陽陣按鍵Label.Visible = !陰陽陣按鍵Label.Visible;
-            三連按鍵Label.Visible = !三連按鍵Label.Visible;
-            R3156控場按鍵Label.Visible = !R3156控場按鍵Label.Visible;
-            重置計時器156R3按鍵Label.Visible = !重置計時器156R3按鍵Label.Visible;
-            ZoomOutControlBox.Visible = !ZoomOutControlBox.Visible;
-            CloseControlBox.Visible = !CloseControlBox.Visible;
-            metroTabControlVS1.Visible = !metroTabControlVS1.Visible;
-
             if (isBackToOriginCheck)
             {
                 this.Controls.Remove(大黑按鍵Label);
@@ -238,31 +226,112 @@ namespace ElsClockStrikes
                 this.Controls.Add(重置計時器156R3Label);
                 this.Controls.Add(WindowsSetting156R3);
             }
+        }
 
-            this.Size = isBackToOriginCheck ? WindowsOriginSize : new Size(180, 225);
+        private void ProcessFormInstance156R3(bool isBackToOriginCheck)
+        {
+            if (isBackToOriginCheck)
+            {
+                if (formTimerInstancePos == null)
+                {
+                    formTimerInstancePos = new Dictionary<string, Point>();
+                }
+                foreach (ElsClockStrikesFormTimerInstance timerInstance in formTimerInstances)
+                {
+                    Console.WriteLine($"{timerInstance.GetMechanicName()} {formTimerInstances.Count}");
+                    formTimerInstancePos[timerInstance.GetMechanicName()] = timerInstance.Location;
+                    timerInstance.Close();
+                }
+                this.Size = WindowsOriginSize;
+                大黑Label.Location = 大黑LabelOriginPos;
+                陰陽陣Label.Location = 陰陽陣LabelOriginPos;
+                三連Label.Location = 三連LabelOriginPos;
+                R3156控場Label.Location = 控場156R3LabelOriginPos;
+                重置計時器156R3Label.Location = 重置計時器LabelOriginPos;
+                WindowsSetting156R3.Location = WindowsSettingOriginPos;
+            }
+            else
+            {
+                int MaxLabelWidth = FormsUtils.GetLabelMaxWidth(this);
+                int KeyLabelAddY = 40;
+                Dictionary<string, TimerInstanceParameters> nonInstanceMap = new Dictionary<string, TimerInstanceParameters>();
+                List<GunaCheckBox> cbList = FormsUtils.GetCheckBoxByMechanicNames(this.TabPage156R3, FormsConstant.tipNames156R3);
+                Dictionary<string, TimerInstanceParameters> tipMap = FormsUtils.GetTIPMapByMechanicNames(this, FormsConstant.tipNames156R3);
+                formTimerInstances = new List<ElsClockStrikesFormTimerInstance>();
+                foreach (GunaCheckBox checkBox in cbList)
+                {
+                    string tipMapKey = checkBox.Name.Replace("分離視窗CheckBox", "");
+                    Console.WriteLine($"{checkBox.Name} = {checkBox.Checked}");
+                    if (checkBox.Checked)
+                    {
+                        if (formTimerInstancePos != null && formTimerInstancePos.ContainsKey(tipMapKey))
+                        {
+                            formTimerInstances.Add(new ElsClockStrikesFormTimerInstance(tipMap[tipMapKey], WindowsSetting156R3, MaxLabelWidth, this.TopMost, formTimerInstancePos[tipMapKey]));
+                        }
+                        else
+                        {
+                            formTimerInstances.Add(new ElsClockStrikesFormTimerInstance(tipMap[tipMapKey], WindowsSetting156R3, MaxLabelWidth, this.TopMost));
+                        }
+                    }
+                    else
+                    {
+                        nonInstanceMap.Add(tipMapKey, tipMap[tipMapKey]);
+                    }
+                }
 
-            int MaxLabelWidth = FormsUtils.GetLabelMaxWidth(this);
-            int KeyLabelAddY = 40;
-            大黑按鍵Label.Location = new Point(5, 30);
-            大黑Label.Location = isBackToOriginCheck ? 大黑LabelOriginPos : new Point(MaxLabelWidth - 大黑Label.Width + 大黑按鍵Label.Width - 5, 大黑按鍵Label.Top + 大黑按鍵Label.Height - 大黑Label.Height - 3);
-            大黑CDLabel.Location = new Point(大黑Label.Left + 大黑Label.Width, 大黑按鍵Label.Location.Y);
+                foreach (ElsClockStrikesFormTimerInstance timerInstance in formTimerInstances)
+                {
+                    timerInstance.Show();
+                }
 
-            陰陽陣按鍵Label.Location = new Point(大黑按鍵Label.Location.X, 大黑按鍵Label.Location.Y + KeyLabelAddY);
-            陰陽陣Label.Location = isBackToOriginCheck ? 陰陽陣LabelOriginPos : new Point(大黑Label.Left + 大黑Label.Width - 陰陽陣Label.Width, 陰陽陣按鍵Label.Top + 陰陽陣按鍵Label.Height - 陰陽陣Label.Height - 3);
-            陰陽陣CDLabel.Location = new Point(陰陽陣Label.Left + 陰陽陣Label.Width, 陰陽陣按鍵Label.Location.Y);
+                this.Size = new Size(180, 225 - (tipMap.Count - nonInstanceMap.Count) * 39);
+                Label firstNameLabel = null;
+                Label labelSign = null;
+                bool firstCheck = false;
 
-            三連按鍵Label.Location = new Point(陰陽陣按鍵Label.Location.X, 陰陽陣按鍵Label.Location.Y + KeyLabelAddY);
-            三連Label.Location = isBackToOriginCheck ? 三連LabelOriginPos : new Point(大黑Label.Left + 大黑Label.Width - 三連Label.Width, 三連按鍵Label.Top + 三連按鍵Label.Height - 三連Label.Height - 3);
-            三連CDLabel.Location = new Point(三連Label.Left + 三連Label.Width, 三連按鍵Label.Location.Y);
+                foreach (KeyValuePair<string, TimerInstanceParameters> kvp in nonInstanceMap)
+                {
+                    if (!firstCheck)
+                    {
+                        kvp.Value.keyLabel.Location = new Point(5, 30);
+                        kvp.Value.nameLabel.Location = new Point(MaxLabelWidth - kvp.Value.nameLabel.Width + kvp.Value.keyLabel.Width - 5, kvp.Value.keyLabel.Top + kvp.Value.keyLabel.Height - kvp.Value.nameLabel.Height - 3);
+                        kvp.Value.timeLeftLabel.Location = new Point(kvp.Value.nameLabel.Left + kvp.Value.nameLabel.Width, kvp.Value.keyLabel.Location.Y);
+                        firstNameLabel = kvp.Value.nameLabel;
+                        labelSign = kvp.Value.keyLabel;
+                        firstCheck = true;
+                    }
+                    else
+                    {
+                        kvp.Value.keyLabel.Location = new Point(labelSign.Location.X, labelSign.Location.Y + KeyLabelAddY);
+                        kvp.Value.nameLabel.Location = new Point(firstNameLabel.Left + firstNameLabel.Width - kvp.Value.nameLabel.Width, kvp.Value.keyLabel.Top + kvp.Value.keyLabel.Height - kvp.Value.nameLabel.Height - 3);
+                        kvp.Value.timeLeftLabel.Location = new Point(kvp.Value.nameLabel.Left + kvp.Value.nameLabel.Width, kvp.Value.keyLabel.Location.Y);
+                        labelSign = kvp.Value.keyLabel;
+                    }
+                }
 
-            R3156控場按鍵Label.Location = new Point(三連按鍵Label.Location.X, 三連按鍵Label.Location.Y + KeyLabelAddY);
-            R3156控場Label.Location = isBackToOriginCheck ? 控場156R3LabelOriginPos : new Point(大黑Label.Left + 大黑Label.Width - R3156控場Label.Width, R3156控場按鍵Label.Top + R3156控場按鍵Label.Height - R3156控場Label.Height - 3);
-            R3156控場CDLabel.Location = new Point(R3156控場Label.Left + R3156控場Label.Width, R3156控場按鍵Label.Location.Y);
+                重置計時器156R3按鍵Label.Location = new Point(labelSign.Location.X, labelSign.Location.Y + KeyLabelAddY);
+                重置計時器156R3Label.Location = new Point(firstNameLabel.Left + firstNameLabel.Width - 重置計時器156R3Label.Width + 27, 重置計時器156R3按鍵Label.Top + 重置計時器156R3按鍵Label.Height - 重置計時器156R3Label.Height - 3);
+                WindowsSetting156R3.Location = new Point(130, 5);
+            }
+        }
 
-            重置計時器156R3按鍵Label.Location = new Point(R3156控場按鍵Label.Location.X, R3156控場按鍵Label.Location.Y + KeyLabelAddY);
-            重置計時器156R3Label.Location = isBackToOriginCheck ? 重置計時器LabelOriginPos : new Point(大黑Label.Left + 大黑Label.Width - 重置計時器156R3Label.Width + 27, 重置計時器156R3按鍵Label.Top + 重置計時器156R3按鍵Label.Height - 重置計時器156R3Label.Height - 3); ;
-            TopMostCheckBox.Visible = !TopMostCheckBox.Visible;
-            WindowsSetting156R3.Location = isBackToOriginCheck ? WindowsSettingOriginPos : new Point(130, 5);
+        private void ProcessWindowsSetting156R3(bool isBackToOriginCheck)
+        {
+            大黑CDLabel.Visible = !大黑CDLabel.Visible;
+            陰陽陣CDLabel.Visible = !陰陽陣CDLabel.Visible;
+            三連CDLabel.Visible = !三連CDLabel.Visible;
+            R3156控場CDLabel.Visible = !R3156控場CDLabel.Visible;
+            大黑按鍵Label.Visible = !大黑按鍵Label.Visible;
+            陰陽陣按鍵Label.Visible = !陰陽陣按鍵Label.Visible;
+            三連按鍵Label.Visible = !三連按鍵Label.Visible;
+            R3156控場按鍵Label.Visible = !R3156控場按鍵Label.Visible;
+            重置計時器156R3按鍵Label.Visible = !重置計時器156R3按鍵Label.Visible;
+            ZoomOutControlBox.Visible = !ZoomOutControlBox.Visible;
+            CloseControlBox.Visible = !CloseControlBox.Visible;
+            metroTabControlVS1.Visible = !metroTabControlVS1.Visible;
+
+            ProcessComponentDisplay156R3(isBackToOriginCheck);
+            ProcessFormInstance156R3(isBackToOriginCheck);
 
             大黑按鍵Label.Text = FormsUtils.ProcessLayoutString(大黑ComboBox.Text);
             陰陽陣按鍵Label.Text = FormsUtils.ProcessLayoutString(陰陽陣ComboBox.Text);
