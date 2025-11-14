@@ -53,53 +53,42 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
         private void ProcessComponentNameIndex(ControlStrategyParameters controlStrategyParameters, GunaButton gunaButton)
         {
             int currentButtonNameIndex = Int32.Parse(this.GetRemoveIndex(gunaButton));
+
             if (currentButtonNameIndex == FormsConstant.indexForCustomizeName)
             {
                 FormsConstant.indexForCustomizeName--; // Update last index.
+                return;
             }
-            else
+
+            FormsConstant.indexForCustomizeName--; // Update last index.
+            int parseNum;
+
+            foreach (CustomizeTaskTimer customizeTaskTimer in controlStrategyParameters.customizeTaskTimerList)
             {
-                int parseNum;
-                foreach (Control control in controlStrategyParameters.tabPage.Controls)
+                int tagIndex;
+                if (Int32.TryParse(FormsCustomizeUtils.GetIndexOfString(customizeTaskTimer.Tag.ToString()), out tagIndex) && tagIndex > currentButtonNameIndex)
                 {
-                    if (control is Label label && Int32.TryParse(FormsCustomizeUtils.GetIndexOfString(label.Name), out parseNum) && parseNum > currentButtonNameIndex)
-                    {
-                        FormsConstant.indexForCustomizeName = parseNum - 1; // Update last index.
-                        string labelName = FormsCustomizeUtils.GetRemoveIndexCharOfStrgin(label.Name);
-                        label.Name = $"{labelName}{parseNum - 1}";
-                        if (labelName == FormsConstant.timeLeftLabelBaseName) {
-                            foreach (CustomizeTaskTimer customizeTaskTimer in controlStrategyParameters.customizeTaskTimerList)
-                            {
-                                int tagIndex;
-                                if (Int32.TryParse(FormsCustomizeUtils.GetIndexOfString(customizeTaskTimer.Tag.ToString()), out tagIndex) && tagIndex == (parseNum - 1))
-                                {
-                                    customizeTaskTimer.setTimeLeftLabel(label);
-                                    break;
-                                }
-                            }
-                        }
-                    }
-                    else if (control is GunaComboBox gunaComboBox && Int32.TryParse(FormsCustomizeUtils.GetIndexOfString(gunaComboBox.Name), out parseNum) && parseNum > currentButtonNameIndex)
-                    {
-                        gunaComboBox.Name = $"{FormsConstant.comboBoxBaseName}{parseNum - 1}";
-                    }
-                    else if (control is GunaLineTextBox gunaLineTextBox && Int32.TryParse(FormsCustomizeUtils.GetIndexOfString(gunaLineTextBox.Name), out parseNum) && parseNum > currentButtonNameIndex)
-                    {
-                        gunaLineTextBox.Name = $"{FormsConstant.textBoxBaseName}{parseNum - 1}";
-                        foreach (CustomizeTaskTimer customizeTaskTimer in controlStrategyParameters.customizeTaskTimerList)
-                        {
-                            int tagIndex;
-                            if (Int32.TryParse(FormsCustomizeUtils.GetIndexOfString(customizeTaskTimer.Tag.ToString()), out tagIndex) && tagIndex == (parseNum - 1))
-                            {
-                                customizeTaskTimer.setCustomTimeGunaLineTextBox(gunaLineTextBox);
-                                break;
-                            }
-                        }
-                    }
-                    else if (control is GunaButton GButton && Int32.TryParse(FormsCustomizeUtils.GetIndexOfString(GButton.Name), out parseNum) && parseNum > currentButtonNameIndex)
-                    {
-                        GButton.Name = $"{FormsCustomizeUtils.GetRemoveIndexCharOfStrgin(GButton.Name)}{parseNum - 1}";
-                    }
+                    customizeTaskTimer.Tag = $"{FormsCustomizeUtils.GetRemoveIndexCharOfStrgin(customizeTaskTimer.Tag.ToString())}{tagIndex - 1}";
+                }
+            }
+
+            foreach (Control control in controlStrategyParameters.tabPage.Controls)
+            {
+                if (control is Label label && Int32.TryParse(FormsCustomizeUtils.GetIndexOfString(label.Name), out parseNum) && parseNum > currentButtonNameIndex)
+                {
+                    label.Name = $"{FormsCustomizeUtils.GetRemoveIndexCharOfStrgin(label.Name)}{parseNum - 1}";
+                }
+                else if (control is GunaComboBox gunaComboBox && Int32.TryParse(FormsCustomizeUtils.GetIndexOfString(gunaComboBox.Name), out parseNum) && parseNum > currentButtonNameIndex)
+                {
+                    gunaComboBox.Name = $"{FormsConstant.comboBoxBaseName}{parseNum - 1}";
+                }
+                else if (control is GunaLineTextBox gunaLineTextBox && Int32.TryParse(FormsCustomizeUtils.GetIndexOfString(gunaLineTextBox.Name), out parseNum) && parseNum > currentButtonNameIndex)
+                {
+                    gunaLineTextBox.Name = $"{FormsConstant.textBoxBaseName}{parseNum - 1}";
+                }
+                else if (control is GunaButton GButton && Int32.TryParse(FormsCustomizeUtils.GetIndexOfString(GButton.Name), out parseNum) && parseNum > currentButtonNameIndex)
+                {
+                    GButton.Name = $"{FormsCustomizeUtils.GetRemoveIndexCharOfStrgin(GButton.Name)}{parseNum - 1}";
                 }
             }
         }
@@ -143,7 +132,7 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
             
             if (controlStrategyParameters.customizeTaskTimerList.Any())
             {
-                controlStrategyParameters.customizeTaskTimerList.RemoveAt(controlStrategyParameters.customizeTaskTimerList.Count - 1);
+                controlStrategyParameters.customizeTaskTimerList.RemoveAt(Int32.Parse(currentButtonNameIndex) - 1);
             }
         }
     }
