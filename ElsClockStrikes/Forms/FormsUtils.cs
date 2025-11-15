@@ -92,7 +92,7 @@ namespace ElsClockStrikes.Forms
             return result;
         }
 
-        public static List<GunaCheckBox> GetCheckBoxByMechanicNames(TabPage tabPage, List<string> mechanicNames)
+        public static List<GunaCheckBox> GetFormInstanceCheckBoxListByMechanicNames(TabPage tabPage, List<string> mechanicNames)
         {
             List<GunaCheckBox> result = new List<GunaCheckBox>();
             GunaCheckBox cb = null;
@@ -123,12 +123,12 @@ namespace ElsClockStrikes.Forms
             return result;
         }
 
-        public static Dictionary<string, TimerInstanceParameters> GetTIPMapByMechanicNames(Control parent, List<string> mechanicNames)
+        public static Dictionary<string, FormInstanceParameters> GetFIPMapByMechanicNames(Control parent, List<string> mechanicNames)
         {
-            Dictionary<string, TimerInstanceParameters> controlMap = new Dictionary<string, TimerInstanceParameters>();
+            Dictionary<string, FormInstanceParameters> controlMap = new Dictionary<string, FormInstanceParameters>();
             foreach (string name in mechanicNames)
             {
-                TimerInstanceParameters param = new TimerInstanceParameters();
+                FormInstanceParameters param = new FormInstanceParameters();
 
                 foreach (Control control in parent.Controls)
                 {

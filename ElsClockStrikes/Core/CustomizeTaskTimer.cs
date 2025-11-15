@@ -9,6 +9,7 @@ namespace ElsClockStrikes.Core
     {
         private Label timeLeftLabel;
         private GunaLineTextBox customTimeGunaLineTextBox;
+        private GunaLineTextBox customVolumeGunaLineTextBox;
         private int customTime;
         private AudioPlayer audioPlayer;
 
@@ -32,6 +33,17 @@ namespace ElsClockStrikes.Core
         public CustomizeTaskTimer setCustomTimeGunaLineTextBox(GunaLineTextBox textBox)
         {
             this.customTimeGunaLineTextBox = textBox;
+            return this;
+        }
+
+        public GunaLineTextBox getCustomVolumeGunaLineTextBox()
+        {
+            return customVolumeGunaLineTextBox;
+        }
+
+        public CustomizeTaskTimer setCustomVolumeGunaLineTextBox(GunaLineTextBox textBox)
+        {
+            this.customVolumeGunaLineTextBox = textBox;
             return this;
         }
 

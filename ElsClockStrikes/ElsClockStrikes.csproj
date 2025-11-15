@@ -138,10 +138,15 @@
     <Compile Include="Forms\FormCustomizeStrategy\ControlStrategyParameters.cs" />
     <Compile Include="Forms\FormCustomizeStrategy\BaseControlStrategy.cs" />
     <Compile Include="Forms\FormCustomizeStrategy\CustomizeTaskTimerStrategy.cs" />
+    <Compile Include="Forms\FormCustomizeStrategy\FormInstanceCheckBoxStrategy.cs" />
     <Compile Include="Forms\FormCustomizeStrategy\HotKeyLabelStrategy.cs" />
     <Compile Include="Forms\FormCustomizeStrategy\LineTextBoxStrategy.cs" />
     <Compile Include="Forms\FormCustomizeStrategy\MechanicNameLabelStrategy.cs" />
+    <Compile Include="Forms\FormCustomizeStrategy\PanelStrategy.cs" />
     <Compile Include="Forms\FormCustomizeStrategy\RemoveButtonStrategy.cs" />
+    <Compile Include="Forms\FormCustomizeStrategy\SettingButtonStrategy.cs" />
+    <Compile Include="Forms\FormCustomizeStrategy\SoundLabelStrategy.cs" />
+    <Compile Include="Forms\FormCustomizeStrategy\SoundLineTextBoxStrategy.cs" />
     <Compile Include="Forms\FormCustomizeStrategy\TimeLeftLabelStrategy.cs" />
     <Compile Include="Forms\FormsCustomizeUtils.cs" />
     <Compile Include="Forms\FormsUtils.cs" />
@@ -155,7 +160,7 @@
     </Compile>
     <Compile Include="Forms\FormsConstant.cs" />
     <Compile Include="Core\HotKeyManager.cs" />
-    <Compile Include="Forms\TimerInstanceParameters.cs" />
+    <Compile Include="Forms\FormInstanceParameters.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\ElsClockStrikesForm.resx">

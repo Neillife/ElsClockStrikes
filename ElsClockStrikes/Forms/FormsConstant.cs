@@ -42,6 +42,11 @@ namespace ElsClockStrikes.Forms
         public const string buttonBaseName = "CustomizeButtonName";
         public const string timerBaseName = "CustomizeTimerName";
         public const string audioPlayerButtonBaseName = "CustomizeAudioPlayer";
+        public const string settingButtonBaseName = "CustomizeSettingButton";
+        public const string panelBaseName = "CustomizePanel";
+        public const string soundLabelBaseName = "CustomizeSoundLabel";
+        public const string soundTextBoxBaseName = "CustomizeSoundTextBox";
+        public const string formInstanceCheckBoxBaseName = "CustomizeFormInstanceCheckBox";
 
         public static void init127Timer(string init小荊棘Time, string init雷射Time, string init荊棘延遲Time, string init控場Time)
         {
