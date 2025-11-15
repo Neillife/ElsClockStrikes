@@ -29,7 +29,6 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
             gunaLineTextBox.Name = $"{FormsConstant.soundTextBoxBaseName}{FormsConstant.indexForCustomizeName}";
             gunaLineTextBox.PasswordChar = '\0';
             gunaLineTextBox.Size = new Size(45, 42);
-            //gunaLineTextBox.TabIndex = 999;
             gunaLineTextBox.Text = this.textBoxText;
             gunaLineTextBox.TextAlign = HorizontalAlignment.Center;
             gunaLineTextBox.TextOffsetX = 3;
