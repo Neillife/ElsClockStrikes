@@ -197,8 +197,7 @@ namespace ElsClockStrikes
                 }
                 foreach (ElsClockStrikesFormTimerInstance timerInstance in formTimerInstances)
                 {
-                    Console.WriteLine($"{timerInstance.GetMechanicName()} {formTimerInstances.Count}");
-                    formTimerInstancePos[timerInstance.GetMechanicName()] = timerInstance.Location;
+                    formTimerInstancePos[timerInstance.GetMechanicName().Replace("Label", "")] = timerInstance.Location;
                     timerInstance.Close();
                 }
                 this.Size = WindowsOriginSize;
@@ -207,34 +206,34 @@ namespace ElsClockStrikes
                 翻桌Label.Location = 翻桌LabelOriginPos;
                 R1156控場Label.Location = 控場156R1LabelOriginPos;
                 重置計時器156R1Label.Location = 重置計時器LabelOriginPos;
+                TopMostCheckBox.Visible = true;
                 WindowsSetting156R1.Location = WindowsSettingOriginPos;
             }
             else
             {
                 int MaxLabelWidth = FormsUtils.GetLabelMaxWidth(this);
                 int KeyLabelAddY = 40;
-                Dictionary<string, TimerInstanceParameters> nonInstanceMap = new Dictionary<string, TimerInstanceParameters>();
-                List<GunaCheckBox> cbList = FormsUtils.GetCheckBoxByMechanicNames(this.TabPage156R1, FormsConstant.tipNames156R1);
-                Dictionary<string, TimerInstanceParameters> tipMap = FormsUtils.GetTIPMapByMechanicNames(this, FormsConstant.tipNames156R1);
+                Dictionary<string, FormInstanceParameters> nonInstanceMap = new Dictionary<string, FormInstanceParameters>();
+                List<GunaCheckBox> cbList = FormsUtils.GetFormInstanceCheckBoxListByMechanicNames(this.TabPage156R1, FormsConstant.tipNames156R1);
+                Dictionary<string, FormInstanceParameters> fipMap = FormsUtils.GetFIPMapByMechanicNames(this, FormsConstant.tipNames156R1);
                 formTimerInstances = new List<ElsClockStrikesFormTimerInstance>();
                 foreach (GunaCheckBox checkBox in cbList)
                 {
-                    string tipMapKey = checkBox.Name.Replace("分離視窗CheckBox", "");
-                    Console.WriteLine($"{checkBox.Name} = {checkBox.Checked}");
+                    string fipMapKey = checkBox.Name.Replace("分離視窗CheckBox", "");
                     if (checkBox.Checked)
                     {
-                        if (formTimerInstancePos != null && formTimerInstancePos.ContainsKey(tipMapKey))
+                        if (formTimerInstancePos != null && formTimerInstancePos.ContainsKey(fipMapKey))
                         {
-                            formTimerInstances.Add(new ElsClockStrikesFormTimerInstance(tipMap[tipMapKey], WindowsSetting156R1, MaxLabelWidth, this.TopMost, formTimerInstancePos[tipMapKey]));
+                            formTimerInstances.Add(new ElsClockStrikesFormTimerInstance(fipMap[fipMapKey], WindowsSetting156R1, MaxLabelWidth, this.TopMost, formTimerInstancePos[fipMapKey]));
                         }
                         else
                         {
-                            formTimerInstances.Add(new ElsClockStrikesFormTimerInstance(tipMap[tipMapKey], WindowsSetting156R1, MaxLabelWidth, this.TopMost));
+                            formTimerInstances.Add(new ElsClockStrikesFormTimerInstance(fipMap[fipMapKey], WindowsSetting156R1, MaxLabelWidth, this.TopMost));
                         }
                     }
                     else
                     {
-                        nonInstanceMap.Add(tipMapKey, tipMap[tipMapKey]);
+                        nonInstanceMap.Add(fipMapKey, fipMap[fipMapKey]);
                     }
                 }
 
@@ -243,12 +242,12 @@ namespace ElsClockStrikes
                     timerInstance.Show();
                 }
 
-                this.Size = new Size(180, 225 - (tipMap.Count - nonInstanceMap.Count) * 39);
+                this.Size = new Size(180, 225 - formTimerInstances.Count * 39);
                 Label firstNameLabel = null;
                 Label labelSign = null;
                 bool firstCheck = false;
 
-                foreach (KeyValuePair<string, TimerInstanceParameters> kvp in nonInstanceMap)
+                foreach (KeyValuePair<string, FormInstanceParameters> kvp in nonInstanceMap)
                 {
                     if (!firstCheck)
                     {
@@ -268,8 +267,9 @@ namespace ElsClockStrikes
                     }
                 }
 
-                重置計時器156R1按鍵Label.Location = new Point(labelSign.Location.X, labelSign.Location.Y + KeyLabelAddY);
-                重置計時器156R1Label.Location = new Point(firstNameLabel.Left + firstNameLabel.Width - 重置計時器156R1Label.Width + 27, 重置計時器156R1按鍵Label.Top + 重置計時器156R1按鍵Label.Height - 重置計時器156R1Label.Height - 3);
+                重置計時器156R1按鍵Label.Location = nonInstanceMap.Count == 0 ? new Point(5, 30) : new Point(labelSign.Location.X, labelSign.Location.Y + KeyLabelAddY);
+                重置計時器156R1Label.Location = nonInstanceMap.Count == 0 ? new Point(58, 37) : new Point(firstNameLabel.Left + firstNameLabel.Width - 重置計時器156R1Label.Width + 27, 重置計時器156R1按鍵Label.Top + 重置計時器156R1按鍵Label.Height - 重置計時器156R1Label.Height - 3);
+                TopMostCheckBox.Visible = false;
                 WindowsSetting156R1.Location = new Point(130, 5);
             }
         }

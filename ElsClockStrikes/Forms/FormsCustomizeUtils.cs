@@ -20,7 +20,10 @@ namespace ElsClockStrikes.Forms
                 FormsConstant.textBoxBaseName,
                 FormsConstant.buttonBaseName,
                 FormsConstant.timerBaseName,
-                FormsConstant.audioPlayerButtonBaseName
+                FormsConstant.audioPlayerButtonBaseName,
+                FormsConstant.settingButtonBaseName,
+                FormsConstant.panelBaseName,
+                FormsConstant.formInstanceCheckBoxBaseName
             };
 
             foreach (string prefix in prefixes)
@@ -146,17 +149,66 @@ namespace ElsClockStrikes.Forms
             }
         }
 
-        public static Dictionary<string, T> GetTheSetControlMap<T>(TabPage tabPage, string controlNamePrefix) where T : Control
+        public static Dictionary<string, FormInstanceParameters> GetCustomFIPMapByTabPage(Control control)
+        {
+            Dictionary<string, Label> hotKeyLabelMap = GetTheSetControlMap<Label>(control, FormsConstant.hotKeyLabelBaseName);
+            Dictionary<string, Label> nameLabelMap = GetTheSetControlMap<Label>(control, FormsConstant.mechanicLabelBaseName);
+            Dictionary<string, Label> timeLeftLabelMap = GetTheSetControlMap<Label>(control, FormsConstant.timeLeftLabelBaseName);
+            Dictionary<string, FormInstanceParameters> result = new Dictionary<string, FormInstanceParameters>();
+
+            foreach (string index in hotKeyLabelMap.Keys)
+            {
+                FormInstanceParameters param = new FormInstanceParameters();
+                param.keyLabel = hotKeyLabelMap[index];
+                param.nameLabel = nameLabelMap[index];
+                param.timeLeftLabel = timeLeftLabelMap[index];
+                result.Add(index, param);
+            }
+
+            return result;
+        }
+
+        public static List<GunaCheckBox> GetFormInstanceCheckBoxByTabPage(TabPage tabPage)
+        {
+            List<GunaCheckBox> result = new List<GunaCheckBox>();
+            GunaCheckBox cb = null;
+
+            foreach (Control control in tabPage.Controls)
+            {
+                if (control is GunaPanel gunaPanel && GetRemoveIndexCharOfStrgin(control.Name) == FormsConstant.panelBaseName)
+                {
+                    foreach (Control gunaPanelControl in gunaPanel.Controls)
+                    {
+                        if (gunaPanelControl is GunaCheckBox checkBox && GetRemoveIndexCharOfStrgin(gunaPanelControl.Name) == FormsConstant.formInstanceCheckBoxBaseName)
+                        {
+                            cb = checkBox;
+                            break;
+                        }
+                    }
+                    if (cb != null)
+                    {
+                        result.Add(cb);
+                        cb = null;
+                    }
+                }
+
+                if (result.Count == FormsConstant.indexForCustomizeName) break;
+            }
+
+            return result;
+        }
+
+        public static Dictionary<string, T> GetTheSetControlMap<T>(Control parent, string controlNamePrefix) where T : Control
         {
             Dictionary<string, T> controlMap = new Dictionary<string, T>();
 
-            foreach (Control control in tabPage.Controls)
+            foreach (Control control in parent.Controls)
             {
                 if (control is T typedControl && GetRemoveIndexCharOfStrgin(control.Name) == controlNamePrefix)
                 {
                     controlMap.Add(GetIndexOfString(control.Name), typedControl);
 
-                    if (GetIndexOfString(control.Name) == FormsConstant.indexForCustomizeName.ToString())
+                    if (controlMap.Count == FormsConstant.indexForCustomizeName)
                     {
                         break;
                     }
@@ -230,17 +282,35 @@ namespace ElsClockStrikes.Forms
             return result;
         }
 
-        public static GunaButton getAudioPlayerButtonByCustomizeIndex(Control parent, int customizeIndex)
+        public static GunaButton getSettingButtonByCustomizeIndex(Control parent, int customizeIndex)
         {
             GunaButton result = null;
             foreach (Control control in parent.Controls)
             {
-                if (control is GunaButton audioPlayerButton)
+                if (control is GunaButton settingButton)
                 {
-                    if (GetIndexOfString(audioPlayerButton.Name) == customizeIndex.ToString() &&
-                        GetRemoveIndexCharOfStrgin(audioPlayerButton.Name) == FormsConstant.audioPlayerButtonBaseName)
+                    if (GetIndexOfString(settingButton.Name) == customizeIndex.ToString() &&
+                        GetRemoveIndexCharOfStrgin(settingButton.Name) == FormsConstant.settingButtonBaseName)
                     {
-                        result = audioPlayerButton;
+                        result = settingButton;
+                        break;
+                    }
+                }
+            }
+            return result;
+        }
+
+        public static GunaPanel getGunaPanelByCustomizeIndex(Control parent, int customizeIndex)
+        {
+            GunaPanel result = null;
+            foreach (Control control in parent.Controls)
+            {
+                if (control is GunaPanel gunaPanel)
+                {
+                    if (GetIndexOfString(gunaPanel.Name) == customizeIndex.ToString() &&
+                        GetRemoveIndexCharOfStrgin(gunaPanel.Name) == FormsConstant.panelBaseName)
+                    {
+                        result = gunaPanel;
                         break;
                     }
                 }
@@ -269,7 +339,8 @@ namespace ElsClockStrikes.Forms
                     Label customizeMechanicLabel = getLabelByCustomizeIndex(tabPage, FormsConstant.mechanicLabelBaseName, findIndex);
                     GunaLineTextBox gunaLineTextBox = getGunaLineTextBoxByCustomizeIndex(tabPage, findIndex);
                     GunaComboBox gunaComboBox = getGunaComboBoxByCustomizeIndex(tabPage, findIndex);
-                    GunaButton audioPlayerButton = getAudioPlayerButtonByCustomizeIndex(tabPage, findIndex); 
+                    GunaButton settingButton = getSettingButtonByCustomizeIndex(tabPage, findIndex);
+                    GunaPanel gunaPanel = getGunaPanelByCustomizeIndex(tabPage, findIndex);
 
                     customizeTimeLeftLabel.Location = new Point(customizeTimeLeftLabel.Location.X, customizeTimeLeftLabel.Location.Y - FormsConstant.ControlLayoutOffset);
                     customizeHotKeyLabel.Location = new Point(customizeHotKeyLabel.Location.X, customizeHotKeyLabel.Location.Y - FormsConstant.ControlLayoutOffset);
@@ -277,7 +348,8 @@ namespace ElsClockStrikes.Forms
                     GButton.Location = new Point(GButton.Location.X, GButton.Location.Y - FormsConstant.ControlLayoutOffset);
                     gunaLineTextBox.Location = new Point(gunaLineTextBox.Location.X, gunaLineTextBox.Location.Y - FormsConstant.ControlLayoutOffset);
                     gunaComboBox.Location = new Point(gunaComboBox.Location.X, gunaComboBox.Location.Y - FormsConstant.ControlLayoutOffset);
-                    audioPlayerButton.Location = new Point(audioPlayerButton.Location.X, audioPlayerButton.Location.Y - FormsConstant.ControlLayoutOffset);
+                    settingButton.Location = new Point(settingButton.Location.X, settingButton.Location.Y - FormsConstant.ControlLayoutOffset);
+                    gunaPanel.Location = new Point(gunaPanel.Location.X, gunaPanel.Location.Y - FormsConstant.ControlLayoutOffset);
                 }
             }
         }

@@ -12,5 +12,7 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
         public List<CustomizeTaskTimer> customizeTaskTimerList { get; set; }
         public Label timeLeftLabel { get; set; }
         public GunaLineTextBox gunaLineTextBox { get; set; }
+        public GunaPanel gunaPanel { get; set; }
+        public GunaLineTextBox soundLineTextBox { get; set; }
     }
 }

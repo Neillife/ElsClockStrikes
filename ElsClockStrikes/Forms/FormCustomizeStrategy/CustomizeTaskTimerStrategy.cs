@@ -15,7 +15,8 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
         {
             CustomizeTaskTimer customizeTaskTimer = new CustomizeTaskTimer($"{FormsConstant.timerBaseName}{FormsConstant.indexForCustomizeName}");
             customizeTaskTimer.setTimeLeftLabel(controlStrategyParameters.timeLeftLabel)
-                .setCustomTimeGunaLineTextBox(controlStrategyParameters.gunaLineTextBox);
+                .setCustomTimeGunaLineTextBox(controlStrategyParameters.gunaLineTextBox)
+                .setCustomVolumeGunaLineTextBox(controlStrategyParameters.soundLineTextBox);
 
             if (isDisableSound)
             {

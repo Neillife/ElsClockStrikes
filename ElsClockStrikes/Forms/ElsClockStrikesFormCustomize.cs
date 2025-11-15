@@ -96,8 +96,13 @@ namespace ElsClockStrikes
                                               .RegisterStrategy(new ComboBoxStrategy(null))
                                               .RegisterStrategy(new LineTextBoxStrategy("10"))
                                               .RegisterStrategy(new RemoveButtonStrategy())
-                                              .RegisterStrategy(new CustomizeTaskTimerStrategy(關閉音效CustomizeRadioButton.Checked))
-                                              .RegisterStrategy(new AudioPlayerButtonStrategy(自訂音效CustomizeRadioButton.Checked));
+                                              .RegisterStrategy(new SettingButtonStrategy(Properties.Resources.setimg))
+                                              .RegisterStrategy(new PanelStrategy())
+                                              .RegisterStrategy(new AudioPlayerButtonStrategy(自訂音效CustomizeRadioButton.Checked))
+                                              .RegisterStrategy(new SoundLabelStrategy())
+                                              .RegisterStrategy(new SoundLineTextBoxStrategy("100"))
+                                              .RegisterStrategy(new FormInstanceCheckBoxStrategy())
+                                              .RegisterStrategy(new CustomizeTaskTimerStrategy(關閉音效CustomizeRadioButton.Checked));
                         controlStrategyManager.ExecuteAll();
                     }
                 }
@@ -247,6 +252,63 @@ namespace ElsClockStrikes
             }
         }
 
+        private void ProcessFormInstanceCustomize(bool isBackToOriginCheck)
+        {
+            if (isBackToOriginCheck)
+            {
+                if (formTimerInstancePos == null)
+                {
+                    formTimerInstancePos = new Dictionary<string, Point>();
+                }
+                foreach (ElsClockStrikesFormTimerInstance timerInstance in formTimerInstances)
+                {
+                    formTimerInstancePos[FormsCustomizeUtils.GetIndexOfString(timerInstance.GetMechanicName())] = timerInstance.Location;
+                    timerInstance.ProcessFormClose();
+                    timerInstance.Close();
+                    this.Controls.Remove(timerInstance.GetHotKeyLabel());
+                    this.TabPageCustomize.Controls.Add(timerInstance.GetHotKeyLabel());
+                    timerInstance.GetHotKeyLabel().Visible = false;
+                    this.Controls.Remove(timerInstance.GetMechanicLabel());
+                    this.TabPageCustomize.Controls.Add(timerInstance.GetMechanicLabel());
+                    this.Controls.Remove(timerInstance.GetTimeLeftLabel());
+                    this.TabPageCustomize.Controls.Add(timerInstance.GetTimeLeftLabel());
+                    timerInstance.GetTimeLeftLabel().Visible = false;
+                }
+            }
+            else
+            {
+                int MaxLabelWidth = FormsUtils.GetLabelMaxWidth(this);
+                Dictionary<string, FormInstanceParameters> nonInstanceMap = new Dictionary<string, FormInstanceParameters>();
+                List<GunaCheckBox> cbList = FormsCustomizeUtils.GetFormInstanceCheckBoxByTabPage(this.TabPageCustomize);
+                Dictionary<string, FormInstanceParameters> fipMap = FormsCustomizeUtils.GetCustomFIPMapByTabPage(this);
+                formTimerInstances = new List<ElsClockStrikesFormTimerInstance>();
+                foreach (GunaCheckBox checkBox in cbList)
+                {
+                    string fipMapKey = FormsCustomizeUtils.GetIndexOfString(checkBox.Name);
+                    if (checkBox.Checked)
+                    {
+                        if (formTimerInstancePos != null && formTimerInstancePos.ContainsKey(fipMapKey))
+                        {
+                            formTimerInstances.Add(new ElsClockStrikesFormTimerInstance(fipMap[fipMapKey], WindowsSettingCustomize, MaxLabelWidth, this.TopMost, formTimerInstancePos[fipMapKey]));
+                        }
+                        else
+                        {
+                            formTimerInstances.Add(new ElsClockStrikesFormTimerInstance(fipMap[fipMapKey], WindowsSettingCustomize, MaxLabelWidth, this.TopMost));
+                        }
+                    }
+                    else
+                    {
+                        nonInstanceMap.Add(fipMapKey, fipMap[fipMapKey]);
+                    }
+                }
+
+                foreach (ElsClockStrikesFormTimerInstance timerInstance in formTimerInstances)
+                {
+                    timerInstance.Show();
+                }
+            }
+        }
+
         private void ProcessWindowsSettingCustomize(bool isBackToOriginCheck)
         {
             FormsCustomizeUtils.ProcessSettingText(this.TabPageCustomize);
@@ -279,18 +341,8 @@ namespace ElsClockStrikes
                 this.Controls.Add(WindowsSettingCustomize);
             }
 
-            int custSizeHeight = 225;
-
-            if (customizeLabelMap.Count / 3 < 4)
-            {
-                custSizeHeight = customizeLabelMap.Count / 3 * 39 + 69;
-            } else
-            {
-                custSizeHeight += (customizeLabelMap.Count / 3  - 4) * 40;
-            }
-
-            this.Size = isBackToOriginCheck ? CustomizeTabWinFormsSize : new Size(180, custSizeHeight);
             TopMostCheckBox.Visible = !TopMostCheckBox.Visible;
+            this.ProcessFormInstanceCustomize(isBackToOriginCheck);
             this.ProcessComponentLocation(isBackToOriginCheck);
         }
 
@@ -319,10 +371,6 @@ namespace ElsClockStrikes
 
         private void ProcessComponentLocation(bool isBackToOriginCheck)
         {
-            int KeyLabelAddY = 40;
-            Label firstCustLabel = null;
-            Label labelSign = null;
-
             if (isBackToOriginCheck)
             {
                 foreach (Control control in this.TabPageCustomize.Controls)
@@ -335,6 +383,8 @@ namespace ElsClockStrikes
                         label.Location = customizeComponentOriginPosMap[label.Name];
                     }
                 }
+
+                this.Size = CustomizeTabWinFormsSize;
                 重置計時器Customize按鍵Label.Location = customizeComponentOriginPosMap[重置計時器Customize按鍵Label.Name];
                 重置計時器CustomizeLabel.Location = customizeComponentOriginPosMap[重置計時器CustomizeLabel.Name];
                 重置計時器CustomizeComboBox.Location = customizeComponentOriginPosMap[重置計時器CustomizeComboBox.Name];
@@ -344,7 +394,22 @@ namespace ElsClockStrikes
             }
             else
             {
+                int custSizeHeight = 225;
+                if (customizeLabelMap.Count / 3 < 4)
+                {
+                    custSizeHeight = customizeLabelMap.Count / 3 * 39 + 69;
+                }
+                else
+                {
+                    custSizeHeight += (customizeLabelMap.Count / 3 - 4) * 40;
+                }
+                this.Size = new Size(180, custSizeHeight - formTimerInstances.Count * 39);
+
                 int MaxLabelWidth = FormsUtils.GetLabelMaxWidth(this);
+                int KeyLabelAddY = 40;
+                Label firstCustLabel = null;
+                Label labelSign = null;
+
                 foreach (Control control in this.Controls)
                 {
                     if (control is Label firstLabel && labelSign == null &&
@@ -391,8 +456,8 @@ namespace ElsClockStrikes
                         }
                     }
                 }
-                重置計時器Customize按鍵Label.Location = new Point(labelSign.Location.X, labelSign.Location.Y + KeyLabelAddY);
-                重置計時器CustomizeLabel.Location = new Point(firstCustLabel.Left + firstCustLabel.Width - 重置計時器CustomizeLabel.Width + 27, 重置計時器Customize按鍵Label.Top + 重置計時器Customize按鍵Label.Height - 重置計時器CustomizeLabel.Height - 3);
+                重置計時器Customize按鍵Label.Location = labelSign == null ? new Point(5, 30) : new Point(labelSign.Location.X, labelSign.Location.Y + KeyLabelAddY);
+                重置計時器CustomizeLabel.Location = firstCustLabel == null ? new Point(58, 37) :  new Point(firstCustLabel.Left + firstCustLabel.Width - 重置計時器CustomizeLabel.Width + 27, 重置計時器Customize按鍵Label.Top + 重置計時器Customize按鍵Label.Height - 重置計時器CustomizeLabel.Height - 3);
                 WindowsSettingCustomize.Location = new Point(130, 5);
             }
         }
@@ -413,6 +478,7 @@ namespace ElsClockStrikes
                 WindowsSettingCustomize.Size = new Size(43, 25);
                 this.ProcessRegisterHotKeyCustomize(false);
                 this.ProcessWindowsSettingCustomize(false);
+                this.ProcessCustomizeFeatureSoundVolume();
             }
             else
             {
@@ -423,6 +489,17 @@ namespace ElsClockStrikes
                 WindowsSettingCustomize.Size = CustomizeWindowsSettingButtonOriginSize;
                 this.ProcessRegisterHotKeyCustomize(true);
                 this.ProcessWindowsSettingCustomize(true);
+            }
+        }
+
+        private void ProcessCustomizeFeatureSoundVolume()
+        {
+            foreach (CustomizeTaskTimer customizeTaskTimer in customizeTaskTimerList)
+            {
+                if (customizeTaskTimer.getAudioPlayer() != null)
+                {
+                    customizeTaskTimer.getAudioPlayer().Volume = Int32.Parse(customizeTaskTimer.getCustomVolumeGunaLineTextBox().Text) / 100f;
+                }
             }
         }
 
@@ -452,9 +529,16 @@ namespace ElsClockStrikes
 
             foreach (Control control in this.TabPageCustomize.Controls)
             {
-                if (control is GunaButton gunaButton && FormsCustomizeUtils.GetRemoveIndexCharOfStrgin(gunaButton.Name) == FormsConstant.audioPlayerButtonBaseName)
+                if (control is GunaPanel gunaPanel && FormsCustomizeUtils.GetRemoveIndexCharOfStrgin(gunaPanel.Name) == FormsConstant.panelBaseName)
                 {
-                    gunaButton.Visible = !gunaButton.Visible;
+                    foreach (Control panelControl in gunaPanel.Controls)
+                    {
+                        if (panelControl is GunaButton gunaButton && FormsCustomizeUtils.GetRemoveIndexCharOfStrgin(gunaButton.Name) == FormsConstant.audioPlayerButtonBaseName)
+                        {
+                            gunaButton.Enabled = !gunaButton.Enabled;
+                            break;
+                        }
+                    }
                 }
             }
  

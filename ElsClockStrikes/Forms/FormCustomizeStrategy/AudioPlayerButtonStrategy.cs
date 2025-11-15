@@ -7,16 +7,15 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
 {
     public class AudioPlayerButtonStrategy : BaseControlStrategy
     {
-        private bool isVisible;
+        private readonly bool _isDisableSound;
 
-        public AudioPlayerButtonStrategy(bool isVisible)
+        public AudioPlayerButtonStrategy(bool isDisableSound)
         {
-            this.isVisible = isVisible;
+            this._isDisableSound = isDisableSound;
         }
 
         public override void AddControl(ControlStrategyParameters controlStrategyParameters)
         {
-            GunaButton lastGunaButton = this.GetControlByName<GunaButton>(controlStrategyParameters.tabPage, $"{FormsConstant.audioPlayerButtonBaseName}{FormsConstant.indexForCustomizeName - 1}");
             GunaButton gunaButton = new GunaButton();
             gunaButton.Animated = true;
             gunaButton.AnimationHoverSpeed = 0.07F;
@@ -30,7 +29,7 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
             gunaButton.ForeColor = Color.WhiteSmoke;
             gunaButton.Image = null;
             gunaButton.ImageSize = new Size(24, 24);
-            gunaButton.Location = ProcessButtonLayout(lastGunaButton, 429);
+            gunaButton.Location = new Point(20, 10);
             gunaButton.Name = $"{FormsConstant.audioPlayerButtonBaseName}{FormsConstant.indexForCustomizeName}";
             gunaButton.OnHoverBaseColor = Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             gunaButton.OnHoverBorderColor = Color.Black;
@@ -40,13 +39,13 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
             gunaButton.Size = new Size(84, 42);
             gunaButton.Text = "設定音效";
             gunaButton.TextAlign = HorizontalAlignment.Center;
-            gunaButton.Visible = isVisible;
+            gunaButton.Enabled = _isDisableSound;
             gunaButton.Click += new EventHandler(
                 (object sender, EventArgs e) => {
                     this.ProcessAudioPlayerButtonClick(controlStrategyParameters, gunaButton);
                 }
             );
-            controlStrategyParameters.tabPage.Controls.Add(gunaButton);
+            controlStrategyParameters.gunaPanel.Controls.Add(gunaButton);
         }
 
         private void ProcessAudioPlayerButtonClick(ControlStrategyParameters controlStrategyParameters, GunaButton gunaButton)

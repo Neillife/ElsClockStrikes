@@ -17,7 +17,7 @@ namespace ElsClockStrikes.Forms
         private GunaButton externalSettingBtn;
         private int maxLabelWidth;
 
-        public ElsClockStrikesFormTimerInstance(TimerInstanceParameters tip, GunaButton settingBtn, int maxLabelWidth, bool topMost, Point pos = default(Point))
+        public ElsClockStrikesFormTimerInstance(FormInstanceParameters tip, GunaButton settingBtn, int maxLabelWidth, bool topMost, Point pos = default(Point))
         {
             InitializeComponent();
             externalKeyLabel = tip.keyLabel;
@@ -42,11 +42,37 @@ namespace ElsClockStrikes.Forms
 
         public string GetMechanicName()
         {
-            return externalNameLabel.Name.Replace("Label", "");
+            return externalNameLabel.Name;
+        }
+
+        public Label GetHotKeyLabel()
+        {
+            return externalKeyLabel;
+        }
+
+        public Label GetMechanicLabel()
+        {
+            return externalNameLabel;
+        }
+
+        public Label GetTimeLeftLabel()
+        {
+            return externalCDLabel;
+        }
+
+        public void ProcessFormClose()
+        {
+            Controls.Remove(externalKeyLabel);
+            originKeyParent.Controls.Add(externalKeyLabel);
+            Controls.Remove(externalNameLabel);
+            originNameParent.Controls.Add(externalNameLabel);
+            Controls.Remove(externalCDLabel);
+            originCDParent.Controls.Add(externalCDLabel);
         }
 
         private void WindowsSetting_Click(object sender, EventArgs e)
         {
+            this.ProcessFormClose();
             externalSettingBtn.PerformClick();
             this.Close();
         }

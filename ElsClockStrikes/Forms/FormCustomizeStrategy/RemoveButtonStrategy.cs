@@ -38,8 +38,8 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
             gunaButton.TextAlign = HorizontalAlignment.Center;
             gunaButton.Click += new EventHandler(
                 (object sender, EventArgs e) => {
-                        this.ProcessRemoveComponent(controlStrategyParameters, gunaButton);
-                        this.ProcessComponentNameIndex(controlStrategyParameters, gunaButton);
+                    this.ProcessRemoveComponent(controlStrategyParameters, gunaButton);
+                    this.ProcessComponentNameIndex(controlStrategyParameters, gunaButton);
                 }
             );
             controlStrategyParameters.tabPage.Controls.Add(gunaButton);
@@ -90,6 +90,25 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
                 {
                     GButton.Name = $"{FormsCustomizeUtils.GetRemoveIndexCharOfStrgin(GButton.Name)}{parseNum - 1}";
                 }
+                else if (control is GunaPanel GPanel && Int32.TryParse(FormsCustomizeUtils.GetIndexOfString(GPanel.Name), out parseNum) && parseNum > currentButtonNameIndex)
+                {
+                    GPanel.Name = $"{FormsCustomizeUtils.GetRemoveIndexCharOfStrgin(GPanel.Name)}{parseNum - 1}";
+                    int isCanBreak = 0;
+                    foreach (Control panelControl in GPanel.Controls)
+                    {
+                        if (panelControl is GunaButton audioPlayerButton && Int32.TryParse(FormsCustomizeUtils.GetIndexOfString(audioPlayerButton.Name), out parseNum) && parseNum > currentButtonNameIndex)
+                        {
+                            audioPlayerButton.Name = $"{FormsCustomizeUtils.GetRemoveIndexCharOfStrgin(audioPlayerButton.Name)}{parseNum - 1}";
+                            isCanBreak++;
+                        }
+                        else if (panelControl is GunaCheckBox formInstanceCheckBox && Int32.TryParse(FormsCustomizeUtils.GetIndexOfString(formInstanceCheckBox.Name), out parseNum) && parseNum > currentButtonNameIndex)
+                        {
+                            formInstanceCheckBox.Name = $"{FormsCustomizeUtils.GetRemoveIndexCharOfStrgin(formInstanceCheckBox.Name)}{parseNum - 1}";
+                            isCanBreak++;
+                        }
+                        if (isCanBreak == 2) break;
+                    }
+                }
             }
         }
 
@@ -117,19 +136,24 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
                     controls.Add(gunaLineTextBox);
                     breakCheck++;
                 }
-                else if (control is GunaButton audioPlayerButton && FormsCustomizeUtils.GetIndexOfString(audioPlayerButton.Name) == currentButtonNameIndex)
+                else if (control is GunaButton settingButton && FormsCustomizeUtils.GetIndexOfString(settingButton.Name) == currentButtonNameIndex)
                 {
-                    controls.Add(audioPlayerButton);
+                    controls.Add(settingButton);
                     breakCheck++;
                 }
-                if (breakCheck == 6) { break; } // Increase execution performance and avoid excessive invalid loops...
+                else if (control is GunaPanel panel && FormsCustomizeUtils.GetIndexOfString(panel.Name) == currentButtonNameIndex)
+                {
+                    controls.Add(panel);
+                    breakCheck++;
+                }
+                if (breakCheck == 7) { break; } // Increase execution performance and avoid excessive invalid loops...
             }
 
             foreach (Control control in controls)
             {
                 controlStrategyParameters.tabPage.Controls.Remove(control);
             }
-            
+
             if (controlStrategyParameters.customizeTaskTimerList.Any())
             {
                 controlStrategyParameters.customizeTaskTimerList.RemoveAt(Int32.Parse(currentButtonNameIndex) - 1);
