@@ -528,6 +528,7 @@ namespace ElsClockStrikes
             {
                 if (customizeTaskTimer.getAudioPlayer() != null)
                 {
+                    FormsUtils.ProcessSoundTextBoxLeave(customizeTaskTimer.getCustomVolumeGunaLineTextBox());
                     customizeTaskTimer.getAudioPlayer().Volume = Int32.Parse(customizeTaskTimer.getCustomVolumeGunaLineTextBox().Text) / 100f;
                 }
             }
