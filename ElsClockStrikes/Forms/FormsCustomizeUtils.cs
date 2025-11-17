@@ -45,7 +45,14 @@ namespace ElsClockStrikes.Forms
 
         public static void ProcessLoadConfigRemoveComponent(TabPage tabPage)
         {
-            List<Control> removeControl = new List<Control>();
+            // need to be removed iteratively in sequence
+            Dictionary<string, List<Control>> removeMap = new Dictionary<string, List<Control>>();
+
+            for (int i = 0; i < FormsConstant.indexForCustomizeName; i++)
+            {
+                removeMap[(i + 1).ToString()] = new List<Control>();
+            }
+
             foreach (Control control in tabPage.Controls)
             {
                 if (GetRemoveIndexCharOfStrgin(control.Name) == FormsConstant.timeLeftLabelBaseName ||
@@ -54,15 +61,19 @@ namespace ElsClockStrikes.Forms
                     GetRemoveIndexCharOfStrgin(control.Name) == FormsConstant.comboBoxBaseName ||
                     GetRemoveIndexCharOfStrgin(control.Name) == FormsConstant.textBoxBaseName ||
                     GetRemoveIndexCharOfStrgin(control.Name) == FormsConstant.buttonBaseName ||
-                    GetRemoveIndexCharOfStrgin(control.Name) == FormsConstant.timerBaseName ||
-                    GetRemoveIndexCharOfStrgin(control.Name) == FormsConstant.audioPlayerButtonBaseName)
+                    GetRemoveIndexCharOfStrgin(control.Name) == FormsConstant.settingButtonBaseName ||
+                    GetRemoveIndexCharOfStrgin(control.Name) == FormsConstant.panelBaseName)
                 {
-                    removeControl.Add(control);
+                    removeMap[GetIndexOfString(control.Name)].Add(control);
                 }
             }
-            foreach (Control control in removeControl)
+
+            for (int i = 0; i < removeMap.Count; i++)
             {
-                tabPage.Controls.Remove(control);
+                foreach (Control control in removeMap[(i + 1).ToString()])
+                {
+                    tabPage.Controls.Remove(control);
+                }
             }
         }
 
