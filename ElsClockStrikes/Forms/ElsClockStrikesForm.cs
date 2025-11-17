@@ -494,22 +494,18 @@ namespace ElsClockStrikes
         {
             if (小荊棘TimeupAudioPlayer != null)
             {
-                FormsUtils.ProcessSoundTextBoxLeave(小荊棘音量TextBox);
                 小荊棘TimeupAudioPlayer.Volume = Int32.Parse(小荊棘音量TextBox.Text) / 100f;
             }
             if (雷射TimeupAudioPlayer != null)
             {
-                FormsUtils.ProcessSoundTextBoxLeave(雷射音量TextBox);
                 雷射TimeupAudioPlayer.Volume = Int32.Parse(雷射音量TextBox.Text) / 100f;
             }
             if (荊棘延遲TimeupAudioPlayer != null)
             {
-                FormsUtils.ProcessSoundTextBoxLeave(荊棘延遲音量TextBox);
                 荊棘延遲TimeupAudioPlayer.Volume = Int32.Parse(荊棘延遲音量TextBox.Text) / 100f;
             }
             if (控場TimeupAudioPlayer != null)
             {
-                FormsUtils.ProcessSoundTextBoxLeave(控場音量TextBox);
                 控場TimeupAudioPlayer.Volume = Int32.Parse(控場音量TextBox.Text) / 100f;
             }
         }

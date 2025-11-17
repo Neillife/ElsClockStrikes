@@ -405,22 +405,18 @@ namespace ElsClockStrikes
         {
             if (大招TimeupAudioPlayer != null)
             {
-                FormsUtils.ProcessSoundTextBoxLeave(大招音量TextBox);
                 大招TimeupAudioPlayer.Volume = Int32.Parse(大招音量TextBox.Text) / 100f;
             }
             if (大刺TimeupAudioPlayer != null)
             {
-                FormsUtils.ProcessSoundTextBoxLeave(大刺音量TextBox);
                 大刺TimeupAudioPlayer.Volume = Int32.Parse(大刺音量TextBox.Text) / 100f;
             }
             if (翻桌TimeupAudioPlayer != null)
             {
-                FormsUtils.ProcessSoundTextBoxLeave(翻桌音量TextBox);
                 翻桌TimeupAudioPlayer.Volume = Int32.Parse(翻桌音量TextBox.Text) / 100f;
             }
             if (R1156控場TimeupAudioPlayer != null)
             {
-                FormsUtils.ProcessSoundTextBoxLeave(R1156控場音量TextBox);
                 R1156控場TimeupAudioPlayer.Volume = Int32.Parse(R1156控場音量TextBox.Text) / 100f;
             }
         }
