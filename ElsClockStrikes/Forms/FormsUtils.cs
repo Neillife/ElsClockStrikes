@@ -224,7 +224,7 @@ namespace ElsClockStrikes.Forms
 
         public static void ProcessSoundTextBoxLeave(GunaLineTextBox soundTextBox)
         {
-            if (Int32.Parse(soundTextBox.Text) > 100)
+            if (soundTextBox.Text.Trim() == "" || Int32.Parse(soundTextBox.Text.Trim()) > 100 || Int32.Parse(soundTextBox.Text.Trim()) < 0)
             {
                 soundTextBox.Text = "100";
             }
