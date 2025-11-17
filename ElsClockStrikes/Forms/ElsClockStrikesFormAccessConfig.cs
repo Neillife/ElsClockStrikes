@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
+using System.Drawing;
+using Guna.UI.WinForms;
 using ElsClockStrikes.Forms;
 using ElsClockStrikes.Core;
-using System.Windows.Forms;
-using Guna.UI.WinForms;
 using ElsClockStrikes.Forms.FormCustomizeStrategy;
 
 namespace ElsClockStrikes
@@ -13,6 +14,8 @@ namespace ElsClockStrikes
     {
         private string autoLoadStr = "autoLoad";
         private string topMostStr = "topMost";
+        private string BaseMechanicFormInstancePosKeyListStr = "BaseMechanicFormInstancePosKeyList";
+        private string BaseMechanicFormInstancePosValueListStr = "BaseMechanicFormInstancePosValueList";
         private string 小荊棘SoundStr = "小荊棘Sound";
         private string 雷射SoundStr = "雷射Sound";
         private string 荊棘延遲SoundStr = "荊棘延遲Sound";
@@ -30,6 +33,10 @@ namespace ElsClockStrikes
         private string CustomizeComboBoxListStr = "CustomizeComboBoxList";
         private string CustomizeTextBoxListStr = "CustomizeTextBoxList";
         private string CustomizeSoundListStr = "CustomizeSoundList";
+        private string CustomizeVolumeListStr = "CustomizeVolumeList";
+        private string CustomizeFormInstanceListStr = "CustomizeFormInstanceList";
+        private string CustomizeFormInstancePosKeyListStr = "CustomizeFormInstancePosKeyList";
+        private string CustomizeFormInstancePosValueListStr = "CustomizeFormInstancePosValueList";
         private string DefaultStr = "Default";
         private string mp3Str = ".mp3";
         private string wavStr = ".wav";
@@ -51,10 +58,23 @@ namespace ElsClockStrikes
             IniManager iniManager = new IniManager();
             TopMostCheckBox.Checked = iniManager.GetBoolValue(FormsConstant.configGlobalSectionName, topMostStr);
             AutoLoadCheckBox.Checked = iniManager.GetBoolValue(FormsConstant.configGlobalSectionName, autoLoadStr);
+            this.LoadConfigBaseMechanicFormInstancePos(iniManager);
             this.LoadConfig127R3(iniManager);
             this.LoadConfig156R1(iniManager);
             this.LoadConfig156R3(iniManager);
             this.LoadConfigCustomize(iniManager);
+        }
+
+        private void LoadConfigBaseMechanicFormInstancePos(IniManager iniManager)
+        {
+            this.formTimerInstancePos = new Dictionary<string, Point>();
+            string[] posKeys = iniManager.GetValue(FormsConstant.configGlobalSectionName, BaseMechanicFormInstancePosKeyListStr).Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] posValues = iniManager.GetValue(FormsConstant.configGlobalSectionName, BaseMechanicFormInstancePosValueListStr).Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+            for (int i = 0; i < posKeys.Length; i++)
+            {
+                string[] pos = posValues[i].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                this.formTimerInstancePos.Add(posKeys[i], new Point(Int32.Parse(pos[0]), Int32.Parse(pos[1])));
+            }
         }
 
         private void LoadConfig127R3(IniManager iniManager)
@@ -74,6 +94,8 @@ namespace ElsClockStrikes
 
             小荊棘ComboBox.Text = iniManager.GetValue(FormsConstant.config127R3SectionName, 小荊棘ComboBox.Name, 小荊棘ComboBox.SelectedItem.ToString());
             小荊棘TextBox.Text = iniManager.GetIntValue(FormsConstant.config127R3SectionName, 小荊棘TextBox.Name).ToString();
+            小荊棘音量TextBox.Text = iniManager.GetIntValue(FormsConstant.config127R3SectionName, 小荊棘音量TextBox.Name, 100).ToString();
+            小荊棘分離視窗CheckBox.Checked = iniManager.GetBoolValue(FormsConstant.config127R3SectionName, 小荊棘分離視窗CheckBox.Name);
 
             string soundFilePath = iniManager.GetValue(FormsConstant.config127R3SectionName, 小荊棘SoundStr, 小荊棘TimeupAudioPlayer?.filePath);
             if (soundFilePath.EndsWith(mp3Str) || soundFilePath.EndsWith(wavStr)) {
@@ -82,7 +104,9 @@ namespace ElsClockStrikes
 
             雷射ComboBox.Text = iniManager.GetValue(FormsConstant.config127R3SectionName, 雷射ComboBox.Name, 雷射ComboBox.SelectedItem.ToString());
             雷射TextBox.Text = iniManager.GetIntValue(FormsConstant.config127R3SectionName, 雷射TextBox.Name).ToString();
-            
+            雷射音量TextBox.Text = iniManager.GetIntValue(FormsConstant.config127R3SectionName, 雷射音量TextBox.Name, 100).ToString();
+            雷射分離視窗CheckBox.Checked = iniManager.GetBoolValue(FormsConstant.config127R3SectionName, 雷射分離視窗CheckBox.Name);
+
             soundFilePath = iniManager.GetValue(FormsConstant.config127R3SectionName, 雷射SoundStr, 雷射TimeupAudioPlayer?.filePath);
             if (soundFilePath.EndsWith(mp3Str) || soundFilePath.EndsWith(wavStr)) {
                 雷射TimeupAudioPlayer = new AudioPlayer(soundFilePath);
@@ -90,7 +114,9 @@ namespace ElsClockStrikes
 
             荊棘延遲ComboBox.Text = iniManager.GetValue(FormsConstant.config127R3SectionName, 荊棘延遲ComboBox.Name, 荊棘延遲ComboBox.SelectedItem.ToString());
             荊棘延遲TextBox.Text = iniManager.GetIntValue(FormsConstant.config127R3SectionName, 荊棘延遲TextBox.Name).ToString();
-            
+            荊棘延遲音量TextBox.Text = iniManager.GetIntValue(FormsConstant.config127R3SectionName, 荊棘延遲音量TextBox.Name, 100).ToString();
+            荊棘延遲分離視窗CheckBox.Checked = iniManager.GetBoolValue(FormsConstant.config127R3SectionName, 荊棘延遲分離視窗CheckBox.Name);
+
             soundFilePath = iniManager.GetValue(FormsConstant.config127R3SectionName, 荊棘延遲SoundStr, 荊棘延遲TimeupAudioPlayer?.filePath);
             if (soundFilePath.EndsWith(mp3Str) || soundFilePath.EndsWith(wavStr)) {
                 荊棘延遲TimeupAudioPlayer = new AudioPlayer(soundFilePath);
@@ -98,7 +124,9 @@ namespace ElsClockStrikes
 
             控場ComboBox.Text = iniManager.GetValue(FormsConstant.config127R3SectionName, 控場ComboBox.Name, 控場ComboBox.SelectedItem.ToString());
             控場TextBox.Text = iniManager.GetIntValue(FormsConstant.config127R3SectionName, 控場TextBox.Name).ToString();
-            
+            控場音量TextBox.Text = iniManager.GetIntValue(FormsConstant.config127R3SectionName, 控場音量TextBox.Name, 100).ToString();
+            控場分離視窗CheckBox.Checked = iniManager.GetBoolValue(FormsConstant.config127R3SectionName, 控場分離視窗CheckBox.Name);
+
             soundFilePath = iniManager.GetValue(FormsConstant.config127R3SectionName, 控場SoundStr, 控場TimeupAudioPlayer?.filePath);
             if (soundFilePath.EndsWith(mp3Str) || soundFilePath.EndsWith(wavStr)) {
                 控場TimeupAudioPlayer = new AudioPlayer(soundFilePath);
@@ -124,7 +152,9 @@ namespace ElsClockStrikes
 
             大招ComboBox.Text = iniManager.GetValue(FormsConstant.config156R1SectionName, 大招ComboBox.Name, 大招ComboBox.SelectedItem.ToString());
             大招TextBox.Text = iniManager.GetIntValue(FormsConstant.config156R1SectionName, 大招TextBox.Name).ToString();
-            
+            大招音量TextBox.Text = iniManager.GetIntValue(FormsConstant.config156R1SectionName, 大招音量TextBox.Name, 100).ToString();
+            大招分離視窗CheckBox.Checked = iniManager.GetBoolValue(FormsConstant.config156R1SectionName, 大招分離視窗CheckBox.Name);
+
             string soundFilePath = iniManager.GetValue(FormsConstant.config156R1SectionName, 大招SoundStr, 大招TimeupAudioPlayer?.filePath);
             if (soundFilePath.EndsWith(mp3Str) || soundFilePath.EndsWith(wavStr)) {
                 大招TimeupAudioPlayer = new AudioPlayer(soundFilePath);
@@ -132,6 +162,8 @@ namespace ElsClockStrikes
 
             大刺ComboBox.Text = iniManager.GetValue(FormsConstant.config156R1SectionName, 大刺ComboBox.Name, 大刺ComboBox.SelectedItem.ToString());
             大刺TextBox.Text = iniManager.GetIntValue(FormsConstant.config156R1SectionName, 大刺TextBox.Name).ToString();
+            大刺音量TextBox.Text = iniManager.GetIntValue(FormsConstant.config156R1SectionName, 大刺音量TextBox.Name, 100).ToString();
+            大刺分離視窗CheckBox.Checked = iniManager.GetBoolValue(FormsConstant.config156R1SectionName, 大刺分離視窗CheckBox.Name);
             
             soundFilePath = iniManager.GetValue(FormsConstant.config156R1SectionName, 大刺SoundStr, 大刺TimeupAudioPlayer?.filePath);
             if (soundFilePath.EndsWith(mp3Str) || soundFilePath.EndsWith(wavStr)) {
@@ -140,6 +172,8 @@ namespace ElsClockStrikes
 
             翻桌ComboBox.Text = iniManager.GetValue(FormsConstant.config156R1SectionName, 翻桌ComboBox.Name, 翻桌ComboBox.SelectedItem.ToString());
             翻桌TextBox.Text = iniManager.GetIntValue(FormsConstant.config156R1SectionName, 翻桌TextBox.Name).ToString();
+            翻桌音量TextBox.Text = iniManager.GetIntValue(FormsConstant.config156R1SectionName, 翻桌音量TextBox.Name, 100).ToString();
+            翻桌分離視窗CheckBox.Checked = iniManager.GetBoolValue(FormsConstant.config156R1SectionName, 翻桌分離視窗CheckBox.Name);
             
             soundFilePath = iniManager.GetValue(FormsConstant.config156R1SectionName, 翻桌SoundStr, 翻桌TimeupAudioPlayer?.filePath);
             if (soundFilePath.EndsWith(mp3Str) || soundFilePath.EndsWith(wavStr)) {
@@ -148,6 +182,8 @@ namespace ElsClockStrikes
 
             R1156控場ComboBox.Text = iniManager.GetValue(FormsConstant.config156R1SectionName, R1156控場ComboBox.Name, R1156控場ComboBox.SelectedItem.ToString());
             R1156控場TextBox.Text = iniManager.GetIntValue(FormsConstant.config156R1SectionName, R1156控場TextBox.Name).ToString();
+            R1156控場音量TextBox.Text = iniManager.GetIntValue(FormsConstant.config156R1SectionName, R1156控場音量TextBox.Name, 100).ToString();
+            R1156控場分離視窗CheckBox.Checked = iniManager.GetBoolValue(FormsConstant.config156R1SectionName, R1156控場分離視窗CheckBox.Name);
             
             soundFilePath = iniManager.GetValue(FormsConstant.config156R1SectionName, R1156控場SoundStr, R1156控場TimeupAudioPlayer?.filePath);
             if (soundFilePath.EndsWith(mp3Str) || soundFilePath.EndsWith(wavStr)) {
@@ -174,7 +210,9 @@ namespace ElsClockStrikes
 
             大黑ComboBox.Text = iniManager.GetValue(FormsConstant.config156R3SectionName, 大黑ComboBox.Name, 大黑ComboBox.SelectedItem.ToString());
             大黑TextBox.Text = iniManager.GetIntValue(FormsConstant.config156R3SectionName, 大黑TextBox.Name).ToString();
-            
+            大黑音量TextBox.Text = iniManager.GetIntValue(FormsConstant.config156R3SectionName, 大黑音量TextBox.Name, 100).ToString();
+            大黑分離視窗CheckBox.Checked = iniManager.GetBoolValue(FormsConstant.config156R3SectionName, 大黑分離視窗CheckBox.Name);
+
             string soundFilePath = iniManager.GetValue(FormsConstant.config156R3SectionName, 大黑SoundStr, 大黑TimeupAudioPlayer?.filePath);
             if (soundFilePath.EndsWith(mp3Str) || soundFilePath.EndsWith(wavStr)) {
                 大黑TimeupAudioPlayer = new AudioPlayer(soundFilePath);
@@ -182,6 +220,8 @@ namespace ElsClockStrikes
 
             陰陽陣ComboBox.Text = iniManager.GetValue(FormsConstant.config156R3SectionName, 陰陽陣ComboBox.Name, 陰陽陣ComboBox.SelectedItem.ToString());
             陰陽陣TextBox.Text = iniManager.GetIntValue(FormsConstant.config156R3SectionName, 陰陽陣TextBox.Name).ToString();
+            陰陽陣音量TextBox.Text = iniManager.GetIntValue(FormsConstant.config156R3SectionName, 陰陽陣音量TextBox.Name, 100).ToString();
+            陰陽陣分離視窗CheckBox.Checked = iniManager.GetBoolValue(FormsConstant.config156R3SectionName, 陰陽陣分離視窗CheckBox.Name);
             
             soundFilePath = iniManager.GetValue(FormsConstant.config156R3SectionName, 陰陽陣SoundStr, 陰陽陣TimeupAudioPlayer?.filePath);
             if (soundFilePath.EndsWith(mp3Str) || soundFilePath.EndsWith(wavStr)) {
@@ -190,6 +230,8 @@ namespace ElsClockStrikes
 
             三連ComboBox.Text = iniManager.GetValue(FormsConstant.config156R3SectionName, 三連ComboBox.Name, 三連ComboBox.SelectedItem.ToString());
             三連TextBox.Text = iniManager.GetIntValue(FormsConstant.config156R3SectionName, 三連TextBox.Name).ToString();
+            三連音量TextBox.Text = iniManager.GetIntValue(FormsConstant.config156R3SectionName, 三連音量TextBox.Name, 100).ToString();
+            三連分離視窗CheckBox.Checked = iniManager.GetBoolValue(FormsConstant.config156R3SectionName, 三連分離視窗CheckBox.Name);
             
             soundFilePath = iniManager.GetValue(FormsConstant.config156R3SectionName, 三連SoundStr, 三連TimeupAudioPlayer?.filePath);
             if (soundFilePath.EndsWith(mp3Str) || soundFilePath.EndsWith(wavStr)) {
@@ -198,6 +240,8 @@ namespace ElsClockStrikes
 
             R3156控場ComboBox.Text = iniManager.GetValue(FormsConstant.config156R3SectionName, R3156控場ComboBox.Name, R3156控場ComboBox.SelectedItem.ToString());
             R3156控場TextBox.Text = iniManager.GetIntValue(FormsConstant.config156R3SectionName, R3156控場TextBox.Name).ToString();
+            R3156控場音量TextBox.Text = iniManager.GetIntValue(FormsConstant.config156R3SectionName, R3156控場音量TextBox.Name, 100).ToString();
+            R3156控場分離視窗CheckBox.Checked = iniManager.GetBoolValue(FormsConstant.config156R3SectionName, R3156控場分離視窗CheckBox.Name);
             
             soundFilePath = iniManager.GetValue(FormsConstant.config156R3SectionName, R3156控場SoundStr, R3156控場TimeupAudioPlayer?.filePath);
             if (soundFilePath.EndsWith(mp3Str) || soundFilePath.EndsWith(wavStr)) {
@@ -233,7 +277,13 @@ namespace ElsClockStrikes
             FormsCustomizeUtils.ProcessLoadConfigRemoveComponent(this.TabPageCustomize);
             this.ProcessCompoenetBackOriginPos();
             FormsConstant.indexForCustomizeName = 0;
+            foreach (CustomizeTaskTimer taskTimer in this.customizeTaskTimerList)
+            {
+                taskTimer.Stop();
+                taskTimer.Dispose();
+            }
             this.customizeTaskTimerList.Clear();
+            this.customizeFormTimerInstancePos = new Dictionary<string, Point>();
 
             IniManager iniManager = new IniManager();
 
@@ -243,26 +293,41 @@ namespace ElsClockStrikes
                 return;
             }
 
+            string[] posKeys = iniManager.GetValue(FormsConstant.configCustomizeSectionName, CustomizeFormInstancePosKeyListStr).Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] posValues = iniManager.GetValue(FormsConstant.configCustomizeSectionName, CustomizeFormInstancePosValueListStr).Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+            for (int i = 0; i < posKeys.Length; i++)
+            {
+                string[] pos = posValues[i].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                this.customizeFormTimerInstancePos.Add(posKeys[i], new Point(Int32.Parse(pos[0]), Int32.Parse(pos[1])));
+            }
+
             string[] mechanicLabels = iniManager.GetValue(FormsConstant.configCustomizeSectionName, CustomizeMechanicLabelListStr).Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
             string[] comboBoxs = iniManager.GetValue(FormsConstant.configCustomizeSectionName, CustomizeComboBoxListStr).Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
             string[] textBoxs = iniManager.GetValue(FormsConstant.configCustomizeSectionName, CustomizeTextBoxListStr).Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] volumeTextBoxs = iniManager.GetValue(FormsConstant.configCustomizeSectionName, CustomizeVolumeListStr).Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+            bool[] formInstanceCheckBoxs = iniManager.GetValue(FormsConstant.configCustomizeSectionName, CustomizeFormInstanceListStr).Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries).Select(bool.Parse).ToArray();
             for (int i = 0; i < indexForCustomizeName; i++)
             {
                 ControlStrategyParameters controlStrategyParameters = new ControlStrategyParameters
                 {
                     tabPage = this.TabPageCustomize,
-                    custSettingFormsInputData = mechanicLabels[i],
+                    custSettingFormsInputData = mechanicLabels.Length == 0 ? "null" : mechanicLabels[i],
                     customizeTaskTimerList = this.customizeTaskTimerList
                 };
                 ControlStrategyManager controlStrategyManager = new ControlStrategyManager(controlStrategyParameters);
                 controlStrategyManager.RegisterStrategy(new HotKeyLabelStrategy())
                                       .RegisterStrategy(new MechanicNameLabelStrategy())
                                       .RegisterStrategy(new TimeLeftLabelStrategy())
-                                      .RegisterStrategy(new ComboBoxStrategy(comboBoxs[i]))
-                                      .RegisterStrategy(new LineTextBoxStrategy(textBoxs[i]))
+                                      .RegisterStrategy(new ComboBoxStrategy(comboBoxs.Length == 0 ? null : comboBoxs[i]))
+                                      .RegisterStrategy(new LineTextBoxStrategy(textBoxs.Length == 0 ? "10" : textBoxs[i]))
                                       .RegisterStrategy(new RemoveButtonStrategy())
-                                      .RegisterStrategy(new CustomizeTaskTimerStrategy(關閉音效CustomizeRadioButton.Checked))
-                                      .RegisterStrategy(new AudioPlayerButtonStrategy(自訂音效CustomizeRadioButton.Checked));
+                                      .RegisterStrategy(new SettingButtonStrategy(Properties.Resources.setimg))
+                                      .RegisterStrategy(new PanelStrategy())
+                                      .RegisterStrategy(new AudioPlayerButtonStrategy(自訂音效CustomizeRadioButton.Checked))
+                                      .RegisterStrategy(new SoundLabelStrategy())
+                                      .RegisterStrategy(new SoundLineTextBoxStrategy(volumeTextBoxs.Length == 0 ? "100" : volumeTextBoxs[i]))
+                                      .RegisterStrategy(new FormInstanceCheckBoxStrategy(formInstanceCheckBoxs.Length == 0 ? false : formInstanceCheckBoxs[i]))
+                                      .RegisterStrategy(new CustomizeTaskTimerStrategy(關閉音效CustomizeRadioButton.Checked));
                 controlStrategyManager.ExecuteAll();
             }
 
@@ -290,6 +355,7 @@ namespace ElsClockStrikes
         private void SaveSettingButton_Click(object sender, EventArgs e)
         {
             IniManager iniManager = new IniManager();
+            this.SaveConfigBaseMechanicFormInstancePos(iniManager);
             this.SaveConfig127R3(iniManager);
             this.SaveConfig156R1(iniManager);
             this.SaveConfig156R3(iniManager);
@@ -299,23 +365,47 @@ namespace ElsClockStrikes
             iniManager.Save();
         }
 
+        private void SaveConfigBaseMechanicFormInstancePos(IniManager iniManager)
+        {
+            List<string> posKeyList = new List<string>();
+            List<string> posValueList = new List<string>();
+            if (this.formTimerInstancePos != null)
+            {
+                foreach (KeyValuePair<string, Point> kvp in formTimerInstancePos)
+                {
+                    posKeyList.Add(kvp.Key);
+                    posValueList.Add($"{kvp.Value.X},{kvp.Value.Y}");
+                }
+            }
+            iniManager.SetValue(FormsConstant.configGlobalSectionName, BaseMechanicFormInstancePosKeyListStr, string.Join("|", posKeyList.Cast<string>()));
+            iniManager.SetValue(FormsConstant.configGlobalSectionName, BaseMechanicFormInstancePosValueListStr, string.Join("|", posValueList.Cast<string>()));
+        }
+
         private void SaveConfig127R3(IniManager iniManager)
         {
             iniManager.SetValue(FormsConstant.config127R3SectionName, 小荊棘ComboBox.Name, 小荊棘ComboBox.SelectedItem.ToString());
             iniManager.SetValue(FormsConstant.config127R3SectionName, 小荊棘TextBox.Name, 小荊棘TextBox.Text);
             iniManager.SetValue(FormsConstant.config127R3SectionName, 小荊棘SoundStr, 小荊棘TimeupAudioPlayer?.filePath);
+            iniManager.SetValue(FormsConstant.config127R3SectionName, 小荊棘音量TextBox.Name, 小荊棘音量TextBox.Text);
+            iniManager.SetValue(FormsConstant.config127R3SectionName, 小荊棘分離視窗CheckBox.Name, 小荊棘分離視窗CheckBox.Checked.ToString());
 
             iniManager.SetValue(FormsConstant.config127R3SectionName, 雷射ComboBox.Name, 雷射ComboBox.SelectedItem.ToString());
             iniManager.SetValue(FormsConstant.config127R3SectionName, 雷射TextBox.Name, 雷射TextBox.Text);
             iniManager.SetValue(FormsConstant.config127R3SectionName, 雷射SoundStr, 雷射TimeupAudioPlayer?.filePath);
+            iniManager.SetValue(FormsConstant.config127R3SectionName, 雷射音量TextBox.Name, 雷射音量TextBox.Text);
+            iniManager.SetValue(FormsConstant.config127R3SectionName, 雷射分離視窗CheckBox.Name, 雷射分離視窗CheckBox.Checked.ToString());
 
             iniManager.SetValue(FormsConstant.config127R3SectionName, 荊棘延遲ComboBox.Name, 荊棘延遲ComboBox.SelectedItem.ToString());
             iniManager.SetValue(FormsConstant.config127R3SectionName, 荊棘延遲TextBox.Name, 荊棘延遲TextBox.Text);
             iniManager.SetValue(FormsConstant.config127R3SectionName, 荊棘延遲SoundStr, 荊棘延遲TimeupAudioPlayer?.filePath);
+            iniManager.SetValue(FormsConstant.config127R3SectionName, 荊棘延遲音量TextBox.Name, 荊棘延遲音量TextBox.Text);
+            iniManager.SetValue(FormsConstant.config127R3SectionName, 荊棘延遲分離視窗CheckBox.Name, 荊棘延遲分離視窗CheckBox.Checked.ToString());
 
             iniManager.SetValue(FormsConstant.config127R3SectionName, 控場ComboBox.Name, 控場ComboBox.SelectedItem.ToString());
             iniManager.SetValue(FormsConstant.config127R3SectionName, 控場TextBox.Name, 控場TextBox.Text);
             iniManager.SetValue(FormsConstant.config127R3SectionName, 控場SoundStr, 控場TimeupAudioPlayer?.filePath);
+            iniManager.SetValue(FormsConstant.config127R3SectionName, 控場音量TextBox.Name, 控場音量TextBox.Text);
+            iniManager.SetValue(FormsConstant.config127R3SectionName, 控場分離視窗CheckBox.Name, 控場分離視窗CheckBox.Checked.ToString());
 
             iniManager.SetValue(FormsConstant.config127R3SectionName, 重置計時器ComboBox.Name, 重置計時器ComboBox.SelectedItem.ToString());
             iniManager.SetValue(FormsConstant.config127R3SectionName, 預設音效RadioButton.Name, 預設音效RadioButton.Checked.ToString());
@@ -328,18 +418,26 @@ namespace ElsClockStrikes
             iniManager.SetValue(FormsConstant.config156R1SectionName, 大招ComboBox.Name, 大招ComboBox.SelectedItem.ToString());
             iniManager.SetValue(FormsConstant.config156R1SectionName, 大招TextBox.Name, 大招TextBox.Text);
             iniManager.SetValue(FormsConstant.config156R1SectionName, 大招SoundStr, 大招TimeupAudioPlayer?.filePath);
+            iniManager.SetValue(FormsConstant.config156R1SectionName, 大招音量TextBox.Name, 大招音量TextBox.Text);
+            iniManager.SetValue(FormsConstant.config156R1SectionName, 大招分離視窗CheckBox.Name, 大招分離視窗CheckBox.Checked.ToString());
 
             iniManager.SetValue(FormsConstant.config156R1SectionName, 大刺ComboBox.Name, 大刺ComboBox.SelectedItem.ToString());
             iniManager.SetValue(FormsConstant.config156R1SectionName, 大刺TextBox.Name, 大刺TextBox.Text);
             iniManager.SetValue(FormsConstant.config156R1SectionName, 大刺SoundStr, 大刺TimeupAudioPlayer?.filePath);
+            iniManager.SetValue(FormsConstant.config156R1SectionName, 大刺音量TextBox.Name, 大刺音量TextBox.Text);
+            iniManager.SetValue(FormsConstant.config156R1SectionName, 大刺分離視窗CheckBox.Name, 大刺分離視窗CheckBox.Checked.ToString());
 
             iniManager.SetValue(FormsConstant.config156R1SectionName, 翻桌ComboBox.Name, 翻桌ComboBox.SelectedItem.ToString());
             iniManager.SetValue(FormsConstant.config156R1SectionName, 翻桌TextBox.Name, 翻桌TextBox.Text);
             iniManager.SetValue(FormsConstant.config156R1SectionName, 翻桌SoundStr, 翻桌TimeupAudioPlayer?.filePath);
+            iniManager.SetValue(FormsConstant.config156R1SectionName, 翻桌音量TextBox.Name, 翻桌音量TextBox.Text);
+            iniManager.SetValue(FormsConstant.config156R1SectionName, 翻桌分離視窗CheckBox.Name, 翻桌分離視窗CheckBox.Checked.ToString());
 
             iniManager.SetValue(FormsConstant.config156R1SectionName, R1156控場ComboBox.Name, R1156控場ComboBox.SelectedItem.ToString());
             iniManager.SetValue(FormsConstant.config156R1SectionName, R1156控場TextBox.Name, R1156控場TextBox.Text);
             iniManager.SetValue(FormsConstant.config156R1SectionName, R1156控場SoundStr, R1156控場TimeupAudioPlayer?.filePath);
+            iniManager.SetValue(FormsConstant.config156R1SectionName, R1156控場音量TextBox.Name, R1156控場音量TextBox.Text);
+            iniManager.SetValue(FormsConstant.config156R1SectionName, R1156控場分離視窗CheckBox.Name, R1156控場分離視窗CheckBox.Checked.ToString());
 
             iniManager.SetValue(FormsConstant.config156R1SectionName, 重置計時器156R1ComboBox.Name, 重置計時器156R1ComboBox.SelectedItem.ToString());
             iniManager.SetValue(FormsConstant.config156R1SectionName, 預設音效156R1RadioButton.Name, 預設音效156R1RadioButton.Checked.ToString());
@@ -352,18 +450,26 @@ namespace ElsClockStrikes
             iniManager.SetValue(FormsConstant.config156R3SectionName, 大黑ComboBox.Name, 大黑ComboBox.SelectedItem.ToString());
             iniManager.SetValue(FormsConstant.config156R3SectionName, 大黑TextBox.Name, 大黑TextBox.Text);
             iniManager.SetValue(FormsConstant.config156R3SectionName, 大黑SoundStr, 大黑TimeupAudioPlayer?.filePath);
+            iniManager.SetValue(FormsConstant.config156R3SectionName, 大黑音量TextBox.Name, 大黑音量TextBox.Text);
+            iniManager.SetValue(FormsConstant.config156R3SectionName, 大黑分離視窗CheckBox.Name, 大黑分離視窗CheckBox.Checked.ToString());
 
             iniManager.SetValue(FormsConstant.config156R3SectionName, 陰陽陣ComboBox.Name, 陰陽陣ComboBox.SelectedItem.ToString());
             iniManager.SetValue(FormsConstant.config156R3SectionName, 陰陽陣TextBox.Name, 陰陽陣TextBox.Text);
             iniManager.SetValue(FormsConstant.config156R3SectionName, 陰陽陣SoundStr, 陰陽陣TimeupAudioPlayer?.filePath);
+            iniManager.SetValue(FormsConstant.config156R3SectionName, 陰陽陣音量TextBox.Name, 陰陽陣音量TextBox.Text);
+            iniManager.SetValue(FormsConstant.config156R3SectionName, 陰陽陣分離視窗CheckBox.Name, 陰陽陣分離視窗CheckBox.Checked.ToString());
 
             iniManager.SetValue(FormsConstant.config156R3SectionName, 三連ComboBox.Name, 三連ComboBox.SelectedItem.ToString());
             iniManager.SetValue(FormsConstant.config156R3SectionName, 三連TextBox.Name, 三連TextBox.Text);
             iniManager.SetValue(FormsConstant.config156R3SectionName, 三連SoundStr, 三連TimeupAudioPlayer?.filePath);
+            iniManager.SetValue(FormsConstant.config156R3SectionName, 三連音量TextBox.Name, 三連音量TextBox.Text);
+            iniManager.SetValue(FormsConstant.config156R3SectionName, 三連分離視窗CheckBox.Name, 三連分離視窗CheckBox.Checked.ToString());
 
             iniManager.SetValue(FormsConstant.config156R3SectionName, R3156控場ComboBox.Name, R3156控場ComboBox.SelectedItem.ToString());
             iniManager.SetValue(FormsConstant.config156R3SectionName, R3156控場TextBox.Name, R3156控場TextBox.Text);
             iniManager.SetValue(FormsConstant.config156R3SectionName, R3156控場SoundStr, R3156控場TimeupAudioPlayer?.filePath);
+            iniManager.SetValue(FormsConstant.config156R3SectionName, R3156控場音量TextBox.Name, R3156控場音量TextBox.Text);
+            iniManager.SetValue(FormsConstant.config156R3SectionName, R3156控場分離視窗CheckBox.Name, R3156控場分離視窗CheckBox.Checked.ToString());
 
             iniManager.SetValue(FormsConstant.config156R3SectionName, 重置計時器156R3ComboBox.Name, 重置計時器156R3ComboBox.SelectedItem.ToString());
             iniManager.SetValue(FormsConstant.config156R3SectionName, 預設音效156R3RadioButton.Name, 預設音效156R3RadioButton.Checked.ToString());
@@ -396,7 +502,7 @@ namespace ElsClockStrikes
 
             Dictionary<string, GunaComboBox> gunaComboBoxMap = FormsCustomizeUtils.GetTheSetControlMap<GunaComboBox>(this.TabPageCustomize, FormsConstant.comboBoxBaseName);
             saveValue.Clear();
-            foreach (GunaComboBox gunaComboBox in gunaComboBoxMap.Values )
+            foreach (GunaComboBox gunaComboBox in gunaComboBoxMap.Values)
             {
                 saveValue.Add(gunaComboBox.SelectedItem.ToString());
             }
@@ -427,6 +533,43 @@ namespace ElsClockStrikes
                 }
                 iniManager.SetValue(FormsConstant.configCustomizeSectionName, CustomizeSoundListStr, string.Join("|", saveValue.Cast<string>()));
             }
+
+            Dictionary<string, GunaPanel> gunaPanelMap = FormsCustomizeUtils.GetTheSetControlMap<GunaPanel>(this.TabPageCustomize, FormsConstant.panelBaseName);
+            List<string> volumeValueList = new List<string>();
+            List<string> formInstanceValueList = new List<string>();
+            for (int i = 0; i < gunaPanelMap.Count; i++)
+            {
+                int isCanBreak = 0;
+                foreach (Control control in gunaPanelMap[(i + 1).ToString()].Controls)      // Dictionary does not guarantee iteration order.
+                {
+                    if (control is GunaLineTextBox gunaLineTextBox)
+                    {
+                        volumeValueList.Add(gunaLineTextBox.Text);
+                        isCanBreak++;
+                    }
+                    else if (control is GunaCheckBox gunaCheckBox)
+                    {
+                        formInstanceValueList.Add(gunaCheckBox.Checked.ToString());
+                        isCanBreak++;
+                    }
+                    if (isCanBreak == 2) break;
+                }
+            }
+            iniManager.SetValue(FormsConstant.configCustomizeSectionName, CustomizeVolumeListStr, string.Join("|", volumeValueList.Cast<string>()));
+            iniManager.SetValue(FormsConstant.configCustomizeSectionName, CustomizeFormInstanceListStr, string.Join("|", formInstanceValueList.Cast<string>()));
+
+            List<string> posKeyList = new List<string>();
+            List<string> posValueList = new List<string>();
+            if (this.customizeFormTimerInstancePos != null)
+            {
+                foreach (KeyValuePair<string, Point> kvp in customizeFormTimerInstancePos)
+                {
+                    posKeyList.Add(kvp.Key);
+                    posValueList.Add($"{kvp.Value.X},{kvp.Value.Y}");
+                }
+            }
+            iniManager.SetValue(FormsConstant.configCustomizeSectionName, CustomizeFormInstancePosKeyListStr, string.Join("|", posKeyList.Cast<string>()));
+            iniManager.SetValue(FormsConstant.configCustomizeSectionName, CustomizeFormInstancePosValueListStr, string.Join("|", posValueList.Cast<string>()));
         }
     }
 }

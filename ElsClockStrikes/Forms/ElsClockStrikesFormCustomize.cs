@@ -21,6 +21,7 @@ namespace ElsClockStrikes
         private Size CustomizeWindowsSettingButtonOriginSize;
         private Point CustomizeTabCopyrightTagLabelPos;
         private Point CustomizeTopMostCheckBoxPos;
+        private Dictionary<string, Point> customizeFormTimerInstancePos;
 
         private void TabPageCustomize_ControlRemoved(object sender, ControlEventArgs e)
         {
@@ -29,6 +30,7 @@ namespace ElsClockStrikes
                 if (FormsCustomizeUtils.GetRemoveIndexCharOfStrgin(gunaButton.Name) == FormsConstant.buttonBaseName)
                 {
                     FormsCustomizeUtils.ProcessComponentLayout(this.TabPageCustomize, gunaButton);
+                    ShiftIndexKeys(gunaButton);
                     ProcessResetComponent(false);
                     if (this.Size.Height > WindowsOriginSize.Height)
                     {
@@ -101,7 +103,7 @@ namespace ElsClockStrikes
                                               .RegisterStrategy(new AudioPlayerButtonStrategy(自訂音效CustomizeRadioButton.Checked))
                                               .RegisterStrategy(new SoundLabelStrategy())
                                               .RegisterStrategy(new SoundLineTextBoxStrategy("100"))
-                                              .RegisterStrategy(new FormInstanceCheckBoxStrategy())
+                                              .RegisterStrategy(new FormInstanceCheckBoxStrategy(false))
                                               .RegisterStrategy(new CustomizeTaskTimerStrategy(關閉音效CustomizeRadioButton.Checked));
                         controlStrategyManager.ExecuteAll();
                     }
@@ -136,6 +138,34 @@ namespace ElsClockStrikes
             else
             {
                 音效設定CustomizeGroupBox.Location = new Point(音效設定CustomizeGroupBox.Location.X, 音效設定CustomizeGroupBox.Location.Y - FormsConstant.FormSizeOffset);
+            }
+        }
+
+        private void ShiftIndexKeys(GunaButton gunaButton)
+        {
+            if (customizeFormTimerInstancePos == null)
+            {
+                return;
+            }
+
+            Dictionary<string, Point> newData = new Dictionary<string, Point>();
+            foreach (KeyValuePair<string, Point> kvp in customizeFormTimerInstancePos)
+            {
+                int newKey = Int32.Parse(kvp.Key) - 1;
+                if (newKey > 0)
+                    newData[newKey.ToString()] = kvp.Value;
+            }
+            customizeFormTimerInstancePos = newData;
+
+            List<GunaCheckBox> cbList = FormsCustomizeUtils.GetFormInstanceCheckBoxByTabPage(this.TabPageCustomize);
+            foreach (GunaCheckBox formInstanceCheckBox in cbList)
+            {
+                if (formInstanceCheckBox.Checked && FormsCustomizeUtils.GetIndexOfString(formInstanceCheckBox.Name) == FormsCustomizeUtils.GetIndexOfString(gunaButton.Name))
+                {
+                    int newKey = Int32.Parse(FormsCustomizeUtils.GetIndexOfString(formInstanceCheckBox.Name)) - 1;
+                    if (newKey > 0)
+                        customizeFormTimerInstancePos.Remove(newKey.ToString());
+                }
             }
         }
 
@@ -256,13 +286,13 @@ namespace ElsClockStrikes
         {
             if (isBackToOriginCheck)
             {
-                if (formTimerInstancePos == null)
+                if (customizeFormTimerInstancePos == null)
                 {
-                    formTimerInstancePos = new Dictionary<string, Point>();
+                    customizeFormTimerInstancePos = new Dictionary<string, Point>();
                 }
                 foreach (ElsClockStrikesFormTimerInstance timerInstance in formTimerInstances)
                 {
-                    formTimerInstancePos[FormsCustomizeUtils.GetIndexOfString(timerInstance.GetMechanicName())] = timerInstance.Location;
+                    customizeFormTimerInstancePos[FormsCustomizeUtils.GetIndexOfString(timerInstance.GetMechanicName())] = timerInstance.Location;
                     timerInstance.ProcessFormClose();
                     timerInstance.Close();
                     this.Controls.Remove(timerInstance.GetHotKeyLabel());
@@ -287,9 +317,9 @@ namespace ElsClockStrikes
                     string fipMapKey = FormsCustomizeUtils.GetIndexOfString(checkBox.Name);
                     if (checkBox.Checked)
                     {
-                        if (formTimerInstancePos != null && formTimerInstancePos.ContainsKey(fipMapKey))
+                        if (customizeFormTimerInstancePos != null && customizeFormTimerInstancePos.ContainsKey(fipMapKey))
                         {
-                            formTimerInstances.Add(new ElsClockStrikesFormTimerInstance(fipMap[fipMapKey], WindowsSettingCustomize, MaxLabelWidth, this.TopMost, formTimerInstancePos[fipMapKey]));
+                            formTimerInstances.Add(new ElsClockStrikesFormTimerInstance(fipMap[fipMapKey], WindowsSettingCustomize, MaxLabelWidth, this.TopMost, customizeFormTimerInstancePos[fipMapKey]));
                         }
                         else
                         {

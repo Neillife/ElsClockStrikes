@@ -5,6 +5,13 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
 {
     public class FormInstanceCheckBoxStrategy : BaseControlStrategy
     {
+        private readonly bool isChrcked;
+
+        public FormInstanceCheckBoxStrategy(bool isChrcked)
+        {
+            this.isChrcked = isChrcked;
+        }
+
         public override void AddControl(ControlStrategyParameters controlStrategyParameters)
         {
             GunaCheckBox gunaCheckBox = new GunaCheckBox();
@@ -18,6 +25,7 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
             gunaCheckBox.Name = $"{FormsConstant.formInstanceCheckBoxBaseName}{FormsConstant.indexForCustomizeName}";
             gunaCheckBox.Size = new Size(100, 25);
             gunaCheckBox.Text = "分離介面";
+            gunaCheckBox.Checked = isChrcked;
             controlStrategyParameters.gunaPanel.Controls.Add(gunaCheckBox);
         }
     }
