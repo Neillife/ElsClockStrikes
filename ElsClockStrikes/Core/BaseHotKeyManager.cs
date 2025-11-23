@@ -29,14 +29,14 @@ namespace ElsClockStrikes.Core
             return keyMapWithContainer;
         }
 
-        public static Dictionary<string, int> GetEnumMapByComboBoxSelect(Dictionary<string, List<HotKeyContainer>> keyMapWithContainer)
+        public static Dictionary<int, string> GetEnumMapByComboBoxSelect(Dictionary<string, List<HotKeyContainer>> keyMapWithContainer)
         {
-            Dictionary<string, int> enumMap = new Dictionary<string, int>();
+            Dictionary<int, string> enumMap = new Dictionary<int, string>();
             foreach (string item in keyMapWithContainer.Keys)
             {
                 if (Enum.TryParse<HotKeySet.KeySet>(item, out var result))
                 {
-                    enumMap.Add(item, (int)result);
+                    enumMap.Add((int)result, item);
                 }
             }
             return enumMap;
@@ -50,10 +50,10 @@ namespace ElsClockStrikes.Core
                 globalHook.Dispose();
                 globalHook = null;
 
-                Dictionary<string, int> enumMap = GetEnumMapByComboBoxSelect(keyMapWithContainer);
-                foreach (KeyValuePair<string, int> kvp in enumMap)
+                Dictionary<int, string> enumMap = GetEnumMapByComboBoxSelect(keyMapWithContainer);
+                foreach (KeyValuePair<int, string> kvp in enumMap)
                 {
-                    foreach (HotKeyContainer hotKeyContainer in keyMapWithContainer[kvp.Key])
+                    foreach (HotKeyContainer hotKeyContainer in keyMapWithContainer[kvp.Value])
                     {
                         if (hotKeyContainer.timer != null)
                         {
@@ -71,71 +71,60 @@ namespace ElsClockStrikes.Core
 
         private void GlobalHookKeyDown(object sender, KeyEventArgs e)
         {
-            Dictionary<string, int> enumMap = GetEnumMapByComboBoxSelect(keyMapWithContainer);
-            foreach (KeyValuePair<string, int> kvp in enumMap)
+            Dictionary<int, string> enumMap = GetEnumMapByComboBoxSelect(keyMapWithContainer);
+
+            if (!enumMap.TryGetValue(e.KeyValue, out string inputKey))
+                return;
+
+            List<HotKeyContainer> hotKeyContainersList = keyMapWithContainer[inputKey];
+            foreach (HotKeyContainer hotKeyContainer in  hotKeyContainersList)
             {
-                if (kvp.Value.Equals(e.KeyValue))
+                if (hotKeyContainer.timer != null)
                 {
-                    foreach (HotKeyContainer hotKeyContainer in keyMapWithContainer[kvp.Key])
+                    if (hotKeyContainer.timer.Enabled)
                     {
-                        if (hotKeyContainer.timer != null && hotKeyContainer.timer.Enabled)
-                        {
-                            hotKeyContainer.method.Invoke(hotKeyContainer.invokeObj, new object[] { hotKeyContainer.textBox.Text });
-                            hotKeyContainer.label.ForeColor = Color.FromArgb(245, 245, 245);
-                            if (hotKeyContainer.audioPlayer != null)
-                            {
-                                hotKeyContainer.audioPlayer.Stop();
-                            }
-                            if (hotKeyContainer.actionMethod != null)
-                            {
-                                hotKeyContainer.actionMethod.Invoke(formsInstance.Parent.Parent, null);
-                            }
-                        }
-                        else if (hotKeyContainer.timer != null)
-                        {
-                            hotKeyContainer.timer.Start();
-                            hotKeyContainer.label.ForeColor = Color.FromArgb(245, 245, 245);
-                            if (hotKeyContainer.audioPlayer != null)
-                            {
-                                hotKeyContainer.audioPlayer.Stop();
-                            }
-                            if (hotKeyContainer.actionMethod != null)
-                            {
-                                hotKeyContainer.actionMethod.Invoke(formsInstance.Parent.Parent, null);
-                            }
-                        }
-                        else
-                        {
-                            foreach (KeyValuePair<string, int> nonResetkvp in enumMap)
-                            {
-                                if (!nonResetkvp.Key.Equals(kvp.Key))
-                                {
-                                    foreach (HotKeyContainer nonResetHotKeyContainer in keyMapWithContainer[nonResetkvp.Key])
-                                    {
-                                        nonResetHotKeyContainer.label.Text = nonResetHotKeyContainer.textBox.Text;
-                                        nonResetHotKeyContainer.label.ForeColor = Color.FromArgb(245, 245, 245);
-                                        nonResetHotKeyContainer.method.Invoke(nonResetHotKeyContainer.invokeObj, new object[] { nonResetHotKeyContainer.textBox.Text });
-                                        nonResetHotKeyContainer.timer.Stop();
-                                        if (nonResetHotKeyContainer.audioPlayer != null)
-                                        {
-                                            nonResetHotKeyContainer.audioPlayer.Stop();
-                                        }
-                                    }
-                                }
-                                else
-                                {
-                                    foreach (HotKeyContainer resetHotKeyContainer in keyMapWithContainer[kvp.Key])
-                                    {
-                                        if (resetHotKeyContainer.actionMethod != null)
-                                        {
-                                            resetHotKeyContainer.actionMethod.Invoke(null, null);
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                        hotKeyContainer.method.Invoke(hotKeyContainer.invokeObj, new object[] { hotKeyContainer.textBox.Text });
                     }
+                    else
+                    {
+                        hotKeyContainer.timer.Start();
+                    }
+
+                    hotKeyContainer.label.ForeColor = Color.FromArgb(245, 245, 245);
+                    hotKeyContainer.audioPlayer?.Stop();
+                    hotKeyContainer.actionMethod?.Invoke(formsInstance.Parent.Parent, null);
                 }
+                else
+                {
+                    ResetOtherHotKeyGroups(inputKey);
+                    InvokeHotKeyResetAction(hotKeyContainersList);
+                }
+            }
+        }
+
+        private void ResetOtherHotKeyGroups(string resetKey)
+        {
+            foreach (KeyValuePair<string, List<HotKeyContainer>> kvp in keyMapWithContainer)
+            {
+                if (kvp.Key == resetKey)
+                    continue;
+
+                foreach (HotKeyContainer hotKeyContainer in kvp.Value)
+                {
+                    hotKeyContainer.label.Text = hotKeyContainer.textBox.Text;
+                    hotKeyContainer.label.ForeColor = Color.FromArgb(245, 245, 245);
+                    hotKeyContainer.method.Invoke(hotKeyContainer.invokeObj, new object[] { hotKeyContainer.textBox.Text });
+                    hotKeyContainer.timer?.Stop();
+                    hotKeyContainer.audioPlayer?.Stop();
+                }
+            }
+        }
+
+        private void InvokeHotKeyResetAction(List<HotKeyContainer> hotKeyContainersList)
+        {
+            foreach (HotKeyContainer hotKeyContainer in hotKeyContainersList)
+            {
+                hotKeyContainer.actionMethod?.Invoke(null, null);
             }
         }
 
