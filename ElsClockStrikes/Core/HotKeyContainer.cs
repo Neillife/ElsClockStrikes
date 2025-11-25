@@ -13,5 +13,6 @@ namespace ElsClockStrikes.Core
         public AudioPlayer audioPlayer { get; set; }
         public MethodInfo actionMethod { get; set; }
         public object invokeObj { get; set; } = null;
+        public HotKeySet.KeySet triggerKey { get; set; } = HotKeySet.KeySet.None;
     }
 }

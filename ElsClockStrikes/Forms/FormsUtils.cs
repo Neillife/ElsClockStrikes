@@ -336,5 +336,13 @@ namespace ElsClockStrikes.Forms
             targetPanel.Visible = true;
             t.Start();
         }
+
+        public static HotKeySet.KeySet TryParseHotKeySet(string keyName)
+        {
+            if (Enum.TryParse<HotKeySet.KeySet>(keyName, out var result))
+                return result;
+
+            return HotKeySet.KeySet.None;
+        }
     }
 }

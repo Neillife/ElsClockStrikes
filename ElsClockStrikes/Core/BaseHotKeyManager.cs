@@ -1,4 +1,5 @@
-﻿using Gma.System.MouseKeyHook;
+﻿using ElsClockStrikes.Core.Triggers;
+using Gma.System.MouseKeyHook;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -9,37 +10,22 @@ namespace ElsClockStrikes.Core
     public abstract class BaseHotKeyManager : IDisposable
     {
         private IKeyboardMouseEvents globalHook;
-        protected Dictionary<string, List<HotKeyContainer>> keyMapWithContainer;
-        private Control formsInstance;
+        protected List<IHotKeyTrigger> triggerList;
 
-        protected BaseHotKeyManager(Control parent, Type type)
+        protected BaseHotKeyManager(Type type)
         {
             globalHook = Hook.GlobalEvents();
             globalHook.KeyDown += GlobalHookKeyDown;
-            formsInstance = parent;
         }
 
-        public void InitializeKeyMapWithContainer(Control parent, Type type)
+        public void InitializeKeyMapWithTriggers(Control parent, Type type)
         {
-            keyMapWithContainer = this.GetKeyMapWithContainerByComboBoxSelect(parent, type);
+            triggerList = this.GetTriggerListByComboBoxSelect(parent, type);
         }
 
-        public Dictionary<string, List<HotKeyContainer>> GetKeyMapWithContainer()
+        public List<IHotKeyTrigger> GetTriggerList()
         {
-            return keyMapWithContainer;
-        }
-
-        public static Dictionary<int, string> GetEnumMapByComboBoxSelect(Dictionary<string, List<HotKeyContainer>> keyMapWithContainer)
-        {
-            Dictionary<int, string> enumMap = new Dictionary<int, string>();
-            foreach (string item in keyMapWithContainer.Keys)
-            {
-                if (Enum.TryParse<HotKeySet.KeySet>(item, out var result))
-                {
-                    enumMap.Add((int)result, item);
-                }
-            }
-            return enumMap;
+            return triggerList;
         }
 
         public void Dispose()
@@ -50,20 +36,16 @@ namespace ElsClockStrikes.Core
                 globalHook.Dispose();
                 globalHook = null;
 
-                Dictionary<int, string> enumMap = GetEnumMapByComboBoxSelect(keyMapWithContainer);
-                foreach (KeyValuePair<int, string> kvp in enumMap)
+                foreach (IHotKeyTrigger hotKeyTrigger in triggerList)
                 {
-                    foreach (HotKeyContainer hotKeyContainer in keyMapWithContainer[kvp.Value])
+                    if (hotKeyTrigger.hotKeyContainer.timer != null)
                     {
-                        if (hotKeyContainer.timer != null)
-                        {
-                            hotKeyContainer.timer.Stop();
-                            hotKeyContainer.label.ForeColor = Color.FromArgb(245, 245, 245);
-                        }
-                        if (hotKeyContainer.audioPlayer != null)
-                        {
-                            hotKeyContainer.audioPlayer.Stop();
-                        }
+                        hotKeyTrigger.hotKeyContainer.timer.Stop();
+                        hotKeyTrigger.hotKeyContainer.label.ForeColor = Color.FromArgb(245, 245, 245);
+                    }
+                    if (hotKeyTrigger.hotKeyContainer.audioPlayer != null)
+                    {
+                        hotKeyTrigger.hotKeyContainer.audioPlayer.Stop();
                     }
                 }
             }
@@ -71,63 +53,24 @@ namespace ElsClockStrikes.Core
 
         private void GlobalHookKeyDown(object sender, KeyEventArgs e)
         {
-            Dictionary<int, string> enumMap = GetEnumMapByComboBoxSelect(keyMapWithContainer);
-
-            if (!enumMap.TryGetValue(e.KeyValue, out string inputKey))
-                return;
-
-            List<HotKeyContainer> hotKeyContainersList = keyMapWithContainer[inputKey];
-            foreach (HotKeyContainer hotKeyContainer in  hotKeyContainersList)
+            foreach (IHotKeyTrigger hotKeyTrigger in triggerList)
             {
-                if (hotKeyContainer.timer != null)
+                if (hotKeyTrigger.OnKeyDown(e.KeyCode))
                 {
-                    if (hotKeyContainer.timer.Enabled)
-                    {
-                        hotKeyContainer.method.Invoke(hotKeyContainer.invokeObj, new object[] { hotKeyContainer.textBox.Text });
-                    }
-                    else
-                    {
-                        hotKeyContainer.timer.Start();
-                    }
-
-                    hotKeyContainer.label.ForeColor = Color.FromArgb(245, 245, 245);
-                    hotKeyContainer.audioPlayer?.Stop();
-                    hotKeyContainer.actionMethod?.Invoke(formsInstance.Parent.Parent, null);
-                }
-                else
-                {
-                    ResetOtherHotKeyGroups(inputKey);
-                    InvokeHotKeyResetAction(hotKeyContainersList);
+                    ResetAllTriggers();
+                    break;
                 }
             }
         }
 
-        private void ResetOtherHotKeyGroups(string resetKey)
+        private void ResetAllTriggers()
         {
-            foreach (KeyValuePair<string, List<HotKeyContainer>> kvp in keyMapWithContainer)
+            foreach (IHotKeyTrigger hotKeyTrigger in triggerList)
             {
-                if (kvp.Key == resetKey)
-                    continue;
-
-                foreach (HotKeyContainer hotKeyContainer in kvp.Value)
-                {
-                    hotKeyContainer.label.Text = hotKeyContainer.textBox.Text;
-                    hotKeyContainer.label.ForeColor = Color.FromArgb(245, 245, 245);
-                    hotKeyContainer.method.Invoke(hotKeyContainer.invokeObj, new object[] { hotKeyContainer.textBox.Text });
-                    hotKeyContainer.timer?.Stop();
-                    hotKeyContainer.audioPlayer?.Stop();
-                }
+                hotKeyTrigger.Reset();
             }
         }
 
-        private void InvokeHotKeyResetAction(List<HotKeyContainer> hotKeyContainersList)
-        {
-            foreach (HotKeyContainer hotKeyContainer in hotKeyContainersList)
-            {
-                hotKeyContainer.actionMethod?.Invoke(null, null);
-            }
-        }
-
-        protected abstract Dictionary<string, List<HotKeyContainer>> GetKeyMapWithContainerByComboBoxSelect(Control parent, Type type);
+        protected abstract List<IHotKeyTrigger> GetTriggerListByComboBoxSelect(Control parent, Type type);
     }
 }
