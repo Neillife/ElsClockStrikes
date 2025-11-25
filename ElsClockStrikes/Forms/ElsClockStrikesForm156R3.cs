@@ -1,4 +1,5 @@
 ﻿using ElsClockStrikes.Core;
+using ElsClockStrikes.Core.Triggers;
 using ElsClockStrikes.Forms;
 using Guna.UI.WinForms;
 using System;
@@ -353,34 +354,25 @@ namespace ElsClockStrikes
             else
             {
                 hotKeyManager = new HotKeyManager(this.TabPage156R3, typeof(ElsClockStrikesForm));
-                Dictionary<string, List<HotKeyContainer>> keyMapWithContainer = hotKeyManager.GetKeyMapWithContainer();
+                List<IHotKeyTrigger> triggerList = hotKeyManager.GetTriggerList();
                 int isCanBreakCount = 0;
-                foreach (KeyValuePair<string, List<HotKeyContainer>> kvp in keyMapWithContainer)
+                foreach (IHotKeyTrigger trigger in triggerList)
                 {
-                    if (kvp.Key.Equals(重置計時器156R3ComboBox.Text))
+                    if (trigger.hotKeyContainer.triggerKey.Equals(FormsUtils.TryParseHotKeySet(重置計時器156R3ComboBox.Text)))
                     {
-                        foreach (HotKeyContainer hotKeyContainer in kvp.Value)
-                        {
-                            hotKeyContainer.actionMethod = typeof(ElsClockStrikesForm).GetMethod("InitFirstStart陰陽陣");
-                        }
+                        trigger.hotKeyContainer.actionMethod = typeof(ElsClockStrikesForm).GetMethod("InitFirstStart陰陽陣");
                         isCanBreakCount++;
                     }
 
-                    if (kvp.Key.Equals(大黑ComboBox.Text))
+                    if (trigger.hotKeyContainer.triggerKey.Equals(FormsUtils.TryParseHotKeySet(大黑ComboBox.Text)))
                     {
-                        foreach (HotKeyContainer hotKeyContainer in kvp.Value)
-                        {
-                            hotKeyContainer.actionMethod = typeof(ElsClockStrikesForm).GetMethod("Process陰陽陣Delay");
-                        }
+                        trigger.hotKeyContainer.actionMethod = typeof(ElsClockStrikesForm).GetMethod("Process陰陽陣Delay");
                         isCanBreakCount++;
                     }
 
-                    if (kvp.Key.Equals(陰陽陣ComboBox.Text))
+                    if (trigger.hotKeyContainer.triggerKey.Equals(FormsUtils.TryParseHotKeySet(陰陽陣ComboBox.Text)))
                     {
-                        foreach (HotKeyContainer hotKeyContainer in kvp.Value)
-                        {
-                            hotKeyContainer.actionMethod = typeof(ElsClockStrikesForm).GetMethod("Process大黑Delay");
-                        }
+                        trigger.hotKeyContainer.actionMethod = typeof(ElsClockStrikesForm).GetMethod("Process大黑Delay");
                         isCanBreakCount++;
                     }
 
