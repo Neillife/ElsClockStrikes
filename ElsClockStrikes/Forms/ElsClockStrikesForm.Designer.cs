@@ -113,10 +113,6 @@
             this.大招音量TextBox = new Guna.UI.WinForms.GunaLineTextBox();
             this.大招音量Label = new System.Windows.Forms.Label();
             this.大招設定音效Button = new Guna.UI.WinForms.GunaButton();
-            this.R1156控場設定Button = new Guna.UI.WinForms.GunaButton();
-            this.翻桌設定Button = new Guna.UI.WinForms.GunaButton();
-            this.大刺設定Button = new Guna.UI.WinForms.GunaButton();
-            this.大招設定Button = new Guna.UI.WinForms.GunaButton();
             this.R1156控場Label = new System.Windows.Forms.Label();
             this.WindowsSetting156R1 = new Guna.UI.WinForms.GunaButton();
             this.音效設定156R1GroupBox = new System.Windows.Forms.GroupBox();
@@ -145,6 +141,10 @@
             this.大刺按鍵Label = new System.Windows.Forms.Label();
             this.翻桌按鍵Label = new System.Windows.Forms.Label();
             this.R1156控場按鍵Label = new System.Windows.Forms.Label();
+            this.R1156控場設定Button = new Guna.UI.WinForms.GunaButton();
+            this.翻桌設定Button = new Guna.UI.WinForms.GunaButton();
+            this.大刺設定Button = new Guna.UI.WinForms.GunaButton();
+            this.大招設定Button = new Guna.UI.WinForms.GunaButton();
             this.TabPage156R3 = new System.Windows.Forms.TabPage();
             this.R3156控場GunaPanel = new Guna.UI.WinForms.GunaPanel();
             this.R3156控場音量Label = new System.Windows.Forms.Label();
@@ -166,10 +166,6 @@
             this.大黑音量TextBox = new Guna.UI.WinForms.GunaLineTextBox();
             this.大黑音量Label = new System.Windows.Forms.Label();
             this.大黑設定音效Button = new Guna.UI.WinForms.GunaButton();
-            this.R3156控場設定Button = new Guna.UI.WinForms.GunaButton();
-            this.三連設定Button = new Guna.UI.WinForms.GunaButton();
-            this.陰陽陣設定Button = new Guna.UI.WinForms.GunaButton();
-            this.大黑設定Button = new Guna.UI.WinForms.GunaButton();
             this.R3156控場Label = new System.Windows.Forms.Label();
             this.WindowsSetting156R3 = new Guna.UI.WinForms.GunaButton();
             this.音效設定156R3GroupBox = new System.Windows.Forms.GroupBox();
@@ -198,6 +194,10 @@
             this.陰陽陣按鍵Label = new System.Windows.Forms.Label();
             this.三連按鍵Label = new System.Windows.Forms.Label();
             this.R3156控場按鍵Label = new System.Windows.Forms.Label();
+            this.R3156控場設定Button = new Guna.UI.WinForms.GunaButton();
+            this.三連設定Button = new Guna.UI.WinForms.GunaButton();
+            this.陰陽陣設定Button = new Guna.UI.WinForms.GunaButton();
+            this.大黑設定Button = new Guna.UI.WinForms.GunaButton();
             this.TabPageCustomize = new System.Windows.Forms.TabPage();
             this.音效設定CustomizeGroupBox = new System.Windows.Forms.GroupBox();
             this.關閉音效CustomizeRadioButton = new Guna.UI.WinForms.GunaRadioButton();
@@ -447,72 +447,11 @@
             this.重置計時器ComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.重置計時器ComboBox.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.重置計時器ComboBox.FormattingEnabled = true;
-            this.重置計時器ComboBox.Items.AddRange(new object[] {
-            "F1",
-            "F2",
-            "F3",
-            "F4",
-            "F5",
-            "F6",
-            "F7",
-            "F8",
-            "F9",
-            "F10",
-            "F11",
-            "F12",
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J",
-            "K",
-            "L",
-            "M",
-            "N",
-            "O",
-            "P",
-            "Q",
-            "R",
-            "S",
-            "T",
-            "U",
-            "V",
-            "W",
-            "X",
-            "Y",
-            "Z",
-            "Ctrl",
-            "主鍵盤0",
-            "主鍵盤1",
-            "主鍵盤2",
-            "主鍵盤3",
-            "主鍵盤4",
-            "主鍵盤5",
-            "主鍵盤6",
-            "主鍵盤7",
-            "主鍵盤8",
-            "主鍵盤9",
-            "小鍵盤0",
-            "小鍵盤1",
-            "小鍵盤2",
-            "小鍵盤3",
-            "小鍵盤4",
-            "小鍵盤5",
-            "小鍵盤6",
-            "小鍵盤7",
-            "小鍵盤8",
-            "小鍵盤9"});
             this.重置計時器ComboBox.Location = new System.Drawing.Point(111, 327);
             this.重置計時器ComboBox.Name = "重置計時器ComboBox";
             this.重置計時器ComboBox.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.重置計時器ComboBox.OnHoverItemForeColor = System.Drawing.SystemColors.ControlDark;
             this.重置計時器ComboBox.Size = new System.Drawing.Size(84, 26);
-            this.重置計時器ComboBox.StartIndex = 4;
             this.重置計時器ComboBox.TabIndex = 103;
             // 
             // 控場ComboBox
@@ -527,72 +466,11 @@
             this.控場ComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.控場ComboBox.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.控場ComboBox.FormattingEnabled = true;
-            this.控場ComboBox.Items.AddRange(new object[] {
-            "F1",
-            "F2",
-            "F3",
-            "F4",
-            "F5",
-            "F6",
-            "F7",
-            "F8",
-            "F9",
-            "F10",
-            "F11",
-            "F12",
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J",
-            "K",
-            "L",
-            "M",
-            "N",
-            "O",
-            "P",
-            "Q",
-            "R",
-            "S",
-            "T",
-            "U",
-            "V",
-            "W",
-            "X",
-            "Y",
-            "Z",
-            "Ctrl",
-            "主鍵盤0",
-            "主鍵盤1",
-            "主鍵盤2",
-            "主鍵盤3",
-            "主鍵盤4",
-            "主鍵盤5",
-            "主鍵盤6",
-            "主鍵盤7",
-            "主鍵盤8",
-            "主鍵盤9",
-            "小鍵盤0",
-            "小鍵盤1",
-            "小鍵盤2",
-            "小鍵盤3",
-            "小鍵盤4",
-            "小鍵盤5",
-            "小鍵盤6",
-            "小鍵盤7",
-            "小鍵盤8",
-            "小鍵盤9"});
             this.控場ComboBox.Location = new System.Drawing.Point(111, 255);
             this.控場ComboBox.Name = "控場ComboBox";
             this.控場ComboBox.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.控場ComboBox.OnHoverItemForeColor = System.Drawing.SystemColors.ControlDark;
             this.控場ComboBox.Size = new System.Drawing.Size(84, 26);
-            this.控場ComboBox.StartIndex = 3;
             this.控場ComboBox.TabIndex = 104;
             // 
             // 荊棘延遲ComboBox
@@ -607,72 +485,11 @@
             this.荊棘延遲ComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.荊棘延遲ComboBox.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.荊棘延遲ComboBox.FormattingEnabled = true;
-            this.荊棘延遲ComboBox.Items.AddRange(new object[] {
-            "F1",
-            "F2",
-            "F3",
-            "F4",
-            "F5",
-            "F6",
-            "F7",
-            "F8",
-            "F9",
-            "F10",
-            "F11",
-            "F12",
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J",
-            "K",
-            "L",
-            "M",
-            "N",
-            "O",
-            "P",
-            "Q",
-            "R",
-            "S",
-            "T",
-            "U",
-            "V",
-            "W",
-            "X",
-            "Y",
-            "Z",
-            "Ctrl",
-            "主鍵盤0",
-            "主鍵盤1",
-            "主鍵盤2",
-            "主鍵盤3",
-            "主鍵盤4",
-            "主鍵盤5",
-            "主鍵盤6",
-            "主鍵盤7",
-            "主鍵盤8",
-            "主鍵盤9",
-            "小鍵盤0",
-            "小鍵盤1",
-            "小鍵盤2",
-            "小鍵盤3",
-            "小鍵盤4",
-            "小鍵盤5",
-            "小鍵盤6",
-            "小鍵盤7",
-            "小鍵盤8",
-            "小鍵盤9"});
             this.荊棘延遲ComboBox.Location = new System.Drawing.Point(111, 183);
             this.荊棘延遲ComboBox.Name = "荊棘延遲ComboBox";
             this.荊棘延遲ComboBox.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.荊棘延遲ComboBox.OnHoverItemForeColor = System.Drawing.SystemColors.ControlDark;
             this.荊棘延遲ComboBox.Size = new System.Drawing.Size(84, 26);
-            this.荊棘延遲ComboBox.StartIndex = 2;
             this.荊棘延遲ComboBox.TabIndex = 105;
             // 
             // 雷射ComboBox
@@ -687,72 +504,11 @@
             this.雷射ComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.雷射ComboBox.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.雷射ComboBox.FormattingEnabled = true;
-            this.雷射ComboBox.Items.AddRange(new object[] {
-            "F1",
-            "F2",
-            "F3",
-            "F4",
-            "F5",
-            "F6",
-            "F7",
-            "F8",
-            "F9",
-            "F10",
-            "F11",
-            "F12",
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J",
-            "K",
-            "L",
-            "M",
-            "N",
-            "O",
-            "P",
-            "Q",
-            "R",
-            "S",
-            "T",
-            "U",
-            "V",
-            "W",
-            "X",
-            "Y",
-            "Z",
-            "Ctrl",
-            "主鍵盤0",
-            "主鍵盤1",
-            "主鍵盤2",
-            "主鍵盤3",
-            "主鍵盤4",
-            "主鍵盤5",
-            "主鍵盤6",
-            "主鍵盤7",
-            "主鍵盤8",
-            "主鍵盤9",
-            "小鍵盤0",
-            "小鍵盤1",
-            "小鍵盤2",
-            "小鍵盤3",
-            "小鍵盤4",
-            "小鍵盤5",
-            "小鍵盤6",
-            "小鍵盤7",
-            "小鍵盤8",
-            "小鍵盤9"});
             this.雷射ComboBox.Location = new System.Drawing.Point(111, 111);
             this.雷射ComboBox.Name = "雷射ComboBox";
             this.雷射ComboBox.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.雷射ComboBox.OnHoverItemForeColor = System.Drawing.SystemColors.ControlDark;
             this.雷射ComboBox.Size = new System.Drawing.Size(84, 26);
-            this.雷射ComboBox.StartIndex = 1;
             this.雷射ComboBox.TabIndex = 106;
             // 
             // 小荊棘ComboBox
@@ -767,72 +523,11 @@
             this.小荊棘ComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.小荊棘ComboBox.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.小荊棘ComboBox.FormattingEnabled = true;
-            this.小荊棘ComboBox.Items.AddRange(new object[] {
-            "F1",
-            "F2",
-            "F3",
-            "F4",
-            "F5",
-            "F6",
-            "F7",
-            "F8",
-            "F9",
-            "F10",
-            "F11",
-            "F12",
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J",
-            "K",
-            "L",
-            "M",
-            "N",
-            "O",
-            "P",
-            "Q",
-            "R",
-            "S",
-            "T",
-            "U",
-            "V",
-            "W",
-            "X",
-            "Y",
-            "Z",
-            "Ctrl",
-            "主鍵盤0",
-            "主鍵盤1",
-            "主鍵盤2",
-            "主鍵盤3",
-            "主鍵盤4",
-            "主鍵盤5",
-            "主鍵盤6",
-            "主鍵盤7",
-            "主鍵盤8",
-            "主鍵盤9",
-            "小鍵盤0",
-            "小鍵盤1",
-            "小鍵盤2",
-            "小鍵盤3",
-            "小鍵盤4",
-            "小鍵盤5",
-            "小鍵盤6",
-            "小鍵盤7",
-            "小鍵盤8",
-            "小鍵盤9"});
             this.小荊棘ComboBox.Location = new System.Drawing.Point(111, 39);
             this.小荊棘ComboBox.Name = "小荊棘ComboBox";
             this.小荊棘ComboBox.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.小荊棘ComboBox.OnHoverItemForeColor = System.Drawing.SystemColors.ControlDark;
             this.小荊棘ComboBox.Size = new System.Drawing.Size(84, 26);
-            this.小荊棘ComboBox.StartIndex = 0;
             this.小荊棘ComboBox.TabIndex = 107;
             // 
             // CloseControlBox
@@ -1587,10 +1282,6 @@
             this.TabPage156R1.Controls.Add(this.翻桌GunaPanel);
             this.TabPage156R1.Controls.Add(this.大刺GunaPanel);
             this.TabPage156R1.Controls.Add(this.大招GunaPanel);
-            this.TabPage156R1.Controls.Add(this.R1156控場設定Button);
-            this.TabPage156R1.Controls.Add(this.翻桌設定Button);
-            this.TabPage156R1.Controls.Add(this.大刺設定Button);
-            this.TabPage156R1.Controls.Add(this.大招設定Button);
             this.TabPage156R1.Controls.Add(this.R1156控場Label);
             this.TabPage156R1.Controls.Add(this.WindowsSetting156R1);
             this.TabPage156R1.Controls.Add(this.音效設定156R1GroupBox);
@@ -1616,6 +1307,10 @@
             this.TabPage156R1.Controls.Add(this.大刺按鍵Label);
             this.TabPage156R1.Controls.Add(this.翻桌按鍵Label);
             this.TabPage156R1.Controls.Add(this.R1156控場按鍵Label);
+            this.TabPage156R1.Controls.Add(this.R1156控場設定Button);
+            this.TabPage156R1.Controls.Add(this.翻桌設定Button);
+            this.TabPage156R1.Controls.Add(this.大刺設定Button);
+            this.TabPage156R1.Controls.Add(this.大招設定Button);
             this.TabPage156R1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.TabPage156R1.Location = new System.Drawing.Point(4, 20);
             this.TabPage156R1.Name = "TabPage156R1";
@@ -1968,114 +1663,6 @@
             this.大招設定音效Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.大招設定音效Button.Click += new System.EventHandler(this.大招設定音效Button_Click);
             // 
-            // R1156控場設定Button
-            // 
-            this.R1156控場設定Button.Animated = true;
-            this.R1156控場設定Button.AnimationHoverSpeed = 0.07F;
-            this.R1156控場設定Button.AnimationSpeed = 0.03F;
-            this.R1156控場設定Button.BackColor = System.Drawing.Color.Transparent;
-            this.R1156控場設定Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(138)))), ((int)(((byte)(149)))));
-            this.R1156控場設定Button.BorderColor = System.Drawing.Color.Transparent;
-            this.R1156控場設定Button.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.R1156控場設定Button.FocusedColor = System.Drawing.Color.Empty;
-            this.R1156控場設定Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.R1156控場設定Button.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.R1156控場設定Button.Image = ((System.Drawing.Image)(resources.GetObject("R1156控場設定Button.Image")));
-            this.R1156控場設定Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.R1156控場設定Button.ImageSize = new System.Drawing.Size(24, 24);
-            this.R1156控場設定Button.Location = new System.Drawing.Point(429, 245);
-            this.R1156控場設定Button.Name = "R1156控場設定Button";
-            this.R1156控場設定Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.R1156控場設定Button.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.R1156控場設定Button.OnHoverForeColor = System.Drawing.Color.White;
-            this.R1156控場設定Button.OnHoverImage = null;
-            this.R1156控場設定Button.OnPressedColor = System.Drawing.Color.Black;
-            this.R1156控場設定Button.Size = new System.Drawing.Size(84, 42);
-            this.R1156控場設定Button.TabIndex = 197;
-            this.R1156控場設定Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.R1156控場設定Button.Click += new System.EventHandler(this.R1156控場設定Button_Click);
-            // 
-            // 翻桌設定Button
-            // 
-            this.翻桌設定Button.Animated = true;
-            this.翻桌設定Button.AnimationHoverSpeed = 0.07F;
-            this.翻桌設定Button.AnimationSpeed = 0.03F;
-            this.翻桌設定Button.BackColor = System.Drawing.Color.Transparent;
-            this.翻桌設定Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(138)))), ((int)(((byte)(149)))));
-            this.翻桌設定Button.BorderColor = System.Drawing.Color.Transparent;
-            this.翻桌設定Button.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.翻桌設定Button.FocusedColor = System.Drawing.Color.Empty;
-            this.翻桌設定Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.翻桌設定Button.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.翻桌設定Button.Image = ((System.Drawing.Image)(resources.GetObject("翻桌設定Button.Image")));
-            this.翻桌設定Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.翻桌設定Button.ImageSize = new System.Drawing.Size(24, 24);
-            this.翻桌設定Button.Location = new System.Drawing.Point(429, 173);
-            this.翻桌設定Button.Name = "翻桌設定Button";
-            this.翻桌設定Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.翻桌設定Button.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.翻桌設定Button.OnHoverForeColor = System.Drawing.Color.White;
-            this.翻桌設定Button.OnHoverImage = null;
-            this.翻桌設定Button.OnPressedColor = System.Drawing.Color.Black;
-            this.翻桌設定Button.Size = new System.Drawing.Size(84, 42);
-            this.翻桌設定Button.TabIndex = 196;
-            this.翻桌設定Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.翻桌設定Button.Click += new System.EventHandler(this.翻桌設定Button_Click);
-            // 
-            // 大刺設定Button
-            // 
-            this.大刺設定Button.Animated = true;
-            this.大刺設定Button.AnimationHoverSpeed = 0.07F;
-            this.大刺設定Button.AnimationSpeed = 0.03F;
-            this.大刺設定Button.BackColor = System.Drawing.Color.Transparent;
-            this.大刺設定Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(138)))), ((int)(((byte)(149)))));
-            this.大刺設定Button.BorderColor = System.Drawing.Color.Transparent;
-            this.大刺設定Button.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.大刺設定Button.FocusedColor = System.Drawing.Color.Empty;
-            this.大刺設定Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.大刺設定Button.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.大刺設定Button.Image = ((System.Drawing.Image)(resources.GetObject("大刺設定Button.Image")));
-            this.大刺設定Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.大刺設定Button.ImageSize = new System.Drawing.Size(24, 24);
-            this.大刺設定Button.Location = new System.Drawing.Point(429, 101);
-            this.大刺設定Button.Name = "大刺設定Button";
-            this.大刺設定Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.大刺設定Button.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.大刺設定Button.OnHoverForeColor = System.Drawing.Color.White;
-            this.大刺設定Button.OnHoverImage = null;
-            this.大刺設定Button.OnPressedColor = System.Drawing.Color.Black;
-            this.大刺設定Button.Size = new System.Drawing.Size(84, 42);
-            this.大刺設定Button.TabIndex = 195;
-            this.大刺設定Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.大刺設定Button.Click += new System.EventHandler(this.大刺設定Button_Click);
-            // 
-            // 大招設定Button
-            // 
-            this.大招設定Button.Animated = true;
-            this.大招設定Button.AnimationHoverSpeed = 0.07F;
-            this.大招設定Button.AnimationSpeed = 0.03F;
-            this.大招設定Button.BackColor = System.Drawing.Color.Transparent;
-            this.大招設定Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(138)))), ((int)(((byte)(149)))));
-            this.大招設定Button.BorderColor = System.Drawing.Color.Transparent;
-            this.大招設定Button.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.大招設定Button.FocusedColor = System.Drawing.Color.Empty;
-            this.大招設定Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.大招設定Button.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.大招設定Button.Image = ((System.Drawing.Image)(resources.GetObject("大招設定Button.Image")));
-            this.大招設定Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.大招設定Button.ImageSize = new System.Drawing.Size(24, 24);
-            this.大招設定Button.Location = new System.Drawing.Point(429, 29);
-            this.大招設定Button.Name = "大招設定Button";
-            this.大招設定Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.大招設定Button.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.大招設定Button.OnHoverForeColor = System.Drawing.Color.White;
-            this.大招設定Button.OnHoverImage = null;
-            this.大招設定Button.OnPressedColor = System.Drawing.Color.Black;
-            this.大招設定Button.Size = new System.Drawing.Size(84, 42);
-            this.大招設定Button.TabIndex = 194;
-            this.大招設定Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.大招設定Button.Click += new System.EventHandler(this.大招設定Button_Click);
-            // 
             // R1156控場Label
             // 
             this.R1156控場Label.AutoSize = true;
@@ -2355,72 +1942,11 @@
             this.大招ComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.大招ComboBox.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.大招ComboBox.FormattingEnabled = true;
-            this.大招ComboBox.Items.AddRange(new object[] {
-            "F1",
-            "F2",
-            "F3",
-            "F4",
-            "F5",
-            "F6",
-            "F7",
-            "F8",
-            "F9",
-            "F10",
-            "F11",
-            "F12",
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J",
-            "K",
-            "L",
-            "M",
-            "N",
-            "O",
-            "P",
-            "Q",
-            "R",
-            "S",
-            "T",
-            "U",
-            "V",
-            "W",
-            "X",
-            "Y",
-            "Z",
-            "Ctrl",
-            "主鍵盤0",
-            "主鍵盤1",
-            "主鍵盤2",
-            "主鍵盤3",
-            "主鍵盤4",
-            "主鍵盤5",
-            "主鍵盤6",
-            "主鍵盤7",
-            "主鍵盤8",
-            "主鍵盤9",
-            "小鍵盤0",
-            "小鍵盤1",
-            "小鍵盤2",
-            "小鍵盤3",
-            "小鍵盤4",
-            "小鍵盤5",
-            "小鍵盤6",
-            "小鍵盤7",
-            "小鍵盤8",
-            "小鍵盤9"});
             this.大招ComboBox.Location = new System.Drawing.Point(111, 39);
             this.大招ComboBox.Name = "大招ComboBox";
             this.大招ComboBox.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.大招ComboBox.OnHoverItemForeColor = System.Drawing.SystemColors.ControlDark;
             this.大招ComboBox.Size = new System.Drawing.Size(84, 26);
-            this.大招ComboBox.StartIndex = 0;
             this.大招ComboBox.TabIndex = 139;
             // 
             // R1156控場ComboBox
@@ -2435,72 +1961,11 @@
             this.R1156控場ComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.R1156控場ComboBox.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.R1156控場ComboBox.FormattingEnabled = true;
-            this.R1156控場ComboBox.Items.AddRange(new object[] {
-            "F1",
-            "F2",
-            "F3",
-            "F4",
-            "F5",
-            "F6",
-            "F7",
-            "F8",
-            "F9",
-            "F10",
-            "F11",
-            "F12",
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J",
-            "K",
-            "L",
-            "M",
-            "N",
-            "O",
-            "P",
-            "Q",
-            "R",
-            "S",
-            "T",
-            "U",
-            "V",
-            "W",
-            "X",
-            "Y",
-            "Z",
-            "Ctrl",
-            "主鍵盤0",
-            "主鍵盤1",
-            "主鍵盤2",
-            "主鍵盤3",
-            "主鍵盤4",
-            "主鍵盤5",
-            "主鍵盤6",
-            "主鍵盤7",
-            "主鍵盤8",
-            "主鍵盤9",
-            "小鍵盤0",
-            "小鍵盤1",
-            "小鍵盤2",
-            "小鍵盤3",
-            "小鍵盤4",
-            "小鍵盤5",
-            "小鍵盤6",
-            "小鍵盤7",
-            "小鍵盤8",
-            "小鍵盤9"});
             this.R1156控場ComboBox.Location = new System.Drawing.Point(111, 255);
             this.R1156控場ComboBox.Name = "R1156控場ComboBox";
             this.R1156控場ComboBox.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.R1156控場ComboBox.OnHoverItemForeColor = System.Drawing.SystemColors.ControlDark;
             this.R1156控場ComboBox.Size = new System.Drawing.Size(84, 26);
-            this.R1156控場ComboBox.StartIndex = 3;
             this.R1156控場ComboBox.TabIndex = 136;
             // 
             // 重置計時器156R1ComboBox
@@ -2515,72 +1980,11 @@
             this.重置計時器156R1ComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.重置計時器156R1ComboBox.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.重置計時器156R1ComboBox.FormattingEnabled = true;
-            this.重置計時器156R1ComboBox.Items.AddRange(new object[] {
-            "F1",
-            "F2",
-            "F3",
-            "F4",
-            "F5",
-            "F6",
-            "F7",
-            "F8",
-            "F9",
-            "F10",
-            "F11",
-            "F12",
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J",
-            "K",
-            "L",
-            "M",
-            "N",
-            "O",
-            "P",
-            "Q",
-            "R",
-            "S",
-            "T",
-            "U",
-            "V",
-            "W",
-            "X",
-            "Y",
-            "Z",
-            "Ctrl",
-            "主鍵盤0",
-            "主鍵盤1",
-            "主鍵盤2",
-            "主鍵盤3",
-            "主鍵盤4",
-            "主鍵盤5",
-            "主鍵盤6",
-            "主鍵盤7",
-            "主鍵盤8",
-            "主鍵盤9",
-            "小鍵盤0",
-            "小鍵盤1",
-            "小鍵盤2",
-            "小鍵盤3",
-            "小鍵盤4",
-            "小鍵盤5",
-            "小鍵盤6",
-            "小鍵盤7",
-            "小鍵盤8",
-            "小鍵盤9"});
             this.重置計時器156R1ComboBox.Location = new System.Drawing.Point(111, 327);
             this.重置計時器156R1ComboBox.Name = "重置計時器156R1ComboBox";
             this.重置計時器156R1ComboBox.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.重置計時器156R1ComboBox.OnHoverItemForeColor = System.Drawing.SystemColors.ControlDark;
             this.重置計時器156R1ComboBox.Size = new System.Drawing.Size(84, 26);
-            this.重置計時器156R1ComboBox.StartIndex = 4;
             this.重置計時器156R1ComboBox.TabIndex = 135;
             // 
             // 翻桌ComboBox
@@ -2595,72 +1999,11 @@
             this.翻桌ComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.翻桌ComboBox.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.翻桌ComboBox.FormattingEnabled = true;
-            this.翻桌ComboBox.Items.AddRange(new object[] {
-            "F1",
-            "F2",
-            "F3",
-            "F4",
-            "F5",
-            "F6",
-            "F7",
-            "F8",
-            "F9",
-            "F10",
-            "F11",
-            "F12",
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J",
-            "K",
-            "L",
-            "M",
-            "N",
-            "O",
-            "P",
-            "Q",
-            "R",
-            "S",
-            "T",
-            "U",
-            "V",
-            "W",
-            "X",
-            "Y",
-            "Z",
-            "Ctrl",
-            "主鍵盤0",
-            "主鍵盤1",
-            "主鍵盤2",
-            "主鍵盤3",
-            "主鍵盤4",
-            "主鍵盤5",
-            "主鍵盤6",
-            "主鍵盤7",
-            "主鍵盤8",
-            "主鍵盤9",
-            "小鍵盤0",
-            "小鍵盤1",
-            "小鍵盤2",
-            "小鍵盤3",
-            "小鍵盤4",
-            "小鍵盤5",
-            "小鍵盤6",
-            "小鍵盤7",
-            "小鍵盤8",
-            "小鍵盤9"});
             this.翻桌ComboBox.Location = new System.Drawing.Point(111, 183);
             this.翻桌ComboBox.Name = "翻桌ComboBox";
             this.翻桌ComboBox.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.翻桌ComboBox.OnHoverItemForeColor = System.Drawing.SystemColors.ControlDark;
             this.翻桌ComboBox.Size = new System.Drawing.Size(84, 26);
-            this.翻桌ComboBox.StartIndex = 2;
             this.翻桌ComboBox.TabIndex = 137;
             // 
             // 重置計時器156R1Label
@@ -2685,72 +2028,11 @@
             this.大刺ComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.大刺ComboBox.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.大刺ComboBox.FormattingEnabled = true;
-            this.大刺ComboBox.Items.AddRange(new object[] {
-            "F1",
-            "F2",
-            "F3",
-            "F4",
-            "F5",
-            "F6",
-            "F7",
-            "F8",
-            "F9",
-            "F10",
-            "F11",
-            "F12",
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J",
-            "K",
-            "L",
-            "M",
-            "N",
-            "O",
-            "P",
-            "Q",
-            "R",
-            "S",
-            "T",
-            "U",
-            "V",
-            "W",
-            "X",
-            "Y",
-            "Z",
-            "Ctrl",
-            "主鍵盤0",
-            "主鍵盤1",
-            "主鍵盤2",
-            "主鍵盤3",
-            "主鍵盤4",
-            "主鍵盤5",
-            "主鍵盤6",
-            "主鍵盤7",
-            "主鍵盤8",
-            "主鍵盤9",
-            "小鍵盤0",
-            "小鍵盤1",
-            "小鍵盤2",
-            "小鍵盤3",
-            "小鍵盤4",
-            "小鍵盤5",
-            "小鍵盤6",
-            "小鍵盤7",
-            "小鍵盤8",
-            "小鍵盤9"});
             this.大刺ComboBox.Location = new System.Drawing.Point(111, 111);
             this.大刺ComboBox.Name = "大刺ComboBox";
             this.大刺ComboBox.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.大刺ComboBox.OnHoverItemForeColor = System.Drawing.SystemColors.ControlDark;
             this.大刺ComboBox.Size = new System.Drawing.Size(84, 26);
-            this.大刺ComboBox.StartIndex = 1;
             this.大刺ComboBox.TabIndex = 138;
             // 
             // 大刺按鍵Label
@@ -2786,6 +2068,114 @@
             this.R1156控場按鍵Label.Text = "F4";
             this.R1156控場按鍵Label.Visible = false;
             // 
+            // R1156控場設定Button
+            // 
+            this.R1156控場設定Button.Animated = true;
+            this.R1156控場設定Button.AnimationHoverSpeed = 0.07F;
+            this.R1156控場設定Button.AnimationSpeed = 0.03F;
+            this.R1156控場設定Button.BackColor = System.Drawing.Color.Transparent;
+            this.R1156控場設定Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(138)))), ((int)(((byte)(149)))));
+            this.R1156控場設定Button.BorderColor = System.Drawing.Color.Transparent;
+            this.R1156控場設定Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.R1156控場設定Button.FocusedColor = System.Drawing.Color.Empty;
+            this.R1156控場設定Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.R1156控場設定Button.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.R1156控場設定Button.Image = ((System.Drawing.Image)(resources.GetObject("R1156控場設定Button.Image")));
+            this.R1156控場設定Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.R1156控場設定Button.ImageSize = new System.Drawing.Size(24, 24);
+            this.R1156控場設定Button.Location = new System.Drawing.Point(429, 245);
+            this.R1156控場設定Button.Name = "R1156控場設定Button";
+            this.R1156控場設定Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.R1156控場設定Button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.R1156控場設定Button.OnHoverForeColor = System.Drawing.Color.White;
+            this.R1156控場設定Button.OnHoverImage = null;
+            this.R1156控場設定Button.OnPressedColor = System.Drawing.Color.Black;
+            this.R1156控場設定Button.Size = new System.Drawing.Size(84, 42);
+            this.R1156控場設定Button.TabIndex = 197;
+            this.R1156控場設定Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.R1156控場設定Button.Click += new System.EventHandler(this.R1156控場設定Button_Click);
+            // 
+            // 翻桌設定Button
+            // 
+            this.翻桌設定Button.Animated = true;
+            this.翻桌設定Button.AnimationHoverSpeed = 0.07F;
+            this.翻桌設定Button.AnimationSpeed = 0.03F;
+            this.翻桌設定Button.BackColor = System.Drawing.Color.Transparent;
+            this.翻桌設定Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(138)))), ((int)(((byte)(149)))));
+            this.翻桌設定Button.BorderColor = System.Drawing.Color.Transparent;
+            this.翻桌設定Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.翻桌設定Button.FocusedColor = System.Drawing.Color.Empty;
+            this.翻桌設定Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.翻桌設定Button.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.翻桌設定Button.Image = ((System.Drawing.Image)(resources.GetObject("翻桌設定Button.Image")));
+            this.翻桌設定Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.翻桌設定Button.ImageSize = new System.Drawing.Size(24, 24);
+            this.翻桌設定Button.Location = new System.Drawing.Point(429, 173);
+            this.翻桌設定Button.Name = "翻桌設定Button";
+            this.翻桌設定Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.翻桌設定Button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.翻桌設定Button.OnHoverForeColor = System.Drawing.Color.White;
+            this.翻桌設定Button.OnHoverImage = null;
+            this.翻桌設定Button.OnPressedColor = System.Drawing.Color.Black;
+            this.翻桌設定Button.Size = new System.Drawing.Size(84, 42);
+            this.翻桌設定Button.TabIndex = 196;
+            this.翻桌設定Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.翻桌設定Button.Click += new System.EventHandler(this.翻桌設定Button_Click);
+            // 
+            // 大刺設定Button
+            // 
+            this.大刺設定Button.Animated = true;
+            this.大刺設定Button.AnimationHoverSpeed = 0.07F;
+            this.大刺設定Button.AnimationSpeed = 0.03F;
+            this.大刺設定Button.BackColor = System.Drawing.Color.Transparent;
+            this.大刺設定Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(138)))), ((int)(((byte)(149)))));
+            this.大刺設定Button.BorderColor = System.Drawing.Color.Transparent;
+            this.大刺設定Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.大刺設定Button.FocusedColor = System.Drawing.Color.Empty;
+            this.大刺設定Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.大刺設定Button.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.大刺設定Button.Image = ((System.Drawing.Image)(resources.GetObject("大刺設定Button.Image")));
+            this.大刺設定Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.大刺設定Button.ImageSize = new System.Drawing.Size(24, 24);
+            this.大刺設定Button.Location = new System.Drawing.Point(429, 101);
+            this.大刺設定Button.Name = "大刺設定Button";
+            this.大刺設定Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.大刺設定Button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.大刺設定Button.OnHoverForeColor = System.Drawing.Color.White;
+            this.大刺設定Button.OnHoverImage = null;
+            this.大刺設定Button.OnPressedColor = System.Drawing.Color.Black;
+            this.大刺設定Button.Size = new System.Drawing.Size(84, 42);
+            this.大刺設定Button.TabIndex = 195;
+            this.大刺設定Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.大刺設定Button.Click += new System.EventHandler(this.大刺設定Button_Click);
+            // 
+            // 大招設定Button
+            // 
+            this.大招設定Button.Animated = true;
+            this.大招設定Button.AnimationHoverSpeed = 0.07F;
+            this.大招設定Button.AnimationSpeed = 0.03F;
+            this.大招設定Button.BackColor = System.Drawing.Color.Transparent;
+            this.大招設定Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(138)))), ((int)(((byte)(149)))));
+            this.大招設定Button.BorderColor = System.Drawing.Color.Transparent;
+            this.大招設定Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.大招設定Button.FocusedColor = System.Drawing.Color.Empty;
+            this.大招設定Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.大招設定Button.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.大招設定Button.Image = ((System.Drawing.Image)(resources.GetObject("大招設定Button.Image")));
+            this.大招設定Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.大招設定Button.ImageSize = new System.Drawing.Size(24, 24);
+            this.大招設定Button.Location = new System.Drawing.Point(429, 29);
+            this.大招設定Button.Name = "大招設定Button";
+            this.大招設定Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.大招設定Button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.大招設定Button.OnHoverForeColor = System.Drawing.Color.White;
+            this.大招設定Button.OnHoverImage = null;
+            this.大招設定Button.OnPressedColor = System.Drawing.Color.Black;
+            this.大招設定Button.Size = new System.Drawing.Size(84, 42);
+            this.大招設定Button.TabIndex = 194;
+            this.大招設定Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.大招設定Button.Click += new System.EventHandler(this.大招設定Button_Click);
+            // 
             // TabPage156R3
             // 
             this.TabPage156R3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
@@ -2793,10 +2183,6 @@
             this.TabPage156R3.Controls.Add(this.三連GunaPanel);
             this.TabPage156R3.Controls.Add(this.陰陽陣GunaPanel);
             this.TabPage156R3.Controls.Add(this.大黑GunaPanel);
-            this.TabPage156R3.Controls.Add(this.R3156控場設定Button);
-            this.TabPage156R3.Controls.Add(this.三連設定Button);
-            this.TabPage156R3.Controls.Add(this.陰陽陣設定Button);
-            this.TabPage156R3.Controls.Add(this.大黑設定Button);
             this.TabPage156R3.Controls.Add(this.R3156控場Label);
             this.TabPage156R3.Controls.Add(this.WindowsSetting156R3);
             this.TabPage156R3.Controls.Add(this.音效設定156R3GroupBox);
@@ -2822,6 +2208,10 @@
             this.TabPage156R3.Controls.Add(this.陰陽陣按鍵Label);
             this.TabPage156R3.Controls.Add(this.三連按鍵Label);
             this.TabPage156R3.Controls.Add(this.R3156控場按鍵Label);
+            this.TabPage156R3.Controls.Add(this.R3156控場設定Button);
+            this.TabPage156R3.Controls.Add(this.三連設定Button);
+            this.TabPage156R3.Controls.Add(this.陰陽陣設定Button);
+            this.TabPage156R3.Controls.Add(this.大黑設定Button);
             this.TabPage156R3.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.TabPage156R3.Location = new System.Drawing.Point(4, 20);
             this.TabPage156R3.Name = "TabPage156R3";
@@ -3174,114 +2564,6 @@
             this.大黑設定音效Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.大黑設定音效Button.Click += new System.EventHandler(this.大黑設定音效Button_Click);
             // 
-            // R3156控場設定Button
-            // 
-            this.R3156控場設定Button.Animated = true;
-            this.R3156控場設定Button.AnimationHoverSpeed = 0.07F;
-            this.R3156控場設定Button.AnimationSpeed = 0.03F;
-            this.R3156控場設定Button.BackColor = System.Drawing.Color.Transparent;
-            this.R3156控場設定Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(138)))), ((int)(((byte)(149)))));
-            this.R3156控場設定Button.BorderColor = System.Drawing.Color.Transparent;
-            this.R3156控場設定Button.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.R3156控場設定Button.FocusedColor = System.Drawing.Color.Empty;
-            this.R3156控場設定Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.R3156控場設定Button.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.R3156控場設定Button.Image = ((System.Drawing.Image)(resources.GetObject("R3156控場設定Button.Image")));
-            this.R3156控場設定Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.R3156控場設定Button.ImageSize = new System.Drawing.Size(24, 24);
-            this.R3156控場設定Button.Location = new System.Drawing.Point(429, 245);
-            this.R3156控場設定Button.Name = "R3156控場設定Button";
-            this.R3156控場設定Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.R3156控場設定Button.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.R3156控場設定Button.OnHoverForeColor = System.Drawing.Color.White;
-            this.R3156控場設定Button.OnHoverImage = null;
-            this.R3156控場設定Button.OnPressedColor = System.Drawing.Color.Black;
-            this.R3156控場設定Button.Size = new System.Drawing.Size(84, 42);
-            this.R3156控場設定Button.TabIndex = 205;
-            this.R3156控場設定Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.R3156控場設定Button.Click += new System.EventHandler(this.R3156控場設定Button_Click);
-            // 
-            // 三連設定Button
-            // 
-            this.三連設定Button.Animated = true;
-            this.三連設定Button.AnimationHoverSpeed = 0.07F;
-            this.三連設定Button.AnimationSpeed = 0.03F;
-            this.三連設定Button.BackColor = System.Drawing.Color.Transparent;
-            this.三連設定Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(138)))), ((int)(((byte)(149)))));
-            this.三連設定Button.BorderColor = System.Drawing.Color.Transparent;
-            this.三連設定Button.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.三連設定Button.FocusedColor = System.Drawing.Color.Empty;
-            this.三連設定Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.三連設定Button.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.三連設定Button.Image = ((System.Drawing.Image)(resources.GetObject("三連設定Button.Image")));
-            this.三連設定Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.三連設定Button.ImageSize = new System.Drawing.Size(24, 24);
-            this.三連設定Button.Location = new System.Drawing.Point(429, 173);
-            this.三連設定Button.Name = "三連設定Button";
-            this.三連設定Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.三連設定Button.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.三連設定Button.OnHoverForeColor = System.Drawing.Color.White;
-            this.三連設定Button.OnHoverImage = null;
-            this.三連設定Button.OnPressedColor = System.Drawing.Color.Black;
-            this.三連設定Button.Size = new System.Drawing.Size(84, 42);
-            this.三連設定Button.TabIndex = 204;
-            this.三連設定Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.三連設定Button.Click += new System.EventHandler(this.三連設定Button_Click);
-            // 
-            // 陰陽陣設定Button
-            // 
-            this.陰陽陣設定Button.Animated = true;
-            this.陰陽陣設定Button.AnimationHoverSpeed = 0.07F;
-            this.陰陽陣設定Button.AnimationSpeed = 0.03F;
-            this.陰陽陣設定Button.BackColor = System.Drawing.Color.Transparent;
-            this.陰陽陣設定Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(138)))), ((int)(((byte)(149)))));
-            this.陰陽陣設定Button.BorderColor = System.Drawing.Color.Transparent;
-            this.陰陽陣設定Button.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.陰陽陣設定Button.FocusedColor = System.Drawing.Color.Empty;
-            this.陰陽陣設定Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.陰陽陣設定Button.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.陰陽陣設定Button.Image = ((System.Drawing.Image)(resources.GetObject("陰陽陣設定Button.Image")));
-            this.陰陽陣設定Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.陰陽陣設定Button.ImageSize = new System.Drawing.Size(24, 24);
-            this.陰陽陣設定Button.Location = new System.Drawing.Point(429, 101);
-            this.陰陽陣設定Button.Name = "陰陽陣設定Button";
-            this.陰陽陣設定Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.陰陽陣設定Button.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.陰陽陣設定Button.OnHoverForeColor = System.Drawing.Color.White;
-            this.陰陽陣設定Button.OnHoverImage = null;
-            this.陰陽陣設定Button.OnPressedColor = System.Drawing.Color.Black;
-            this.陰陽陣設定Button.Size = new System.Drawing.Size(84, 42);
-            this.陰陽陣設定Button.TabIndex = 203;
-            this.陰陽陣設定Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.陰陽陣設定Button.Click += new System.EventHandler(this.陰陽陣設定Button_Click);
-            // 
-            // 大黑設定Button
-            // 
-            this.大黑設定Button.Animated = true;
-            this.大黑設定Button.AnimationHoverSpeed = 0.07F;
-            this.大黑設定Button.AnimationSpeed = 0.03F;
-            this.大黑設定Button.BackColor = System.Drawing.Color.Transparent;
-            this.大黑設定Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(138)))), ((int)(((byte)(149)))));
-            this.大黑設定Button.BorderColor = System.Drawing.Color.Transparent;
-            this.大黑設定Button.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.大黑設定Button.FocusedColor = System.Drawing.Color.Empty;
-            this.大黑設定Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.大黑設定Button.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.大黑設定Button.Image = ((System.Drawing.Image)(resources.GetObject("大黑設定Button.Image")));
-            this.大黑設定Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.大黑設定Button.ImageSize = new System.Drawing.Size(24, 24);
-            this.大黑設定Button.Location = new System.Drawing.Point(429, 29);
-            this.大黑設定Button.Name = "大黑設定Button";
-            this.大黑設定Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.大黑設定Button.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.大黑設定Button.OnHoverForeColor = System.Drawing.Color.White;
-            this.大黑設定Button.OnHoverImage = null;
-            this.大黑設定Button.OnPressedColor = System.Drawing.Color.Black;
-            this.大黑設定Button.Size = new System.Drawing.Size(84, 42);
-            this.大黑設定Button.TabIndex = 202;
-            this.大黑設定Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.大黑設定Button.Click += new System.EventHandler(this.大黑設定Button_Click);
-            // 
             // R3156控場Label
             // 
             this.R3156控場Label.AutoSize = true;
@@ -3561,72 +2843,11 @@
             this.大黑ComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.大黑ComboBox.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.大黑ComboBox.FormattingEnabled = true;
-            this.大黑ComboBox.Items.AddRange(new object[] {
-            "F1",
-            "F2",
-            "F3",
-            "F4",
-            "F5",
-            "F6",
-            "F7",
-            "F8",
-            "F9",
-            "F10",
-            "F11",
-            "F12",
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J",
-            "K",
-            "L",
-            "M",
-            "N",
-            "O",
-            "P",
-            "Q",
-            "R",
-            "S",
-            "T",
-            "U",
-            "V",
-            "W",
-            "X",
-            "Y",
-            "Z",
-            "Ctrl",
-            "主鍵盤0",
-            "主鍵盤1",
-            "主鍵盤2",
-            "主鍵盤3",
-            "主鍵盤4",
-            "主鍵盤5",
-            "主鍵盤6",
-            "主鍵盤7",
-            "主鍵盤8",
-            "主鍵盤9",
-            "小鍵盤0",
-            "小鍵盤1",
-            "小鍵盤2",
-            "小鍵盤3",
-            "小鍵盤4",
-            "小鍵盤5",
-            "小鍵盤6",
-            "小鍵盤7",
-            "小鍵盤8",
-            "小鍵盤9"});
             this.大黑ComboBox.Location = new System.Drawing.Point(111, 39);
             this.大黑ComboBox.Name = "大黑ComboBox";
             this.大黑ComboBox.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.大黑ComboBox.OnHoverItemForeColor = System.Drawing.SystemColors.ControlDark;
             this.大黑ComboBox.Size = new System.Drawing.Size(84, 26);
-            this.大黑ComboBox.StartIndex = 0;
             this.大黑ComboBox.TabIndex = 169;
             // 
             // R3156控場ComboBox
@@ -3641,72 +2862,11 @@
             this.R3156控場ComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.R3156控場ComboBox.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.R3156控場ComboBox.FormattingEnabled = true;
-            this.R3156控場ComboBox.Items.AddRange(new object[] {
-            "F1",
-            "F2",
-            "F3",
-            "F4",
-            "F5",
-            "F6",
-            "F7",
-            "F8",
-            "F9",
-            "F10",
-            "F11",
-            "F12",
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J",
-            "K",
-            "L",
-            "M",
-            "N",
-            "O",
-            "P",
-            "Q",
-            "R",
-            "S",
-            "T",
-            "U",
-            "V",
-            "W",
-            "X",
-            "Y",
-            "Z",
-            "Ctrl",
-            "主鍵盤0",
-            "主鍵盤1",
-            "主鍵盤2",
-            "主鍵盤3",
-            "主鍵盤4",
-            "主鍵盤5",
-            "主鍵盤6",
-            "主鍵盤7",
-            "主鍵盤8",
-            "主鍵盤9",
-            "小鍵盤0",
-            "小鍵盤1",
-            "小鍵盤2",
-            "小鍵盤3",
-            "小鍵盤4",
-            "小鍵盤5",
-            "小鍵盤6",
-            "小鍵盤7",
-            "小鍵盤8",
-            "小鍵盤9"});
             this.R3156控場ComboBox.Location = new System.Drawing.Point(111, 255);
             this.R3156控場ComboBox.Name = "R3156控場ComboBox";
             this.R3156控場ComboBox.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.R3156控場ComboBox.OnHoverItemForeColor = System.Drawing.SystemColors.ControlDark;
             this.R3156控場ComboBox.Size = new System.Drawing.Size(84, 26);
-            this.R3156控場ComboBox.StartIndex = 3;
             this.R3156控場ComboBox.TabIndex = 166;
             // 
             // 重置計時器156R3ComboBox
@@ -3721,72 +2881,11 @@
             this.重置計時器156R3ComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.重置計時器156R3ComboBox.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.重置計時器156R3ComboBox.FormattingEnabled = true;
-            this.重置計時器156R3ComboBox.Items.AddRange(new object[] {
-            "F1",
-            "F2",
-            "F3",
-            "F4",
-            "F5",
-            "F6",
-            "F7",
-            "F8",
-            "F9",
-            "F10",
-            "F11",
-            "F12",
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J",
-            "K",
-            "L",
-            "M",
-            "N",
-            "O",
-            "P",
-            "Q",
-            "R",
-            "S",
-            "T",
-            "U",
-            "V",
-            "W",
-            "X",
-            "Y",
-            "Z",
-            "Ctrl",
-            "主鍵盤0",
-            "主鍵盤1",
-            "主鍵盤2",
-            "主鍵盤3",
-            "主鍵盤4",
-            "主鍵盤5",
-            "主鍵盤6",
-            "主鍵盤7",
-            "主鍵盤8",
-            "主鍵盤9",
-            "小鍵盤0",
-            "小鍵盤1",
-            "小鍵盤2",
-            "小鍵盤3",
-            "小鍵盤4",
-            "小鍵盤5",
-            "小鍵盤6",
-            "小鍵盤7",
-            "小鍵盤8",
-            "小鍵盤9"});
             this.重置計時器156R3ComboBox.Location = new System.Drawing.Point(111, 327);
             this.重置計時器156R3ComboBox.Name = "重置計時器156R3ComboBox";
             this.重置計時器156R3ComboBox.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.重置計時器156R3ComboBox.OnHoverItemForeColor = System.Drawing.SystemColors.ControlDark;
             this.重置計時器156R3ComboBox.Size = new System.Drawing.Size(84, 26);
-            this.重置計時器156R3ComboBox.StartIndex = 4;
             this.重置計時器156R3ComboBox.TabIndex = 165;
             // 
             // 三連ComboBox
@@ -3801,72 +2900,11 @@
             this.三連ComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.三連ComboBox.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.三連ComboBox.FormattingEnabled = true;
-            this.三連ComboBox.Items.AddRange(new object[] {
-            "F1",
-            "F2",
-            "F3",
-            "F4",
-            "F5",
-            "F6",
-            "F7",
-            "F8",
-            "F9",
-            "F10",
-            "F11",
-            "F12",
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J",
-            "K",
-            "L",
-            "M",
-            "N",
-            "O",
-            "P",
-            "Q",
-            "R",
-            "S",
-            "T",
-            "U",
-            "V",
-            "W",
-            "X",
-            "Y",
-            "Z",
-            "Ctrl",
-            "主鍵盤0",
-            "主鍵盤1",
-            "主鍵盤2",
-            "主鍵盤3",
-            "主鍵盤4",
-            "主鍵盤5",
-            "主鍵盤6",
-            "主鍵盤7",
-            "主鍵盤8",
-            "主鍵盤9",
-            "小鍵盤0",
-            "小鍵盤1",
-            "小鍵盤2",
-            "小鍵盤3",
-            "小鍵盤4",
-            "小鍵盤5",
-            "小鍵盤6",
-            "小鍵盤7",
-            "小鍵盤8",
-            "小鍵盤9"});
             this.三連ComboBox.Location = new System.Drawing.Point(111, 183);
             this.三連ComboBox.Name = "三連ComboBox";
             this.三連ComboBox.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.三連ComboBox.OnHoverItemForeColor = System.Drawing.SystemColors.ControlDark;
             this.三連ComboBox.Size = new System.Drawing.Size(84, 26);
-            this.三連ComboBox.StartIndex = 2;
             this.三連ComboBox.TabIndex = 167;
             // 
             // 重置計時器156R3Label
@@ -3891,72 +2929,11 @@
             this.陰陽陣ComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.陰陽陣ComboBox.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.陰陽陣ComboBox.FormattingEnabled = true;
-            this.陰陽陣ComboBox.Items.AddRange(new object[] {
-            "F1",
-            "F2",
-            "F3",
-            "F4",
-            "F5",
-            "F6",
-            "F7",
-            "F8",
-            "F9",
-            "F10",
-            "F11",
-            "F12",
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J",
-            "K",
-            "L",
-            "M",
-            "N",
-            "O",
-            "P",
-            "Q",
-            "R",
-            "S",
-            "T",
-            "U",
-            "V",
-            "W",
-            "X",
-            "Y",
-            "Z",
-            "Ctrl",
-            "主鍵盤0",
-            "主鍵盤1",
-            "主鍵盤2",
-            "主鍵盤3",
-            "主鍵盤4",
-            "主鍵盤5",
-            "主鍵盤6",
-            "主鍵盤7",
-            "主鍵盤8",
-            "主鍵盤9",
-            "小鍵盤0",
-            "小鍵盤1",
-            "小鍵盤2",
-            "小鍵盤3",
-            "小鍵盤4",
-            "小鍵盤5",
-            "小鍵盤6",
-            "小鍵盤7",
-            "小鍵盤8",
-            "小鍵盤9"});
             this.陰陽陣ComboBox.Location = new System.Drawing.Point(111, 111);
             this.陰陽陣ComboBox.Name = "陰陽陣ComboBox";
             this.陰陽陣ComboBox.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.陰陽陣ComboBox.OnHoverItemForeColor = System.Drawing.SystemColors.ControlDark;
             this.陰陽陣ComboBox.Size = new System.Drawing.Size(84, 26);
-            this.陰陽陣ComboBox.StartIndex = 1;
             this.陰陽陣ComboBox.TabIndex = 168;
             // 
             // 陰陽陣按鍵Label
@@ -3991,6 +2968,114 @@
             this.R3156控場按鍵Label.TabIndex = 177;
             this.R3156控場按鍵Label.Text = "F4";
             this.R3156控場按鍵Label.Visible = false;
+            // 
+            // R3156控場設定Button
+            // 
+            this.R3156控場設定Button.Animated = true;
+            this.R3156控場設定Button.AnimationHoverSpeed = 0.07F;
+            this.R3156控場設定Button.AnimationSpeed = 0.03F;
+            this.R3156控場設定Button.BackColor = System.Drawing.Color.Transparent;
+            this.R3156控場設定Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(138)))), ((int)(((byte)(149)))));
+            this.R3156控場設定Button.BorderColor = System.Drawing.Color.Transparent;
+            this.R3156控場設定Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.R3156控場設定Button.FocusedColor = System.Drawing.Color.Empty;
+            this.R3156控場設定Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.R3156控場設定Button.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.R3156控場設定Button.Image = ((System.Drawing.Image)(resources.GetObject("R3156控場設定Button.Image")));
+            this.R3156控場設定Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.R3156控場設定Button.ImageSize = new System.Drawing.Size(24, 24);
+            this.R3156控場設定Button.Location = new System.Drawing.Point(429, 245);
+            this.R3156控場設定Button.Name = "R3156控場設定Button";
+            this.R3156控場設定Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.R3156控場設定Button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.R3156控場設定Button.OnHoverForeColor = System.Drawing.Color.White;
+            this.R3156控場設定Button.OnHoverImage = null;
+            this.R3156控場設定Button.OnPressedColor = System.Drawing.Color.Black;
+            this.R3156控場設定Button.Size = new System.Drawing.Size(84, 42);
+            this.R3156控場設定Button.TabIndex = 205;
+            this.R3156控場設定Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.R3156控場設定Button.Click += new System.EventHandler(this.R3156控場設定Button_Click);
+            // 
+            // 三連設定Button
+            // 
+            this.三連設定Button.Animated = true;
+            this.三連設定Button.AnimationHoverSpeed = 0.07F;
+            this.三連設定Button.AnimationSpeed = 0.03F;
+            this.三連設定Button.BackColor = System.Drawing.Color.Transparent;
+            this.三連設定Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(138)))), ((int)(((byte)(149)))));
+            this.三連設定Button.BorderColor = System.Drawing.Color.Transparent;
+            this.三連設定Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.三連設定Button.FocusedColor = System.Drawing.Color.Empty;
+            this.三連設定Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.三連設定Button.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.三連設定Button.Image = ((System.Drawing.Image)(resources.GetObject("三連設定Button.Image")));
+            this.三連設定Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.三連設定Button.ImageSize = new System.Drawing.Size(24, 24);
+            this.三連設定Button.Location = new System.Drawing.Point(429, 173);
+            this.三連設定Button.Name = "三連設定Button";
+            this.三連設定Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.三連設定Button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.三連設定Button.OnHoverForeColor = System.Drawing.Color.White;
+            this.三連設定Button.OnHoverImage = null;
+            this.三連設定Button.OnPressedColor = System.Drawing.Color.Black;
+            this.三連設定Button.Size = new System.Drawing.Size(84, 42);
+            this.三連設定Button.TabIndex = 204;
+            this.三連設定Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.三連設定Button.Click += new System.EventHandler(this.三連設定Button_Click);
+            // 
+            // 陰陽陣設定Button
+            // 
+            this.陰陽陣設定Button.Animated = true;
+            this.陰陽陣設定Button.AnimationHoverSpeed = 0.07F;
+            this.陰陽陣設定Button.AnimationSpeed = 0.03F;
+            this.陰陽陣設定Button.BackColor = System.Drawing.Color.Transparent;
+            this.陰陽陣設定Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(138)))), ((int)(((byte)(149)))));
+            this.陰陽陣設定Button.BorderColor = System.Drawing.Color.Transparent;
+            this.陰陽陣設定Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.陰陽陣設定Button.FocusedColor = System.Drawing.Color.Empty;
+            this.陰陽陣設定Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.陰陽陣設定Button.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.陰陽陣設定Button.Image = ((System.Drawing.Image)(resources.GetObject("陰陽陣設定Button.Image")));
+            this.陰陽陣設定Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.陰陽陣設定Button.ImageSize = new System.Drawing.Size(24, 24);
+            this.陰陽陣設定Button.Location = new System.Drawing.Point(429, 101);
+            this.陰陽陣設定Button.Name = "陰陽陣設定Button";
+            this.陰陽陣設定Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.陰陽陣設定Button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.陰陽陣設定Button.OnHoverForeColor = System.Drawing.Color.White;
+            this.陰陽陣設定Button.OnHoverImage = null;
+            this.陰陽陣設定Button.OnPressedColor = System.Drawing.Color.Black;
+            this.陰陽陣設定Button.Size = new System.Drawing.Size(84, 42);
+            this.陰陽陣設定Button.TabIndex = 203;
+            this.陰陽陣設定Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.陰陽陣設定Button.Click += new System.EventHandler(this.陰陽陣設定Button_Click);
+            // 
+            // 大黑設定Button
+            // 
+            this.大黑設定Button.Animated = true;
+            this.大黑設定Button.AnimationHoverSpeed = 0.07F;
+            this.大黑設定Button.AnimationSpeed = 0.03F;
+            this.大黑設定Button.BackColor = System.Drawing.Color.Transparent;
+            this.大黑設定Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(138)))), ((int)(((byte)(149)))));
+            this.大黑設定Button.BorderColor = System.Drawing.Color.Transparent;
+            this.大黑設定Button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.大黑設定Button.FocusedColor = System.Drawing.Color.Empty;
+            this.大黑設定Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.大黑設定Button.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.大黑設定Button.Image = ((System.Drawing.Image)(resources.GetObject("大黑設定Button.Image")));
+            this.大黑設定Button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.大黑設定Button.ImageSize = new System.Drawing.Size(24, 24);
+            this.大黑設定Button.Location = new System.Drawing.Point(429, 29);
+            this.大黑設定Button.Name = "大黑設定Button";
+            this.大黑設定Button.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.大黑設定Button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.大黑設定Button.OnHoverForeColor = System.Drawing.Color.White;
+            this.大黑設定Button.OnHoverImage = null;
+            this.大黑設定Button.OnPressedColor = System.Drawing.Color.Black;
+            this.大黑設定Button.Size = new System.Drawing.Size(84, 42);
+            this.大黑設定Button.TabIndex = 202;
+            this.大黑設定Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.大黑設定Button.Click += new System.EventHandler(this.大黑設定Button_Click);
             // 
             // TabPageCustomize
             // 
@@ -4088,72 +3173,11 @@
             this.重置計時器CustomizeComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.重置計時器CustomizeComboBox.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.重置計時器CustomizeComboBox.FormattingEnabled = true;
-            this.重置計時器CustomizeComboBox.Items.AddRange(new object[] {
-            "F1",
-            "F2",
-            "F3",
-            "F4",
-            "F5",
-            "F6",
-            "F7",
-            "F8",
-            "F9",
-            "F10",
-            "F11",
-            "F12",
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J",
-            "K",
-            "L",
-            "M",
-            "N",
-            "O",
-            "P",
-            "Q",
-            "R",
-            "S",
-            "T",
-            "U",
-            "V",
-            "W",
-            "X",
-            "Y",
-            "Z",
-            "Ctrl",
-            "主鍵盤0",
-            "主鍵盤1",
-            "主鍵盤2",
-            "主鍵盤3",
-            "主鍵盤4",
-            "主鍵盤5",
-            "主鍵盤6",
-            "主鍵盤7",
-            "主鍵盤8",
-            "主鍵盤9",
-            "小鍵盤0",
-            "小鍵盤1",
-            "小鍵盤2",
-            "小鍵盤3",
-            "小鍵盤4",
-            "小鍵盤5",
-            "小鍵盤6",
-            "小鍵盤7",
-            "小鍵盤8",
-            "小鍵盤9"});
             this.重置計時器CustomizeComboBox.Location = new System.Drawing.Point(111, 39);
             this.重置計時器CustomizeComboBox.Name = "重置計時器CustomizeComboBox";
             this.重置計時器CustomizeComboBox.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.重置計時器CustomizeComboBox.OnHoverItemForeColor = System.Drawing.SystemColors.ControlDark;
             this.重置計時器CustomizeComboBox.Size = new System.Drawing.Size(84, 26);
-            this.重置計時器CustomizeComboBox.StartIndex = 4;
             this.重置計時器CustomizeComboBox.TabIndex = 159;
             // 
             // 重置計時器CustomizeLabel
