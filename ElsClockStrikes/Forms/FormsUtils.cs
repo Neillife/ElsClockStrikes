@@ -246,39 +246,7 @@ namespace ElsClockStrikes.Forms
 
         public static string ProcessLayoutString(string comboBoxText)
         {
-            string[] keySet = {
-                nameof(HotKeySet.KeySet.主鍵盤0),
-                nameof(HotKeySet.KeySet.主鍵盤1),
-                nameof(HotKeySet.KeySet.主鍵盤2),
-                nameof(HotKeySet.KeySet.主鍵盤3),
-                nameof(HotKeySet.KeySet.主鍵盤4),
-                nameof(HotKeySet.KeySet.主鍵盤5),
-                nameof(HotKeySet.KeySet.主鍵盤6),
-                nameof(HotKeySet.KeySet.主鍵盤7),
-                nameof(HotKeySet.KeySet.主鍵盤8),
-                nameof(HotKeySet.KeySet.主鍵盤9),
-                nameof(HotKeySet.KeySet.小鍵盤0),
-                nameof(HotKeySet.KeySet.小鍵盤1),
-                nameof(HotKeySet.KeySet.小鍵盤2),
-                nameof(HotKeySet.KeySet.小鍵盤3),
-                nameof(HotKeySet.KeySet.小鍵盤4),
-                nameof(HotKeySet.KeySet.小鍵盤5),
-                nameof(HotKeySet.KeySet.小鍵盤6),
-                nameof(HotKeySet.KeySet.小鍵盤7),
-                nameof(HotKeySet.KeySet.小鍵盤8),
-                nameof(HotKeySet.KeySet.小鍵盤9)
-            };
-
-            foreach (string key in keySet)
-            {
-                if (key == comboBoxText)
-                {
-                    comboBoxText = comboBoxText.Replace("鍵盤", "");
-                    break;
-                }
-            }
-
-            return comboBoxText;
+            return comboBoxText.Replace("鍵盤", "");
         }
 
         public static void ProcessSettingBtnClick(Panel targetPanel, GunaButton targetButton)
@@ -343,6 +311,22 @@ namespace ElsClockStrikes.Forms
                 return result;
 
             return HotKeySet.KeySet.None;
+        }
+
+        public static void GetComboBoxItemsFormHotKeySet(GunaComboBox gunaComboBox, string defaultKey)
+        {
+            FieldInfo[] fields = typeof(HotKeySet.KeySet).GetFields(BindingFlags.Public | BindingFlags.Static);
+            List<HotKeySet.KeySet> keys = new List<HotKeySet.KeySet>();
+            foreach (FieldInfo fieldInfo in fields)
+            {
+                HotKeySet.KeySet key = (HotKeySet.KeySet)fieldInfo.GetValue(null);
+                if (key == HotKeySet.KeySet.None)
+                    continue;
+
+                keys.Add(key);
+            }
+            gunaComboBox.DataSource = keys;
+            gunaComboBox.Text = defaultKey;
         }
     }
 }

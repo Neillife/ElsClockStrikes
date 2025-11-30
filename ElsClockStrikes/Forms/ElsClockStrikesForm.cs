@@ -38,6 +38,26 @@ namespace ElsClockStrikes
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            FormsUtils.GetComboBoxItemsFormHotKeySet(小荊棘ComboBox, "F1");
+            FormsUtils.GetComboBoxItemsFormHotKeySet(雷射ComboBox, "F2");
+            FormsUtils.GetComboBoxItemsFormHotKeySet(荊棘延遲ComboBox, "F3");
+            FormsUtils.GetComboBoxItemsFormHotKeySet(控場ComboBox, "F4");
+            FormsUtils.GetComboBoxItemsFormHotKeySet(重置計時器ComboBox, "F5");
+
+            FormsUtils.GetComboBoxItemsFormHotKeySet(大招ComboBox, "F1");
+            FormsUtils.GetComboBoxItemsFormHotKeySet(大刺ComboBox, "F2");
+            FormsUtils.GetComboBoxItemsFormHotKeySet(翻桌ComboBox, "F3");
+            FormsUtils.GetComboBoxItemsFormHotKeySet(R1156控場ComboBox, "F4");
+            FormsUtils.GetComboBoxItemsFormHotKeySet(重置計時器156R1ComboBox, "F5");
+
+            FormsUtils.GetComboBoxItemsFormHotKeySet(大黑ComboBox, "F1");
+            FormsUtils.GetComboBoxItemsFormHotKeySet(陰陽陣ComboBox, "F2");
+            FormsUtils.GetComboBoxItemsFormHotKeySet(三連ComboBox, "F3");
+            FormsUtils.GetComboBoxItemsFormHotKeySet(R3156控場ComboBox, "F4");
+            FormsUtils.GetComboBoxItemsFormHotKeySet(重置計時器156R3ComboBox, "F5");
+
+            FormsUtils.GetComboBoxItemsFormHotKeySet(重置計時器CustomizeComboBox, "F5");
+
             this.metroTabControlVS1.Controls.Remove(TopMostCheckBox);
             this.Controls.Add(TopMostCheckBox);
             TopMostCheckBox.BringToFront();

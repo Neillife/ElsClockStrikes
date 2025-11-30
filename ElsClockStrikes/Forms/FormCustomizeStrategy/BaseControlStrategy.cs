@@ -33,6 +33,11 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
             return new Point(x, lastGunaButton == null ? 30 : lastGunaButton.Location.Y + FormsConstant.ControlLayoutOffset);
         }
 
+        protected Point ProcessGunaComboBoxLayout(GunaComboBox lastGunaComboBox)
+        {
+            return new Point(111, lastGunaComboBox == null ? 39 : lastGunaComboBox.Location.Y + FormsConstant.ControlLayoutOffset);
+        }
+
         public abstract void AddControl(ControlStrategyParameters controlStrategyParameters);
     }
 }
