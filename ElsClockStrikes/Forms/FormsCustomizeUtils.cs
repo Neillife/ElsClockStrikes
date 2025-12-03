@@ -146,6 +146,11 @@ namespace ElsClockStrikes.Forms
             }
         }
 
+        public static string[] GetSeqSplitStrs(string labelText)
+        {
+            return labelText.Split('+');
+        }
+
         public static void ProcessSettingText(TabPage tabPage)
         {
             Dictionary<string, Label> hotKeyLabelMap = GetTheSetControlMap<Label>(tabPage, FormsConstant.hotKeyLabelBaseName);
@@ -340,8 +345,8 @@ namespace ElsClockStrikes.Forms
 
             foreach (Control control in tabPage.Controls)
             {
-                if (control is GunaButton GButton && 
-                    GetRemoveIndexCharOfStrgin(GButton.Name) == FormsConstant.buttonBaseName && 
+                if (control is GunaButton GButton &&
+                    GetRemoveIndexCharOfStrgin(GButton.Name) == FormsConstant.buttonBaseName &&
                     Int32.Parse(GetIndexOfString(GButton.Name)) > currentButtonNameIndex)
                 {
                     int findIndex = Int32.Parse(GetIndexOfString(GButton.Name));

@@ -108,6 +108,9 @@
     <Compile Include="Core\HotKeyManagerForCustomize.cs" />
     <Compile Include="Core\HotKeySet.cs" />
     <Compile Include="Core\IniManager.cs" />
+    <Compile Include="Core\Triggers\IHotKeyTrigger.cs" />
+    <Compile Include="Core\Triggers\SequenceKeyTrigger.cs" />
+    <Compile Include="Core\Triggers\SingleKeyTrigger.cs" />
     <Compile Include="Forms\ElsClockStrikesForm156R1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +128,12 @@
     </Compile>
     <Compile Include="Forms\ElsClockStrikesFormCustomizeSetting.Designer.cs">
       <DependentUpon>ElsClockStrikesFormCustomizeSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ElsClockStrikesFormSeqKeySetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ElsClockStrikesFormSeqKeySetting.Designer.cs">
+      <DependentUpon>ElsClockStrikesFormSeqKeySetting.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ElsClockStrikesFormTimerInstance.cs">
       <SubType>Form</SubType>
@@ -144,6 +153,7 @@
     <Compile Include="Forms\FormCustomizeStrategy\MechanicNameLabelStrategy.cs" />
     <Compile Include="Forms\FormCustomizeStrategy\PanelStrategy.cs" />
     <Compile Include="Forms\FormCustomizeStrategy\RemoveButtonStrategy.cs" />
+    <Compile Include="Forms\FormCustomizeStrategy\SequenceComboBoxStrategy.cs" />
     <Compile Include="Forms\FormCustomizeStrategy\SettingButtonStrategy.cs" />
     <Compile Include="Forms\FormCustomizeStrategy\SoundLabelStrategy.cs" />
     <Compile Include="Forms\FormCustomizeStrategy\SoundLineTextBoxStrategy.cs" />
@@ -168,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ElsClockStrikesFormCustomizeSetting.resx">
       <DependentUpon>ElsClockStrikesFormCustomizeSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ElsClockStrikesFormSeqKeySetting.resx">
+      <DependentUpon>ElsClockStrikesFormSeqKeySetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ElsClockStrikesFormTimerInstance.resx">
       <DependentUpon>ElsClockStrikesFormTimerInstance.cs</DependentUpon>
@@ -205,6 +218,32 @@
     <Content Include="hg.ico" />
     <Content Include="Resources\cross.png" />
     <Content Include="Resources\setimg.png" />
+    <None Include="Resources\title_d005.png" />
+    <None Include="Resources\title_d021.png" />
+    <None Include="Resources\title_d028.png" />
+    <None Include="Resources\title_d032.png" />
+    <None Include="Resources\title_d041.png" />
+    <None Include="Resources\title_d047.png" />
+    <None Include="Resources\title_d048.png" />
+    <None Include="Resources\title_d081.png" />
+    <None Include="Resources\title_d093.png" />
+    <None Include="Resources\title_d095.png" />
+    <None Include="Resources\title_d110.png" />
+    <None Include="Resources\title_s015.png" />
+    <None Include="Resources\title_s065.png" />
+    <None Include="Resources\Title_50.png" />
+    <None Include="Resources\Title_300.png" />
+    <None Include="Resources\Title_330.png" />
+    <None Include="Resources\Title_370.png" />
+    <None Include="Resources\Title_460.png" />
+    <None Include="Resources\Title_520.png" />
+    <None Include="Resources\Title_530.png" />
+    <None Include="Resources\TITLE_820.png" />
+    <None Include="Resources\TITLE_960.png" />
+    <None Include="Resources\TITLE_980.png" />
+    <None Include="Resources\TITLE_1130.png" />
+    <None Include="Resources\TITLE_12830.png" />
+    <None Include="Resources\Title_20190.png" />
     <Content Include="Resources\小荊棘大招大黑DefultSound.wav" />
     <Content Include="Resources\控場DefultSound.wav" />
     <Content Include="Resources\荊棘延遲翻桌陰陽陣DefultSound.wav" />

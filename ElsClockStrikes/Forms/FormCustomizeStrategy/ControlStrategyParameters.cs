@@ -14,5 +14,6 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
         public GunaLineTextBox gunaLineTextBox { get; set; }
         public GunaPanel gunaPanel { get; set; }
         public GunaLineTextBox soundLineTextBox { get; set; }
+        public Label mechanicNameLabel { get; set; }
     }
 }

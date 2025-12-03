@@ -30,7 +30,8 @@ namespace ElsClockStrikes.Core
             triggerList.Add(
                 new SingleKeyTrigger(
                     parent,
-                    new HotKeyContainer() {
+                    new HotKeyContainer()
+                    {
                         triggerKey = FormsUtils.TryParseHotKeySet(resetHotKey)
                     }
                 )
@@ -47,9 +48,30 @@ namespace ElsClockStrikes.Core
                 hotKeyContainer.method = customizeTaskTimerMap[index].GetType().GetMethod("setCustomTimeLabel");
                 customizeTaskTimerMap[index].setCustomTimeLabel(gunaLineTextBoxMap[index].Text); // init timeleft
                 hotKeyContainer.audioPlayer = customizeTaskTimerMap[index].getAudioPlayer();
-                hotKeyContainer.triggerKey = FormsUtils.TryParseHotKeySet(selectKey);
-                SingleKeyTrigger singleKeyTrigger = new SingleKeyTrigger(parent, hotKeyContainer);
-                triggerList.Add(singleKeyTrigger);
+
+                string[] selectKeys = FormsCustomizeUtils.GetSeqSplitStrs(selectKey);
+                IHotKeyTrigger trigger = null;
+                if (selectKeys.Length == 1)
+                {
+                    hotKeyContainer.triggerKey = FormsUtils.TryParseHotKeySet(selectKey);
+                    trigger = new SingleKeyTrigger(parent, hotKeyContainer);
+                }
+                else
+                {
+                    hotKeyContainer.triggerKey = FormsUtils.TryParseHotKeySet(selectKeys[2]);
+                    trigger = new SequenceKeyTrigger(
+                        parent,
+                        hotKeyContainer,
+                        new List<HotKeySet.KeySet>()
+                        {
+                            FormsUtils.TryParseHotKeySet(selectKeys[0]),
+                            FormsUtils.TryParseHotKeySet(selectKeys[1]),
+                            FormsUtils.TryParseHotKeySet(selectKeys[2]),
+                        }
+                    );
+                }
+
+                triggerList.Add(trigger);
             }
             return triggerList;
         }

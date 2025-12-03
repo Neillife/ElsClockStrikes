@@ -1,5 +1,7 @@
 ﻿using MetroSuite;
 using System;
+using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ElsClockStrikes.Forms
@@ -7,7 +9,6 @@ namespace ElsClockStrikes.Forms
     public partial class ElsClockStrikesFormCustomizeSetting : MetroForm
     {
         private bool topMost;
-
         public string inputData { get; set; }
 
         public ElsClockStrikesFormCustomizeSetting(bool topMost)
@@ -41,6 +42,19 @@ namespace ElsClockStrikes.Forms
         {
             FeatureNameTextBox.Focus();
             this.TopMost = topMost;
+        }
+
+        private void SeqKeyFeatureButton_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Retry;
+            this.Close();
+        }
+
+        private void ElsClockStrikesFormCustomizeSetting_Load(object sender, EventArgs e)
+        {
+            Image randImg = FormsConstant.FormFeatureSettingBtnImgMap.Keys.ElementAt(new Random().Next(FormsConstant.FormFeatureSettingBtnImgMap.Keys.Count));
+            this.SeqKeyFeatureButton.Image = randImg;
+            this.SeqKeyFeatureButton.ImageSize = FormsConstant.FormFeatureSettingBtnImgMap[randImg];
         }
     }
 }
