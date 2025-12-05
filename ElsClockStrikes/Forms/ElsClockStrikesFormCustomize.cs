@@ -502,7 +502,7 @@ namespace ElsClockStrikes
                         {
                             if (isSeqKey)
                             {
-                                mechanicLabelBaseNamePointX = 重置計時器CustomizeLabel.Width + 10;
+                                mechanicLabelBaseNamePointX = MaxLabelWidth - label.Width + customizeLabelMap[$"{FormsConstant.hotKeyLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(label.Name)}"].Width - 28;
                                 mechanicLabelBaseNamePointY = customizeLabelMap[$"{FormsConstant.hotKeyLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(label.Name)}"].Top +
                                     customizeLabelMap[$"{FormsConstant.hotKeyLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(label.Name)}"].Height -
                                     label.Height + 4;

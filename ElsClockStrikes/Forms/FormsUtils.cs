@@ -246,7 +246,7 @@ namespace ElsClockStrikes.Forms
 
         public static string ProcessLayoutString(string comboBoxText)
         {
-            return comboBoxText.Replace("鍵盤", "");
+            return comboBoxText.Replace("鍵盤", "").Replace("LCtrl", "LC").Replace("RCtrl", "RC").Replace("LShift", "LShi").Replace("RShift", "RShi");
         }
 
         public static void ProcessSettingBtnClick(Panel targetPanel, GunaButton targetButton)
@@ -313,7 +313,7 @@ namespace ElsClockStrikes.Forms
             return ArrowKeySymbolToHotKeySet(keyName);
         }
 
-        public static void GetComboBoxItemsFormHotKeySet(GunaComboBox gunaComboBox, string defaultKey)
+        public static List<string> GetHotKeySetStrings()
         {
             FieldInfo[] fields = typeof(HotKeySet.KeySet).GetFields(BindingFlags.Public | BindingFlags.Static);
             List<string> keys = new List<string>();
@@ -325,7 +325,12 @@ namespace ElsClockStrikes.Forms
 
                 keys.Add(ArrowKeyToSymbol(key));
             }
-            gunaComboBox.DataSource = keys;
+            return keys;
+        }
+
+        public static void GetComboBoxItemsFormHotKeySet(GunaComboBox gunaComboBox, string defaultKey)
+        {
+            gunaComboBox.DataSource = GetHotKeySetStrings();
             gunaComboBox.Text = defaultKey;
         }
 

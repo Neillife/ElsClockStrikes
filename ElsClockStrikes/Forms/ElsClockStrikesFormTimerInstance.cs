@@ -95,7 +95,7 @@ namespace ElsClockStrikes.Forms
             else
             {
                 externalKeyLabel.Location = new Point(5, 40);
-                externalNameLabel.Location = new Point(104, 36);
+                externalNameLabel.Location = new Point(maxLabelWidth - externalNameLabel.Width + externalKeyLabel.Width - 28, externalKeyLabel.Top + externalKeyLabel.Height - externalNameLabel.Height + 4);
                 externalCDLabel.Location = new Point(125, 32);
             }
         }
