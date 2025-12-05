@@ -79,35 +79,70 @@ namespace ElsClockStrikes
         private void AddCustomizeTimer_Click(object sender, EventArgs e)
         {
             using (ElsClockStrikesFormCustomizeSetting elsClockStrikesFormCustomizeSetting = new ElsClockStrikesFormCustomizeSetting(this.TopMost))
+            using (ElsClockStrikesFormSeqKeySetting elsClockStrikesFormSeqKeySetting = new ElsClockStrikesFormSeqKeySetting(this.TopMost))
             {
-                if (elsClockStrikesFormCustomizeSetting.ShowDialog() == DialogResult.OK)
+                while ((elsClockStrikesFormCustomizeSetting.DialogResult != DialogResult.Cancel && elsClockStrikesFormCustomizeSetting.DialogResult != DialogResult.OK) &&
+                    (elsClockStrikesFormSeqKeySetting.DialogResult != DialogResult.Cancel && elsClockStrikesFormSeqKeySetting.DialogResult != DialogResult.OK))
                 {
-                    string inputData = elsClockStrikesFormCustomizeSetting.inputData;
-                    if (inputData != null && inputData.Trim() != "")
+                    elsClockStrikesFormCustomizeSetting.ShowDialog();
+                    if (elsClockStrikesFormCustomizeSetting.DialogResult == DialogResult.OK)
                     {
-                        ControlStrategyParameters controlStrategyParameters = new ControlStrategyParameters
+                        ProcessControlStrategy(elsClockStrikesFormCustomizeSetting.inputData);
+                    }
+                    else if (elsClockStrikesFormCustomizeSetting.DialogResult == DialogResult.Retry)
+                    {
+                        elsClockStrikesFormSeqKeySetting.ShowDialog();
+                        if (elsClockStrikesFormSeqKeySetting.DialogResult == DialogResult.OK)
                         {
-                            tabPage = this.TabPageCustomize,
-                            custSettingFormsInputData = inputData,
-                            customizeTaskTimerList = this.customizeTaskTimerList
-                        };
-                        ControlStrategyManager controlStrategyManager = new ControlStrategyManager(controlStrategyParameters);
-                        controlStrategyManager.RegisterStrategy(new HotKeyLabelStrategy())
-                                              .RegisterStrategy(new MechanicNameLabelStrategy())
-                                              .RegisterStrategy(new TimeLeftLabelStrategy())
-                                              .RegisterStrategy(new ComboBoxStrategy(null))
-                                              .RegisterStrategy(new LineTextBoxStrategy("10"))
-                                              .RegisterStrategy(new RemoveButtonStrategy())
-                                              .RegisterStrategy(new SettingButtonStrategy(Properties.Resources.setimg))
-                                              .RegisterStrategy(new PanelStrategy())
-                                              .RegisterStrategy(new AudioPlayerButtonStrategy(自訂音效CustomizeRadioButton.Checked))
-                                              .RegisterStrategy(new SoundLabelStrategy())
-                                              .RegisterStrategy(new SoundLineTextBoxStrategy("100"))
-                                              .RegisterStrategy(new FormInstanceCheckBoxStrategy(false))
-                                              .RegisterStrategy(new CustomizeTaskTimerStrategy(關閉音效CustomizeRadioButton.Checked));
-                        controlStrategyManager.ExecuteAll();
+                            ProcessControlStrategy(elsClockStrikesFormSeqKeySetting.inputData, elsClockStrikesFormSeqKeySetting.sequenceData);
+                        }
                     }
                 }
+            }
+        }
+
+        private void ProcessControlStrategy(string inputData, string sequenceData = "")
+        {
+            if (inputData != null && inputData.Trim() != "")
+            {
+                ControlStrategyParameters controlStrategyParameters = new ControlStrategyParameters
+                {
+                    tabPage = this.TabPageCustomize,
+                    custSettingFormsInputData = inputData,
+                    customizeTaskTimerList = this.customizeTaskTimerList
+                };
+                ControlStrategyManager controlStrategyManager = new ControlStrategyManager(controlStrategyParameters);
+                if (sequenceData == "")
+                {
+                    controlStrategyManager.RegisterStrategy(new HotKeyLabelStrategy());
+                }
+                else
+                {
+                    controlStrategyManager.RegisterStrategy(new HotKeyLabelStrategy(true));
+                }
+
+                controlStrategyManager.RegisterStrategy(new MechanicNameLabelStrategy())
+                                      .RegisterStrategy(new TimeLeftLabelStrategy());
+
+                if (sequenceData == "")
+                {
+                    controlStrategyManager.RegisterStrategy(new ComboBoxStrategy("F1"));
+                }
+                else
+                {
+                    controlStrategyManager.RegisterStrategy(new SequenceComboBoxStrategy(sequenceData));
+                }
+
+                controlStrategyManager.RegisterStrategy(new LineTextBoxStrategy("10"))
+                                      .RegisterStrategy(new RemoveButtonStrategy())
+                                      .RegisterStrategy(new SettingButtonStrategy(Properties.Resources.setimg))
+                                      .RegisterStrategy(new PanelStrategy())
+                                      .RegisterStrategy(new AudioPlayerButtonStrategy(自訂音效CustomizeRadioButton.Checked))
+                                      .RegisterStrategy(new SoundLabelStrategy())
+                                      .RegisterStrategy(new SoundLineTextBoxStrategy("100"))
+                                      .RegisterStrategy(new FormInstanceCheckBoxStrategy(false))
+                                      .RegisterStrategy(new CustomizeTaskTimerStrategy(關閉音效CustomizeRadioButton.Checked));
+                controlStrategyManager.ExecuteAll();
             }
         }
 
@@ -424,6 +459,98 @@ namespace ElsClockStrikes
             }
             else
             {
+                int MaxLabelWidth = FormsUtils.GetLabelMaxWidth(this);
+                int KeyLabelAddY = 40;
+                Label firstCustLabel = null;
+                Label labelSign = null;
+                bool isSeqKey = false;
+
+                foreach (Control control in this.Controls)
+                {
+                    if (control is Label firstLabel && labelSign == null &&
+                        FormsCustomizeUtils.GetRemoveIndexCharOfStrgin(firstLabel.Name) == FormsConstant.hotKeyLabelBaseName)
+                    {
+                        labelSign = firstLabel;
+                        isSeqKey = (firstLabel.Tag as bool?) ?? false;
+                        labelSign.Location = new Point(5, isSeqKey && customizeLabelMap.Count / 3 - formTimerInstances.Count > 1 ? 40 : 30);
+                        continue;
+                    }
+                    if (control is Label timeLeftLabel && FormsCustomizeUtils.GetRemoveIndexCharOfStrgin(timeLeftLabel.Name) == FormsConstant.timeLeftLabelBaseName)
+                    {
+                        isSeqKey = (customizeLabelMap[$"{FormsConstant.hotKeyLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(timeLeftLabel.Name)}"].Tag as bool?) ?? false;
+                        customizeLabelMap[timeLeftLabel.Name].Location = new Point(
+                            customizeLabelMap[$"{FormsConstant.mechanicLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(timeLeftLabel.Name)}"].Left +
+                            customizeLabelMap[$"{FormsConstant.mechanicLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(timeLeftLabel.Name)}"].Width,
+                            isSeqKey ?
+                            customizeLabelMap[$"{FormsConstant.hotKeyLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(timeLeftLabel.Name)}"].Location.Y - 9:
+                            customizeLabelMap[$"{FormsConstant.hotKeyLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(timeLeftLabel.Name)}"].Location.Y
+                            );
+                    }
+                    else if (control is Label hotKeyLable && FormsCustomizeUtils.GetRemoveIndexCharOfStrgin(hotKeyLable.Name) == FormsConstant.hotKeyLabelBaseName)
+                    {
+                        isSeqKey = (labelSign.Tag as bool?) ?? false;
+                        customizeLabelMap[hotKeyLable.Name].Location = new Point(labelSign.Location.X,
+                            isSeqKey ? labelSign.Location.Y + 30 : labelSign.Location.Y + KeyLabelAddY);
+                        labelSign = hotKeyLable;
+                    }
+                    else if (control is Label label && FormsCustomizeUtils.GetRemoveIndexCharOfStrgin(label.Name) == FormsConstant.mechanicLabelBaseName)
+                    {
+                        int mechanicLabelBaseNamePointX;
+                        int mechanicLabelBaseNamePointY;
+                        isSeqKey = (customizeLabelMap[$"{FormsConstant.hotKeyLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(label.Name)}"].Tag as bool?) ?? false;
+                        if (firstCustLabel == null)
+                        {
+                            if (isSeqKey)
+                            {
+                                mechanicLabelBaseNamePointX = MaxLabelWidth - label.Width + customizeLabelMap[$"{FormsConstant.hotKeyLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(label.Name)}"].Width - 28;
+                                mechanicLabelBaseNamePointY = customizeLabelMap[$"{FormsConstant.hotKeyLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(label.Name)}"].Top +
+                                    customizeLabelMap[$"{FormsConstant.hotKeyLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(label.Name)}"].Height -
+                                    label.Height + 4;
+                            }
+                            else
+                            {
+                                mechanicLabelBaseNamePointX = MaxLabelWidth - label.Width + customizeLabelMap[$"{FormsConstant.hotKeyLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(label.Name)}"].Width - 5;
+                                mechanicLabelBaseNamePointY = customizeLabelMap[$"{FormsConstant.hotKeyLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(label.Name)}"].Top + 
+                                    customizeLabelMap[$"{FormsConstant.hotKeyLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(label.Name)}"].Height - 
+                                    label.Height - 3;
+                            }
+                            firstCustLabel = label;
+                            customizeLabelMap[label.Name].Location = new Point(mechanicLabelBaseNamePointX, mechanicLabelBaseNamePointY);
+                        }
+                        else
+                        {
+                            mechanicLabelBaseNamePointX = firstCustLabel.Left + firstCustLabel.Width - label.Width;
+                            if (isSeqKey)
+                            {
+                                mechanicLabelBaseNamePointY = customizeLabelMap[$"{FormsConstant.hotKeyLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(label.Name)}"].Top +
+                                    customizeLabelMap[$"{FormsConstant.hotKeyLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(label.Name)}"].Height -
+                                    label.Height + 4;
+                            }
+                            else
+                            {
+                                mechanicLabelBaseNamePointY = customizeLabelMap[$"{FormsConstant.hotKeyLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(label.Name)}"].Top +
+                                    customizeLabelMap[$"{FormsConstant.hotKeyLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(label.Name)}"].Height -
+                                    label.Height - 3;
+                            }
+                            customizeLabelMap[label.Name].Location = new Point(mechanicLabelBaseNamePointX, mechanicLabelBaseNamePointY);
+                        }
+                    }
+                }
+                重置計時器Customize按鍵Label.Location = labelSign == null ? new Point(5, 30) : new Point(labelSign.Location.X, labelSign.Location.Y + KeyLabelAddY);
+                重置計時器CustomizeLabel.Location = firstCustLabel == null ? new Point(58, 37) : new Point(firstCustLabel.Left + firstCustLabel.Width - 重置計時器CustomizeLabel.Width + 27, 重置計時器Customize按鍵Label.Top + 重置計時器Customize按鍵Label.Height - 重置計時器CustomizeLabel.Height - 3);
+                WindowsSettingCustomize.Location = new Point(130, 5);
+
+                isSeqKey = (labelSign?.Tag as bool?) ?? false;
+                if (labelSign != null && isSeqKey)
+                {
+                    Label hotKeyLabel = customizeLabelMap[$"{FormsConstant.hotKeyLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(labelSign.Name)}"];
+                    Label mechanicLabel = customizeLabelMap[$"{FormsConstant.mechanicLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(labelSign.Name)}"];
+                    Label timeLeftLabel = customizeLabelMap[$"{FormsConstant.timeLeftLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(labelSign.Name)}"];
+                    hotKeyLabel.Location = new Point(hotKeyLabel.Location.X, hotKeyLabel.Location.Y + 10);
+                    mechanicLabel.Location = new Point(mechanicLabel.Location.X, mechanicLabel.Location.Y + 10);
+                    timeLeftLabel.Location = new Point(timeLeftLabel.Location.X, timeLeftLabel.Location.Y + 10);
+                }
+
                 int custSizeHeight = 225;
                 if (customizeLabelMap.Count / 3 < 4)
                 {
@@ -433,62 +560,18 @@ namespace ElsClockStrikes
                 {
                     custSizeHeight += (customizeLabelMap.Count / 3 - 4) * 40;
                 }
-                this.Size = new Size(180, custSizeHeight - formTimerInstances.Count * 39);
 
-                int MaxLabelWidth = FormsUtils.GetLabelMaxWidth(this);
-                int KeyLabelAddY = 40;
-                Label firstCustLabel = null;
-                Label labelSign = null;
+                int finalSizeHeight = 重置計時器CustomizeLabel.Top + 重置計時器CustomizeLabel.Height + 8;
 
-                foreach (Control control in this.Controls)
+                if (finalSizeHeight < custSizeHeight - formTimerInstances.Count * 39)
                 {
-                    if (control is Label firstLabel && labelSign == null &&
-                        FormsCustomizeUtils.GetRemoveIndexCharOfStrgin(firstLabel.Name) == FormsConstant.hotKeyLabelBaseName)
-                    {
-                        labelSign = firstLabel;
-                        labelSign.Location = new Point(5, 30);
-                        continue;
-                    }
-                    if (control is Label timeLeftLabel && FormsCustomizeUtils.GetRemoveIndexCharOfStrgin(timeLeftLabel.Name) == FormsConstant.timeLeftLabelBaseName)
-                    {
-                        customizeLabelMap[timeLeftLabel.Name].Location = new Point(
-                            customizeLabelMap[$"{FormsConstant.mechanicLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(timeLeftLabel.Name)}"].Left + 
-                            customizeLabelMap[$"{FormsConstant.mechanicLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(timeLeftLabel.Name)}"].Width, 
-                            customizeLabelMap[$"{FormsConstant.hotKeyLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(timeLeftLabel.Name)}"].Location.Y
-                            );
-                    }
-                    else if (control is Label hotKeyLable && FormsCustomizeUtils.GetRemoveIndexCharOfStrgin(hotKeyLable.Name) == FormsConstant.hotKeyLabelBaseName)
-                    {
-                        customizeLabelMap[hotKeyLable.Name].Location = new Point(labelSign.Location.X, labelSign.Location.Y + KeyLabelAddY);
-                        labelSign = hotKeyLable;
-                    }
-                    else if (control is Label label && FormsCustomizeUtils.GetRemoveIndexCharOfStrgin(label.Name) == FormsConstant.mechanicLabelBaseName)
-                    {
-                        if (firstCustLabel == null)
-                        {
-                            firstCustLabel = label;
-                            customizeLabelMap[label.Name].Location = new Point(
-                                MaxLabelWidth - label.Width + 
-                                customizeLabelMap[$"{FormsConstant.hotKeyLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(label.Name)}"].Width - 5,
-                                customizeLabelMap[$"{FormsConstant.hotKeyLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(label.Name)}"].Top +
-                                customizeLabelMap[$"{FormsConstant.hotKeyLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(label.Name)}"].Height -
-                                label.Height - 3
-                                );
-                        }
-                        else
-                        {
-                            customizeLabelMap[label.Name].Location = new Point(
-                                firstCustLabel.Left + firstCustLabel.Width - label.Width,
-                                customizeLabelMap[$"{FormsConstant.hotKeyLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(label.Name)}"].Top +
-                                customizeLabelMap[$"{FormsConstant.hotKeyLabelBaseName}{FormsCustomizeUtils.GetIndexOfString(label.Name)}"].Height -
-                                label.Height - 3
-                                );
-                        }
-                    }
+                    custSizeHeight = finalSizeHeight;
                 }
-                重置計時器Customize按鍵Label.Location = labelSign == null ? new Point(5, 30) : new Point(labelSign.Location.X, labelSign.Location.Y + KeyLabelAddY);
-                重置計時器CustomizeLabel.Location = firstCustLabel == null ? new Point(58, 37) :  new Point(firstCustLabel.Left + firstCustLabel.Width - 重置計時器CustomizeLabel.Width + 27, 重置計時器Customize按鍵Label.Top + 重置計時器Customize按鍵Label.Height - 重置計時器CustomizeLabel.Height - 3);
-                WindowsSettingCustomize.Location = new Point(130, 5);
+                else
+                {
+                    custSizeHeight -= formTimerInstances.Count * 39;
+                }
+                this.Size = new Size(180, custSizeHeight);
             }
         }
 
@@ -572,7 +655,7 @@ namespace ElsClockStrikes
                     }
                 }
             }
- 
+
             this.LoadCustomizeFeatureDefaultSound();
         }
 

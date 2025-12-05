@@ -86,9 +86,18 @@ namespace ElsClockStrikes.Forms
             originCDParent.Controls.Remove(externalCDLabel);
             Controls.Add(externalCDLabel);
 
-            externalKeyLabel.Location = new Point(5, 30);
-            externalNameLabel.Location = new Point(maxLabelWidth - externalNameLabel.Width + externalKeyLabel.Width - 5, externalKeyLabel.Top + externalKeyLabel.Height - externalNameLabel.Height - 3);
-            externalCDLabel.Location = new Point(externalNameLabel.Left + externalNameLabel.Width, externalKeyLabel.Location.Y);
+            if (FormsCustomizeUtils.GetSeqSplitStrs(externalKeyLabel.Text).Length == 1)
+            {
+                externalKeyLabel.Location = new Point(5, 30);
+                externalNameLabel.Location = new Point(maxLabelWidth - externalNameLabel.Width + externalKeyLabel.Width - 5, externalKeyLabel.Top + externalKeyLabel.Height - externalNameLabel.Height - 3);
+                externalCDLabel.Location = new Point(externalNameLabel.Left + externalNameLabel.Width, externalKeyLabel.Location.Y);
+            }
+            else
+            {
+                externalKeyLabel.Location = new Point(5, 40);
+                externalNameLabel.Location = new Point(maxLabelWidth - externalNameLabel.Width + externalKeyLabel.Width - 28, externalKeyLabel.Top + externalKeyLabel.Height - externalNameLabel.Height + 4);
+                externalCDLabel.Location = new Point(125, 32);
+            }
         }
     }
 }

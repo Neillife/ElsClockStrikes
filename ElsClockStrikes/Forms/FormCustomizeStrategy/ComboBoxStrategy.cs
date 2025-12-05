@@ -32,12 +32,8 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
             gunaComboBox.OnHoverItemBaseColor = Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             gunaComboBox.OnHoverItemForeColor = SystemColors.ControlDark;
             gunaComboBox.Size = new Size(84, 26);
-            if (this.comboBoxText != null)
-            {
-                gunaComboBox.Text = this.comboBoxText;
-            }
-            FormsUtils.GetComboBoxItemsFormHotKeySet(gunaComboBox, comboBoxText);
             controlStrategyParameters.tabPage.Controls.Add(gunaComboBox);
+            FormsUtils.GetComboBoxItemsFormHotKeySet(gunaComboBox, comboBoxText);
         }
     }
 }

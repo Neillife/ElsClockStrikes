@@ -246,7 +246,7 @@ namespace ElsClockStrikes.Forms
 
         public static string ProcessLayoutString(string comboBoxText)
         {
-            return comboBoxText.Replace("鍵盤", "");
+            return comboBoxText.Replace("鍵盤", "").Replace("LCtrl", "LC").Replace("RCtrl", "RC").Replace("LShift", "LShi").Replace("RShift", "RShi");
         }
 
         public static void ProcessSettingBtnClick(Panel targetPanel, GunaButton targetButton)
@@ -310,23 +310,52 @@ namespace ElsClockStrikes.Forms
             if (Enum.TryParse<HotKeySet.KeySet>(keyName, out var result))
                 return result;
 
-            return HotKeySet.KeySet.None;
+            return ArrowKeySymbolToHotKeySet(keyName);
         }
 
-        public static void GetComboBoxItemsFormHotKeySet(GunaComboBox gunaComboBox, string defaultKey)
+        public static List<string> GetHotKeySetStrings()
         {
             FieldInfo[] fields = typeof(HotKeySet.KeySet).GetFields(BindingFlags.Public | BindingFlags.Static);
-            List<HotKeySet.KeySet> keys = new List<HotKeySet.KeySet>();
+            List<string> keys = new List<string>();
             foreach (FieldInfo fieldInfo in fields)
             {
                 HotKeySet.KeySet key = (HotKeySet.KeySet)fieldInfo.GetValue(null);
                 if (key == HotKeySet.KeySet.None)
                     continue;
 
-                keys.Add(key);
+                keys.Add(ArrowKeyToSymbol(key));
             }
-            gunaComboBox.DataSource = keys;
+            return keys;
+        }
+
+        public static void GetComboBoxItemsFormHotKeySet(GunaComboBox gunaComboBox, string defaultKey)
+        {
+            gunaComboBox.DataSource = GetHotKeySetStrings();
             gunaComboBox.Text = defaultKey;
+        }
+
+        public static string ArrowKeyToSymbol(HotKeySet.KeySet key)
+        {
+            switch(key)
+            {
+                case HotKeySet.KeySet.Up: return "↑";
+                case HotKeySet.KeySet.Down: return "↓";
+                case HotKeySet.KeySet.Left: return "←";
+                case HotKeySet.KeySet.Right: return "→";
+                default: return key.ToString();
+            }
+        }
+
+        public static HotKeySet.KeySet ArrowKeySymbolToHotKeySet(string key)
+        {
+            switch (key)
+            {
+                case "↑": return HotKeySet.KeySet.Up;
+                case "↓": return HotKeySet.KeySet.Down;
+                case "←": return HotKeySet.KeySet.Left;
+                case "→": return HotKeySet.KeySet.Right;
+                default: return HotKeySet.KeySet.None;
+            }
         }
     }
 }

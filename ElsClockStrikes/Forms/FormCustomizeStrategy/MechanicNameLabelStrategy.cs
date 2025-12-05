@@ -16,6 +16,7 @@ namespace ElsClockStrikes.Forms.FormCustomizeStrategy
             label.Font = new Font(Font, 11.25F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
             label.Location = this.ProcessLabelLayout(label, lastLabel, 314, 42);
             label.Size = new Size(47, 20);
+            controlStrategyParameters.mechanicNameLabel = label;
         }
     }
 }

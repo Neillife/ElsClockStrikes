@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Collections.Generic;
 
 namespace ElsClockStrikes.Forms
@@ -47,6 +48,14 @@ namespace ElsClockStrikes.Forms
         public const string soundLabelBaseName = "CustomizeSoundLabel";
         public const string soundTextBoxBaseName = "CustomizeSoundTextBox";
         public const string formInstanceCheckBoxBaseName = "CustomizeFormInstanceCheckBox";
+        public static readonly Dictionary<Image, Size> FormFeatureSettingBtnImgMap = new Dictionary<Image, Size>()
+        {
+            { Properties.Resources.Title_300, new Size(80, 40) },
+            { Properties.Resources.Title_330, new Size(80, 48) },
+            { Properties.Resources.Title_980, new Size(80, 48) },
+            { Properties.Resources.Title_1130, new Size(80, 40) },
+            { Properties.Resources.Title_20190, new Size(80, 40) }
+        };
 
         public static void init127Timer(string init小荊棘Time, string init雷射Time, string init荊棘延遲Time, string init控場Time)
         {

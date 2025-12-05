@@ -318,7 +318,7 @@ namespace ElsClockStrikes
                 controlStrategyManager.RegisterStrategy(new HotKeyLabelStrategy())
                                       .RegisterStrategy(new MechanicNameLabelStrategy())
                                       .RegisterStrategy(new TimeLeftLabelStrategy())
-                                      .RegisterStrategy(new ComboBoxStrategy(comboBoxs.Length == 0 ? null : comboBoxs[i]))
+                                      .RegisterStrategy(new ComboBoxStrategy(comboBoxs.Length == 0 ? "F1" : comboBoxs[i]))
                                       .RegisterStrategy(new LineTextBoxStrategy(textBoxs.Length == 0 ? "10" : textBoxs[i]))
                                       .RegisterStrategy(new RemoveButtonStrategy())
                                       .RegisterStrategy(new SettingButtonStrategy(Properties.Resources.setimg))
