@@ -1,8 +1,10 @@
 ﻿using ElsClockStrikes.Core;
 using ElsClockStrikes.Forms;
+using Guna.UI.WinForms;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Xunit;
 
@@ -85,6 +87,211 @@ namespace ElsClockStrikes.Tests.Forms
 
             // Assert
             Assert.Null(result);
+        }
+
+        [StaFact]
+        public async Task Should_Return_GunaLineTextBox_By_NamingPattern()
+        {
+            await Task.Yield(); // 避免 ActiveX / WinForms 初始化問題
+
+            Panel parent = new Panel();
+
+            // 模擬符合 namePattern 的 TextBox 和 ComboBox
+            // namePattern = "小荊棘ComboBox"
+            // method 會檢查: "小荊棘ComboBox".Substring(0, len-i) + "TextBox"
+            ComboBox cbA = new ComboBox { Name = "小荊棘ComboBox" };
+            GunaLineTextBox tbA = new GunaLineTextBox { Name = "小荊棘TextBox" };
+            ComboBox cbWrong = new ComboBox { Name = "OtherComboBox" };
+            GunaLineTextBox tbWrong = new GunaLineTextBox { Name = "OtherTextBox" };
+            ComboBox cbShort = new ComboBox { Name = "MechComboBox" };
+            GunaLineTextBox tbShort = new GunaLineTextBox { Name = "MechTextBox" };
+
+            parent.Controls.Add(cbA);
+            parent.Controls.Add(tbA);
+            parent.Controls.Add(cbWrong);
+            parent.Controls.Add(tbWrong);
+            parent.Controls.Add(cbShort);
+            parent.Controls.Add(tbShort);
+
+            GunaLineTextBox result = FormsUtils.getGunaLineTextBoxByNamingPattern(parent, cbA.Name);
+
+            Assert.NotNull(result);
+            Assert.Same(tbA, result);
+        }
+
+        [StaFact]
+        public async Task Should_Return_Null_When_No_Match()
+        {
+            await Task.Yield();
+
+            Panel parent = new Panel();
+            ComboBox cbA = new ComboBox { Name = "RandomComboBox" };
+            GunaLineTextBox tbA = new GunaLineTextBox { Name = "Test123TextBox" };
+            parent.Controls.Add(cbA);
+            parent.Controls.Add(tbA);
+
+            GunaLineTextBox result = FormsUtils.getGunaLineTextBoxByNamingPattern(parent, cbA.Name);
+
+            Assert.Null(result);
+        }
+
+        [UIFact]
+        public async void Should_Return_CheckBoxes_By_TipNames127R3()
+        {
+            await Task.Yield();
+            // Arrange
+            TabPage tab = new TabPage();
+            List<string> tipNames127R3 = FormsConstant.tipNames127R3;
+
+            GunaPanel panelA = new GunaPanel { Name = $"{tipNames127R3[0]}GunaPanel" };
+            GunaCheckBox cbA = new GunaCheckBox { Name = $"{tipNames127R3[0]}分離視窗CheckBox" };
+            panelA.Controls.Add(cbA);
+
+            GunaPanel panelB = new GunaPanel { Name = $"{tipNames127R3[1]}GunaPanel" };
+            GunaCheckBox cbB = new GunaCheckBox { Name = $"{tipNames127R3[1]}分離視窗CheckBox" };
+            panelB.Controls.Add(cbB);
+
+            GunaPanel panelC = new GunaPanel { Name = $"{tipNames127R3[2]}GunaPanel" };
+            GunaCheckBox cbC = new GunaCheckBox { Name = $"{tipNames127R3[2]}分離視窗CheckBox" };
+            panelC.Controls.Add(cbC);
+
+            GunaPanel panelD = new GunaPanel { Name = $"{tipNames127R3[3]}GunaPanel" };
+            GunaCheckBox cbD = new GunaCheckBox { Name = $"{tipNames127R3[3]}分離視窗CheckBox" };
+            panelD.Controls.Add(cbD);
+
+            tab.Controls.Add(panelA);
+            tab.Controls.Add(panelB);
+            tab.Controls.Add(panelC);
+            tab.Controls.Add(panelD);
+
+            // Act
+            List<GunaCheckBox> result = FormsUtils.GetFormInstanceCheckBoxListByMechanicNames(tab, tipNames127R3);
+
+            // Assert
+            Assert.Equal(4, result.Count);
+            Assert.Same(cbA, result[0]);
+            Assert.Same(cbB, result[1]);
+            Assert.Same(cbC, result[2]);
+            Assert.Same(cbD, result[3]);
+        }
+
+        [UIFact]
+        public async void Should_Return_CheckBoxes_By_TipNames156R1()
+        {
+            await Task.Yield();
+            // Arrange
+            TabPage tab = new TabPage();
+            List<string> tipNames156R1 = FormsConstant.tipNames156R1;
+
+            GunaPanel panelA = new GunaPanel { Name = $"{tipNames156R1[0]}GunaPanel" };
+            GunaCheckBox cbA = new GunaCheckBox { Name = $"{tipNames156R1[0]}分離視窗CheckBox" };
+            panelA.Controls.Add(cbA);
+
+            GunaPanel panelB = new GunaPanel { Name = $"{tipNames156R1[1]}GunaPanel" };
+            GunaCheckBox cbB = new GunaCheckBox { Name = $"{tipNames156R1[1]}分離視窗CheckBox" };
+            panelB.Controls.Add(cbB);
+
+            GunaPanel panelC = new GunaPanel { Name = $"{tipNames156R1[2]}GunaPanel" };
+            GunaCheckBox cbC = new GunaCheckBox { Name = $"{tipNames156R1[2]}分離視窗CheckBox" };
+            panelC.Controls.Add(cbC);
+
+            GunaPanel panelD = new GunaPanel { Name = $"{tipNames156R1[3]}GunaPanel" };
+            GunaCheckBox cbD = new GunaCheckBox { Name = $"{tipNames156R1[3]}分離視窗CheckBox" };
+            panelD.Controls.Add(cbD);
+
+            tab.Controls.Add(panelA);
+            tab.Controls.Add(panelB);
+            tab.Controls.Add(panelC);
+            tab.Controls.Add(panelD);
+
+            // Act
+            List<GunaCheckBox> result = FormsUtils.GetFormInstanceCheckBoxListByMechanicNames(tab, tipNames156R1);
+
+            // Assert
+            Assert.Equal(4, result.Count);
+            Assert.Same(cbA, result[0]);
+            Assert.Same(cbB, result[1]);
+            Assert.Same(cbC, result[2]);
+            Assert.Same(cbD, result[3]);
+        }
+
+        [UIFact]
+        public async void Should_Return_CheckBoxes_By_TipNames156R3()
+        {
+            await Task.Yield();
+            // Arrange
+            TabPage tab = new TabPage();
+            List<string> tipNames156R3 = FormsConstant.tipNames156R3;
+
+            GunaPanel panelA = new GunaPanel { Name = $"{tipNames156R3[0]}GunaPanel" };
+            GunaCheckBox cbA = new GunaCheckBox { Name = $"{tipNames156R3[0]}分離視窗CheckBox" };
+            panelA.Controls.Add(cbA);
+
+            GunaPanel panelB = new GunaPanel { Name = $"{tipNames156R3[1]}GunaPanel" };
+            GunaCheckBox cbB = new GunaCheckBox { Name = $"{tipNames156R3[1]}分離視窗CheckBox" };
+            panelB.Controls.Add(cbB);
+
+            GunaPanel panelC = new GunaPanel { Name = $"{tipNames156R3[2]}GunaPanel" };
+            GunaCheckBox cbC = new GunaCheckBox { Name = $"{tipNames156R3[2]}分離視窗CheckBox" };
+            panelC.Controls.Add(cbC);
+
+            GunaPanel panelD = new GunaPanel { Name = $"{tipNames156R3[3]}GunaPanel" };
+            GunaCheckBox cbD = new GunaCheckBox { Name = $"{tipNames156R3[3]}分離視窗CheckBox" };
+            panelD.Controls.Add(cbD);
+
+            tab.Controls.Add(panelA);
+            tab.Controls.Add(panelB);
+            tab.Controls.Add(panelC);
+            tab.Controls.Add(panelD);
+
+            // Act
+            List<GunaCheckBox> result = FormsUtils.GetFormInstanceCheckBoxListByMechanicNames(tab, tipNames156R3);
+
+            // Assert
+            Assert.Equal(4, result.Count);
+            Assert.Same(cbA, result[0]);
+            Assert.Same(cbB, result[1]);
+            Assert.Same(cbC, result[2]);
+            Assert.Same(cbD, result[3]);
+        }
+
+        [UIFact]
+        public async void Should_Skip_When_CheckBox_Not_Found()
+        {
+            await Task.Yield();
+            // Arrange
+            TabPage tab = new TabPage();
+
+            GunaPanel panelA = new GunaPanel { Name = "EmptyCheckBoxGunaPanel" };
+            tab.Controls.Add(panelA);
+            List<string> mechanicNames = new List<string> { "EmptyCheckBox" };
+
+            // Act
+            List<GunaCheckBox> result = FormsUtils.GetFormInstanceCheckBoxListByMechanicNames(tab, mechanicNames);
+
+            // Assert
+            Assert.Empty(result); // 找不到應回傳空 List
+        }
+
+        [UIFact]
+        public async void Should_Not_Match_Wrongly_Named_Controls()
+        {
+            await Task.Yield();
+            // Arrange
+            TabPage tab = new TabPage();
+
+            GunaPanel wrongPanel = new GunaPanel { Name = "MechanicAWrongPanel" };
+            GunaCheckBox wrongCheckBox = new GunaCheckBox { Name = "MechanicAWrongCheckBox" };
+            wrongPanel.Controls.Add(wrongCheckBox);
+            tab.Controls.Add(wrongPanel);
+
+            List<string> mechanicNames = new List<string> { "MechanicA" };
+
+            // Act
+            List<GunaCheckBox> result = FormsUtils.GetFormInstanceCheckBoxListByMechanicNames(tab, mechanicNames);
+
+            // Assert
+            Assert.Empty(result); // 名稱不吻合，所以不會加入
         }
 
         private Control CreateTestParent()
