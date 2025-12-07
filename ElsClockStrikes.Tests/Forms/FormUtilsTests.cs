@@ -89,7 +89,7 @@ namespace ElsClockStrikes.Tests.Forms
             Assert.Null(result);
         }
 
-        [StaFact]
+        [UIFact]
         public async Task Should_Return_GunaLineTextBox_By_NamingPattern()
         {
             await Task.Yield(); // 避免 ActiveX / WinForms 初始化問題
@@ -119,7 +119,7 @@ namespace ElsClockStrikes.Tests.Forms
             Assert.Same(tbA, result);
         }
 
-        [StaFact]
+        [UIFact]
         public async Task Should_Return_Null_When_No_Match()
         {
             await Task.Yield();
