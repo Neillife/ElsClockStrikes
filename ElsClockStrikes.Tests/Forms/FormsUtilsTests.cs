@@ -2,6 +2,7 @@
 using ElsClockStrikes.Forms;
 using Guna.UI.WinForms;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ using Xunit;
 
 namespace ElsClockStrikes.Tests.Forms
 {
-    public class FormUtilsTests
+    public class FormsUtilsTests
     {
         private class TestTimerControl : Control
         {
@@ -136,7 +137,7 @@ namespace ElsClockStrikes.Tests.Forms
         }
 
         [UIFact]
-        public async void Should_Return_CheckBoxes_By_TipNames127R3()
+        public async Task Should_Return_CheckBoxes_By_TipNames127R3()
         {
             await Task.Yield();
             // Arrange
@@ -176,7 +177,7 @@ namespace ElsClockStrikes.Tests.Forms
         }
 
         [UIFact]
-        public async void Should_Return_CheckBoxes_By_TipNames156R1()
+        public async Task Should_Return_CheckBoxes_By_TipNames156R1()
         {
             await Task.Yield();
             // Arrange
@@ -216,7 +217,7 @@ namespace ElsClockStrikes.Tests.Forms
         }
 
         [UIFact]
-        public async void Should_Return_CheckBoxes_By_TipNames156R3()
+        public async Task Should_Return_CheckBoxes_By_TipNames156R3()
         {
             await Task.Yield();
             // Arrange
@@ -256,7 +257,7 @@ namespace ElsClockStrikes.Tests.Forms
         }
 
         [UIFact]
-        public async void Should_Skip_When_CheckBox_Not_Found()
+        public async Task Should_Skip_When_CheckBox_Not_Found()
         {
             await Task.Yield();
             // Arrange
@@ -274,7 +275,7 @@ namespace ElsClockStrikes.Tests.Forms
         }
 
         [UIFact]
-        public async void Should_Not_Match_Wrongly_Named_Controls()
+        public async Task Should_Not_Match_Wrongly_Named_Controls()
         {
             await Task.Yield();
             // Arrange
@@ -606,6 +607,36 @@ namespace ElsClockStrikes.Tests.Forms
             Assert.Equal(150, result);
         }
 
+        [Fact]
+        public void Should_Not_Handle_When_Key_Is_Digit()
+        {
+            var e = new KeyPressEventArgs('5');
+
+            FormsUtils.ProcessKeyPress(e);
+
+            Assert.False(e.Handled);
+        }
+
+        [Fact]
+        public void Should_Not_Handle_When_Key_Is_Backspace()
+        {
+            var e = new KeyPressEventArgs((char)Keys.Back);
+
+            FormsUtils.ProcessKeyPress(e);
+
+            Assert.False(e.Handled);
+        }
+
+        [Fact]
+        public void Should_Handle_When_Key_Is_Not_Digit_Or_Backspace()
+        {
+            var e = new KeyPressEventArgs('A');
+
+            FormsUtils.ProcessKeyPress(e);
+
+            Assert.True(e.Handled);
+        }
+
         [Theory]
         [InlineData("", "100")]
         [InlineData(" ", "100")]
@@ -643,6 +674,42 @@ namespace ElsClockStrikes.Tests.Forms
 
             // Assert
             Assert.Equal(expected, result);
+        }
+
+        [UIFact]
+        public async Task ProcessSettingBtnClick_Should_Open_When_Panel_Was_Closed()
+        {
+            await Task.Yield();
+
+            // Arrange
+            Panel panel = new Panel { Visible = false };
+            GunaButton button = new GunaButton();
+
+            // Act
+            FormsUtils.ProcessSettingBtnClick(panel, button);
+
+            // Assert
+            Assert.True(panel.Visible);
+            Assert.Equal(Color.FromArgb(44, 149, 180), button.BaseColor);
+            Assert.Equal(Color.FromArgb(20, 120, 170), button.OnHoverBaseColor);
+        }
+
+        [UIFact]
+        public async Task ProcessSettingBtnClick_Should_Close_When_Panel_Was_Open()
+        {
+            await Task.Yield();
+
+            // Arrange
+            Panel panel = new Panel { Visible = true };
+            GunaButton button = new GunaButton();
+
+            // Act
+            FormsUtils.ProcessSettingBtnClick(panel, button);
+
+            // Assert
+            Assert.False(panel.Visible);
+            Assert.Equal(Color.FromArgb(143, 138, 149), button.BaseColor);
+            Assert.Equal(Color.FromArgb(120, 120, 120), button.OnHoverBaseColor);
         }
 
         [Theory]
