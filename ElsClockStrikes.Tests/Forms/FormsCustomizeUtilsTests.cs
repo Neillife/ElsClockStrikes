@@ -10,13 +10,6 @@ namespace ElsClockStrikes.Tests.Forms
 {
     public class FormsCustomizeUtilsTests
     {
-        //private readonly ITestOutputHelper _output;
-
-        //public FormsCustomizeUtilsTests(ITestOutputHelper output)
-        //{
-        //    _output = output;
-        //}
-
         [Theory]
         [InlineData("CustomizeTimeLeftLabelName", FormsConstant.timeLeftLabelBaseName)]
         [InlineData("CustomizeHotKeyLabelName", FormsConstant.hotKeyLabelBaseName)]
