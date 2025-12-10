@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElsClockStrikes", "ElsClockStrikes\ElsClockStrikes.csproj", "{E77D42AE-8811-49F9-B60B-9DC9ABF45E8B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElsClockStrikes.Tests", "ElsClockStrikes.Tests\ElsClockStrikes.Tests.csproj", "{EA3785F4-5F34-476D-8BEB-1D01D0E059E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{E77D42AE-8811-49F9-B60B-9DC9ABF45E8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E77D42AE-8811-49F9-B60B-9DC9ABF45E8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E77D42AE-8811-49F9-B60B-9DC9ABF45E8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA3785F4-5F34-476D-8BEB-1D01D0E059E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA3785F4-5F34-476D-8BEB-1D01D0E059E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA3785F4-5F34-476D-8BEB-1D01D0E059E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA3785F4-5F34-476D-8BEB-1D01D0E059E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

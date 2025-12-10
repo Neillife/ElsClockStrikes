@@ -1,0 +1,454 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Xunit.StaFact</name>
+    </assembly>
+    <members>
+        <member name="T:Xunit.Sdk.WinFormsFactDiscoverer">
+            <summary>
+            The discovery class for <see cref="T:Xunit.WinFormsFactAttribute"/>.
+            </summary>
+        </member>
+        <member name="M:Xunit.Sdk.WinFormsFactDiscoverer.#ctor(Xunit.Abstractions.IMessageSink)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Xunit.Sdk.WinFormsFactDiscoverer"/> class.
+            </summary>
+            <param name="diagnosticMessageSink">The diagnostic message sink.</param>
+        </member>
+        <member name="T:Xunit.Sdk.WinFormsTheoryDiscoverer">
+            <summary>
+            The discovery class for <see cref="T:Xunit.WinFormsTheoryAttribute"/>.
+            </summary>
+        </member>
+        <member name="M:Xunit.Sdk.WinFormsTheoryDiscoverer.#ctor(Xunit.Abstractions.IMessageSink)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Xunit.Sdk.WinFormsTheoryDiscoverer"/> class.
+            </summary>
+            <param name="diagnosticMessageSink">The diagnostic message sink.</param>
+        </member>
+        <member name="T:Xunit.Sdk.WpfFactDiscoverer">
+            <summary>
+            The discovery class for <see cref="T:Xunit.WpfFactAttribute"/>.
+            </summary>
+        </member>
+        <member name="M:Xunit.Sdk.WpfFactDiscoverer.#ctor(Xunit.Abstractions.IMessageSink)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Xunit.Sdk.WpfFactDiscoverer"/> class.
+            </summary>
+            <param name="diagnosticMessageSink">The diagnostic message sink.</param>
+        </member>
+        <member name="T:Xunit.Sdk.WpfTheoryDiscoverer">
+            <summary>
+            The discovery class for <see cref="T:Xunit.WpfTheoryAttribute"/>.
+            </summary>
+        </member>
+        <member name="M:Xunit.Sdk.WpfTheoryDiscoverer.#ctor(Xunit.Abstractions.IMessageSink)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Xunit.Sdk.WpfTheoryDiscoverer"/> class.
+            </summary>
+            <param name="diagnosticMessageSink">The diagnostic message sink.</param>
+        </member>
+        <member name="T:Xunit.Sdk.AsyncAutoResetEvent">
+            <summary>
+            An asynchronous implementation of an AutoResetEvent.
+            </summary>
+        </member>
+        <member name="F:Xunit.Sdk.AsyncAutoResetEvent.signalAwaiters">
+            <summary>
+            A queue of folks awaiting signals.
+            </summary>
+        </member>
+        <member name="F:Xunit.Sdk.AsyncAutoResetEvent.signaled">
+            <summary>
+            A value indicating whether this event is already in a signaled state.
+            </summary>
+            <devremarks>
+            This should not need the volatile modifier because it is
+            always accessed within a lock.
+            </devremarks>
+        </member>
+        <member name="M:Xunit.Sdk.AsyncAutoResetEvent.WaitAsync">
+            <summary>
+            Returns an awaitable that may be used to asynchronously acquire the next signal.
+            </summary>
+            <returns>An awaitable.</returns>
+        </member>
+        <member name="M:Xunit.Sdk.AsyncAutoResetEvent.Set">
+            <summary>
+            Sets the signal if it has not already been set, allowing one awaiter to handle the signal if one is already waiting.
+            </summary>
+        </member>
+        <member name="T:Xunit.Sdk.StaFactDiscoverer">
+            <summary>
+            The discovery class for the <see cref="T:Xunit.StaFactAttribute"/>.
+            </summary>
+        </member>
+        <member name="M:Xunit.Sdk.StaFactDiscoverer.#ctor(Xunit.Abstractions.IMessageSink)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Xunit.Sdk.StaFactDiscoverer"/> class.
+            </summary>
+            <param name="diagnosticMessageSink">The diagnostic message sink.</param>
+        </member>
+        <member name="M:Xunit.Sdk.StaFactDiscoverer.CreateTestCase(Xunit.Abstractions.ITestFrameworkDiscoveryOptions,Xunit.Abstractions.ITestMethod,Xunit.Abstractions.IAttributeInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Xunit.Sdk.StaTheoryDiscoverer">
+            <summary>
+            The discovery class for <see cref="T:Xunit.StaTheoryAttribute"/>.
+            </summary>
+        </member>
+        <member name="M:Xunit.Sdk.StaTheoryDiscoverer.#ctor(Xunit.Abstractions.IMessageSink)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Xunit.Sdk.StaTheoryDiscoverer"/> class.
+            </summary>
+            <param name="diagnosticMessageSink">The diagnostic message sink.</param>
+        </member>
+        <member name="T:Xunit.Sdk.SyncContextAdapter">
+            <summary>
+            A base class that abstracts away particulars of a specific
+            <see cref="T:System.Threading.SynchronizationContext"/> derived type.
+            </summary>
+        </member>
+        <member name="P:Xunit.Sdk.SyncContextAdapter.CanCompleteOperations">
+            <summary>
+            Gets a value indicating whether async void methods are supported.
+            </summary>
+            <value><see langword="true"/> if <see cref="M:Xunit.Sdk.SyncContextAdapter.WaitForOperationCompletionAsync(System.Threading.SynchronizationContext)"/> can be invoked.</value>
+        </member>
+        <member name="M:Xunit.Sdk.SyncContextAdapter.Create(System.String)">
+            <summary>
+            Creates a new <see cref="T:System.Threading.SynchronizationContext"/> of the derived type.
+            </summary>
+            <param name="name">The name of the context.</param>
+            <returns>The new instance.</returns>
+        </member>
+        <member name="M:Xunit.Sdk.SyncContextAdapter.InitializeThread">
+            <summary>
+            Runs code on the test thread before any user code is executed (before the test class is even instantiated).
+            </summary>
+        </member>
+        <member name="M:Xunit.Sdk.SyncContextAdapter.PumpTill(System.Threading.SynchronizationContext,System.Threading.Tasks.Task)">
+            <summary>
+            Pumps messages until a task completes.
+            </summary>
+            <param name="syncContext">The <see cref="T:System.Threading.SynchronizationContext"/> returned from <see cref="M:Xunit.Sdk.SyncContextAdapter.Create(System.String)"/>.</param>
+            <param name="task">The task to wait on.</param>
+        </member>
+        <member name="M:Xunit.Sdk.SyncContextAdapter.WaitForOperationCompletionAsync(System.Threading.SynchronizationContext)">
+            <summary>
+            Returns a <see cref="T:System.Threading.Tasks.Task"/> that completes when all pending operations have completed.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> that completes when all pending operations have completed.</returns>
+        </member>
+        <member name="M:Xunit.Sdk.SyncContextAdapter.Cleanup">
+            <summary>
+            Clean up this instance.
+            </summary>
+        </member>
+        <member name="T:Xunit.Sdk.UIFactDiscoverer">
+            <summary>
+            The discovery class for the <see cref="T:Xunit.UIFactAttribute"/>.
+            </summary>
+        </member>
+        <member name="M:Xunit.Sdk.UIFactDiscoverer.#ctor(Xunit.Abstractions.IMessageSink)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Xunit.Sdk.UIFactDiscoverer"/> class.
+            </summary>
+            <param name="diagnosticMessageSink">The diagnostic message sink.</param>
+        </member>
+        <member name="T:Xunit.Sdk.UISynchronizationContext">
+            <summary>
+            A portable implementation of a single-threaded SynchronizationContext.
+            </summary>
+        </member>
+        <member name="M:Xunit.Sdk.UISynchronizationContext.#ctor(System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Xunit.Sdk.UISynchronizationContext"/> class.
+            </summary>
+        </member>
+        <member name="M:Xunit.Sdk.UISynchronizationContext.PumpMessages(System.Threading.Tasks.Task)">
+            <summary>
+            Blocks the calling thread to pump messages until a task has completed.
+            </summary>
+            <param name="untilCompleted">The task that must complete to break out of the message loop.</param>
+        </member>
+        <member name="M:Xunit.Sdk.UISynchronizationContext.OperationStarted">
+            <inheritdoc />
+        </member>
+        <member name="M:Xunit.Sdk.UISynchronizationContext.OperationCompleted">
+            <inheritdoc />
+        </member>
+        <member name="M:Xunit.Sdk.UISynchronizationContext.Post(System.Threading.SendOrPostCallback,System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Xunit.Sdk.UISynchronizationContext.Send(System.Threading.SendOrPostCallback,System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="T:Xunit.Sdk.UITestCase">
+            <summary>
+            Wraps test cases for FactAttribute and TheoryAttribute so the test case runs on the WPF STA thread.
+            </summary>
+        </member>
+        <member name="M:Xunit.Sdk.UITestCase.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Xunit.Sdk.UITestCase"/> class
+            for deserialization.
+            </summary>
+        </member>
+        <member name="M:Xunit.Sdk.UITestCase.#ctor(Xunit.Sdk.UITestCase.SyncContextType,Xunit.Abstractions.IMessageSink,Xunit.Sdk.TestMethodDisplay,Xunit.Abstractions.ITestMethod,System.Object[],Xunit.UISettingsAttribute)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Xunit.Sdk.UITestCase"/> class.
+            </summary>
+            <param name="synchronizationContextType">The type of <see cref="T:System.Threading.SynchronizationContext"/> to use.</param>
+            <param name="diagnosticMessageSink">The message sink used to send diagnostic messages.</param>
+            <param name="defaultMethodDisplay">Default method display to use (when not customized).</param>
+            <param name="testMethod">The test method this test case belongs to.</param>
+            <param name="settings">The test settings to apply.</param>
+            <param name="testMethodArguments">The arguments for the test method.</param>
+        </member>
+        <member name="F:Xunit.Sdk.UITestCase.SyncContextType.None">
+            <summary>
+            No <see cref="T:System.Threading.SynchronizationContext"/> at all.
+            </summary>
+        </member>
+        <member name="F:Xunit.Sdk.UITestCase.SyncContextType.Portable">
+            <summary>
+            Use the <see cref="T:Xunit.Sdk.UISynchronizationContext"/>, which works in portable profiles.
+            </summary>
+        </member>
+        <member name="F:Xunit.Sdk.UITestCase.SyncContextType.WPF">
+            <summary>
+            Use the <see cref="T:System.Windows.Threading.DispatcherSynchronizationContext"/>, which is only available on Desktop.
+            </summary>
+        </member>
+        <member name="F:Xunit.Sdk.UITestCase.SyncContextType.WinForms">
+            <summary>
+            Use the <see cref="T:System.Windows.Forms.WindowsFormsSynchronizationContext"/>, which is only available on Desktop.
+            </summary>
+        </member>
+        <member name="M:Xunit.Sdk.UITestCase.RunAsync(Xunit.Abstractions.IMessageSink,Xunit.Sdk.IMessageBus,System.Object[],Xunit.Sdk.ExceptionAggregator,System.Threading.CancellationTokenSource)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Xunit.Sdk.UITestCaseRunner.#ctor(Xunit.Sdk.IXunitTestCase,System.String,System.String,System.Object[],System.Object[],Xunit.Sdk.IMessageBus,Xunit.Sdk.ExceptionAggregator,System.Threading.CancellationTokenSource,Xunit.UISettingsAttribute,Xunit.Sdk.ThreadRental)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Xunit.Sdk.UITestCaseRunner"/> class.
+            </summary>
+            <param name="testCase">The test case to be run.</param>
+            <param name="displayName">The display name of the test case.</param>
+            <param name="skipReason">The skip reason, if the test is to be skipped.</param>
+            <param name="constructorArguments">The arguments to be passed to the test class constructor.</param>
+            <param name="testMethodArguments">The arguments to be passed to the test method.</param>
+            <param name="messageBus">The message bus to report run status to.</param>
+            <param name="aggregator">The exception aggregator used to run code and collect exceptions.</param>
+            <param name="cancellationTokenSource">The task cancellation token source, used to cancel the test run.</param>
+            <param name="settings">The settings to use for this test case.</param>
+            <param name="threadRental">The <see cref="T:Xunit.Sdk.ThreadRental"/> instance to use.</param>
+        </member>
+        <member name="M:Xunit.Sdk.UITestInvoker.#ctor(Xunit.Abstractions.ITest,Xunit.Sdk.IMessageBus,System.Type,System.Object[],System.Reflection.MethodInfo,System.Object[],System.Collections.Generic.IReadOnlyList{Xunit.Sdk.BeforeAfterTestAttribute},Xunit.Sdk.ExceptionAggregator,System.Threading.CancellationTokenSource,Xunit.Sdk.ThreadRental)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Xunit.Sdk.UITestInvoker"/> class.
+            </summary>
+        </member>
+        <member name="T:Xunit.Sdk.UITheoryDiscoverer">
+            <summary>
+            The discovery class for <see cref="T:Xunit.UITheoryAttribute"/>.
+            </summary>
+        </member>
+        <member name="M:Xunit.Sdk.UITheoryDiscoverer.#ctor(Xunit.Abstractions.IMessageSink)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Xunit.Sdk.UITheoryDiscoverer"/> class.
+            </summary>
+            <param name="diagnosticMessageSink">The diagnostic message sink.</param>
+        </member>
+        <member name="P:Xunit.Sdk.Utilities.SyncContextAwaiter.IsCompleted">
+            <summary>
+            Gets a value indicating whether the caller is already running on the desired <see cref="T:System.Threading.SynchronizationContext"/>.
+            </summary>
+        </member>
+        <member name="T:Xunit.StaFactAttribute">
+            <summary>
+            Identifies an xunit test that starts on an STA thread.
+            Tests will be Skipped on non-Windows operating systems.
+            </summary>
+            <remarks>
+            The test does *not* apply a <see cref="T:System.Threading.SynchronizationContext" />, so an async test
+            will resume on a standard MTA thread from the thread pool.
+            To get an STA thread even after awaiting expressions, use <see cref="T:Xunit.UIFactAttribute" />.
+            </remarks>
+        </member>
+        <member name="T:Xunit.StaTheoryAttribute">
+            <summary>
+            Identifies an xunit theory that starts on an STA thread.
+            Tests will be Skipped on non-Windows operating systems.
+            </summary>
+            <remarks>
+            The test does *not* apply a <see cref="T:System.Threading.SynchronizationContext" />, so an async test
+            will resume on a standard MTA thread from the thread pool.
+            To get an STA thread even after awaiting expressions, use <see cref="T:Xunit.UITheoryAttribute" />.
+            </remarks>
+        </member>
+        <member name="M:Xunit.TplExtensions.NoThrowAwaitable(System.Threading.Tasks.Task,System.Boolean)">
+            <summary>
+            Returns an awaitable for the specified task that will never throw, even if the source task
+            faults or is canceled.
+            </summary>
+            <param name="task">The task whose completion should signal the completion of the returned awaitable.</param>
+            <param name="captureContext">if set to <see langword="true" /> the continuation will be scheduled on the caller's context; <see langword="false" /> to always execute the continuation on the threadpool.</param>
+            <returns>An awaitable.</returns>
+        </member>
+        <member name="T:Xunit.TplExtensions.NoThrowTaskAwaitable">
+            <summary>
+            An awaitable that wraps a task and never throws an exception when waited on.
+            </summary>
+        </member>
+        <member name="F:Xunit.TplExtensions.NoThrowTaskAwaitable.task">
+            <summary>
+            The task.
+            </summary>
+        </member>
+        <member name="F:Xunit.TplExtensions.NoThrowTaskAwaitable.captureContext">
+            <summary>
+            A value indicating whether the continuation should be scheduled on the current sync context.
+            </summary>
+        </member>
+        <member name="M:Xunit.TplExtensions.NoThrowTaskAwaitable.#ctor(System.Threading.Tasks.Task,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Xunit.TplExtensions.NoThrowTaskAwaitable" /> struct.
+            </summary>
+            <param name="task">The task.</param>
+            <param name="captureContext">Whether the continuation should be scheduled on the current sync context.</param>
+        </member>
+        <member name="M:Xunit.TplExtensions.NoThrowTaskAwaitable.GetAwaiter">
+            <summary>
+            Gets the awaiter.
+            </summary>
+            <returns>The awaiter.</returns>
+        </member>
+        <member name="T:Xunit.TplExtensions.NoThrowTaskAwaiter">
+            <summary>
+            An awaiter that wraps a task and never throws an exception when waited on.
+            </summary>
+        </member>
+        <member name="F:Xunit.TplExtensions.NoThrowTaskAwaiter.task">
+            <summary>
+            The task.
+            </summary>
+        </member>
+        <member name="F:Xunit.TplExtensions.NoThrowTaskAwaiter.captureContext">
+            <summary>
+            A value indicating whether the continuation should be scheduled on the current sync context.
+            </summary>
+        </member>
+        <member name="M:Xunit.TplExtensions.NoThrowTaskAwaiter.#ctor(System.Threading.Tasks.Task,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Xunit.TplExtensions.NoThrowTaskAwaiter"/> struct.
+            </summary>
+            <param name="task">The task.</param>
+            <param name="captureContext">if set to <see langword="true" /> [capture context].</param>
+        </member>
+        <member name="P:Xunit.TplExtensions.NoThrowTaskAwaiter.IsCompleted">
+            <summary>
+            Gets a value indicating whether the task has completed.
+            </summary>
+        </member>
+        <member name="M:Xunit.TplExtensions.NoThrowTaskAwaiter.OnCompleted(System.Action)">
+            <summary>
+            Schedules a delegate for execution at the conclusion of a task's execution.
+            </summary>
+            <param name="continuation">The action.</param>
+        </member>
+        <member name="M:Xunit.TplExtensions.NoThrowTaskAwaiter.UnsafeOnCompleted(System.Action)">
+            <summary>
+            Schedules a delegate for execution at the conclusion of a task's execution
+            without capturing the ExecutionContext.
+            </summary>
+            <param name="continuation">The action.</param>
+        </member>
+        <member name="M:Xunit.TplExtensions.NoThrowTaskAwaiter.GetResult">
+            <summary>
+            Does nothing.
+            </summary>
+        </member>
+        <member name="T:Xunit.UIFactAttribute">
+            <summary>
+            Identifies an xunit test that starts on a UI thread-like <see cref="T:System.Threading.SynchronizationContext" />
+            such that awaited expressions resume on the test's "main thread".
+            On Windows, the test runs on an STA thread.
+            </summary>
+        </member>
+        <member name="P:Xunit.UISettingsAttribute.MaxAttempts">
+            <summary>
+            Gets or sets the maximum number of retry attempts for a test.
+            </summary>
+            <value>
+            <list type="bullet">
+            <item><description>Leave unset to inherit the value from an attribute applied to a containing type (the ultimate default being <c>1</c>)</description></item>
+            <item><description><c>1</c> to not retry the test on failure</description></item>
+            <item><description>An explicit value greater than <c>1</c> to retry the test up to a total of this many attempts on failure</description></item>
+            </list>
+            </value>
+        </member>
+        <member name="M:Xunit.UISettingsAttribute.ApplyTraits(Xunit.Sdk.XunitTestCase)">
+            <summary>
+            Applies traits to a test case based on the settings in this attribute.
+            </summary>
+            <param name="testCase">The test case to add traits to.</param>
+        </member>
+        <member name="T:Xunit.UITheoryAttribute">
+            <summary>
+            Identifies an xunit theory that starts on a UI thread-like <see cref="T:System.Threading.SynchronizationContext" />
+            such that awaited expressions resume on the test's "main thread".
+            On Windows, the test runs on an STA thread.
+            </summary>
+        </member>
+        <member name="T:Xunit.WinFormsFactAttribute">
+            <summary>
+            Identifies an xunit test that starts on an STA thread
+            with a <see cref="T:System.Windows.Forms.WindowsFormsSynchronizationContext" />.
+            Tests will be Skipped on non-Windows operating systems.
+            </summary>
+        </member>
+        <member name="T:Xunit.WinFormsTheoryAttribute">
+            <summary>
+            Identifies an xunit theory that starts on an STA thread
+            with a <see cref="T:System.Windows.Forms.WindowsFormsSynchronizationContext" />.
+            Tests will be Skipped on non-Windows operating systems.
+            </summary>
+        </member>
+        <member name="T:Xunit.WpfFactAttribute">
+            <summary>
+            Identifies an xunit test that starts on an STA thread
+            with a WPF <see cref="T:System.Windows.Threading.DispatcherSynchronizationContext" />.
+            Tests will be Skipped on non-Windows operating systems.
+            </summary>
+        </member>
+        <member name="T:Xunit.WpfTheoryAttribute">
+            <summary>
+            Identifies an xunit theory that starts on an STA thread
+            with a WPF <see cref="T:System.Windows.Threading.DispatcherSynchronizationContext" />.
+            Tests will be Skipped on non-Windows operating systems.
+            </summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.OverloadResolutionPriorityAttribute">
+            <summary>
+            Specifies the priority of a member in overload resolution. When unspecified, the default priority is 0.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.OverloadResolutionPriorityAttribute.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Runtime.CompilerServices.OverloadResolutionPriorityAttribute"/> class.
+            </summary>
+            <param name="priority">The priority of the attributed member. Higher numbers are prioritized, lower numbers are deprioritized. 0 is the default if no attribute is present.</param>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.OverloadResolutionPriorityAttribute.Priority">
+            <summary>
+            The priority of the member.
+            </summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.ParamCollectionAttribute">
+            <summary>
+            Indicates that a method will allow a variable number of arguments in its invocation.
+            </summary>
+        </member>
+    </members>
+</doc>

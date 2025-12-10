@@ -222,12 +222,20 @@ namespace ElsClockStrikes.Forms
             }
         }
 
+        public static string ProcessSoundTextBoxLeaveCore(string text)
+        {
+            if (string.IsNullOrWhiteSpace(text) ||
+                int.Parse(text.Trim()) > 100 ||
+                int.Parse(text.Trim()) < 0)
+            {
+                return "100";
+            }
+            return text.Trim();
+        }
+
         public static void ProcessSoundTextBoxLeave(GunaLineTextBox soundTextBox)
         {
-            if (soundTextBox.Text.Trim() == "" || Int32.Parse(soundTextBox.Text.Trim()) > 100 || Int32.Parse(soundTextBox.Text.Trim()) < 0)
-            {
-                soundTextBox.Text = "100";
-            }
+            soundTextBox.Text = ProcessSoundTextBoxLeaveCore(soundTextBox.Text);
         }
 
         public static AudioPlayer ProcessSelectSoundFile(UnmanagedMemoryStream defaultSound)
