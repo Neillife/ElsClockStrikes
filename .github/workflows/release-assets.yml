@@ -1,0 +1,101 @@
+name: ElsClockStrikes CD Only For Date Tags on Master
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build-and-upload:
+    runs-on: windows-latest
+
+    steps:
+    - name: Clone repository
+      uses: actions/checkout@v6
+      with:
+        fetch-depth: 0 # 完全 fetch tag 與所有分支
+
+    - name: Check if tag matches date format and on master
+      id: check_tag
+      shell: bash
+      run: |
+        TAG="${GITHUB_REF_NAME:-${GITHUB_REF#refs/tags/}}"
+        echo "Detected tag: $TAG"
+        IS_DATE_FORMAT=false
+        IS_ON_MASTER=false
+
+        # 判斷格式是否為 YYYY-MM-DD
+        if [[ "$TAG" =~ ^20[0-9]{2}-[0-9]{2}-[0-9]{2}$ ]]; then
+          IS_DATE_FORMAT=true
+        fi
+
+        # 判斷 tag 是否在 master
+        # 先 fetch 最新 master
+        git fetch origin master
+        # 取出 tag commit sha
+        TAG_SHA=$(git rev-list -n 1 "$TAG")
+        # 判斷 tag commit 是否存在於 master 分支歷史
+        if git merge-base --is-ancestor "$TAG_SHA" origin/master; then
+          IS_ON_MASTER=true
+        fi
+
+        # 如果不符條件，設定略過 (skip_build)
+        if [[ "$IS_DATE_FORMAT" == "true" && "$IS_ON_MASTER" == "true" ]]; then
+          echo "skip_build=false" >> $GITHUB_ENV
+          echo "格式正確且在 master 上, 開始 build!"
+        else
+          echo "skip_build=true" >> $GITHUB_ENV
+          echo "Tag 格式或分支不符, skip 後續 release 步驟"
+        fi
+
+    - name: Add MSBuild to PATH
+      if: env.skip_build != 'true'
+      uses: microsoft/setup-msbuild@v2
+
+    - name: Setup NuGet
+      if: env.skip_build != 'true'
+      uses: nuget/setup-nuget@v2
+
+    - name: Restore NuGet packages (Project Dependency)
+      if: env.skip_build != 'true'
+      run: nuget restore ./ElsClockStrikes.sln
+
+    - name: Build Project
+      if: env.skip_build != 'true'
+      run: msbuild ./ElsClockStrikes/ElsClockStrikes.csproj /p:Configuration=Release
+
+    - name: Pack ZIP
+      if: env.skip_build != 'true'
+      shell: pwsh
+      run: |
+        New-Item -ItemType Directory -Force -Path ".\output\ElsClockStrikes" | Out-Null
+        $files = @(
+          ".\ElsClockStrikes\bin\Release\ElsClockStrikes.exe",
+          ".\ElsClockStrikes\bin\Release\Siticone.UI.dll",
+          ".\ElsClockStrikes\bin\Release\NAudio.WinMM.dll",
+          ".\ElsClockStrikes\bin\Release\NAudio.Wasapi.dll",
+          ".\ElsClockStrikes\bin\Release\NAudio.dll",
+          ".\ElsClockStrikes\bin\Release\NAudio.Core.dll",
+          ".\ElsClockStrikes\bin\Release\MetroSuite 2.0.dll",
+          ".\ElsClockStrikes\bin\Release\INIFileParser.dll",
+          ".\ElsClockStrikes\bin\Release\Guna.UI.dll",
+          ".\ElsClockStrikes\bin\Release\Gma.System.MouseKeyHook.dll"
+        )
+        foreach ($file in $files) {
+          Copy-Item $file -Destination "output\ElsClockStrikes" -Force
+        }
+        Compress-Archive `
+          -Path .\output\ElsClockStrikes `
+          -DestinationPath .\output\ElsClockStrikes.zip `
+          -Force
+
+    - name: Upload to Release Assets
+      if: env.skip_build != 'true'
+      uses: softprops/action-gh-release@v2
+      with:
+        files: output/ElsClockStrikes.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+
+    - name: Notice for skipped build
+      if: env.skip_build == 'true'
+      run: echo "Tag 格式或 tag 不在 master 分支, 本次 release build 步驟已全數略過"
