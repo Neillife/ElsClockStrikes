@@ -73,7 +73,12 @@
 
 # 程式介面
 
-![程式介面](https://github.com/Neillife/ElsClockStrikes/blob/master/images/formui.gif)
+<details>
+  <summary>滑鼠點擊觀看</summary>
+    <a href="https://github.com/Neillife/ElsClockStrikes">
+      <img src="images/formui.gif" alt="Logo" width="564" height="615">
+    </a>
+</details>
 
 # 資料夾說明
 
