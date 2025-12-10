@@ -315,11 +315,20 @@ namespace ElsClockStrikes
                     customizeTaskTimerList = this.customizeTaskTimerList
                 };
                 ControlStrategyManager controlStrategyManager = new ControlStrategyManager(controlStrategyParameters);
-                controlStrategyManager.RegisterStrategy(new HotKeyLabelStrategy())
+                controlStrategyManager.RegisterStrategy(new HotKeyLabelStrategy(comboBoxs.Length != 0 && FormsCustomizeUtils.GetSeqSplitStrs(comboBoxs[i]).Length == 3 ? true : false))
                                       .RegisterStrategy(new MechanicNameLabelStrategy())
-                                      .RegisterStrategy(new TimeLeftLabelStrategy())
-                                      .RegisterStrategy(new ComboBoxStrategy(comboBoxs.Length == 0 ? "F1" : comboBoxs[i]))
-                                      .RegisterStrategy(new LineTextBoxStrategy(textBoxs.Length == 0 ? "10" : textBoxs[i]))
+                                      .RegisterStrategy(new TimeLeftLabelStrategy());
+
+                if (comboBoxs.Length != 0 && FormsCustomizeUtils.GetSeqSplitStrs(comboBoxs[i]).Length == 3)
+                {
+                    controlStrategyManager.RegisterStrategy(new SequenceComboBoxStrategy(comboBoxs[i]));
+                }
+                else
+                {
+                    controlStrategyManager.RegisterStrategy(new ComboBoxStrategy(comboBoxs.Length == 0 ? "F1" : comboBoxs[i]));
+                }
+
+                controlStrategyManager.RegisterStrategy(new LineTextBoxStrategy(textBoxs.Length == 0 ? "10" : textBoxs[i]))
                                       .RegisterStrategy(new RemoveButtonStrategy())
                                       .RegisterStrategy(new SettingButtonStrategy(Properties.Resources.setimg))
                                       .RegisterStrategy(new PanelStrategy())
