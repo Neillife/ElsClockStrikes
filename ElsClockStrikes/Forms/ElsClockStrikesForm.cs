@@ -97,6 +97,7 @@ namespace ElsClockStrikes
             預設音效156R3RadioButton.Checked = true;
             CopyrightTagLabel.Text = FormsConstant.copyrightTag;
             this.ProcessAutoLoadConfig();
+            _ = UpdateChecker.CheckNewVersion(AutoCheckUpdateCheckBox.Checked);
         }
 
         private void ElsClockStrikesForm_FormClosing(object sender, FormClosingEventArgs e)

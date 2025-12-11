@@ -13,6 +13,7 @@ namespace ElsClockStrikes
     public partial class ElsClockStrikesForm
     {
         private string autoLoadStr = "autoLoad";
+        private string autoCheckUpdateStr = "autoCheckUpdate";
         private string topMostStr = "topMost";
         private string BaseMechanicFormInstancePosKeyListStr = "BaseMechanicFormInstancePosKeyList";
         private string BaseMechanicFormInstancePosValueListStr = "BaseMechanicFormInstancePosValueList";
@@ -49,6 +50,7 @@ namespace ElsClockStrikes
             if (result)
             {
                 AutoLoadCheckBox.Checked = result;
+                AutoCheckUpdateCheckBox.Checked = iniManager.GetBoolValue(FormsConstant.configGlobalSectionName, autoCheckUpdateStr);
                 this.LoadSettingButton_Click(null, null);
             }
         }
@@ -58,6 +60,7 @@ namespace ElsClockStrikes
             IniManager iniManager = new IniManager();
             TopMostCheckBox.Checked = iniManager.GetBoolValue(FormsConstant.configGlobalSectionName, topMostStr);
             AutoLoadCheckBox.Checked = iniManager.GetBoolValue(FormsConstant.configGlobalSectionName, autoLoadStr);
+            AutoCheckUpdateCheckBox.Checked = iniManager.GetBoolValue(FormsConstant.configGlobalSectionName, autoCheckUpdateStr);
             this.LoadConfigBaseMechanicFormInstancePos(iniManager);
             this.LoadConfig127R3(iniManager);
             this.LoadConfig156R1(iniManager);
@@ -370,6 +373,7 @@ namespace ElsClockStrikes
             this.SaveConfig156R3(iniManager);
             this.SaveConfigCustomize(iniManager);
             iniManager.SetValue(FormsConstant.configGlobalSectionName, autoLoadStr, AutoLoadCheckBox.Checked.ToString());
+            iniManager.SetValue(FormsConstant.configGlobalSectionName, autoCheckUpdateStr, AutoCheckUpdateCheckBox.Checked.ToString());
             iniManager.SetValue(FormsConstant.configGlobalSectionName, topMostStr, TopMostCheckBox.Checked.ToString());
             iniManager.Save();
         }

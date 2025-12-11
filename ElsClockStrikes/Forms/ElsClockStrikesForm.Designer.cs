@@ -231,6 +231,7 @@
             this.三連Timer = new System.Windows.Forms.Timer(this.components);
             this.陰陽陣Timer = new System.Windows.Forms.Timer(this.components);
             this.大黑Timer = new System.Windows.Forms.Timer(this.components);
+            this.AutoCheckUpdateCheckBox = new Guna.UI.WinForms.GunaCheckBox();
             this.音效設定GroupBox.SuspendLayout();
             this.metroTabControlVS1.SuspendLayout();
             this.TabPage127R3.SuspendLayout();
@@ -3247,6 +3248,7 @@
             // TabPageConfig
             // 
             this.TabPageConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.TabPageConfig.Controls.Add(this.AutoCheckUpdateCheckBox);
             this.TabPageConfig.Controls.Add(this.label1);
             this.TabPageConfig.Controls.Add(this.AutoLoadCheckBox);
             this.TabPageConfig.Controls.Add(this.SaveSettingButton);
@@ -3512,6 +3514,20 @@
             this.大黑Timer.Interval = 1000;
             this.大黑Timer.Tag = "大黑Timer";
             this.大黑Timer.Tick += new System.EventHandler(this.大黑Timer_Tick);
+            // 
+            // AutoCheckUpdateCheckBox
+            // 
+            this.AutoCheckUpdateCheckBox.BaseColor = System.Drawing.Color.White;
+            this.AutoCheckUpdateCheckBox.CheckedOffColor = System.Drawing.Color.Gray;
+            this.AutoCheckUpdateCheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.AutoCheckUpdateCheckBox.FillColor = System.Drawing.Color.White;
+            this.AutoCheckUpdateCheckBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AutoCheckUpdateCheckBox.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.AutoCheckUpdateCheckBox.Location = new System.Drawing.Point(173, 192);
+            this.AutoCheckUpdateCheckBox.Name = "AutoCheckUpdateCheckBox";
+            this.AutoCheckUpdateCheckBox.Size = new System.Drawing.Size(187, 25);
+            this.AutoCheckUpdateCheckBox.TabIndex = 161;
+            this.AutoCheckUpdateCheckBox.Text = "啟動時自動檢查更新";
             // 
             // ElsClockStrikesForm
             // 
@@ -3786,6 +3802,7 @@
         private Guna.UI.WinForms.GunaButton 三連設定Button;
         private Guna.UI.WinForms.GunaButton 陰陽陣設定Button;
         private Guna.UI.WinForms.GunaButton 大黑設定Button;
+        private Guna.UI.WinForms.GunaCheckBox AutoCheckUpdateCheckBox;
     }
 }
 
