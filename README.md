@@ -3,6 +3,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
+<br />
 [![ElsClockStrikes CI MSBuild and Test][CI-Build-shield]][CI-Build-url]
 [![ElsClockStrikes CD Only For Date Tags on Master][CD-Build-shield]][CD-Build-url]
 
@@ -70,6 +71,7 @@
 - [x] 完全自定義計時器
 - [x] 完全自定義稱號計時器
 - [x] 儲存設定/讀取設定
+- [x] 自動檢查更新
 
 # 程式介面
 
