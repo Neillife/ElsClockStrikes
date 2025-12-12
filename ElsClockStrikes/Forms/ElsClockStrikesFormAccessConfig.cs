@@ -47,10 +47,10 @@ namespace ElsClockStrikes
         {
             IniManager iniManager = new IniManager();
             bool result = iniManager.GetBoolValue(FormsConstant.configGlobalSectionName, autoLoadStr);
+            AutoCheckUpdateCheckBox.Checked = iniManager.GetBoolValue(FormsConstant.configGlobalSectionName, autoCheckUpdateStr, true);
             if (result)
             {
                 AutoLoadCheckBox.Checked = result;
-                AutoCheckUpdateCheckBox.Checked = iniManager.GetBoolValue(FormsConstant.configGlobalSectionName, autoCheckUpdateStr);
                 this.LoadSettingButton_Click(null, null);
             }
         }
@@ -60,7 +60,7 @@ namespace ElsClockStrikes
             IniManager iniManager = new IniManager();
             TopMostCheckBox.Checked = iniManager.GetBoolValue(FormsConstant.configGlobalSectionName, topMostStr);
             AutoLoadCheckBox.Checked = iniManager.GetBoolValue(FormsConstant.configGlobalSectionName, autoLoadStr);
-            AutoCheckUpdateCheckBox.Checked = iniManager.GetBoolValue(FormsConstant.configGlobalSectionName, autoCheckUpdateStr);
+            AutoCheckUpdateCheckBox.Checked = iniManager.GetBoolValue(FormsConstant.configGlobalSectionName, autoCheckUpdateStr, true);
             this.LoadConfigBaseMechanicFormInstancePos(iniManager);
             this.LoadConfig127R3(iniManager);
             this.LoadConfig156R1(iniManager);
