@@ -6,6 +6,7 @@
 <br />
 [![ElsClockStrikes CI MSBuild and Test][CI-Build-shield]][CI-Build-url]
 [![ElsClockStrikes CD Only For Date Tags on Master][CD-Build-shield]][CD-Build-url]
+[![ElsClockStrikes Downloads][downloads-shield]][downloads-url]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -146,3 +147,5 @@
 [CI-Build-url]: https://github.com/Neillife/ElsClockStrikes/blob/master/.github/workflows/msbuild-test-ci.yml
 [CD-Build-shield]: https://img.shields.io/github/actions/workflow/status/Neillife/ElsClockStrikes/release-assets.yml?style=for-the-badge&label=CD%20BUILD
 [CD-Build-url]: https://github.com/Neillife/ElsClockStrikes/blob/master/.github/workflows/release-assets.yml
+[downloads-shield]: https://img.shields.io/github/downloads/Neillife/ElsClockStrikes/total?style=for-the-badge
+[downloads-url]: https://github.com/Neillife/ElsClockStrikes/releases
