@@ -144,5 +144,5 @@
 [license-url]: https://github.com/Neillife/ElsClockStrikes/blob/master/LICENSE
 [CI-Build-shield]: https://img.shields.io/github/actions/workflow/status/Neillife/ElsClockStrikes/msbuild-test-ci.yml?style=for-the-badge&branch=master&label=CI%20BUILD
 [CI-Build-url]: https://github.com/Neillife/ElsClockStrikes/blob/master/.github/workflows/msbuild-test-ci.yml
-[CD-Build-shield]: https://img.shields.io/github/actions/workflow/status/Neillife/ElsClockStrikes/release-assets.yml?style=for-the-badge&branch=master&label=CD%20BUILD
+[CD-Build-shield]: https://img.shields.io/github/actions/workflow/status/Neillife/ElsClockStrikes/release-assets.yml?style=for-the-badge&label=CD%20BUILD
 [CD-Build-url]: https://github.com/Neillife/ElsClockStrikes/blob/master/.github/workflows/release-assets.yml
