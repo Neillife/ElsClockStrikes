@@ -1,5 +1,6 @@
 ﻿using MetroSuite;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -9,6 +10,7 @@ namespace ElsClockStrikes.Forms
     public partial class ElsClockStrikesFormSeqKeySetting : MetroForm
     {
         private bool topMost;
+        private List<string> arrowKeys = new List<string>() { "↑", "↓", "←", "→" };
 
         public string inputData { get; set; }
         public string sequenceData { get; set; }
@@ -73,6 +75,7 @@ namespace ElsClockStrikes.Forms
             Image randImg = FormsConstant.FormFeatureSettingBtnImgMap.Keys.ElementAt(new Random().Next(FormsConstant.FormFeatureSettingBtnImgMap.Keys.Count));
             this.SinKeyFeatureButton.Image = randImg;
             this.SinKeyFeatureButton.ImageSize = FormsConstant.FormFeatureSettingBtnImgMap[randImg];
+            this.TwoKeyComboBox.DataSource = arrowKeys;
         }
     }
 }
