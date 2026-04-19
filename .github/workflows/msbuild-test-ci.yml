@@ -2,7 +2,7 @@ name: ElsClockStrikes CI MSBuild and Test
 
 on:
   push:
-    branches: [ "master", "cicd", "feature/*", "fix/*", "refactor/*" ]
+    branches: [ "master", "cicd", "feature/*", "fix/*", "refactor/*", "chore/*" ]
   pull_request:
     branches: [ "master" ]
 
