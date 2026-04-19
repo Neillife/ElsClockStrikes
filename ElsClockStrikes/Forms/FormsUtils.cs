@@ -254,7 +254,7 @@ namespace ElsClockStrikes.Forms
 
         public static string ProcessLayoutString(string comboBoxText)
         {
-            return comboBoxText.Replace("鍵盤", "").Replace("LCtrl", "LC").Replace("RCtrl", "RC").Replace("LShift", "LShi").Replace("RShift", "RShi");
+            return comboBoxText.Replace("鍵盤", "").Replace("LCtrl", "LC").Replace("RCtrl", "RC").Replace("LShift", "LShi").Replace("RShift", "RShi").Replace("CapsLock", "Caps");
         }
 
         public static void ProcessSettingBtnClick(Panel targetPanel, GunaButton targetButton)
