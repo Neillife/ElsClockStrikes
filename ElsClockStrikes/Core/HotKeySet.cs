@@ -45,6 +45,7 @@ namespace ElsClockStrikes.Core
             X = Keys.X,
             Y = Keys.Y,
             Z = Keys.Z,
+            CapsLock = Keys.CapsLock,
             LCtrl = Keys.LControlKey,
             RCtrl = Keys.RControlKey,
             LShift = Keys.LShiftKey,
