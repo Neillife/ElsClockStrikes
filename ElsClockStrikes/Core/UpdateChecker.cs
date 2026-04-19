@@ -52,7 +52,17 @@ namespace ElsClockStrikes.Core
         {
             string verStr = Assembly.GetExecutingAssembly().GetName().Version.ToString().Replace(".", "-");
             verStr = verStr.Remove(verStr.Length - 2);
-            return $"20{verStr}";
+
+            string[] verStrSplit = verStr.Split('-');
+            if (verStrSplit[1].Length == 1)
+            {
+                verStrSplit[1] = $"0{verStrSplit[1]}";
+            } else if (verStrSplit[2].Length == 1)
+            {
+                verStrSplit[2] = $"0{verStrSplit[2]}";
+            }
+
+            return $"20{verStrSplit[0]}-{verStrSplit[1]}-{verStrSplit[2]}";
         }
 
         private static async Task<(string releaseTagName, string releaseUrl)> GetLatestReleaseAsync()

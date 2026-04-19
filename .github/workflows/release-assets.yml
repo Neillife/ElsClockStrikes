@@ -79,6 +79,13 @@ jobs:
           ".\ElsClockStrikes\bin\Release\INIFileParser.dll",
           ".\ElsClockStrikes\bin\Release\Guna.UI.dll",
           ".\ElsClockStrikes\bin\Release\Gma.System.MouseKeyHook.dll"
+          ".\ElsClockStrikes\bin\Release\System.Numerics.Vectors.dll"
+          ".\ElsClockStrikes\bin\Release\System.Runtime.CompilerServices.Unsafe.dll"
+          ".\ElsClockStrikes\bin\Release\System.Buffers.dll"
+          ".\ElsClockStrikes\bin\Release\System.Text.Json.dll"
+          ".\ElsClockStrikes\bin\Release\System.IO.Pipelines.dll"
+          ".\ElsClockStrikes\bin\Release\System.Threading.Tasks.Extensions.dll"
+          ".\ElsClockStrikes\bin\Release\System.Memory.dll"
         )
         foreach ($file in $files) {
           Copy-Item $file -Destination "output\ElsClockStrikes" -Force
